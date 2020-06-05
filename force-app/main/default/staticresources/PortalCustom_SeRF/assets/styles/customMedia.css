@@ -1,0 +1,57 @@
+/* Media Queries */
+
+@media all and (max-width: 1828px) {
+	.topicList .forceTopicFeaturedTopicItem.topicItem {
+		margin:25px;
+	}
+}
+
+@media all and (max-width: 1543px) {
+	.topicList .forceTopicFeaturedTopicItem.topicItem {
+		margin: 20px;
+		height: 225px;
+	}
+}
+
+@media all and (max-width: 1243px) {
+	.topicList .forceTopicFeaturedTopicItem.topicItem {
+		margin: 18px;
+		height: 200px;
+	}
+}
+
+@media all and (max-width: 1123px) {
+	.topicList .forceTopicFeaturedTopicItem.topicItem {
+		margin: 17px;
+		height: 150px;
+	}
+}
+
+@media all and (max-width: 1064px) {
+	.topicList .forceTopicFeaturedTopicItem.topicItem {
+		margin: 15px;
+	}
+}
+
+@media all and (max-width: 943px) {
+	.topicList .forceTopicFeaturedTopicItem.topicItem {
+		margin: 12px;
+		width: 21%;
+	}
+}
+
+/* Featured Topics styles - end */
+
+/* Footer */
+@media all and (max-width: 575px) {
+    .themeLayoutStarterWrapper > .footer {
+        height: 130px;
+    }
+}
+
+@media all and (max-width: 409px) {
+    .themeLayoutStarterWrapper > .footer {
+        height: 155px;
+    }
+}
+/* Footer - end */

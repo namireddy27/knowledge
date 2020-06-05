@@ -1,0 +1,44 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" controller="DynamicStageController" >
+    <!--    <aura:attribute name="pathList" type="Object[]" default="[]"/>
+    <aura:attribute name="statusValue" type="String" default="LJS"/>
+    <aura:attribute name="pathList" type="Object[]" default="[]"/>
+    <aura:attribute name="myChild" type="String" default=""/>
+     <aura:attribute name="variant" type="String" default="non-linear"/>
+    <aura:attribute name="hideUpdateButton" type="Boolean" default="false"/>
+    <aura:handler name="init" action="{!c.getApplication}" value="{!this}" />
+    <aura:attribute name="steps" type="Object[]" default="[]"/>
+    <aura:registerEvent name="StageEvents" type="c:StageEvents"/>
+
+    
+    
+        <lightning:progressIndicator currentStep="{!v.statusValue}" type="path" >
+        <aura:iteration items="{! v.steps }" var="step">
+            <lightning:progressStep onstepmouseenter="{!c.ononstepblurO}" label="{! step.label }" value="{! step.value }" 
+                                   aura:Id="mystep"/>
+        </aura:iteration>
+    </lightning:progressIndicator>
+   
+
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" controller="DynamicStageController" >
+-->    <aura:attribute name="pathList" type="Object[]" default="[]"/>
+    <aura:attribute name="myChild" type="String" default=""/>
+    <aura:attribute name="variant" type="String" default="non-linear"/>
+    <aura:attribute name="hideUpdateButton" type="Boolean" default="false"/>
+    <aura:handler name="init" action="{!c.getApplication}" value="{!this}" />
+    <aura:attribute name="steps" type="String[]" default="[]"/>
+    <aura:attribute name="statusValue" type="String" default=""/>
+    <aura:attribute name="failedStep" type="Boolean" default=""/>
+    <aura:registerEvent name="StageEvents" type="c:StageEvents"/>
+    <lightning:progressIndicator currentStep="{!v.statusValue}" type="path" hasError="false" variant="brand">
+        <aura:iteration items="{! v.steps }" var="step">
+            <aura:if isTrue="{!and(step == v.statusValue, v.failedStep)}">
+                <lightning:progressStep class="slds-is-lost" label="{! step }" value="{! step }"/>
+                <aura:set attribute="else">
+                    <lightning:progressStep label="{! step }" value="{! step }"/>
+                </aura:set>
+            </aura:if>
+            
+        </aura:iteration>
+    </lightning:progressIndicator>
+    
+</aura:component>

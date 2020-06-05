@@ -1,0 +1,70 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" 
+                controller="CandidateWithdrawalController">
+    <!-- ATTRIBUTE STARTS -->
+    <aura:attribute name="showConfirtmation" type="boolean" default="false" />
+    <aura:attribute name="recordId" type="String" />
+    <!-- ATTRIBUTE ENDS -->
+    
+    <!-- MARKUP STARTS -->
+    <div class="slds-text-align--right slds-text-heading_small"><u><a onclick="{!c.handleEdit}">Withdraw Application</a></u></div><br/>
+    <div class="slds-text-align--right slds-text-heading_small"><u><a onclick="{!c.initFlow}">Initiate Flow</a></u></div>
+    
+    <div id="showconfirm">
+    	<!-- CONFIRMATION MODAL STARTS -->    
+        <aura:if isTrue="{!v.showConfirtmation}">
+            <div class="slds-m-around_xx-large">
+                <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+                         aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                    <div class="slds-modal__container">
+                        <!-- ###### MODAL BOX HEADER Start ######-->
+                        <header class="slds-modal__header" id="rwtopDivide">
+                            <lightning:buttonIcon iconName="utility:close" onclick="{! c.closeModel }"
+                                                  alternativeText="close" variant="bare-inverse" class="slds-modal__close" />
+                            <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate"><Strong>Withdraw Application</Strong></h2>
+                        </header>
+                        <!--###### MODAL BOX BODY Part Start######-->
+                        <div id="modalbody" class="modalbody">
+                            <br/>
+                            <div class="rwContent">
+                                <center>
+                                    <p>
+                                        Sure you want to withdraw your application?<br/>
+                                        Once withdrawn, to apply again you must start a new application<sup class="rwSup">1</sup>
+                                    </p>
+                                </center>
+                            </div>
+                            <!-- ** BUTTONS *** -->
+                            <div class="slds-modal__content slds-p-around_medium button rwBtnRow" id="modal-content-id-1">
+                                <!-- ** BUTTON ROW -->
+                                <div class="rwCancelbtn">
+                                    <!-- ** CANCEL BTN *** -->
+                                    <span class="yes rwCancelMargin">
+                                        
+                                        <lightning:button label="Cancel" title="Cancel" onclick="{! c.closeModel }"/>
+                                    </span>
+                                    <!-- // CANCEL BTN // -->
+                                    <!-- ** WITHDRAW BTN *** -->
+                                    <span class="no">
+                                        <lightning:button label="Withdraw" title="Withdraw" onclick="{! c.handleWithdraw }" variant="brand"/>
+                                    </span>
+                                    <!-- // END WITHDRAW BTN // -->
+                                </div><!-- // END BUTTON ROW // -->
+                            </div><!-- // END BUTTONS // -->
+                            
+                            <div class="footer">
+                                <center>
+                                    <p class="rwFooter">
+                                        1. If withdrawing your only active TSO application and have already attended an airport assessment, but have not completed the medical and background investigation steps, you will no longer receive consideration for a TSO position.
+                                    </p>
+                                </center>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <div class="slds-backdrop slds-backdrop_open"></div>
+            </div>
+        </aura:if>
+        <!-- CONFIRMATION MODAL ENDS -->
+    </div>
+    <!-- MARKUP ENDS -->
+</aura:component>

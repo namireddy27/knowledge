@@ -1,0 +1,40 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global">
+    <!--lightningRecEditFormComp-->
+    <aura:attribute name="disabled" type="Boolean" default="false" />
+    <aura:attribute name="saved" type="Boolean" default="false" />
+    <aura:attribute name="showSpinner" type="Boolean" default="true" />
+    <aura:attribute name="contactId" type="String" default="true" />
+    <aura:if isTrue="{!!v.saved}">
+        <lightning:recordEditForm
+            aura:id="createAccountForm"
+            onsuccess="{!c.handleSuccess}"
+            recordId="{!v.contactId}"
+            objectApiName="User"
+            >
+        <!--<lightning:recordEditForm
+            aura:id="createAccountForm"
+            onsuccess="{!c.handleSuccess}"
+            recordId="{!v.contactId}"
+            objectApiName="Account"
+            >-->
+            
+            <lightning:messages />
+
+            <lightning:inputField fieldName="FirstName" disabled="true"/>
+            <lightning:inputField fieldName="LastName" disabled="true"/>
+            <lightning:inputField fieldName="Type" />
+            <lightning:inputField fieldName="Email" />
+            <lightning:inputField fieldName="Phone" />
+            <lightning:inputField fieldName="Street" />
+            <lightning:inputField fieldName="City" />
+           
+            <div class="slds-m-top_medium">
+                <lightning:button  variant="brand" type="submit" name="save" label="Save" />
+            </div>
+        </lightning:recordEditForm>
+        <aura:set attribute="else">
+            <p>Saved!</p>
+        </aura:set>
+    </aura:if>
+
+</aura:component>

@@ -1,0 +1,31 @@
+<aura:component implements="force:hasRecordId,flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes"
+                controller="GraphController">
+    
+    <aura:attribute name="record" type="Object" />
+    <aura:attribute name="allStages" type="List" />
+    <aura:attribute name="simpleRecord" type="Object" />
+    <aura:attribute name="currentStage" type="String" />
+    <aura:attribute name="Percentage" type="String" />
+    
+    <aura:handler event="c:StageEvents" action="{!c.handleApplicationEvent}"/>
+    <ltng:require scripts="{!$Resource.chartminjs}"
+                  /> 
+    <force:recordData aura:id="forceRecordCmp" 
+                      
+                      recordId="{!v.recordId}"
+                      
+                      mode="VIEW"
+                      targetRecord="{!v.record}"
+                      targetFields="{!v.simpleRecord}" 
+                      fields="Id, Name,Job_Title__c,Application_Status__c,Status_Completion_Percentage__c,Candidate_Portal_Hiring_Stage__c"
+                      />
+    App ID:  {!v.simpleRecord.Name} <br/>
+    Job Title:  {!v.simpleRecord.Job_Title__c} <br/>
+    Status:  {!v.simpleRecord.Application_Status__c} <br/>
+    Percentage: {!v.simpleRecord.Status_Completion_Percentage__c} 
+    
+    <br/>{!v.Percentage}
+    <div id="chartContainer" style="height: 200px; width: 200px;">
+        <canvas id="chart-area" width="100%" height="100%"></canvas>
+    </div>
+</aura:component>

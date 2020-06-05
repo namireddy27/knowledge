@@ -1,0 +1,91 @@
+<!-- 
+Author:  Ganga Atturu
+Created: 2/12/2020
+Description: Allow candidate to schedule CBT. 
+-->
+
+
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global"
+                controller="HR_Candidate_SSO_Link_Request_Controller">
+	
+    <aura:attribute name="showConfirtmation" type="boolean" default="false" />
+    <aura:attribute name="recordId" type="String" />
+     <aura:attribute name="ssoLink" type="string" />
+     <aura:attribute name="isButtonActive" type="Boolean" default="false" />
+     
+    <aura:attribute name="application" type="HR_App__c[]" />
+    
+    
+    <lightning:button label="Click To Schedule" title="Schedule" onclick="{!c.clickCBTLink }" variant="brand" />
+                                
+    
+    <div id="showconfirm">
+
+        <aura:if isTrue="{!v.showConfirtmation}">
+            <div class="slds-m-around_xx-large">
+                <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+                    aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                    <div class="slds-modal__container">
+<!-- ###### MODAL BOX HEADER Start ######-->
+                        <header class="slds-modal__header" id="rwtopDivide">
+                            <lightning:buttonIcon iconName="utility:close" onclick="{! c.closeModel }"
+                                alternativeText="close" variant="bare-inverse" class="slds-modal__close" />
+                            <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate"><Strong>Schedule CBT</Strong></h2>
+                        </header>
+                        <!--###### MODAL BOX BODY Part Start######-->
+                        <div id="modalbody" class="modalbody">
+                            <br/>
+                            <div class="rwContent">
+                                <center>
+                                    <p>
+                                        You are about to schedule CBT<br/>
+                                         Click Schedule CBT button to redirecting to CBT Site in 15 sec... <sup class="rwSup">1</sup>
+                                    </p>
+                                    
+                
+                                </center>
+                              </div>
+                                                       <!-- ** BUTTONS *** -->
+                            <div class="slds-modal__content slds-p-around_medium button rwBtnRow" id="modal-content-id-1">
+                                <!-- ** BUTTON ROW -->
+                                <div class="rwCancelbtn">
+                                      <!-- ** CANCEL BTN *** -->
+                                <span class="yes rwCancelMargin">
+                                                                         
+                                   <lightning:button label="Cancel" title="Cancel" onclick="{! c.closeModel }"/>
+                                </span>
+                                    <!-- // CANCEL BTN // -->
+		<!-- ** SChedule CBT BTN *** -->
+                                    
+                                 
+                                    
+                                <aura:if isTrue="{!v.isButtonActive}">
+    
+                                 <span class="no">
+                                   <lightning:button label="Schedule" title="Schedule" onclick="{! c.scheduleCBT }" variant="brand" disabled="false"/>
+                                </span>  
+                                   <aura:set attribute="else">
+                                    <span class="no">
+                                   <lightning:button label="Schedule" title="Schedule" onclick="{! c.scheduleCBT }" variant="brand" disabled="true"/>
+                                </span>
+                                   </aura:set>
+                                    
+                                          
+                               </aura:if>
+                                    
+        
+                                    
+                                    <!-- // END Schedule CBT BTN // -->
+				</div><!-- // END BUTTON ROW // -->
+			</div><!-- // END BUTTONS // -->
+                          
+                            
+                        </div>
+                    </div>
+                </section>
+                <div class="slds-backdrop slds-backdrop_open"></div>
+            </div>
+        </aura:if>
+    </div>
+    
+</aura:component>

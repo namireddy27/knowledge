@@ -1,0 +1,11 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global"  controller="CurrentUserController" >
+	Header: 
+    <aura:attribute name="currentUser" type="User" ></aura:attribute>
+    <aura:attribute name="recordId" type="String" default="{!$SObjectType.CurrentUser.Id}" />
+    
+    
+   	<aura:handler name="init" value="{!this}" action="{!c.doinit}" /> 
+    
+    <div class="slds-text-heading_small"><b>{!v.currentUser.FirstName}&nbsp;{!v.currentUser.LastName}</b>
+    </div>
+</aura:component>

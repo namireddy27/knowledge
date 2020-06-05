@@ -1,0 +1,473 @@
+/*****************************************************************/
+/************************ Header *********************************/
+/*****************************************************************/
+
+/** Default input/textarea font sizes **/
+input, textarea {
+	font-size: 16px;
+}
+
+/**App Launcher**/
+.tooltipTrigger.tooltip-trigger.uiTooltip .slds-icon-waffle div {
+	display:none;
+}
+
+.tooltipTrigger.tooltip-trigger.uiTooltip .slds-icon-waffle {
+    width: 100px;
+    height: auto;
+}
+
+.tooltipTrigger.tooltip-trigger.uiTooltip .slds-icon-waffle::before {
+    content: "My Apps";
+    font-size: 18px;
+}
+/**End App Launcher**/
+
+.forceCommunityThemeNav .visible-links {
+    
+    font-size: 18px;
+}
+
+.forceCommunityThemeSearch .search-box .search-input {
+
+    padding-left: 9px;
+}
+
+.search-input::-webkit-input-placeholder {
+
+    font-size: 18px;
+}
+
+.search-inputSearchButton .slds-button__icon {
+
+    width: 1.3rem;
+}
+
+/*User icon*/
+.forceCommunityThemeProfileMenu .profile-menuTrigger .profile-icon {
+
+    width: 25px;
+    height: 25px;
+
+}
+
+/*****************************************************************/
+/************************ Content ********************************/
+/*****************************************************************/
+
+.siteforceContentArea .contentRegion {
+    font-size: 16px;
+}
+
+.slds-form-element{
+    font-size: 16px;
+}
+
+.uiOutputRichText,
+.uiOutputText,
+.uiOutputTextArea {
+    font-size: 16px;
+}
+
+.siteforceThemeLayoutStarter .uiButton .label {
+    font-size: 16px;
+}
+
+
+.siteforceThemeLayoutStarter .slds-form-element__label {
+    font-size: 16px;
+}
+
+
+.slds-rich-text-editor__output span[style] {
+    font-family:"Salesforce Sans" !important;
+    font-size:16px;     
+}
+
+/* Button Styling */
+.slds-button .slds-button_brand {
+    background-color: #006699;
+    border-color: #006699;
+}
+
+
+.slds-button .slds-button_brand:hover {
+    background-color: #004f77;
+    border-color: #004f77;
+}
+
+.slds-button.slds-button_brand[disabled='true'],
+.slds-button.slds-button_brand[disabled='true']:hover {
+    background-color: rgb(201, 199, 197);
+    border-color: rgb(201, 199, 197);
+    color: #ffffff;
+}
+/* Button Styling - end */
+
+/*****************************************************************/
+/************************ Footer* ********************************/
+/*****************************************************************/
+
+.themeLayoutStarterWrapper > .footer {
+    background-color: #6c7882;
+    color: #fff;
+    /*height:106px;*/
+    font-size:17px;
+}
+
+.themeLayoutStarterWrapper > .footer .footer-links span {
+    display: block;
+}
+
+.themeLayoutStarterWrapper > .footer a {
+    color: #fff;
+}
+
+.footer-links {
+    margin-bottom: 1rem;
+}
+
+/*****************************************************************/
+/********************** Component Specific ***********************/
+/*****************************************************************/
+
+/*Hero*/
+.jepsonHomeHero .contentTitle,
+.jepsonHomeHero .contentSubtitle {
+
+    font-weight:bold;
+}
+
+.jepsonHomeHero .content{
+
+    background: rgba(0, 102, 153, 0.8);
+	padding:25px 10px;
+	border-radius:20px;
+}
+
+.forceCommunityThemeSearch.jepsonHomeHero div .search-box {
+	border: 2px solid white !important;
+}
+
+/*End Hero Component Style*/
+
+/*Header*/
+
+.headlineTitleText .uiOutputText {
+
+    font-size: 18px;
+}
+
+.headlineInfo .uiOutputRichText {
+    font-size: 18px;
+}
+
+/*End Header Component*/
+
+/*Tabs*/
+.forceCommunityTabset .uiTabBar .uiTabItem .tabHeader {
+    font-size: 16px;
+}
+/*End Component*/
+
+/* List View */
+.forceCommunityRecordListDesktop.forceListViewManager {
+    font-size: 16px;
+}
+
+/*Object Name*/
+.forceBreadCrumbItem.uiOutputText {
+    font-size: 18px;
+}
+
+.selectedListView {
+    font-size: 18px;
+}
+
+/*Table th*/
+.forceListViewManagerGrid .slds-th__action .slds-truncate {
+    font-size: 18px;
+}
+
+/*End List View */
+
+/*Flow Component*/
+
+.siteforceContentArea .forceCommunityFlowCommunity {
+
+    background-color: #F4F4F6;
+}
+
+/*End Flow Component*/
+
+/*serfNewRequest Component
+.siteforceContentArea .comm-layout-column .ui-widget:not(:last-child) .emptydiv, 
+.siteforceContentArea .cb-section_column .ui-widget:not(:last-child) .emptydiv {
+
+	margin-bottom: 0px;
+}*/
+/*end serfNewRequest Component*/
+
+/*****************************************************************/
+/*************************** Chatter *****************************/
+/********************** Component Specific ***********************/
+/*****************************************************************/
+
+/*Chatter Publisher*/
+.forceCommunityFeedPublisher .oneActionsComposer .uiTabBar .uiTabItem.active .tabHeader{
+    font-size: 16px;
+}
+
+/*End Chatter Publisher Component */
+
+/*Chatter Feed */
+.forceChatterFeedInner {
+
+    border: 1px solid #d4d4d4;
+    border-radius: .25rem;
+
+}
+
+/*End Chatter Feed */
+
+
+/*****************************************************************/
+/*************************** Records *****************************/
+/********************** Component Specific ***********************/
+/*****************************************************************/
+
+/*Record Details */
+.forceCommunityRecordDetail {
+
+    border: 1px solid #d4d4d4;
+    border-radius: .25rem;
+    
+}
+
+.ui-widget .forceDetailPanelDesktop, 
+.slds-section__title .slds-section__title-action{
+
+    background: #F4F4F6;
+}
+
+.slds-form-element .slds-form-element__static {
+
+    font-size: 16px;
+}
+
+.slds-section__title-action {
+
+    font-size: 18px
+}
+
+/*End Record Details */
+
+/*Record Banner*/
+
+.forceHighlightsStencilDesktop .primaryFieldRow {
+    font-size: 18px;
+}
+
+.forceCommunityRecordHeadline .forceHighlightsStencilDesktop .entityNameTitle {
+    font-size: 18px;
+}
+
+/*Field Name*/
+.slds-form-element .slds-form-element__label {
+
+    font-size: 16px;
+}
+
+/*End Record Banner Commponent*/
+
+/*Record List*/
+
+.container .forceVirtualAutocompleteMenu.slds-lookup {
+    width: auto;
+}
+.forceBaseListView table{
+    font-size: 16px;
+}
+
+.forceCommunityRecordListDesktop .forceListViewManagerHeader .force-list-view-manager-status-info{
+    font-size: 18px;
+}
+
+.slds-media .slds-card__header-title {
+
+    font-size: 18px;
+}
+
+.forceRelatedListPreviewGrid.forceBaseListView thead th {
+
+    font-size: 18px;
+}
+
+.siteforceThemeLayoutStarter .actionsContainer {
+
+    font-size: 16px;
+}
+
+
+/*End Record List Component*/
+
+/*****************************************************************/
+/*************************** Topics ******************************/
+/********************** Component Specific ***********************/
+/*****************************************************************/
+
+/*Featured Topics */
+.contentRegion .forceTopicFeaturedTopics .topicList{
+
+    margin: auto;
+    width: 95%;
+}
+
+.topicList .forceTopicFeaturedTopicItem.topicItem {
+	
+	width: 16.5%;
+    margin: 30px;
+}
+
+.topicList .topicContent .topicLabel{
+    
+    font-size: 18px;
+}
+/*End Featured Topics Component */
+
+/* Topic Catalog Styling */
+
+.forceCommunityTopicCatalog a{
+
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.slds-text-heading--small .topicHierarchy-child :hover,
+.slds-text-heading--medium .topicHierarchy-top :hover,
+.forceCommunityBreadcrumbs .slds-breadcrumb a:hover{
+
+    color:#006699;
+}
+
+.forceTopicSubTopicNavigation :hover,
+.forceCommunityRecordListStandard .viewAllLink :hover{
+
+    color:#006699;
+    text-decoration: none;
+}
+
+/*Topic Catalog Styling - end */
+
+
+/*****************************************************************/
+/*************************** Articles ****************************/
+/********************** Component Specific ***********************/
+/*****************************************************************/
+
+/*Trending Articles*/
+.comm-topic-trending-articles .slds-text-heading_small, 
+.slds-text-heading--small{
+    font-size: 18px;
+}
+
+.comm-topic-trending-articles__item .slds-text-body_small {
+    font-size: 16px;
+}
+/*End Component*/
+
+/*Related Articles*/
+
+.comm-related-articles .slds-text-heading_small {
+
+    font-size: 18px;
+}
+
+.comm-related-articles .slds-text-body_small {
+
+    font-size: 16px;
+}
+
+/*End Related Articles Component*/
+
+/*Articles with this topic*/
+
+.topicRelatedArticleList .selfServiceTopicArticleList 
+.selfServiceArticleListItem .article-summary{
+
+    font-size: 16px;
+}
+
+/*End Component*/
+
+/*Top Articles by Topic*/
+
+.forceCommunityTopArticleList {
+    font-size: 18px;
+    border: 1px solid #d4d4d4;
+    border-radius: .25rem;
+}
+
+.siteforceContentArea .ui-widget .forceCommunityTopArticleList .title{
+    font-size: 16px;
+}
+
+.forceCommunityTopArticleList .listContent ul {
+
+    text-align: center;
+}
+
+.topicArticleList .forceCommunityTopArticleItem .article-title {
+
+    font-size: 16px;
+}
+/*End Top Articles by Topic Component*/
+
+/*Article Content */
+
+.selfServiceArticleLayout .summary {
+    font-size: 16px;
+}
+
+.selfServiceArticleLayout.article-column {
+
+    border: 1px solid #d4d4d4;
+    border-radius: .25rem;
+    background: #F4F4F6;
+}
+
+.selfServiceArticleLayout {
+    padding-top: 10px;
+}
+
+.slds-form-element .slds-form-element__static .outputLookupLink {
+
+    font-size: 16px;
+}
+
+/*helpful? vote counts*/
+
+.forceKnowledgeArticleThumbVote .uiOutputText {
+    font-size: 12px;
+}
+
+/*End Article Content */
+
+/* My Request Page - Start */
+.comm-page-custom-myrequests th a,
+.comm-page-custom-myrequests td a {
+	font-weight: bold;
+	text-decoration: underline;
+	color: #006699;
+}
+
+.comm-page-custom-myrequests .body {
+	min-height: 708px;
+}
+/* My Request Page - End */
+
+
+
+
+
+

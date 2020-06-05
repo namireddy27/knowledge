@@ -1,0 +1,7 @@
+<aura:event type="APPLICATION" description="Event template">
+    
+    <aura:attribute type="List" name="allStages"/>
+    <aura:attribute type="String" name="currentStage"/>
+                                        
+                                       
+</aura:event>

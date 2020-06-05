@@ -1,0 +1,21 @@
+.THIS.navy {
+    background-color: #16325C;
+    font-size: 1.625rem;
+    padding: 8px 0 8px 20px;  
+    color: white;
+    font-family: Salesforce Sans;
+    }
+
+h2.THIS { 
+    font-weight: 700;
+    }
+
+
+
+h1.THIS{ 
+    font-size:36pt; 
+    }
+
+.THIS.right {
+  text-align: right;
+}

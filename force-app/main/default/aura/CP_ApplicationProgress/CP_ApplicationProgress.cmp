@@ -1,0 +1,21 @@
+<aura:component implements="flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes,force:hasRecordId" access="global">
+   
+    <div class="navy">Application Progress</div>
+    <div style="padding:10px; border:1px solid; font-size: 0.875rem;">
+    <div>Progress Percent will show here based on the hiring stage of the HR Application.
+        <br /><br /><br />
+        <strong>Job Title </strong><br /><br />
+        <strong>In Progress</strong> APP - 000172
+           <!-- Venu will work on this    
+        <lightning:recordViewForm recordId="{v.recordId}" objectApiName="HR_Application__c"> -->
+            
+               <!-- need Job Title which is Job_Title__c, then Application Status which is Application_Status__c, and Name which is Name -->
+           
+                
+           
+       <!-- </lightning:recordViewForm>-->
+               
+        </div> 
+    
+    </div>
+</aura:component>

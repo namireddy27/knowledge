@@ -1,0 +1,14 @@
+<svg id="Icons_Mobile_Icon-Login" data-name="Icons/Mobile/Icon-Login" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Hit_Spot" data-name="Hit Spot" width="24" height="24" fill="#d8d8d8" opacity="0"/>
+    </clipPath>
+  </defs>
+  <g id="Group_1" data-name="Group 1">
+    <rect id="Hit_Spot-2" data-name="Hit Spot" width="24" height="24" fill="#d8d8d8" opacity="0"/>
+    <g id="Mask_Group_1" data-name="Mask Group 1" clip-path="url(#clip-path)">
+      <path id="Combined_Shape" data-name="Combined Shape" d="M4.8,9.6A4.8,4.8,0,1,1,9.6,4.8,4.805,4.805,0,0,1,4.8,9.6Zm0-8.4A3.6,3.6,0,1,0,8.4,4.8,3.6,3.6,0,0,0,4.8,1.2Z" transform="translate(7.2 2.4)" fill="#333"/>
+      <path id="Combined_Shape-2" data-name="Combined Shape" d="M9.6,19.2A9.6,9.6,0,0,1,2.812,2.812,9.6,9.6,0,1,1,16.388,16.388,9.537,9.537,0,0,1,9.6,19.2Zm0-18A8.4,8.4,0,1,0,18,9.6,8.41,8.41,0,0,0,9.6,1.2Z" transform="translate(2.4 10.8)" fill="#333"/>
+    </g>
+  </g>
+</svg>

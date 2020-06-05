@@ -1,0 +1,49 @@
+.THIS .slds-path__nav .slds-is-active {
+    background: #fff;
+}
+.THIS.slds-path__nav .slds-is-active {
+    background: #fff;
+}
+.THIS.slds-path__link{
+    height: 2rem;
+}
+.THIS .slds-path__link{
+    height: 2rem;
+}
+.THIS .slds-path__item:after{
+	bottom:0; height: 1rem; transform: skew(-30deg) translate3d(0, 0, 0);
+}
+.THIS .slds-path__item:before{
+	top: 0; height: calc((2rem / 2) + 0.0625rem); transform: skew(28deg) translate3d(0, 0, 0); 
+}
+.THIS.slds-path__nav .slds-is-active:first-child .slds-path__link {
+    height: 2rem;
+}
+.THIS .slds-path__item {
+    min-width: 2rem;
+}
+.THIS .greenPath{
+    background-color: green !important;
+}
+.THIS .bluePath{
+    background-color: blue !important;
+}
+
+.THIS .redPath{
+    background-color: red !important;
+}
+
+.THIS .greyPath{
+    background-color: grey !important;
+}
+
+.THIS .slds-readonly-path{
+pointer-events: none;
+}
+
+.THIS .slds-popover_tooltip{
+      top:50px;
+    position:absolute;
+  width: 150px;
+    text-align: center;
+}

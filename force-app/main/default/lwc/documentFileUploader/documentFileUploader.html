@@ -1,0 +1,30 @@
+<template>
+    <lightning-card title="Document Uploader" icon-name="action:upload">
+        <div class="slds-m-around_medium">
+            <template if:true={documentTypeValues.data}>
+                <lightning-combobox label="Document Type"
+                                    value={docType}
+                                    placeholder="-Select-"
+                                    options={documentTypeValues.data.values}
+                                    onchange={handleChange} 
+                                    required>
+                </lightning-combobox>
+          
+                <br/>
+                <div>
+                    <lightning-input label="Select File" name="file uploader" onchange={handleFilesChange} type="file"></lightning-input>
+                </div>
+
+                <div class="slds-text-body_small slds-text-color_success">{fileName}
+                    <template if:true={showLoadingSpinner}>
+                        <lightning-spinner alternative-text="Uploading......" size="medium"></lightning-spinner>
+                    </template>
+                </div><br/>
+                
+                <div>
+                    <lightning-button class="slds-m-top--medium" label={UploadFile} onclick={handleSave} variant="brand" disabled={isTrue}></lightning-button>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>47.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Document File Uploader</masterLabel>
+    <targets>
+        <target>lightning__RecordPage</target>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__RecordPage">
+            <objects>
+                <object>HR_App__c</object>
+                <object>Account</object>
+                <object>HR_Cert__c</object>
+                <object>HR_JOA__c</object>
+                <object>HR_Assessment__c</object>
+                <object>HR_Offer__c</object>
+            </objects>
+            <property name="lookUpObject" type="String" default="" label="Document Lookup API Name" description="API name of the Lookup Reference field on Document__c object"/>
+        </targetConfig>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="recordId" type="String" label="Record Id To find similarities" description="Default uses the current page's record id" default="{!recordId}"/>
+            <property name="lookUpObject" type="String" default="{!lookUpObject}" label="Document Lookup API Name"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

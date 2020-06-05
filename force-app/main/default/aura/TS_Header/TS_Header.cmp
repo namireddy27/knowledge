@@ -1,0 +1,94 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global">
+<aura:attribute name="showConfirtmation" type="boolean" default="false" /> 
+        <aura:attribute name="currentUser" type="User" /> 
+    <force:recordData
+                      fields="Name, Email, UserType, Account.HR_Candidate_ID__c"
+                      recordId="{!$SObjectType.CurrentUser.Id}"
+                      targetFields="{!v.currentUser}"
+                      mode="VIEW"
+                      /> 
+<header class="header-section">
+			<a href="javascript:void();" class="site-logo">
+				<img src="{!$Resource.itechlogo}" alt="TS Agro: Agricultural Department"></img> 
+    		</a>
+			<nav class="header-nav">
+				<ul class="main-menu">
+					<li class="return-site">
+						<a href="javascript:void();" class="active x">
+<!--							<img src="{!$Resource.CPHeaderArrowIcon}" alt="right arrow icon" aria-role="presentation" class="right-arrow"></img> --> Return to Career Management
+                        </a>
+					</li>
+					<li>
+						<a href="javascript:void();">Logout</a>
+					</li>
+					<li>
+<!--						<img src="{!$Resource.CPHeaderMenuIcon}" alt="TS Agro: Agricultural Department" style="margin-bottom: 15px;"></img> -->
+                    </li>
+					<li>
+					  <div class="candidate-info">
+						<span>{!v.currentUser.Name}</span>
+                          <span>{!v.currentUser.Account.HR_Candidate_ID__c}</span>
+
+                        </div>
+					</li>
+				</ul>
+
+				<ul class="mobile-menu-nav">
+					<li>
+                        <a onclick="{!c.handleMobileMenu}">Menu</a>
+					</li>
+					<li>
+						<a onclick="{!c.handleMobileMenu}">
+<!--                            <img src="{!$Resource.CPHeaderMenuIcon}" alt="TS Agro: Agricultural Department" style="margin-bottom: 15px;"></img> -->
+                        </a>
+                    </li>
+				</ul>
+                
+                <!-- Mobile Menu: Modal Popup Panel --> 
+                <aura:if isTrue="{!v.showConfirtmation}">
+                    <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                        <div class="slds-modal__container">
+                            <!-- Modal/Popup Box Header Starts here-->
+                            <header class="slds-modal__header" style="border-bottom:1px solid #FFBE2E;">
+                                <lightning:buttonIcon iconName="utility:close"
+                                                      onclick="{! c.closeModel }"
+                                                      alternativeText="close"
+                                                      variant="bare-inverse"
+                                                      class="slds-modal__close"/>
+                                <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate" style="font-size:1.375rem;"><strong>Candidate Portal Menu</strong></h2>
+                            </header>
+                            <!--Modal/Popup Box Body Starts here-->
+                            <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                                <!--Mobile Menu Content Starts here-->
+                                <ul class="mobile-menu">
+                                    <li>
+                                        <a href="javascript:void();">Logout</a>
+                                    </li>
+                                    <li>
+<!--                                        <img src="{!$Resource.CPHeaderMenuIcon}" alt="TS Agro: Agricultural Department" style="margin-bottom: 15px;"></img> -->
+                                    </li>
+                                    <li>
+                                      <div class="candidate-info">
+                                        <div>Venu R. Reddy</div>
+                                        <div>ID: #12345678</div>
+                                      </div>
+                                    </li>
+                                    <li class="">
+                                        <a href="javascript:void();" class="active x">
+<!--                                            <img src="{!$Resource.CPHeaderArrowIcon}" alt="right arrow icon" aria-role="presentation" class="right-arrow"></img> -->Return to Career Management
+                                        </a>
+                                    </li>
+                                </ul>
+                                <!--/End of Mobile Menu Content-->
+                            </div>
+                        </div>
+                    </section>
+                    <div class="slds-backdrop slds-backdrop_open"></div>
+                </aura:if>
+			</nav>
+
+		</header>
+    
+		
+
+</aura:component>

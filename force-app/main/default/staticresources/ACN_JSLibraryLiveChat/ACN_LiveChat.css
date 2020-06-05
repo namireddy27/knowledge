@@ -1,0 +1,207 @@
+html {
+	overflow: hidden;
+}
+
+button:hover { 
+	background-position: right center; 
+}
+
+.acn-margin-none {
+	margin: 0;
+}
+.acn-padding-none {
+	padding: 0;
+}
+.lash-live-chat-log-panel-container {
+	border-radius: 1em;
+	border-style: solid;
+	border-width: 1px;
+	overflow-y: hidden;
+	padding: .25em;
+	margin-top: .25em;
+}
+.lash-live-chat-log-panel {
+	height: 70vh;
+	margin: .75em .25em;
+	overflow-y: auto;
+}
+.lash-live-chat-messaging-panel {
+	bottom: 0;
+	position: fixed;
+	width: 100%;
+}
+#liveAgentMessageStatus {
+	display: block;
+}
+#liveAgentClientChat.liveAgentStateWaiting {
+// The CSS class that is applied when the chat request is waiting to be accepted
+// See "Waiting State" screenshot below
+}
+#liveAgentClientChat {
+// The CSS class that is applied when the chat is currently engaged
+// See "Engaged State" screenshot below
+}
+#liveAgentClientChat.liveAgentStateEnded {
+// The CSS class that is applied when the chat has ended
+// See "Ended State" screenshot below
+}
+#liveAgentSaveButton, #liveAgentEndButton, .liveAgentCancelButton { 
+	z-index: 2;
+}
+.lash-live-chat-element-hidden {
+	display: none !important;
+}
+.lash-live-chat-element-disabled button, .lash-live-chat-element-disabled span button {
+	pointer-events: none;
+}
+/*
+.lash-live-chat-element-disabled button:before, .lash-live-chat-element-disabled span button:before {
+	background-color: RGBA(255, 255, 255, .5) !important;
+	border-radius: .5em;
+	content: " ";
+	height: 3.75em;
+	position: absolute;
+	width: 102%;
+}
+*/
+.lash-live-chat-element-disabled button, .lash-live-chat-element-disabled span button {
+	opacity: .5;
+}
+.liveAgentSaveButton, .liveAgentEndButton, .liveAgentAlert button, .liveAgentSendButton, .liveAgentCancelButton, .liveAgentCloseButton {
+	align-items: center;
+	background-clip: border-box;
+	background-color: white;
+	border-radius: .75em;
+	border-width: 1px;
+	border-style: solid;
+	border-color: white;
+	color: white !important;
+	cursor: pointer;
+	display: inline-flex;
+	flex-grow: 1;
+	font: inherit;
+	justify-content: center;
+	line-height: 1.875rem;
+	margin: 0;
+	overflow: visible;
+	padding: 1em 1em;
+	position: relative;
+	text-align: center;
+	transition: border .15s linear;
+	text-decoration: none;
+	-webkit-appearance: none;
+	user-select: none;
+	vertical-align: middle;
+	white-space: normal;
+	width: 100%;
+}
+.liveAgentCloseButton {
+	height: 4.5em;
+}
+.liveAgentSendButton {
+	margin-left: .5em !important;
+	width: 95%;
+}
+.lash-live-chat-messaging-panel div {
+	padding: 0 !important;
+	margin: 0 !important;
+}
+.lash-live-chat-log-panel-container {
+	margin-top: .75em !important;
+}
+.lash-live-chat-save-end-buttons-panel span, .lash-live-chat-save-end-button-cancel span, .lash-live-chat-save-end-button-end span, .lash-live-chat-save-end-button-save span {
+	display: flex;
+	flex: auto;
+}                
+.liveAgentAlert button {
+	bottom: 0;
+	position: absolute;
+}
+.liveAgentChatInput {
+	border-radius: .5em;
+	border-style: solid;
+	border-width: 1px;
+	display: inline-flex;
+	line-height: 2em !important;
+	padding: .75em !important;
+	width: 100%;
+}
+button:focus {
+	outline: 0 !important;
+} 
+.liveAgentSendButton {
+	display: inline-flex;
+}
+#liveAgentChatLog {
+	height: 100%;
+	width: auto;
+}
+#liveAgentChatLogText {
+	display: flex;
+	flex-direction: column;
+	padding: 10px;
+}
+#liveAgentChatLogText span.client, #liveAgentChatLogText span.operator {
+	border-radius: 20px;
+	display: inline-block;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	padding: 8px 15px;
+}
+#liveAgentChatLogText span.operator {
+	align-items: flex-start;
+	background: linear-gradient(to top, #e4e4e4 0%, #eee 100%);
+	margin-right: 25%;
+	position: relative;
+}
+#liveAgentChatLogText span.operator:nth-last-child(1):before {
+	background: linear-gradient(to top, #e4e4e4 0%, #eee 100%);
+	border-bottom-right-radius: 15px;
+	bottom: 0;
+	content: "";
+	height: 20px;
+	left: -7px;
+	position: absolute;
+	width: 20px;
+	z-index: 0;
+}
+#liveAgentChatLogText span.operator:nth-last-child(1):after{
+	background: white;
+	border-bottom-right-radius: 10px;
+	bottom: 0;
+	content: "";
+	height: 20px;
+	left: -10px;
+	position: absolute;
+	width: 10px;
+	z-index: 1;
+}
+#liveAgentChatLogText span.client {
+	align-items: flex-end;
+	background-attachment: fixed;
+	color: white;
+	margin-left: 25%;
+	position: relative;                    
+}
+#liveAgentChatLogText span.client:nth-last-child(1):before {
+	background-attachment: fixed;
+	border-bottom-left-radius: 15px;
+	bottom: 0;
+	content: "";
+	height: 20px;
+	position: absolute;
+	right: -8px;
+	width: 20px;
+	z-index: 0;
+}
+#liveAgentChatLogText span.client:nth-last-child(1):after{
+	background: white;
+	border-bottom-left-radius: 10px;
+	bottom: 0;
+	content: "";
+	height: 20px;
+	position: absolute;
+	right: -10px;
+	width: 10px;
+	z-index: 1;
+}

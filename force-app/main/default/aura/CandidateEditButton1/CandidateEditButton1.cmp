@@ -1,0 +1,56 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global">
+    <!--lightningRecEditFormComp-->
+    <aura:attribute name="disabled" type="Boolean" default="false" />
+    <aura:attribute name="saved" type="Boolean" default="false" />
+    <aura:attribute name="showSpinner" type="Boolean" default="true" />
+    <aura:attribute name="AccountId" type="String" default="true" />
+
+    <aura:if isTrue="{!!v.saved}">
+        <lightning:recordEditForm
+            aura:id="createAccountForm"
+            onerror="{!c.handelError}"
+            onsuccess="{!c.handleSuccess}"
+            recordId="{!v.AccountId}"
+            objectApiName="User" >
+            
+            <lightning:messages />
+            <lightning:inputField fieldName="FirstName" disabled="true"/>
+            <lightning:inputField fieldName="LastName" disabled="true"/>
+            <lightning:inputField fieldName="Type" />
+            <lightning:inputField fieldName="Email" />
+            <lightning:inputField fieldName="Phone" />
+            <lightning:inputField fieldName="Street" aura:id="newStreetField" />
+            <lightning:inputField fieldName="City" required="true"/>
+     		<lightning:inputField fieldName="State" required="true"/>
+            <lightning:inputField fieldName="PostalCode" required="true" />
+            <div class="info">
+                <span>
+                    <lightning:icon iconName="action:info" alternativeText="Info" size="x-small"/>
+                </span>
+                <span id="test">
+                    Please add the info message here....
+                </span>
+            </div>
+            <lightning:inputField fieldName="Country" required="true"/>
+            
+            
+            <div class="info">
+                <span>
+                    <lightning:icon iconName="action:info" alternativeText="Info" size="x-small"/>
+                </span>
+            	<span>
+                    Please add the info message here....
+                </span>
+            </div>
+            <div class="slds-m-top_medium">
+               <!-- <ui:button    label="Cancel" press="{!c.clickCancel}" />-->
+                 <lightning:button label="Cancel" type="text" onclick="{!c.handleCancel}" />
+                <lightning:button  variant="brand" type="submit" name="save" label="Save" />
+            </div>
+        </lightning:recordEditForm>
+        <!--<aura:set attribute="else">
+            <p>Saved!</p>
+        </aura:set>-->
+    </aura:if>
+
+</aura:component>

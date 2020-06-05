@@ -1,0 +1,14 @@
+<aura:component controller="CurrentUserController">
+    
+ 
+<h1>User from User Component</h1>
+ 
+ 
+    <aura:attribute name="runningUser" type="User"></aura:attribute>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"></aura:handler>
+ 
+User lastname: <ui:outputtext value="{!v.runningUser.LastName}"></ui:outputtext> {!v.runningUser.LastName} <aura:text value="{!v.runningUser.LastName}"></aura:text>
+ 
+User firstname: <ui:outputtext value="{!v.runningUser.FirstName}"></ui:outputtext> {!v.runningUser.FirstName} <aura:text value="{!v.runningUser.FirstName}"></aura:text>
+ 
+</aura:component>

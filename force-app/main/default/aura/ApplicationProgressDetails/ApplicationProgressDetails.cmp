@@ -1,0 +1,23 @@
+<aura:component implements="force:hasRecordId,flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes">
+    <aura:attribute name="record" type="Object" />
+    <aura:attribute name="nvRecord" type="Object" />
+   <aura:attribute name="loaded" type="boolean" default="false" />
+
+    <ltng:require scripts="{!$Resource.chartminjs}"    afterScriptsLoaded="{!c.scriptsLoaded}"  /> 
+    
+		<force:recordData aura:id="forceRecordCmp" 
+    		recordId='{!v.recordId}'            
+    		mode="VIEW"
+    		targetRecord="{!v.record}"
+    		targetFields="{!v.nvRecord}" 
+			fields="Id, Percentage_Complete__c, Name,Candidate_Portal_Hiring_Stage__c"
+                           recordUpdated="{!c.scriptsLoaded}"
+		/>
+    
+
+        <div id="chartContainer" style="height: 200px; width: 200px;">
+    		<canvas id="chart-area" width="100%" height="100%"></canvas>
+    	</div>
+    <center>
+    Current Status: {!v.nvRecord.Candidate_Portal_Hiring_Stage__c}</center>
+</aura:component>
