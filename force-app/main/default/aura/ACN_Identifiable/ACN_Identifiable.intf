@@ -1,0 +1,16 @@
+<aura:interface description="Use this lightning interface to provide support for lightning component identifiers.">
+    <aura:attribute name="contextParentIdentifier" type="String" access="global" default="" />
+	<aura:attribute name="contextParentIdentifierName" type="String" access="global" default="" />
+    <aura:attribute name="screenParentIdentifier" type="String" access="global" default="" />
+    <aura:attribute name="multiSelectionIdentifier" type="String" access="global" default="" />
+    <aura:attribute name="isIdRequired" type="Boolean" access="global" default="false" />
+    <aura:attribute name="defaultContextParentIdentifier" type="String" access="global" default="" />
+    <aura:attribute name="contentPreviewIdentifier" type="String" access="global" default="" />
+    <aura:attribute name="contextParentIdentifierContextIdentifier" type="String" access="global" default="" />
+    <aura:attribute name="selectionContextIdentifier" type="String" access="global" default="" />
+    <aura:attribute name="selectedItemIdentifier" type="String" access="global" default="" />
+    <aura:attribute name="auraId" type="String" access="global" default="" /> 
+    <aura:attribute name="intervalId" type="Integer" access="global" default="-1" />
+    <aura:attribute name="currentUserId" type="String" access="global" default="" />
+    <aura:attribute name="componentId" type="String" access="global" default="" />
+</aura:interface>

@@ -1,0 +1,498 @@
+<aura:tokens extends="c:ACN_CarouselTokens">
+    <!-- Fonts Start -->
+    <aura:token name="acnFontType" value="Lato"/>
+    <aura:token name="acnHeaderFontType" value="Serifa"/>
+    <!-- Fonts End -->
+    
+    <!-- BPM Start -->
+    <aura:token name="acnZeppelinButtonBackgroundColor" value="#d48605"/>
+    <aura:token name="acnZeppelinButtonBackgroundColorHover" value="#d06a0a"/>
+    <!-- BPM Start -->
+    
+    <!-- Scoring Elements -->
+    <aura:token name="acnScoringActiveColor" value="#2574a9"/>
+    <aura:token name="acnScoringInactiveColor" value="#bfbfbf"/>
+    <!-- Scoring Elements end -->
+    
+    <!-- Color Palette Start -->
+    <aura:token name="acnBrandLightningIconColor" value="#3d7aa9"/>
+    <aura:token name="acnBrandLightningIconBackgroundColor" value="white"/>
+    
+    <aura:token name="acnBrandColor" value="#3d7aa9"/>
+    <aura:token name="acnOhioBlue" value="#3d7aa9"/>
+    <!-- <aura:token name="acnOhioMaroon" value="#700017"/>-->
+    <aura:token name="acnFooterColor" value="#525051"/>
+    <aura:token name="acnDefaultText" value="#000000"/>
+    <aura:token name="acnDefaultBackground" value="#ffffff"/>
+    <aura:token name="acnDefaultTextWhite" value="#ffffff"/>
+    <aura:token name="acnDefaultBackgroundAlternate" value="#f2f2f2"/>
+    <aura:token name="acnNavBorder" value="#f2f2f2"/>
+    <aura:token name="acnModalBoxshadow" value="rgba(0, 0, 0, 0.16)"/>
+    <aura:token name="acnBadge" value="#eb1316"/>
+    <aura:token name="acnErrorRed" value="#eb1316"/>
+    <aura:token name="acnErrorFill" value="#fce7e7"/>
+    <aura:token name="acnErrorAlertText" value="#000000"/>
+    <aura:token name="acnErrorText" value="red"/>
+    <aura:token name="acnGroupHeaderBackgroundColor" value="#3d7aa9"/>
+    <aura:token name="acnGroupHeaderColor" value="white"/>   
+    <aura:token name="acnGroupH2Color" value="#3d7aa9"/> 
+    <aura:token name="acnHeaderColor" value="#3d7aa9"/>
+    <aura:token name="acnLinkColor" value="#3d7aa9"/>
+    <aura:token name="acnIconsBorder" value="#3d7aa9"/>
+    <aura:token name="acnLinkHoverColor" value="#73a5cc"/>
+    <aura:token name="acnAccordionBackgroundColor" value="#f5f5f5"/>
+    <aura:token name="acnAccordionBorderColor" value="#d8d8d8"/>
+    <aura:token name="acnBorderColor" value="#a1a1a1"/>
+    <aura:token name="acnGroupNameColor" value="#d8d8d8"/>
+    <aura:token name="acnGroupButtonColor" value="white"/>
+    <aura:token name="acnGroupButtonTextColor" value="#3d7aa9"/>
+    <aura:token name="acnBackButtonBorderColor" value="#3d7aa9"/>
+    <aura:token name="acnGroupButtonBackgroundColor" value="#3d7aa9"/>
+    <aura:token name="acnGroupUploadBorderColor" value="#3d7aa9"/>
+    <aura:token name="acnBackButtonBackground" value="#ffffff"/>
+    <aura:token name="acnGroupButtonBackgroundColorHover" value="#136bad"/>
+    <aura:token name="acnGroupButtonBorderColorFocus" value="#136bad"/>
+    <aura:token name="acnGroupBackButtonBackgroundColor" value="white"/>
+    <aura:token name="acnGroupBackButtonColor" value="#3d7aa9"/>
+    <aura:token name="acnGroupTertiaryButtonBackgroundColor" value="#ffffff"/>
+    <aura:token name="acnGroupTertiaryButtonBorderColor" value="#3d7aa9"/>
+    <aura:token name="acnGroupDestructiveButtonColor" value="#c23934"/>
+    <aura:token name="acnGroupDestructiveButtonHoverColor" value="#fce7e7"/>
+    <aura:token name="acnGroupButtonHoverBackgroundColor" value="#f2f2f2"/>
+    <aura:token name="acnUploadBackgroundColor" value="#f2f2f2"/>
+    <aura:token name="acnGroupButtonInactiveBackgroundColor" value="#f2f2f2"/>
+    <aura:token name="acnGroupButtonBorderColor" value="#a1a1a1"/>
+    <aura:token name="acnGroupEvenSectionBackgroundColor" value="white"/>
+    <aura:token name="acnGroupOddSectionBackgroundColor" value="white"/> 
+    <aura:token name="acnFormInputBackgroundColor" value="#ffffff"/>
+    <aura:token name="acnFormInputBorderColor" value="#a1a1a1"/>
+    <aura:token name="acnAlternateBorderColor" value="#73a5cc" />
+    <aura:token name="acnGroupBackgroundColor" value="white"/>
+    <aura:token name="acnCheckboxBackgroundColor" value="white"/>
+    <aura:token name="acnFormLabelColor" value="#696969"/>
+    <aura:token name="acnFormInputFieldDisabled" value="#f2f2f2"/>
+    <aura:token name="acnDisabledColor" value="#f2f2f2"/>
+    <aura:token name="acnFormInputFieldBorderDisabled" value="#a8b7c7"/>
+    <aura:token name="acnTransparentBackground" value="transparent"/>
+    <aura:token name="acnProgressBarBackground" value="#3d7aa9"/>
+    <aura:token name="acnProgressBar" value="#3d7aa9"/>
+    <aura:token name="acnProgressBarText" value="#ffffff"/>
+    <aura:token name="acnProgressBarBorder" value="#a1a1a1"/>
+    <aura:token name="acnIconText" value="#696969"/>
+    <aura:token name="acnIconFill" value="#3d7aa9"/>
+    <aura:token name="acnIconUnfavorite" value="#525051"/>
+    <aura:token name="acnPopoverText" value="white"/>
+    <aura:token name="acnFloatingMsgBackground" value="#f2f2f2"/>
+    <aura:token name="acnFloatingMsgBorder" value="#a1a1a1"/>
+    <aura:token name="acnFloatingMsgHeader" value="#3d7aa9"/>    
+    <aura:token name="acnNavItemBorder" value="#f2f2f2"/>
+    <aura:token name="acnStatusPillDefaultBackground" value="#a1a1a1"/>
+    <aura:token name="acnStatusPillDefaultText" value="#ffffff"/>
+    <aura:token name="acnStatusList" value="#f2f2f2"/>
+    <aura:token name="infoTextColor" value="#ffbe0e"/>
+    
+    <!-- Color Palette End -->
+    
+    <!-- Form Tokens -->
+    <aura:token name="acnHorizontalFormInputMaxWidth" value="255px"/>
+    <aura:token name="acnHorizontalFormInputMinWidth" value="148px"/>
+    <aura:token name="acnHorizontalFormDisplay" value="table"/>
+    <aura:token name="acnHorizontalFormRowDisplay" value="table-row"/>
+    <aura:token name="acnHorizontalFormInputDisplay" value="table-cell"/>
+    <aura:token name="acnHorizontalFormInputSpacing" value="4px"/>
+    <aura:token name="acnHorizontalFormMaxWidth" value="1060px"/> 
+    <aura:token name="acnUploadFieldBorderRadius" value="4px"/>
+    <aura:token name="acnInputBorderRadius" value="4px"/>
+    <!-- End Form Tokens -->
+    
+    <!-- Buttons Start -->
+    <aura:token name="acnGroupButtonPadding" value="5px 24px"/>
+    <aura:token name="acnGroupButtonBorderRadius" value="4px"/>    
+    <!-- Buttons End -->
+    
+    <aura:token name="acnErrorBorderRadius" value="4px"/>  
+    
+    <aura:token name="acnContextualMenuItemFontColor" value="#3d7aa9" />
+    
+    <!-- Global Height and Width start -->
+    <aura:token name="acnNavigationElementDimensionsDesktop" value="240px" />
+    <aura:token name="acnNavigationElementDimensionsTablet" value="200px" />
+    <aura:token name="acnNavigationCarouselOffset" value="16px" />
+    
+    <aura:token name="acnNavigationCarouselHeight" value="479px" /> <!--266px -->
+    <aura:token name="acnNavigationCarouselHeightMobile" value="100px" />
+    
+    <aura:token name="acnNavigationCarouselCenteredContentsHeight" value="266px" />
+    
+    <aura:token name="acnFloatingMsgWidth" value="400px" />
+    <!-- Global Height and Width end -->
+    
+    <aura:token name="acnNavigationItemDescriptionDisplay" value="none"/>
+    
+    <!-- Square Layout -->
+    <aura:token name="myDefaultRadius" value="0"/>
+    <aura:token name="acnGroupBodyListItemHeight" value="240px"/>
+    <aura:token name="acnGroupBodyListItemWidth" value="25%"/>
+    
+    <aura:token name="acnNavigationListItemImageWidth" value="auto"/>
+    
+    <aura:token name="acnNavigationListItemImgTagImgHeight" value="240px"/>
+    <aura:token name="acnNavigationListItemImgTagImgWidth" value="auto"/>
+    
+    <aura:token name="acnNavigationListItemTransparentDivFontSize" value="16px"/>
+    <aura:token name="acnNavigationListItemTransparentDivFontWeight" value="700"/>
+    <aura:token name="acnNavigationListItemImgTagBoxShadow" value="" />
+    
+    <aura:token name="acnNavigationListItemImgTagPadding" value="" />
+    <aura:token name="acnNavigationListItemImgTagBackground" value="" />
+    <aura:token name="acnNavigationListItemImgTagWebFilter" value="" />
+    <aura:token name="acnNavigationListItemImgTagBGRadial" value="" />
+    <aura:token name="acnNavigationListItemImgTagBGSize" value="" />
+    <aura:token name="acnNavigationListItemImgTagBGSizeMobile" value=""/>
+    <aura:token name="acnNavigationListItemImgTagBGPosition" value="" />
+    
+    <aura:token name="acnNavigationListItemImgTagImgPhoneHeight" value="100%" />
+    <aura:token name="acnNavigationListItemTransparentDivBGColor" value="rgba(0,0,0,.2)"/>
+    
+    <aura:token name="acnNavigationListItemTransparentDivHeight" value="100%"/>
+    <aura:token name="acnNavigationListItemTransparentDivWidth" value="100%"/>
+    <aura:token name="acnNavigationListItemTransparentDivTopPos" value="0"/>
+    <aura:token name="acnNavigationListItemTransparentDivLeftPos" value="0"/>  
+    
+    <!-- Square Layout End -->
+    
+    <!-- Score card Layout -->
+    <aura:token name="acnGroupBodyListItemWidthScoreCard" value="31%"/>
+    <aura:token name="acnGroupBodyListItemHeightScoreCard" value="207px"/>
+    
+    <aura:token name="acnScoreCardNameFontSize" value="1.15em"/>
+    <aura:token name="acnScoreCardNameFontColor" value="#3d7aa9"/>
+    <aura:token name="acnScoreCardNameTextAlign" value="center"/>
+    
+    <aura:token name="acnScoreCardDescriptionBottom" value="0"/>
+    <aura:token name="acnScoreCardDescriptionDisplay" value="block"/>
+    <aura:token name="acnScoreCardDescriptionFontSize" value="14px"/>
+    <aura:token name="acnScoreCardDescriptionFontColor" value="#BFBFBF"/>
+    <aura:token name="acnScoreCardDescriptionFontFamily" value="'Montserrat'"/>
+    <aura:token name="acnScoreCardDescriptionFontWeight" value="400"/>
+    <aura:token name="acnScoreCardDescriptionJustifyContent" value="center"/>
+    <aura:token name="acnScoreCardDescriptionMargin" value="0"/>
+    <aura:token name="acnScoreCardDescriptionPadding" value="0 1em 2em"/>
+    <aura:token name="acnScoreCardDescriptionPosition" value="absolute"/>
+    <aura:token name="acnScoreCardDescriptionTextAlign" value="center"/>
+    <aura:token name="acnScoreCardDescriptionTextRendering" value="optimizeLegibility"/>
+    <aura:token name="acnScoreCardDescriptionWidth" value="100%"/>
+    <aura:token name="acnScoreCardDescriptionWordWrap" value="break-word"/>
+    
+    <aura:token name="acnScoreCardDescriptionParagraphPosition" value="relative"/>
+    <aura:token name="acnScoreCardDescriptionParagraphDisplay" value="block"/>
+    <aura:token name="acnScoreCardDescriptionParagraphFontColor" value="#BFBFBF"/>
+    <aura:token name="acnScoreCardDescriptionParagraphFontSize" value="10pt"/>
+    <aura:token name="acnScoreCardDescriptionParagraphTextAlign" value="center"/>
+    <aura:token name="acnScoreCardDescriptionParagraphWidth" value="100%"/>
+    
+    <aura:token name="acnScoreCardDescriptionTextMargin" value="1em 0"/>
+    <aura:token name="acnScoreCardDescriptionTextPadding" value="0 0 1em"/>
+    <aura:token name="acnScoreCardDescriptionButtonBorderRadius" value="2em"/>
+    <aura:token name="acnScoreCardDescriptionButtonHeight" value="4em"/>
+    <aura:token name="acnScoreCardDescriptionButtonMargin" value="1em 0 0"/>
+    <aura:token name="acnScoreCardDescriptionButtonPadding" value="1em 0 0"/>
+    
+    <!--
+
+    bottom: 0px;
+    padding-bottom: 15px;
+    display: flex;
+    
+    padding-left: 50px;
+    padding-right: 50px;
+    justify-content: center;
+    width: 100%;
+
+    /*padding: 0 5px 5px 5px;*/
+    margin: 0px;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: "kern" 1;
+    -webkit-font-feature-settings: "kern";
+    -moz-font-feature-settings: "kern";
+    -moz-font-feature-settings: "kern=1";
+    font-kerning: normal;
+    word-wrap: break-word;
+    font-family: 'Montserrat';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    color: #333333;
+    text-align: center;
+    line-height: 24px;  
+    
+      
+-->    
+    
+    
+    <!-- Score Card Layout End -->
+    
+    <!-- Pill card Layout -->
+    <aura:token name="acnPillCardNameFontSize" value="1.15em"/>
+    <aura:token name="acnPillCardNameFontColor" value="#3d7aa9"/>
+    <aura:token name="acnPillCardNameTextAlign" value="center"/>
+    <aura:token name="acnPillCardDescriptionFontSize" value="10pt"/>
+    <aura:token name="acnPillCardDescriptionFontColor" value="#BFBFBF"/>
+    <aura:token name="acnPillCardDescriptionTextAlign" value="center"/>
+    
+    <aura:token name="acnPillCardColor" value="#3d7aa9"/>
+    <aura:token name="acnPillCardColorHover" value="#f4f6f9"/>
+    <!--
+     <aura:token name="acnPillCardColorHover" value="#b10820"/>
+  -->
+    <aura:token name="acnPillCardWhiteSpace" value="nowrap"/>
+    <!--
+     <aura:token name="acnPillCardBackgroundColor" value="#2A9FD8"/>
+  -->
+    
+    <!-- Pill Card Layout End -->
+    
+    <!-- Circle Layout -->  
+    <aura:token name="myDefaultRadiusFullCircle" value="50%"/>
+    <aura:token name="acnGroupBodyListItemHeightFullCircle" value="auto"/>
+    <aura:token name="acnGroupBodyListItemWidthFullCircle" value="16%"/>
+    
+    <aura:token name="acnNavigationListItemImageWidthFullCircle" value="242px"/>
+    
+    <aura:token name="acnNavigationListItemImgTagImgHeightFullCircle" value="242px"/>
+    <aura:token name="acnNavigationListItemImgTagImgWidthFullCircle" value="242px"/>
+    
+    <aura:token name="acnNavigationListItemTransparentDivFontSizeFullCircle" value="auto"/>
+    <aura:token name="acnNavigationListItemTransparentDivFontWeightFullCircle" value="bold"/>
+    <aura:token name="acnNavigationListItemImgTagBoxShadowFullCircle" value="0 8px 6px -6px black" />
+    
+    <aura:token name="acnNavigationListItemImgTagPaddingFullCircle" value="" />
+    <aura:token name="acnNavigationListItemImgTagBackgroundFullCircle" value="" />
+    <aura:token name="acnNavigationListItemImgTagWebFilterFullCircle" value="" />
+    <aura:token name="acnNavigationListItemImgTagBGRadialFullCircle" value="" />
+    <aura:token name="acnNavigationListItemImgTagBGSizeFullCircle" value="" />
+    <aura:token name="acnNavigationListItemImgTagBGSizeMobileFullCircle" value=""/>
+    <aura:token name="acnNavigationListItemImgTagBGPositionFullCircle" value="" />
+    
+    <aura:token name="acnNavigationListItemImgTagImgPhoneHeightFullCircle" value="199px" />
+    <aura:token name="acnNavigationListItemTransparentDivBGColorFullCircle" value="rgba(0,0,0,.2)"/>
+    <aura:token name="acnNavigationListItemTransparentDivHeightFullCircle" value="100%"/>
+    <aura:token name="acnNavigationListItemTransparentDivWidthFullCircle" value="100%"/>
+    <aura:token name="acnNavigationListItemTransparentDivTopPosFullCircle" value="0"/>
+    <aura:token name="acnNavigationListItemTransparentDivLeftPosFullCircle" value="0"/>
+    
+    <!-- Circle Layout End -->
+    
+    <!-- Postage Stamp -->    	
+    <aura:token name="myDefaultRadiusStamp" value="0"/>
+    <aura:token name="acnGroupBodyListItemHeightStamp" value="200px"/>
+    <aura:token name="acnGroupBodyListItemWidthStamp" value="20%"/>
+    
+    <aura:token name="acnNavigationListItemImageWidthStamp" value="auto"/>
+    
+    <aura:token name="acnNavigationListItemImgTagImgHeightStamp" value="180px"/>
+    <aura:token name="acnNavigationListItemImgTagImgWidthStamp" value="320px"/>
+    
+    <aura:token name="acnNavigationListItemTransparentDivFontSizeStamp" value="16px"/>
+    <aura:token name="acnNavigationListItemTransparentDivFontWeightStamp" value="700"/>
+    <aura:token name="acnNavigationListItemImgTagBoxShadowStamp" value="" />
+    
+    <aura:token name="acnNavigationListItemImgTagPaddingStamp" value="10px" />
+    <aura:token name="acnNavigationListItemImgTagBackgroundStamp" value="white" />
+    <aura:token name="acnNavigationListItemImgTagWebFilterStamp" value="drop-shadow(0px 0px 10px rgba(0,0,0,0.5))" />
+    <aura:token name="acnNavigationListItemImgTagBGRadialStamp" value="radial-gradient(transparent 0px, transparent 6px, white 2px,white)" />
+    <aura:token name="acnNavigationListItemImgTagBGSizeStamp" value="18px 20px" />
+    <aura:token name="acnNavigationListItemImgTagBGSizeMobileStamp" value="20px 20px"/>
+    <aura:token name="acnNavigationListItemImgTagBGPositionStamp" value="-10px -10px" />
+    <aura:token name="acnNavigationListItemImgTagImgPhoneHeightStamp" value="177px" />
+    <aura:token name="acnNavigationListItemTransparentDivBGColorStamp" value="rgba(0,0,0,0.2)"/>
+    <aura:token name="acnNavigationListItemTransparentDivHeightStamp" value="89%"/>
+    <aura:token name="acnNavigationListItemTransparentDivWidthStamp" value="94%"/>
+    <aura:token name="acnNavigationListItemTransparentDivWidthStampTablet" value="93%"/>
+    <aura:token name="acnNavigationListItemTransparentDivTopPosStamp" value="11px"/>
+    <aura:token name="acnNavigationListItemTransparentDivLeftPosStamp" value="9px"/>
+    
+    <!-- Postage Stamp End -->
+    
+    <!--  Post It -->
+    <aura:token name="myDefaultRadiusPostIt" value="0"/>
+    
+    <aura:token name="acnGroupBodyListItemHeightPostIt" value="240px"/>
+    <aura:token name="acnGroupBodyListItemWidthPostIt" value="25%"/>   
+    
+    <aura:token name="acnNavigationListItemImageWidthPostIt" value="auto"/>    
+    <aura:token name="acnNavigationListItemImgTagImgHeightPostIt" value="240px"/>
+    <aura:token name="acnNavigationListItemImgTagImgWidthPostIt" value="auto"/>    
+    <aura:token name="acnNavigationListItemTransparentDivFontSizePostIt" value="16px"/>
+    <aura:token name="acnNavigationListItemTransparentDivFontWeightPostIt" value="700"/>
+    
+    <aura:token name="acnNavigationListItemImgTagBoxShadowPostIt" value="" />    
+    <aura:token name="acnNavigationListItemImgTagPaddingPostIt" value="" />
+    <aura:token name="acnNavigationListItemImgTagBackgroundPostIt" value="" />
+    <aura:token name="acnNavigationListItemImgTagWebFilterPostIt" value="" />
+    <aura:token name="acnNavigationListItemImgTagBGRadialPostIt" value="" />
+    <aura:token name="acnNavigationListItemImgTagBGSizePostIt" value="" />
+    <aura:token name="acnNavigationListItemImgTagBGSizeMobilePostIt" value=""/>
+    <aura:token name="acnNavigationListItemImgTagBGPositionPostIt" value="" />      
+    <aura:token name="acnNavigationListItemImgTagImgPhoneHeightPostIt" value="199px" />
+    
+    <aura:token name="acnNavigationListItemTransparentDivBGColorPostIt" value="rgba(0,0,0,.3)"/>    
+    <aura:token name="acnNavigationListItemTransparentDivHeightPostIt" value="100%"/>
+    <aura:token name="acnNavigationListItemTransparentDivWidthPostIt" value="100%"/>
+    <aura:token name="acnNavigationListItemTransparentDivTopPosPostIt" value="0"/>
+    <aura:token name="acnNavigationListItemTransparentDivLeftPosPostIt" value="0"/>  
+    
+    <!-- Post It end -->
+    
+    <!-- Half Circle start -->
+    <aura:token name="acnNavigationListAnchorHeight" value="250px"/>
+    <aura:token name="acnNavigationListAnchorHeightSmall" value="214px"/>
+    
+    <aura:token name="acnNavigationListCircleHalfItemImgTagImgHeight" value="240px"/>
+    <aura:token name="acnNavigationListCircleHalfItemImgTagImgHeightSmall" value="214px"/>
+    
+    <aura:token name="acnNavigationListCircleHalfImgRadius" value="50%"/>
+    <aura:token name="acnNavigationListCircleHalfImgRadiusPhone" value="48%"/>
+    
+    <!-- Half Circle End -->
+    
+    
+    <!-- Custom Navigation Card -->
+    <aura:token name="acnNavigationScoreCardMarginLeft" value="15px"/>
+    <aura:token name="acnNavigationScoreCardMarginLeftMobile" value="15px"/>
+    <!-- Custom Navigation Card end -->
+    
+    <aura:token name="acnCarouselBackGroundColor" value="transparent"/>
+    <aura:token name="acnCarouselIndicatorActiveState" value="#3d3d6d"/>
+    <aura:token name="acnCarouselButtonHeight" value="100%"/> <!-- 40px -->
+    <aura:token name="acnCarouselHeight" value="260px" />
+    <aura:token name="acnCarouselWidth" value="100%" />
+    
+    <!--******************************* forms tokens ********************************-->    
+    <!-- Focus of Inputs, Selects, Checkboxes, Radios -->
+    <aura:token name="acnInputOutlineFocusOutline" value="0" />
+    <aura:token name="acnInputOutlineFocusBorderWidth" value="1px" />
+    <aura:token name="acnInputOutlineFocusBorderPattern" value="solid" />
+    <aura:token name="acnInputOutlineFocusBorderColor" value="#1589ee" />
+    <aura:token name="acnInputOutlineFocusBackgroundColor" value="white" />
+    <aura:token name="acnInputOutlineFocusBoxShadowHorizontalOffset" value="0" />
+    <aura:token name="acnInputOutlineFocusBoxShadowVerticalOffset" value="0" />
+    <aura:token name="acnInputOutlineFocusBoxShadowBlurRadius" value="3px" />
+    <aura:token name="acnInputOutlineFocusBoxShadowSpreadRadius" value="2px" />
+    <aura:token name="acnInputOutlineFocusBoxShadowColor" value="#0070d2" />
+    <aura:token name="acnInputCheckboxOutlineFocusContent" value="''" />
+    
+    <!--***************************** Navigation Card Icon *****************************-->
+    <aura:token name="acnNavigationCardIconListBackgroundColor" value="#f7f7f7"/>
+    <aura:token name="acnNavigationCardIconListItemFloat" value="left"/>
+    <aura:token name="acnNavigationCardIconListItemMarginTop" value="0"/>
+    <aura:token name="acnNavigationCardIconListItemMaximumWidth" value="40em"/>
+    <aura:token name="acnNavigationCardIconListItemImageSize" value="80px"/>
+    <aura:token name="acnNavigationCardIconListPadding" value="20px"/>
+    <aura:token name="acnNavigationCardIconListWidth" value="100%"/>
+    <aura:token name="acnNavigationCardIconListMinimumHeight" value="5em"/>
+    <aura:token name="acnNavigationCardIconListMargin" value="auto"/>
+    <aura:token name="acnNavigationCardIconListDisplay" value="inline-block"/>
+    <aura:token name="acnNavigationCardIconListPosition" value="relative"/>
+    <aura:token name="acnNavigationCardIconListTextAlign" value="center"/>
+    <aura:token name="acnNavigationCardIconListTitleLevel01FontSize" value="28px"/>
+    <aura:token name="acnNavigationCardIconListTitleLevel02FontSize" value="16px"/>
+    <aura:token name="acnNavigationCardIconListItemMargin" value="auto"/>
+    <aura:token name="acnNavigationCardIconListItemPadding" value="5px"/>
+    <aura:token name="acnNavigationCardIconListItemWidth" value="100%"/>
+    <aura:token name="acnNavigationCardIconListItemMinimumHeight" value="5em"/>
+    <aura:token name="acnNavigationCardIconListItemImageObjectFit" value="cover"/>
+    <aura:token name="acnNavigationCardIconListItemImageObjectPosition" value="50% 50%"/>
+    <aura:token name="acnNavigationCardIconListItemNameMargin" value="auto .5em auto 1em"/>
+    <aura:token name="acnNavigationCardIconListItemNameFontSize" value="12px"/>
+    <aura:token name="acnNavigationCardIconListItemNameFontWeight" value="600"/>
+    <aura:token name="acnNavigationCardIconListItemNamePadding" value="1em"/>
+    <aura:token name="acnNavigationCardIconListItemNameMaximumWidth" value="15em"/>
+    <aura:token name="acnNavigationCardIconListItemNameFontWeightHover" value="bolder"/>
+    <aura:token name="acnNavigationCardIconListItemNameTextDecorationHover" value="none"/>
+    <aura:token name="acnNavigationCardIconListItemDescriptionFontWeight" value="500"/>
+    <aura:token name="acnNavigationCardIconListItemMaskImageSize" value="contain"/>
+    <aura:token name="acnNavigationCardIconListItemMaskImageMargin" value="auto"/>
+    <aura:token name="acnNavigationCardIconListItemImageWidth" value="100px"/>
+    <aura:token name="acnNavigationCardIconListItemImageHeight" value="90px"/>
+    <aura:token name="acnNavigationCardIconListItemImageTransform" value="scale(1)"/>
+    <aura:token name="acnNavigationCardIconListItemImageTransformHover" value="scale(1.05)"/>
+    <aura:token name="acnNavigationCardIconListItemTransformHoverTransition" value="transform .5s ease"/>
+    <aura:token name="acnNavigationCardIconLIMarginRight" value="3rem"/>
+    
+    
+    
+    <!--***************************** Navigation Card Picture *****************************-->
+    <aura:token name="acnNavigationCardPictureListItemImageHeight" value="12em"/>
+    <aura:token name="acnNavigationCardPictureListItemImageWidth" value="23em"/>
+    <aura:token name="acnNavigationCardPictureListItemNameColor" value="#040404"/>
+    <aura:token name="acnNavigationCardPictureListItemNameFontSize" value="20px"/>
+    <aura:token name="acnNavigationCardPictureListItemNameFontWeight" value="800"/>
+    <aura:token name="acnNavigationCardPictureListItemNameTextTransform" value="uppercase"/>
+    <aura:token name="acnNavigationCardPictureListItemNameTextStretch" value="ultra-condensed"/>
+    <aura:token name="acnNavigationCardPictureListItemNameTextDecoration" value="none"/>
+    <aura:token name="acnNavigationCardPictureListItemNameMargin" value="auto"/>
+    <aura:token name="acnNavigationCardPictureListItemNamePaddingTop" value="1em"/>
+    <aura:token name="acnNavigationCardPictureListItemDescriptionFontWeight" value="700"/>
+    <aura:token name="acnNavigationCardPictureListItemDescriptionMaximumWidth" value="90%"/>
+    <aura:token name="acnNavigationCardPictureListItemDescriptionVerticalAlign" value="top"/>
+    <aura:token name="acnNavigationCardPictureListItemDescriptionMargin" value="auto"/>
+    <aura:token name="acnNavigationCardPictureLIMarginRight" value="5rem"/>
+    <aura:token name="acnNavigationCardPicturePaddingTop" value="1rem"/>
+    
+    <!--***************************** Navigation Card Paragraph *****************************-->
+    <aura:token name="acnNavigationCardParagraphListTitleLevel01FontSize" value="24px"/>
+    <aura:token name="acnNavigationCardParagraphPathSegmentDisplay" value="inline-block"/>
+    <aura:token name="acnNavigationCardParagraphPathSegmentFontFamily" value="Helvetica"/>
+    <aura:token name="acnNavigationCardParagraphPathSegmentSeparatorFontSize" value="10px"/>
+    <aura:token name="acnNavigationCardParagraphPathSegmentSeparatorMargin" value="auto 2px 3px 4px"/>
+    <aura:token name="acnNavigationCardParagraphPathSegmentSeparatorFirstChildMargin" value="auto 0px"/>
+    <aura:token name="acnNavigationCardParagraphPathSegmentCursorLastChildHover" value="default"/>
+    <aura:token name="acnNavigationCardParagraphPathSegmentLineHeight" value="1.5em"/>
+    <aura:token name="acnNavigationCardParagraphPathSegmentVerticalAlign" value="middle"/>
+    <aura:token name="acnNavigationCardParagraphTextDecoration" value="none"/>
+    <aura:token name="acnNavigationCardParagraphFontWeight" value="normal"/>
+    <aura:token name="acnNavigationCardParagraphFontWeightHover" value="bold"/>
+    <aura:token name="acnNavigationCardParagraphPaddingLeft" value="2em"/>
+    
+    
+    <!--***************************** Navigation Card Button *****************************-->
+    <aura:token name="acnNavigationCardButtonListItemNameFontSize" value="16px"/>
+    <aura:token name="acnNavigationCardButtonListItemNameFontWeight" value="400"/>
+    <aura:token name="acnNavigationCardButtonListItemNameMargin" value="auto"/>
+    <aura:token name="acnNavigationCardButtonListItemNamePadding" value=".5em"/>
+    <aura:token name="acnNavigationCardButtonListItemNameMaximumWidth" value="9em"/>
+    
+    <!--******************************* Navigation Card Text ********************************-->
+    <aura:token name="acnNavigationCardTextUlDisplay" value="flex" />
+    <aura:token name="acnNavigationCardTextUlWrap" value="wrap" />
+    <aura:token name="acnNavigationCardTextUlFlexDirection" value="row" />
+    <aura:token name="acnNavigationCardTextUlAlignContent" value="space-evenly" />
+    
+    <aura:token name="acnNavigationCardTextUlBorderTop" value="none" />
+    <aura:token name="acnNavigationCardTextLiWidth" value="400px" />
+    <aura:token name="acnNavigationCardTextLiHeight" value="205px" />
+    <aura:token name="acnNavigationCardTextLiMargin" value="10px" />
+    <aura:token name="acnNavigationCardTextLiPadding" value="1em" />
+    <aura:token name="acnNavigationCardTextLiSpanFontSize" value="24px" />
+    <aura:token name="acnNavigationCardTextLiSpanFontStretch" value="ultra-condensed" />
+    
+    <aura:token name="acnNavigationCardTextUlTopicDisplay" value="inline" />
+    <aura:token name="acnNavigationCardTextUlTopicLiHeader02Width" value="250px" />
+    <aura:token name="acnNavigationCardTextUlTopicLiHeader02FontWeight" value="500" />
+    <aura:token name="acnNavigationCardTextUlTopicLiHeader02TextDecoration" value="500" />
+
+    <!--******************************* Navigation Card Rectangle Button ********************************-->
+    <aura:token name="navigationCardWithRectangleButtonDescriptionListTextAlign" value="center" />
+    <aura:token name="navigationCardWithRectangleButtonDescriptionListListStyle" value="none" />
+    <aura:token name="navigationCardWithRectangleButtonDescriptionTextMargin" value="0 auto" />
+    <aura:token name="navigationCardWithRectangleButtonDescriptionBottom" value="2em" />
+    
+    <aura:token name="calendarButtonGradient" value="linear-gradient(to bottom,#72CDF4,#ACDFF8)" />
+    
+    <aura:token name="clientFontFamily" value="Arial" />
+    <!--
+    <aura:token name="fontFamily" value="Arial" />
+	-->
+    <aura:token name="fontRoot" value="/s/" />
+</aura:tokens>

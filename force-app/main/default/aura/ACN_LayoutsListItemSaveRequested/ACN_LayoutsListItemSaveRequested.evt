@@ -1,0 +1,4 @@
+<aura:event type="APPLICATION" description="Use this lightning event to provide support for saving records on a layouts list.">
+    <aura:attribute name="saveContext" type="String" default="record" access="global" />
+    <aura:attribute name="contextId" type="String" default="" access="global" />
+</aura:event>

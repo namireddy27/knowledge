@@ -1,0 +1,197 @@
+<aura:interface description="Use this interface to provide support for page theme templates and page layout templates.">
+    <aura:attribute name="showHero" type="Boolean" required="false" default="true" />
+    <aura:attribute name="heroBackgroundImage" type="String" required="false" default="" />
+    <aura:attribute name="heroBackgroundImageWidth" type="String" required="false" default="100%" />
+    <aura:attribute name="heroBackgroundImageHeight" type="String" required="false" default="500px" />
+    <aura:attribute name="heroBackgroundImageHeightArray" type="String[]" required="false" default="500px" />
+    <aura:attribute name="heroBackgroundImagePosition" type="String" required="false" default="center" />
+    <aura:attribute name="showCompanyLogo" type="Boolean" required="false" default="true" />
+    <aura:attribute name="companyLogoHeight" type="String" required="false" default="100px" />
+    <aura:attribute name="companyLogoWidth" type="Integer" required="false" default="3" />
+    <aura:attribute name="showSearch" type="Boolean" required="false" default="true" />
+    <aura:attribute name="search" type="Aura.Component[]" required="false"/>
+    <aura:attribute name="showProfileMenu" type="Boolean" required="false" default="true" />
+    <aura:attribute name="profileMenu" type="Aura.Component[]" required="false"/>
+    <aura:attribute name="showNavigationMenu" type="Boolean" required="false" default="true" />
+    <aura:attribute name="showNavigationMenuHome" type="Boolean" required="false" default="true" />
+    <aura:attribute name="showCustomNavigationMenu" type="Boolean" required="false" default="false" />
+    <aura:attribute name="customNavigationMenuPosition" type="string" required="false" default="top" />
+    <aura:attribute name="customNavigationMenuDataProvider" type="String" required="false" default="" />
+    <aura:attribute name="customNavigationMenuItemSize" type="Integer" required="false" default="2" />
+    <aura:attribute name="customNavigationMenuItemSizeVertical" type="Integer" required="false" default="12" />
+    <aura:attribute name="customNavigationMenuStyleClass" type="String" required="false" default="" />
+    <aura:attribute name="navBar" type="Aura.Component[]" required="false"/>
+    <aura:attribute name="showGutters" type="Boolean" required="false" default="true" />
+    <aura:attribute name="showGuttersInTopHeader" type="Boolean" required="false" default="false" />
+    <aura:attribute name="showGuttersInHeader" type="Boolean" required="false" default="false" />
+    <aura:attribute name="showGuttersInHeaderContent" type="Boolean" required="false" default="false" />
+    <aura:attribute name="showGuttersInFooter" type="Boolean" required="false" default="false" />
+    <aura:attribute name="leftGutterSize" type="Integer" required="false" default="1" />
+    <aura:attribute name="rightGutterSize" type="Integer" required="false" default="1" />
+    <aura:attribute name="showHeader" type="Boolean" required="false" default="true" />
+    <aura:attribute name="headerTop" type="Aura.Component[]" required="false" default="" />
+    <aura:attribute name="header" type="Aura.Component[]" required="false" default="" />
+    <aura:attribute name="headerBand" type="Aura.Component[]" required="false" default="" />
+    <aura:attribute name="showHeaderFooter" type="Boolean" required="false" default="true" />
+    <aura:attribute name="headerFooter" type="Aura.Component[]" required="false" default="" />
+    <aura:attribute name="isHeaderFixed" type="Boolean" required="false" default="false" />
+    <aura:attribute name="fixedHeaderPadding" type="String" required="false" default="18em" />
+    <aura:attribute name="showFooter" type="Boolean" required="false" default="true" />
+    <aura:attribute name="footer" type="Aura.Component[]" required="false" default="" />
+    <aura:attribute name="isFooterFixed" type="Boolean" required="false" default="false" />
+    <aura:attribute name="fixedFooterPadding" type="String" required="false" default="3em" />
+    <aura:attribute name="browserFormFactor" type="Object" access="global" default="{!$Browser.formFactor}" />
+    <aura:attribute name="browserIsPhone" type="Object" access="global" default="{!$Browser.isPhone}" />
+    <aura:attribute name="hideListViewsFirstColumn" type="Boolean" required="false" default="false" />
+    <aura:attribute name="hideListViewsSecondColumn" type="Boolean" required="false" default="false" />
+    
+    <aura:attribute name="templateLayoutClass" type="String" default="acn-padding-none" access="global" />
+    <aura:attribute name="templateLayoutTitle" type="String" default="" access="global" />
+    <aura:attribute name="templateLayoutHorizontalAlign" type="String" default="" access="global" />
+    <aura:attribute name="templateLayoutVerticalAlign" type="String" default="start" access="global" />
+    <aura:attribute name="templateLayoutMultipleRows" type="Boolean" default="true" access="global" />
+    <aura:attribute name="templateLayoutPullToBoundary" type="String" default="small" access="global" />
+    
+    <aura:attribute name="logoHeaderIndex" type="String" required="false" default="1" />
+    <aura:attribute name="searchHeaderIndex" type="String" required="false" default="2" />
+    <aura:attribute name="profileMenuHeaderIndex" type="String" required="false" default="3" />
+    <aura:attribute name="navigationMenuHeaderIndex" type="String" required="false" default="4" />
+    <aura:attribute name="headerFooterIndex" type="String" required="false" default="5" />
+    <aura:attribute name="headerBandIndex" type="String" required="false" default="hidden" />
+    <aura:attribute name="componentsIndex" type="String" required="false" default="hidden" />
+    <aura:attribute name="firstElementWidthString" type="String" required="false" default="12,4,4,12" />
+    <aura:attribute name="firstElementWidth" type="Integer[]" required="false" default="" />
+    <aura:attribute name="firstElementFlexibility" type="String" required="false" default="auto" />
+    <aura:attribute name="firstElementPadding" type="String" required="false" default="around-small" />
+    <aura:attribute name="firstElementAlignmentBump" type="String" required="false" default="top" />
+    <aura:attribute name="firstElementStyleClass" type="String" required="false" default="" />
+    <aura:attribute name="firstElementTitle" type="String" required="false" default="" />
+    <aura:attribute name="firstElementComponents" type="Aura.Component[]" required="false"/>
+    <aura:attribute name="secondElementWidthString" type="String" required="false" default="12,4,4,12" />
+    <aura:attribute name="secondElementWidth" type="Integer[]" required="false" default="" />
+    <aura:attribute name="secondElementFlexibility" type="String" required="false" default="auto" />
+    <aura:attribute name="secondElementPadding" type="String" required="false" default="around-small" />
+    <aura:attribute name="secondElementAlignmentBump" type="String" required="false" default="top" />
+    <aura:attribute name="secondElementStyleClass" type="String" required="false" default="" />
+    <aura:attribute name="secondElementTitle" type="String" required="false" default="" />
+    <aura:attribute name="secondElementComponents" type="Aura.Component[]" required="false"/>
+    <aura:attribute name="thirdElementWidthString" type="String" required="false" default="12,4,4,12" />
+    <aura:attribute name="thirdElementWidth" type="Integer[]" required="false" default="" />
+    <aura:attribute name="thirdElementFlexibility" type="String" required="false" default="auto" />
+    <aura:attribute name="thirdElementPadding" type="String" required="false" default="around-small" />
+    <aura:attribute name="thirdElementAlignmentBump" type="String" required="false" default="top" />
+    <aura:attribute name="thirdElementStyleClass" type="String" required="false" default="" />
+    <aura:attribute name="thirdElementTitle" type="String" required="false" default="" />
+    <aura:attribute name="thirdElementComponents" type="Aura.Component[]" required="false"/>
+    <aura:attribute name="fourthElementWidthString" type="String" required="false" default="12,12,12,12" />
+    <aura:attribute name="fourthElementWidth" type="Integer[]" required="false" default="" />
+    <aura:attribute name="fourthElementFlexibility" type="String" required="false" default="auto" />
+    <aura:attribute name="fourthElementPadding" type="String" required="false" default="around-small" />
+    <aura:attribute name="fourthElementAlignmentBump" type="String" required="false" default="top" />
+    <aura:attribute name="fourthElementStyleClass" type="String" required="false" default="" />
+    <aura:attribute name="fourthElementTitle" type="String" required="false" default="" />
+    <aura:attribute name="fourthElementComponents" type="Aura.Component[]" required="false"/>
+    <aura:attribute name="fifthElementWidthString" type="String" required="false" default="12,12,12,12" />
+    <aura:attribute name="fifthElementWidth" type="Integer[]" required="false" default="" />
+    <aura:attribute name="fifthElementFlexibility" type="String" required="false" default="auto" />
+    <aura:attribute name="fifthElementPadding" type="String" required="false" default="around-small" />
+    <aura:attribute name="fifthElementAlignmentBump" type="String" required="false" default="top" />
+    <aura:attribute name="fifthElementStyleClass" type="String" required="false" default="" />
+    <aura:attribute name="fifthElementTitle" type="String" required="false" default="" />
+    <aura:attribute name="fifthElementComponents" type="Aura.Component[]" required="false"/>
+    
+    <aura:attribute name="headerBackground" type="String" required="false" default="" />
+    <aura:attribute name="footerBackground" type="String" required="false" default="" />
+
+    <aura:attribute name="showTop" type="Boolean" default="true" access="global" />
+    <aura:attribute name="top" type="Aura.Component[]" required="false"></aura:attribute>
+    <aura:attribute name="header" type="Aura.Component[]" required="false"></aura:attribute>
+    <aura:attribute name="content" type="Aura.Component[]" required="false"></aura:attribute>
+    <aura:attribute name="middle" type="Aura.Component[]" required="false"></aura:attribute>
+    <aura:attribute name="middle50Left" type="Aura.Component[]" required="false"></aura:attribute>
+    <aura:attribute name="middle50Right" type="Aura.Component[]" required="false"></aura:attribute>
+    <aura:attribute name="detail" type="Aura.Component[]" required="false"></aura:attribute>
+    <aura:attribute name="divider" type="Aura.Component[]" required="false"></aura:attribute>
+    <aura:attribute name="summary" type="Aura.Component[]" required="false"></aura:attribute>
+    <aura:attribute name="footer" type="Aura.Component[]" required="false"></aura:attribute>
+    <aura:attribute name="bottom" type="Aura.Component[]" required="false"></aura:attribute>
+    <aura:attribute name="pageLayoutClass" type="String" default="acn-padding-none acn-margin-none" access="global" />
+    <aura:attribute name="pageLayoutTitle" type="String" default="" access="global" />
+    <aura:attribute name="pageLayoutHorizontalAlign" type="String" default="center" access="global" />
+    <aura:attribute name="pageLayoutVerticalAlign" type="String" default="start" access="global" />
+    <aura:attribute name="pageLayoutMultipleRows" type="Boolean" default="true" access="global" />
+    <aura:attribute name="pageLayoutPullToBoundary" type="String" default="small" access="global" />
+    <aura:attribute name="topTitle" type="String" required="false" default="Outer Header" />
+    <aura:attribute name="topStyleClass" type="String" required="false" default="" />
+    <aura:attribute name="topWidthString" type="String" required="false" default="12,12,12,12" />
+    <aura:attribute name="topWidth" type="Integer[]" required="false" default="[12,12,12,12]" />
+    <aura:attribute name="topFlexibility" type="String" required="false" default="auto" />
+    <aura:attribute name="topPadding" type="String" required="false" default="around-small" />
+    <aura:attribute name="topAlignmentBump" type="String" required="false" default="top" />
+    <aura:attribute name="headerTitle" type="String" required="false" default="Inner Header" />
+    <aura:attribute name="headerStyleClass" type="String" required="false" default="" />
+    <aura:attribute name="headerWidthString" type="String" required="false" default="12,10,12,12" />
+    <aura:attribute name="headerWidth" type="Integer[]" required="false" default="[12,10,12,12]" />
+    <aura:attribute name="headerFlexibility" type="String" required="false" default="auto" />
+    <aura:attribute name="headerPadding" type="String" required="false" default="around-small" />
+    <aura:attribute name="headerAlignmentBump" type="String" required="false" default="top" />
+    <aura:attribute name="contentTitle" type="String" required="false" default="Content" />
+    <aura:attribute name="contentStyleClass" type="String" required="false" default="" />
+    <aura:attribute name="contentWidthString" type="String" required="false" default="12,10,12,12" />
+    <aura:attribute name="contentWidth" type="Integer[]" required="false" default="[12,10,12,12]" />
+    <aura:attribute name="contentFlexibility" type="String" required="false" default="auto" />
+    <aura:attribute name="contentPadding" type="String" required="false" default="around-small" />
+    <aura:attribute name="contentAlignmentBump" type="String" required="false" default="bottom" />
+    <aura:attribute name="middleTitle" type="String" required="false" default="Middle Band" />
+    <aura:attribute name="middleStyleClass" type="String" required="false" default="" />
+    <aura:attribute name="middleWidthString" type="String" required="false" default="12,12,12,12" />
+    <aura:attribute name="middleWidth" type="Integer[]" required="false" default="[12,12,12,12]" />
+    <aura:attribute name="middleFlexibility" type="String" required="false" default="auto" />
+    <aura:attribute name="middleAlignmentBump" type="String" required="false" default="top" />
+    <aura:attribute name="middleHalfPadding" type="String" required="false" default="around-small" />
+    <aura:attribute name="middleHalfTitle" type="String" required="false" default="Middle Band" />
+    <aura:attribute name="middleHalfStyleClass" type="String" required="false" default="" />
+    <aura:attribute name="middleWidthHalfString" type="String" required="false" default="12,6,6,6" />
+    <aura:attribute name="middleWidthHalf" type="Integer[]" required="false" default="[12,6,6,6]" />
+    <aura:attribute name="middleHalfFlexibility" type="String" required="false" default="auto" />
+    <aura:attribute name="middleHalfPadding" type="String" required="false" default="around-small" />
+    <aura:attribute name="middleHalfAlignmentBump" type="String" required="false" default="bottom" />
+    <aura:attribute name="detailTitle" type="String" required="false" default="Additional Content" />
+    <aura:attribute name="detailStyleClass" type="String" required="false" default="" />
+    <aura:attribute name="detailWidthString" type="String" required="false" default="12,10,12,12" />
+    <aura:attribute name="detailWidth" type="Integer[]" required="false" default="[12,10,12,12]" />
+    <aura:attribute name="detailFlexibility" type="String" required="false" default="auto" />
+    <aura:attribute name="detailPadding" type="String" required="false" default="around-small" />
+    <aura:attribute name="detailAlignmentBump" type="String" required="false" default="top" />
+    <aura:attribute name="dividerTitle" type="String" required="false" default="Middle Band" />
+    <aura:attribute name="dividerStyleClass" type="String" required="false" default="" />
+    <aura:attribute name="dividerWidthString" type="String" required="false" default="12,12,12,12" />
+    <aura:attribute name="dividerWidth" type="Integer[]" required="false" default="[12,12,12,12]" />
+    <aura:attribute name="dividerFlexibility" type="String" required="false" default="auto" />
+    <aura:attribute name="dividerPadding" type="String" required="false" default="around-small" />
+    <aura:attribute name="dividerAlignmentBump" type="String" required="false" default="top" />
+    <aura:attribute name="summaryTitle" type="String" required="false" default="Additional Content" />
+    <aura:attribute name="summaryStyleClass" type="String" required="false" default="" />
+    <aura:attribute name="summaryWidthString" type="String" required="false" default="12,10,12,12" />
+    <aura:attribute name="summaryWidth" type="Integer[]" required="false" default="[12,10,12,12]" />
+    <aura:attribute name="summaryFlexibility" type="String" required="false" default="auto" />
+    <aura:attribute name="summaryPadding" type="String" required="false" default="around-small" />
+    <aura:attribute name="summaryAlignmentBump" type="String" required="false" default="top" />
+    <aura:attribute name="footerTitle" type="String" required="false" default="Inner Footer" />
+    <aura:attribute name="footerStyleClass" type="String" required="false" default="" />
+    <aura:attribute name="footerWidthString" type="String" required="false" default="12,10,12,12" />
+    <aura:attribute name="footerWidth" type="Integer[]" required="false" default="[12,10,12,12]" />
+    <aura:attribute name="footerFlexibility" type="String" required="false" default="auto" />
+    <aura:attribute name="footerPadding" type="String" required="false" default="around-small" />
+    <aura:attribute name="footerAlignmentBump" type="String" required="false" default="top" />
+    <aura:attribute name="bottomTitle" type="String" required="false" default="Inner Footer" />
+    <aura:attribute name="bottomStyleClass" type="String" required="false" default="" />
+    <aura:attribute name="bottomWidthString" type="String" required="false" default="12,12,12,12" />
+    <aura:attribute name="bottomWidth" type="Integer[]" required="false" default="[12,12,12,12]" />
+    <aura:attribute name="bottomFlexibility" type="String" required="false" default="auto" />
+    <aura:attribute name="bottomPadding" type="String" required="false" default="around-small" />
+    <aura:attribute name="bottomAlignmentBump" type="String" required="false" default="top" />
+
+    <aura:attribute name="showDrawer" type="Boolean" required="false" default="false" />
+    <aura:attribute name="drawer" type="Aura.Component[]" required="false"/>
+</aura:interface>

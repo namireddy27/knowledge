@@ -1,0 +1,325 @@
+/****************** General Begin ************************/
+.THIS ul.acn-breadcrumb-list {
+    list-style: none;
+    overflow: hidden;
+    font: 18px Helvetica, Arial, Sans-Serif;
+    clear: both;
+    display: -webkit-box;
+  	display: -ms-flexbox;
+  	display: flex;
+    -ms-flex-wrap: wrap;
+   	flex-wrap: wrap;
+}
+
+.THIS ul.acn-breadcrumb-list li.acn-breadcrumb-list-item.navigationPathSegmentChevron:first-child a.navigationPathSegmentChevron {
+    padding-left: 10px;
+}
+
+.THIS ul.acn-breadcrumb-list li.acn-breadcrumb-list-item.navigationPathSegmentChevron:nth-child(2) a.navigationPathSegmentChevron {
+    background: #1b3373;
+}
+
+.THIS ul.acn-breadcrumb-list li.acn-breadcrumb-list-item.navigationPathSegmentChevron:nth-child(2) a.navigationPathSegmentChevron:after {
+    border-left-color: #1b3373;
+}
+
+.THIS ul.acn-breadcrumb-list li.acn-breadcrumb-list-item.navigationPathSegmentChevron:nth-child(3) a.navigationPathSegmentChevron {
+    background: #22408f;
+}
+
+.THIS ul.acn-breadcrumb-list li.acn-breadcrumb-list-item.navigationPathSegmentChevron:nth-child(3) a.navigationPathSegmentChevron:after {
+    border-left-color: #22408f;
+}
+
+.THIS ul.acn-breadcrumb-list li.acn-breadcrumb-list-item.navigationPathSegmentChevron:nth-child(4) a.navigationPathSegmentChevron {
+    background: #2574a9;
+}
+
+.THIS ul.acn-breadcrumb-list li.acn-breadcrumb-list-item.navigationPathSegmentChevron:nth-child(4) a.navigationPathSegmentChevron:after {
+    border-left-color: #2574a9;
+}
+
+.THIS ul.acn-breadcrumb-list li.acn-breadcrumb-list-item.navigationPathSegmentChevron:nth-child(5) a.navigationPathSegmentChevron {
+    background: #2574a9;
+}
+
+.THIS ul.acn-breadcrumb-list li.acn-breadcrumb-list-item.navigationPathSegmentChevron:nth-child(5) a.navigationPathSegmentChevron:after {
+    border-left-color: #2574a9;
+}
+
+.THIS ul.acn-breadcrumb-list li.acn-breadcrumb-list-item.navigationPathSegmentChevron:last-child a.navigationPathSegmentChevron {
+    color: #F9E79F !important;
+    pointer-events: none;
+    cursor: default;
+}
+
+.THIS ul.acn-breadcrumb-list li.acn-breadcrumb-list-item.navigationPathSegmentChevron a.navigationPathSegmentChevron:hover {
+    background: #5aa5d3;
+}
+
+.THIS ul.acn-breadcrumb-list li.acn-breadcrumb-list-item.navigationPathSegmentChevron a.navigationPathSegmentChevron:hover:after {
+    border-left-color: #5aa5d3 !important;
+}
+
+@media screen and (max-width: 654px) {
+    .THIS ul.acn-breadcrumb-list li.acn-breadcrumb-list-item.navigationPathSegmentChevron a.navigationPathSegmentChevron {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        font-size: 11px;
+        min-height: 42px;
+        display: flex;
+        align-items: flex-end;
+    }
+}
+
+/****************** General End **************************/
+
+/******************** Pill Begin *************************/
+.THIS .navigationCardPill.acn-aura-container.cACN_NavigationPath {
+    border: 1px solid rgba(0,0,0,0.1) !important;
+    padding: 5px !important;
+    border-radius: 7px !important;
+}
+
+.THIS ul.acn-breadcrumb-list {
+    list-style: none;
+    overflow: hidden;
+    font: 16px Helvetica, Arial, Sans-Serif;
+    clear: both;
+}
+
+.THIS .navigationCardPill.acn-breadcrumb-list-item {
+	display: flex;
+    justify-content: center;
+    width: auto;
+    list-style-type: none;
+    box-sizing: border-box;
+    padding: 12px;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    height: auto;
+    border: 1px solid token(acnPillCardColor);
+    border-radius: 3px;
+    -webkit-column-break-inside: avoid;
+    color: token(acnPillCardColor);
+    font-family: Helvetica;
+}
+
+.THIS .navigationCardPill.acn-breadcrumb-list-item:last-child {
+    color: white !important;
+    background-color: token(acnPillCardColor);
+    pointer-events: none;
+    cursor: default;
+}
+
+.THIS .navigationCardPill.acn-breadcrumb-list-item:hover {
+    background: token(acnPillCardColorHover);
+    color: white;
+}
+
+.THIS .navigationCardPill.acn-breadcrumb-list-item a:hover {
+    background: token(acnPillCardColorHover);
+    color: white;
+}
+
+.THIS .navigationCardPill.acn-breadcrumb-list-item:active {
+    background: token(acnBrandColor);
+    color: white;
+}
+
+.THIS .navigationCardPill.acn-breadcrumb-list-item a:active {
+    background: token(acnBrandColor);
+    color: white;
+}
+
+
+.THIS .navigationCardPill.acn-breadcrumb-list-item:last-child a.navigationCardPill {
+    color: white !important;
+    background-color: token(acnPillCardColor);
+    pointer-events: none;
+    cursor: default;
+    text-decoration: none;
+}
+
+.THIS .navigationCardPill.acn-breadcrumb-list-item a.navigationCardPill {
+    color: token(acnPillCardColor);
+    font-family: Helvetica;
+    text-decoration: none;
+}
+
+/******************** Pill End ***************************/
+
+/*************** KSA Breadcrumbs Begin *******************/
+.THIS .navigationCardKSABreadCrumbs.acn-breadcrumb-list {
+    list-style: none;
+    overflow: hidden;
+    font: 18px Helvetica,Arial,Sans-Serif;
+    clear: both;
+}
+
+.THIS .navigationCardKSABreadCrumbs.acn-breadcrumb-list-item {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    width: auto;
+    list-style-type: none;
+    box-sizing: border-box;
+    margin: 5px 0;
+    height: auto;
+    margin-right: 10px;
+    -webkit-column-break-inside: avoid;
+    font-family: Helvetica;
+}
+
+.THIS ul.navigationCardKSABreadCrumbs.acn-breadcrumb-list {
+    list-style: none;
+    overflow: hidden;
+    font: 18px Helvetica,Arial,Sans-Serif;
+    clear: both;
+    padding-left: 10px;
+    margin-bottom: 20px;
+	margin-top: 20px;
+    
+}
+
+.THIS .navigationCardKSABreadCrumbs.acn-breadcrumb-list-item:last-child .navigationCardKSABreadCrumbs.navigationPathSegmentWrapperDiv {
+    color: black !important;
+
+    pointer-events: none;
+    cursor: default;
+}
+
+/*************** KSA Breadcrumbs End *********************/
+
+/***************** Mobile Tile Begin *********************/
+.THIS .navigationCardMobileTile.acn-breadcrumb-list {
+ 	max-width: 1140px ;
+    margin: 0 auto;
+    margin-left: 15px;
+}
+
+.THIS .navigationCardMobileTile.acn-group-body-list {
+    list-style: none;
+    overflow: hidden;
+    font: 18px Helvetica,Arial,Sans-Serif;
+    clear: both;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    max-width: 1140px ;
+    margin: 0 auto;
+    margin-left: 15px;
+}
+
+.THIS ul.acn-breadcrumb-list li.acn-breadcrumb-list-item.navigationCardMobileTile {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    list-style-type: none;
+    box-sizing: border-box;
+    margin: 5px 0;
+    -webkit-column-break-inside: avoid;
+    color: t(acnBrandColor);
+    font-family: Helvetica;
+    margin-right: 9px;
+}
+
+.THIS .navigationCardMobileTile.acn-breadcrumb-list-item::after {
+    content: ">";
+    display: inline-block;
+    color: t(acnBrandColor);
+    margin-left: 5px;
+}
+
+.THIS .navigationCardMobileTile.acn-breadcrumb-list-item:last-child::after {
+    content: "";
+}
+
+@media screen and (min-width: 885px){
+    .THIS .navigationCardMobileTile.acn-breadcrumb-list {
+        /*display:none;*/
+    }
+    
+    .THIS .navigationCardMobileTile.acn-group-body-list {
+        /*display:none;*/
+    }
+
+    .THIS .burgerMenu {
+        /*display:none;*/
+    }
+
+}
+
+@media screen and (max-width: 885px ){
+    .THIS .navigationCardMobileTile.acn-breadcrumb-list {
+        /*display:none;*/
+    }
+    
+    .THIS .navigationCardMobileTile.acn-group-body-list {
+        /*display:none;*/
+    }
+
+    .THIS .burgerMenu {
+        /*display:none;*/
+    }
+    
+}
+
+@media screen and (max-width: 550px) {
+    .THIS .navigationCardMobileTile.acn-breadcrumb-list {
+ 		/*display: flex;*/
+	}
+    
+    .THIS .navigationCardMobileTile.acn-group-body-list {
+        /*display: flex;*/
+    }
+
+    .THIS .burgerMenu {
+        /*display:inline-block*/
+    }
+}
+
+/***************** Mobile Tile End ***********************/
+
+/***************** Quick Card Action Begin *********************/
+.THIS li.navigationCardQuickAction.acn-breadcrumb-list-item {
+    color: t(acnBrandColor);
+    font-family: Helvetica;
+    margin-left: 10px;
+    margin-right: 1px;
+    padding: 3px;
+    font-family: Roboto,sans-serif;
+    font-size: 0.95rem;
+    font-weight: t(fontWeightBold);
+}
+
+.THIS li.navigationCardQuickAction.acn-breadcrumb-list-item a {
+    text-decoration: none !important;
+    color: black;
+}
+
+.THIS li.navigationCardQuickAction.acn-breadcrumb-list-item:before {
+    content: ">";
+    position: absolute;
+    margin-left: -12px;
+    color: black;
+}
+
+.THIS li.navigationCardQuickAction.acn-breadcrumb-list-item:nth-child(1):before {
+    content: "";
+}
+
+/***************** Quick Card Action End ***********************/

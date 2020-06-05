@@ -1,0 +1,45 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name="filterListItems" type="ACN_NavigationLibrary.NavigationFilterItem[]"/>
+    <aura:attribute name="filterContextIdentifier" type="String" access="global" default="" />
+    <aura:attribute name="styleClass" type="String" access="global" />
+    <aura:attribute name="showStorageFilterConditions" type="Boolean" default="false" access="global" />
+    <aura:attribute name="showFilterConditionsClearAll" type="Boolean" default="false" access="global" />
+    <aura:attribute name="showClearAllAs" type="String" default="text" access="global" />
+    <aura:attribute name="showActiveFilter" type="Boolean" default="false" access="global" /> 
+    
+    <aura:handler event="c:ACN_NavigationFilterItemPreSelected" action="{!c.handleNavigationFilterPreSelected}"/>
+    <aura:handler event="c:ACN_NavigationFilterSelected" action="{!c.handleNavigationFilterSelected}"/>
+    <aura:registerEvent name="filterChanged" type="c:ACN_NavigationFilterChanged" />
+    <aura:registerEvent name="filterClearAllRequested" type="c:ACN_NavigationFilterClearAllRequested" />
+    
+    <div class="acn-filter-list">
+        <div class="{!v.filterListItems.length==0 ? 'acn-filter-list-hidden' : 'acn-filter-list-visible'}">
+            <aura:if isTrue="{!v.showStorageFilterConditions}">
+                <ul class="{!v.styleClass + ' acn-filter-list'}">
+                    <aura:iteration items="{!v.filterListItems}" var="filterItem">
+                        <li class="{!v.styleClass + ' acn-filter-list-item'}">
+                            {!filterItem.AttributeName} {!filterItem.AttributeOperator} {!filterItem.AttributeValue} 
+                        </li>
+                    </aura:iteration>
+                </ul>
+            </aura:if>
+            <aura:if isTrue="{!v.showFilterConditionsClearAll}">
+                Filter By | 
+                <aura:if isTrue="{!v.showClearAllAs == 'button'}">
+                    <lightning:button class="{!v.filterListItems.length==0 ? 'acn-button-disabled' : ''}" disabled="{!v.filterListItems.length==0}" variant="destructive" label="{!$Label.c.ACN_NavigationFilterClearAll}" iconName="utility:filterList" iconPosition="left" onclick="{!c.clearAllFilters}" />
+                </aura:if>
+                <aura:if isTrue="{!v.showClearAllAs == 'text'}">
+                    <lightning:button class="{!v.filterListItems.length==0 ? 'acn-button-disabled' : ''}" disabled="{!v.filterListItems.length==0}" variant="bare" label="{!$Label.c.ACN_NavigationFilterClearAll}" onclick="{!c.clearAllFilters}" />
+                </aura:if>
+            </aura:if>
+            <aura:if isTrue="{!v.showActiveFilter}">
+                <ul class="{!v.styleClass + ' acn-filter-list'}">
+                    <aura:iteration items="{!v.filterListItems}" var="filterItem">
+                        <lightning:badge class="acn-badge slds-text-color_inverse" 
+                                        label="{!filterItem.AttributeName+' '+filterItem.AttributeOperator+' '+filterItem.Name}"></lightning:badge> 
+                    </aura:iteration>
+                </ul>
+            </aura:if>
+        </div>
+    </div>
+</aura:component>

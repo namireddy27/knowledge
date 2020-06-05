@@ -1,0 +1,8 @@
+<aura:event type="APPLICATION" description="Use this lightning event to notify when progress has changed for a process.">
+    <aura:attribute name="progressContextIdentifier" type="String" access="global" description=""/>
+    <aura:attribute name="flowProgressPercent" type="Integer" access="global" default="0" />
+    <aura:attribute name="flowProgressCurrentStepNumber" type="Integer" access="global" default="0" />
+    <aura:attribute name="flowProgressCurrentStep" type="String" access="global" default="0" />
+    <aura:attribute name="flowProgressTotalSteps" type="Integer" access="global" default="0" />
+    <aura:attribute name="flowSteps" type="Integer[]" access="global" default="[]" />
+</aura:event>

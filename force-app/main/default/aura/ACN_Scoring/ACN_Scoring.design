@@ -1,0 +1,24 @@
+<design:component >
+    <design:attribute name="styleClass" label="CSS Style Class Name" description="The CSS Style Class Name to be applied to the Component." />
+    <design:attribute name="activeIconColor" label="Active Icon Color" description="The color for active icons within the Component." />
+    <design:attribute name="inactiveIconColor" label="Inactive Icon Color" description="The color for inactive icons within the Component." />
+    <design:attribute name="showScoringLoveIt" label="Show Love It!" description="Specifies if the Component should show the Love It/Favorite Scoring."/>	
+    <design:attribute name="isLoved" label="Is Loved?" description="Specifies if the Component should show the highlighted Love It/Favorite Scoring."/>	
+    <design:attribute name="isLovedText" label="'Is Loved?' Label" description="The text or label to display for the 'Is Loved?' icon in the Component." />
+    <!--<design:attribute name="isLovedIconName" label="'Is Loved?' Icon Name" description="The Icon Name 'Is Loved?' icon in the Component." />-->
+    <design:attribute name="showScoringVotes" label="Show Votes" description="Specifies if the Component should show the Like/Not Like Votes Scoring."/>	
+    <design:attribute name="isLiked" label="Is Liked?" description="Specifies if the Component should show the highlighted 'Is Liked?' Scoring."/>	
+    <design:attribute name="isLikedCount" label="'Is Liked?' Count" description="Specifies the total number of 'Is Liked?' actions performed."/>	
+    <design:attribute name="isLikedText" label="'Is Liked?' Label" description="The text or label to display for the 'Is Liked?' icon in the Component." />
+    <!--<design:attribute name="isLikedIconName" label="'Is Liked?' Icon Name" description="The Icon Name 'Is Liked?' icon in the Component." />-->
+    <design:attribute name="isNotLiked" label="Is Not Liked?" description="Specifies if the Component should show the highlighted 'Is Not Liked?' Scoring."/>	
+    <design:attribute name="isNotLikedCount" label="'Is Not Liked?' Count" description="Specifies the total number of 'Is Not Liked?' actions performed."/>	
+    <design:attribute name="isNotLikedText" label="'Is Not Liked?' Label" description="The text or label to display for the 'Is Not Liked?' icon in the Component." />
+    <!--<design:attribute name="isNotLikedIconName" label="'Is Not Liked?' Icon Name" description="The Icon Name 'Is Not Liked?' icon in the Component." />-->
+    <design:attribute name="showScoringStars" label="Show 5 Stars Rating" description="Specifies if the Component should show the Five Stars Rating Scoring."/>	
+    <design:attribute name="averageFiveStarsRating" label="Average 5 Stars Rating." description="Specifies the Average Stars Rating Scoring value."/>	
+    <design:attribute name="fiveStarsRatingCount" label="5 Stars Rating Count" description="Specifies the total number of the 5 Stars Rating Scoring actions performed."/>	
+    <design:attribute name="contextIdentifier" label="Context Identifier" description="The Context Identifier for the Component." />
+    <design:attribute name="showScoringViews" label="Show Views" description="Specifies if the Component should show the number of Views." />
+    <design:attribute name="isViewedCount" label="Views Count" description="Specifies the total number of Views for this element." />
+</design:component>

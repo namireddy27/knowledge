@@ -1,0 +1,3 @@
+<aura:event type="APPLICATION" description="Use this event to notify when a navigation list refresh all action was requested.">
+    
+</aura:event>

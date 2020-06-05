@@ -1,5 +1,4 @@
 global with sharing class ACN_NavigationLibrary {
-/*
     public class MethodNotImplementedException extends Exception {
     }
     public class ItemCommunityMissingException extends Exception {
@@ -529,5 +528,5 @@ global with sharing class ACN_NavigationLibrary {
     global static ConnectAPI.ManagedTopicCollection getNavigationTopics(List<Id> topicIds, Integer level){
         Id communityId = ACN_NavigationLibrary.GetCurrentCommunityId() ;
         return ConnectAPI.ManagedTopics.getManagedTopics(communityId, ConnectApi.ManagedTopicType.Navigational, topicIds, level);
-    }    */
+    }    
 }

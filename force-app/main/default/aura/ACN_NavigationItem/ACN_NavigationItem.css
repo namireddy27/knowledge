@@ -1,2 +1,4118 @@
-.THIS {
+.THIS .biib-menu-icon img {
+    height: 60px;
+    margin-bottom: 3px;
+    margin-top: 3px;
+    /*max-width: 60px;*/
+    padding: 0;
+    width: 60px;
 }
+
+.THIS .biib-support-person-thumbnail {
+    height: 32px;
+    margin-bottom: 3px;
+    margin-top: 3px;
+    /*max-width: 32px;*/
+    padding: 0;
+    width: 32px;
+}
+
+.THIS .biib-journey-action-icon.acn-item-grid-layout {
+    margin-top: -1.2em;
+}
+
+.THIS .biib-journey-button-icon img {
+    height: 32px;
+    margin-bottom: 3px;
+    margin-top: 3px;
+    max-width: 32px;
+    width: 32px;
+}
+
+.THIS .biib-journey-button-icon img:hover {
+    border-radius: 50%;
+    background-color: t(colorBackgroundButtonDefaultHover);
+    -moz-box-shadow:    0 0 3px t(colorBackgroundButtonBrandActive);
+    -webkit-box-shadow: 0 0 3px t(colorBackgroundButtonBrandActive);
+    box-shadow:         0 0 3px t(colorBackgroundButtonBrandActive);
+}
+
+.THIS .biib-journey-button-icon img:active {
+    border-radius: 50%;
+    background-color: t(colorBackgroundButtonDefaultHover);
+    -moz-box-shadow:    0 0 1px t(colorBackgroundButtonBrandActive);
+    -webkit-box-shadow: 0 0 1px t(colorBackgroundButtonBrandActive);
+    box-shadow:         0 0 1px t(colorBackgroundButtonBrandActive);
+}
+
+.THIS .acn-text-direction-inverse {
+    -webkit-transform:rotateY(180deg);
+    -moz-transform:rotateY(180deg);
+    -o-transform:rotateY(180deg);
+    -ms-transform:rotateY(180deg);
+}
+
+.THIS .acn-button-hover-inverse:active {
+    background-color: t(colorBackgroundButtonDefaultHover);
+    -moz-box-shadow:    inset 0 0 5px t(colorBackgroundButtonBrandActive);
+    -webkit-box-shadow: inset 0 0 5px t(colorBackgroundButtonBrandActive);
+    box-shadow:         inset 0 0 5px t(colorBackgroundButtonBrandActive);
+    /*color: t(colorTextButtonBrand);*/
+}
+
+.THIS .acn-button-hover-inverse:hover {
+    background-color: t(colorBackgroundButtonDefaultHover);
+    /*color: t(colorTextButtonBrand);*/
+}
+
+.THIS .acn-button-hover:active {
+    background-color: t(colorBackgroundButtonBrandActive);
+    /*color: t(colorTextButtonBrand);*/
+}
+
+.THIS .acn-button-hover:hover {
+    background-color: t(colorBackgroundButtonBrandHover);
+    /*color: t(colorTextButtonBrand);*/
+}
+
+.THIS .acn-padded-button {
+    padding-top: .25em;
+    padding-bottom: .25em;
+    border-radius: 1em;
+}
+
+.THIS .acn-banner-glyph .acn-navigation-list-item-img-Tag {
+    overflow: hidden;
+}
+
+.THIS .TABLET .acn-banner-glyph .acn-navigation-list-item-img-Tag {
+    height: 175px;
+    margin-left: -30px;
+    margin-right: -28px;
+    margin-top: -16px;
+}
+
+.THIS .DESKTOP .acn-banner-glyph .acn-navigation-list-item-img-Tag {
+    height: 200px;
+    margin-left: -30px;
+    margin-right: -28px;
+    margin-top: -16px;
+}
+
+.THIS .PHONE .acn-banner-glyph .acn-navigation-list-item-img-Tag {
+    margin-left: -30px;
+    margin-right: -28px;
+    margin-top: -16px;
+}
+
+.THIS .acn-banner-glyph img {
+    height: auto;
+    width: 100%;
+    object-fit: contain;
+    margin-top: -40%;    
+}
+
+.THIS .PHONE .acn-banner-glyph img {
+    height: 700px;
+    width: 100%;
+    object-fit: none;
+    margin-top: -79%;
+}
+
+.THIS .biib-tile-card-background-color-blue {
+    background-color: #2573ba;
+}
+
+.THIS .biib-tile-card-background-color-green {
+    background-color: #99ca3c;
+}
+
+.THIS .biib-tile-card-background-color-blue-light {
+    background-color: #7cc3e2;
+}
+
+.THIS .navigationResourceTile {
+    /*background-color: #2573ba !important;*/
+    border-radius: 4px;
+    min-height: 255px;
+    padding: 17px 20px 18px 20px;    
+}
+
+.THIS .acn-font-size-14px span, 
+.THIS .acn-font-size-14px label, 
+.THIS .acn-font-size-14px input, 
+.THIS .acn-font-size-14px textarea, 
+.THIS .acn-font-size-14px div, 
+.THIS .acn-font-size-14px {
+    font-size: 14px;
+}
+
+.THIS .acn-font-size-18px span, 
+.THIS .acn-font-size-18px label, 
+.THIS .acn-font-size-18px input, 
+.THIS .acn-font-size-18px textarea, 
+.THIS .acn-font-size-18px div, 
+.THIS .acn-font-size-18px {
+    font-size: 18px;
+}
+
+.THIS .navigationResourceTile .acn-lightning-icon-container {
+	text-align: initial;
+}
+
+.THIS .navigationResourceTile .slds-icon_container {
+    background-color: transparent;
+}
+
+.THIS .navigationResourceTile.biib-tile-card-background-color-blue svg {
+    background-color: #2573ba;
+    fill: #3583ca;
+	height: 80px;
+    margin: 7.5em 1em 1em -1em;
+	width: 80px;
+}
+
+.THIS .navigationResourceTile.biib-tile-card-background-color-green svg {
+    background-color: #99ca3c;
+    fill: #a0d243;
+	height: 120px;
+    margin: 6.5em 1em 1em -2.5em;
+	width: 120px;
+}
+
+.THIS .navigationResourceTile.biib-tile-card-background-color-blue-light svg {
+    background-color: #7cc3e2;
+    fill: #84cbea;
+	height: 110px;
+    margin: 7em 1em 1em 0em;
+	width: 110px;
+}
+
+.THIS .acn-height-lines-2 {
+    height: 2em !important;
+}
+
+.THIS .acn-height-lines-15 {
+    height: 15em !important;
+}
+
+.THIS .navigationResourceTile svg {
+    border-radius: 50%;
+}
+
+.THIS .navigationResourceTile .acn-navigation-list-item-description-grid li {
+	color: white !important;
+    display: inline-block;
+    float: left;
+    width: 50%;
+}
+
+.THIS .navigationResourceTile .acn-navigation-list-item-description-grid li:nth-child(2) {
+	text-align: right;
+}
+
+.THIS .acn-border-radius-small {
+    border-radius: 1em;
+}
+
+.THIS .acn-bring-to-front {
+    z-index: 1;
+}
+
+.THIS .acn-send-to-back {
+    z-index: 0;
+}
+
+.THIS .acn-margin-top-negative-6em  {
+    margin-top: -6em;
+}
+
+.THIS .acn-margin-top-negative-12em  {
+    margin-top: -12em;
+}
+
+.THIS .acn-margin-top-negative-50  {
+    margin-top: -50%;
+}
+
+.THIS .acn-margin-top-negative-75  {
+    margin-top: -75%;
+}
+
+.THIS .acn-margin-top-negative-100  {
+    margin-top: -100%;
+}
+
+.THIS .acn-position-absolute  {
+    position: absolute;
+}
+
+.THIS .acn-text-color-brand {
+    color: t(colorTextBrand);
+}
+
+.THIS .acn-border-bottom-light {
+    border-bottom: silver 1px solid;
+}
+
+.THIS .acn-font-size-2 {
+    font-size: 2em;
+}
+
+.THIS .acn-font-size-2 .acn-navigation-list-item-name-grid {
+    margin-top: -.1em;
+}
+
+.THIS .acn-fixed-size-2 {
+    height: 2em;
+    /*padding-top: .10em !important;*/
+    line-height: 1.5;
+    width: 2em;
+}
+
+.THIS .acn-fixed-size-1-5 {
+    height: 1.5em;
+    width: 1.5em;
+}
+
+.THIS .acn-fixed-size-3 {
+    height: 3em;
+    padding-top: .20em !important;
+    width: 3em;
+}
+
+.THIS .acn-padding-bottom-one, 
+.acn-padding-bottom-one.THIS {
+    padding-bottom: 1em !important;
+}
+
+.THIS .acn-padding-bottom-two, 
+.acn-padding-bottom-two.THIS {
+    padding-bottom: 2em !important;
+}
+
+.THIS .acn-padding-top-one, 
+.acn-padding-top-one.THIS {
+    padding-top: 1em !important;
+}
+
+.THIS .acn-padding-top-two, 
+.acn-padding-top-two.THIS {
+    padding-top: 2em !important;
+}
+
+.acn-navigation-item-container.acn-connection-left-checked.THIS:after, 
+.acn-navigation-item-container.acn-connection-left-unchecked.THIS:after {
+    /*
+    border-bottom-width: thin !important;
+    border-bottom-color: t(colorBorderInput);
+	border-bottom-style: solid;
+    */
+    content: " ";
+    display: inline-block;
+    height: 1em;
+    margin-bottom: .8em;
+    margin-left: 2.4em;
+    position: relative;
+    width: 250px;
+}
+
+.acn-navigation-item-container.acn-connection-left-checked.THIS:before, 
+.acn-navigation-item-container.acn-connection-left-unchecked.THIS:before {
+    color: t(colorTextBrand);
+    /*border-radius: 1em;*/
+    content: " ";
+    font-size: 1.5em;
+    height: 1.5em;
+    line-height: 1em;
+    margin-left: -.9em;
+    padding-left: .35em;
+    padding-top: .25em;
+    position: absolute;
+    width: 1.5em;
+}
+
+.acn-navigation-item-container.acn-connection-left-checked.THIS:before {
+    /* text only version
+    background-color: t(colorBrand) !important;
+    color: t(colorTextButtonBrand) !important;
+    content: "️✓" !important;
+    font-weight: bold;
+    background-color: t(colorBrand) !important;
+    border-color: t(colorBrand);
+    border-style: solid;
+    border-width: 2px;
+    */
+    background-color: white;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAYAAAAehFoBAAAAAXNSR0IArs4c6QAABGhJREFUWAnVmU1oE0EUgOfNBqSCHhQPrSBKf5WCgmAFQfsTUKu1LW2FXr0IKnjSi1dPakUP9erBg2BbklZUxPTXi/UHpAjW1IIXWxTUk0h/dp/vzTZhs5lkd9MkTQfazM7Pe9/Ovn3z5i2IdRREhO6a8SOmsM4IgZUCoYLEVQigPy4oFuj/ggCkX5g3hHw2GG96CwCo+nP4BznMER01Yy2AVg8KPIcoyoPIABCLIGAEQQ5E482jQeby2EDAXdVjDavCuiUQjwdVpB0PMBUS8vrQXPO0tl/T6Au4o258L5rmbQLt1shYfxPAIBjGtehs0zcvYZ7AnbWjzWhZA/Tod3gJW08/mcpvkLIn8qVlLJscma2zvSp2ybLwZaFhmYF1sC7WmY0pI3BHVayPxPSTpFA2AXntU7qwn3TfySRXaxL2XRLshha4PPw1/MCNkAbMNsuPpqgr66bia4BVKeGk26ZTgNkbCHP1QzFsVsfobuMXURihw07vkWLD7LpKBZbhmUW5U8edJFdYbQpovnH0lUw1BMbRxOaSXGG1g5UMYiqIk00Bc2xA65+f7TZVV36uiE0xkjR7hdE6nx/J/qVQxPaOdrZWCfICuYQ/XjM52OIxkkNEMu82rwl57aegZ1vZrqZovOVFZK7loZTippd8OzJECHVVTzRQcBooRPQSnq2fVvY1wbY+mjn41zFuyVHXVsljlDOrtMBs1Y4oRKO9sqedsD21k/voKd/wo45ZKU6gk0IRim5lGXbZXJ4g9T6fMFbKtWNNQZHXYNNWdg12j2/ldARjL2Gfv/zOAjErQsYpA8RZOurEPadlMIPAsLaiipA6MAY4EgIYV6Kz9lmstz72/t+SGKcXYr8WnGC3u14whxn4X9mEcDrc2n440RDw9/Gn8I+yLdBEQcrntKn5hiUFtK5INqyO4mn6MjZY5r3OutjORL8WugCwrI+SA4u8wpw78F3oLuvRxFhG6ALBrgEuSDvJ4ZtXDSSbPaSDhrKtjXm1WTcWJWRohWHe3e7nWgcdmTn2070p5OgNMiDAvOT0UYZez2YddGLSurxBQojrl1mBg5/Omth3Uu5zt3FJoUvyEh/BgHBkNvyLewsBSzoWI/Hwbkm7EIVrMJKO4b+FV9oyxVRn7av2jurR3hVrZYpmB/ezWVQyI7OqnAMn5gSaF7OM9+5CPEDQUSEs77E5jFCMNC95pmuvjk2W7KmDXOXwXPgE32dyp+MsYg43XpQpTrYksDqVUhaxKARBlBBT4sTM05LAfMEpT5W84IsSKMzCTE6UFGDOsHDKk9NEzkEbUicGZnFmfZgjBZgbVC4LxVWub2ghBndejXnSgLmRs4bk9+5yfSMK6e7TZS6ZJenWdGAq7QriftEymWyKtLKZYD2BecCm+mTAwMqOKOVJL2LhXB7LJh06m2UGZ8lqEs6BXN80n73c4HbykPNx2BY0yuOoi16dpwLkk4J/WHSDc2jK6SM7e+T96Vai8XxornGaoy63LL/X/wEeUAQGJMu+FgAAAABJRU5ErkJggg==');
+    background-repeat: no-repeat;
+    background-size: 32px 32px;
+	border-radius: 50%;
+    height: 32px;
+    width: 32px;
+}
+
+.acn-navigation-item-container.acn-connection-left-unchecked.THIS:before {
+    /*
+    background-color: white;
+    border-color: t(colorBackgroundButtonBrandDisabled);
+    border-style: solid;
+    border-width: 2px;
+    */
+    /* text only version
+    background-color: t(colorBackgroundButtonBrandDisabled);
+    color: t(colorTextInverseWeak);
+    */
+    background-color: white;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAuCAYAAABXuSs3AAAAAXNSR0IArs4c6QAABHxJREFUaAXVmktIHEsUhqvbS/AZfCCoG3UzakAXASG7IAbmqmBwI3gRsvMBWYZkk2U2Ce59rAXBjQg+7nBvkOwuiLNQiDoudOnGa4gvjDqd8xVdk844oxkzmdQcKLqs6j71ne7TNVV/66iftJWVlT+2t7cfi5uwlAdSQp7nVTqOU4ZrqR9J/X+pxqR8lBJpamr60NHRcSn1O5tzlytnZ2fvHR4ePhWop3J9jxzLM/EjgXyS8xflOF9RUTHf39//JZPrOTcjcAF0pqamBuT4RkqjGayqqko1NDQogVDFxcWqpKREF/pPTk50OT09VRKs2tvbUwcHB+ZSJfC7Ul4PDQ3NyNFLdNxS+WFwAX4Sj8ffCvBDfALb3NysgcvKdFbcMtS37qOjIx3A1tZWIgiBjsoZL0dGRt5/OzN97VZwAXUnJycBfoEbINvb21UoFErvNYOeWCymVldXFcFgEsDY8PDwKznGb3JzI/j09PT94+PjGYHuLigo8ATYaW1tVVK/yWfGfVdXV2pjY4MAPKkLs7NUWlo6MDg4+Dmds7Tg4+PjDXLRkpSWoqIiLxwOOzU1Nen8ZKV9f39fRSIR7+zsDK5NKd2jo6N7qZynBOdOy6P7Ty5oIZe7urqU3IFU12e9TZ6wWl5eNrm/Kan5KNWdd5NHJqdJDwPd19eXM2hYuEGMyQ2DwU/Va5zXkrW2tvadwD8jPXp7e53CwkIc5NRc11X19fVqZ2fHu7i4CK2trZUsLCz8E4T4LhKmPGYPXkRyOlfpEQQydcaGARaYJiYmOk0fxwS4dDrM0zQye/zqF5FxbjMYYPHPIxNMXSVSpa6u7i/peM483dnZqXhcNlh1dTUpo87Pz2uj0WhMUmYDLk3H2kOg39DAj0u252n83tVggQmDEVbqGtxfMDXyJmfrFxHn2TKYYBPwRljxq8GlQf/B2sNWM2yG1WU9LbA9ALPCs9UCbD0wu2wCJIpyHkWmq7xcBgmbny7lMJMqfwIQiCiXPBmNFWAMA97C1WwCbLcA4wPA9cKanYvtFmAMuZLflQCz3bLdDCPMriza9b7LNNoMbxhh1vO4zbDp2EgVvdljN267GUaYSRXEGi0h5As4zKQKCpNC97DdAowxwNmUarHGdnAEJd8+Av43f6Aw2W4BxoiLACk58wlZzIgyNgYAG4ywwuz6qukisIGIrGMPsC3CrOdxiWIeUrQ8W82wGVYNjtQrDbs8CrQ82wwmP012YYVPg6NPC/hrGhAgZbdP1QpDV4QJg9Fo6RqcRl+fjvISrK+v02SFIYbCJNBRGA1UAlw6PJEkXtGBaooA+bsNBlh8jpcwGqYEOA0S0b/SOYbUi2qKAPm7jLFh8GXnsWTB/ztwIH1RfQmpF9X08vKnvjHdKW7GZGwYxJZgSnZ0DVxOjItuNyAnbvImz83NqVzeecZiTMaGARaYksETWlxyR14K+yaIVJ9S2trasq4rMuVl7VOKgZdFe/59vDLwHPPuc2EQXu5+/n2gDQaQd5/Eg/CmHvgnBKQ8VLGc/BPCVz7yod0IIjFjAAAAAElFTkSuQmCC');
+    background-repeat: no-repeat;
+    background-size: 32px 32px;
+	border-radius: 50%;
+    height: 32px;
+    width: 32px;
+}
+
+.acn-navigation-item-container.acn-connection-left-margin-one.THIS {
+    margin-left: 1.5em;
+}
+
+.acn-navigation-item-container.acn-connection-left-width-thin.THIS {
+    border-left-width: thin;
+}
+
+.acn-navigation-item-container.acn-connection-left-width-medium.THIS {
+    border-left-width: medium !important;
+}
+
+.acn-navigation-item-container.acn-connection-left-width-thick.THIS {
+    border-left-width: thick;
+}
+
+.acn-navigation-item-container.acn-connection-left-color-brand-checked.THIS, 
+.acn-navigation-item-container.acn-connection-left-color-brand.THIS {
+    border-left-color: t(colorBrand) !important;
+}
+
+.acn-navigation-item-container.acn-connection-left-color-brand-unchecked.THIS {
+    border-left-color: t(colorBorderInput);
+    border-left-width: thin;
+}
+
+.acn-navigation-item-container.acn-connection-left-style-solid.THIS {
+    border-left-style: solid;
+}
+
+.acn-navigation-item-container.acn-connection-left-style-dashed.THIS {
+    border-left-style: dashed;
+}
+
+.THIS .acn-connect-line:after {
+    /*
+    content: " ";
+    border-left: .5em solid green;
+    height: 100%;
+    position: absolute;
+    margin-left: 1em;
+    margin-top: -1em;
+    */
+}
+
+.THIS .acn-image-margin-top-negative-5-px img {
+    margin-top: -5px;
+}
+
+.THIS .acn-line-height-large p::first-line {
+    line-height: 1em;
+}
+
+.THIS .acn-line-height-large p {
+    line-height: 2em;
+}
+
+.THIS .acn-image-margin-top-negative-5-px img {
+    margin-top: -5px;
+}
+
+.THIS .acn-text-description-default .acn-navigation-list-item-description-grid, 
+.THIS .acn-text-description-default .acn-navigation-list-item-description-grid svg {
+    color: token(colorTextDefault);
+    fill: token(colorTextDefault);
+}
+
+.THIS .acn-text-transform-lowercase label, 
+.THIS .acn-text-transform-lowercase span, 
+.THIS .acn-text-transform-lowercase p {
+    text-transform: lowercase;
+}
+
+.THIS .acn-text-transform-uppercase label, 
+.THIS .acn-text-transform-uppercase span, 
+.THIS .acn-text-transform-uppercase p {
+    text-transform: uppercase;
+}
+
+.THIS .acn-text-transform-uppercase-name .acn-navigation-list-item-name-grid label, 
+.THIS .acn-text-transform-uppercase-name .acn-navigation-list-item-name-grid span, 
+.THIS .acn-text-transform-uppercase-name .acn-navigation-list-item-name-grid p {
+    text-transform: uppercase;
+}
+
+.THIS .acn-text-transform-capitalize label, 
+.THIS .acn-text-transform-capitalize span, 
+.THIS .acn-text-transform-capitalize p {
+    text-transform: capitalize;
+}
+
+.THIS .acn-text-transform-none label, 
+.THIS .acn-text-transform-none span, 
+.THIS .acn-text-transform-none p {
+    text-transform: none;
+}
+
+.THIS .acn-text-transform-inherit label, 
+.THIS .acn-text-transform-inherit span, 
+.THIS .acn-text-transform-inherit p {
+    text-transform: inherit;
+}
+
+.THIS .acn-text-transform-full-width label, 
+.THIS .acn-text-transform-full-width span, 
+.THIS .acn-text-transform-full-width p {
+    text-transform: full-width;
+}
+
+.THIS .acn-underline-on-hover div:hover, 
+.THIS .acn-underline-on-hover a:hover, 
+.THIS .acn-underline-on-hover label:hover, 
+.THIS .acn-underline-on-hover span:hover, 
+.THIS .acn-underline-on-hover p:hover {
+    text-decoration: underline;
+}
+
+.THIS .acn-shadow-small {
+	box-shadow: 0 0 5px 3px rgba(60,61,60,0.12);
+}
+
+.THIS .acn-record-list-column-header-sort-none span:after, 
+.THIS .acn-record-list-column-header-sort-ascending span:after, 
+.THIS .acn-record-list-column-header-sort-descending span:after {
+	cursor: pointer;
+    font-size: 1.5em;
+	margin-left: .5em;
+    margin-top: -0.25em;
+    position: absolute;
+}
+
+.THIS .acn-record-list-column-header-sort-none span:after {
+    content: "🠡🠣";
+}
+
+.THIS .acn-record-list-column-header-sort-ascending span:after {
+    content: "🠡";
+}
+
+.THIS .acn-record-list-column-header-sort-descending span:after {
+    content: "🠣";
+}
+
+.THIS .acn-record-list-column-cell-font, 
+.THIS .acn-record-list-column-title-font {
+    font-weight: bold;
+}
+
+.THIS .acn-svg-large svg {
+    height: 2em;
+    width: 2em;
+}
+
+.THIS .acn-svg-larger svg {
+    height: 3em;
+    width: 3em;
+}
+
+.THIS .acn-svg-largest svg {
+    height: 5em;
+    width: 5em;
+}
+
+.THIS .acn-contact-thumbnail-circle.acn-navigation-list-item-image-grid {
+    background-color: silver; 
+    border-radius: 50%;
+    height: 63px;
+    overflow: hidden;
+    padding-left: 0;
+    width: 63px;
+}
+
+.THIS .acn-contact-thumbnail-circle.acn-contact-thumbnail-circle-first-grid-item svg {
+    background-color: silver; 
+    border: 2px solid silver;
+    fill:  t(colorTextButtonBrand); 
+    height: 66px;
+    margin-left: -2px;
+    width: 66px;
+}
+
+.THIS .acn-home-page-list-title-band .acn-home-page-list-item.acn-home-page-list-item-even.acn-list-row-grid.acn-navigation-list-item-description-grid.uiOutputRichText {
+    background-color: #5f5f5f;
+    color: #fff;
+    font-size: 1.30em;
+    font-weight: 400;
+    line-height: 1.5;
+    padding: .25em .5em !important;
+}
+
+.THIS .acn-home-page-list-item.acn-home-page-list-item-even.acn-view-all-row.acn-view-all-button.acn-navigation-list-item-name-grid {
+    background-color: silver;
+    color: t(colorTextButtonBrand);
+    margin-bottom: 1.5em;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1.5em;
+    max-width: 50%;
+    padding: 1em 3em;
+}
+
+.THIS .acn-home-page-list-item.acn-home-page-list-item-even.acn-view-all-row.acn-view-all-button.acn-navigation-list-item-name-grid:hover {
+    cursor: pointer;
+    text-decoration: none;
+    filter: brightness(85%);
+}
+
+.THIS .acn-view-all-row {
+    text-align: center;
+}
+
+div.acn-border-right-silver.THIS {
+    border-right: 1px solid silver;
+}
+
+.THIS .acn-column-header-sorting-ascending:after, 
+.THIS .acn-column-header-sorting-descending:after, 
+.THIS .acn-column-header-sorting-asc:after, 
+.THIS .acn-column-header-sorting-desc:after {
+    display: inline-block;
+    position: relative;
+    margin-left: .5em;
+}
+
+.THIS span.acn-column-header-sorting-ascending:after, 
+.THIS span.acn-column-header-sorting-asc:after, 
+.THIS .acn-column-header-sorting-ascending span:after, 
+.THIS .acn-column-header-sorting-asc span:after {
+    content: ' \25B2';
+    cursor: pointer;
+}
+
+.THIS span.acn-column-header-sorting-descending:after, 
+.THIS span.acn-column-header-sorting-desc:after, 
+.THIS .acn-column-header-sorting-descending span:after, 
+.THIS .acn-column-header-sorting-desc span:after {
+    content: ' \25BC';
+    cursor: pointer;
+}
+
+.THIS span.acn-column-header-sorting-none:after, 
+.THIS .acn-column-header-sorting-none span:after {
+    content: ' \21C5';
+    cursor: pointer;
+}
+
+.THIS .acn-column-header-default-sort:after {
+    content: ' \21C5';
+}
+
+.THIS .acn-date-outstanding, 
+.THIS .acn-status-completed, 
+.THIS .acn-status-outstanding {
+    border-radius: .25em;
+    font-size: 16px;
+	margin: .5em auto;
+    max-width: 60%;
+    min-height: 2em;
+    padding-top: .3em;
+    text-align: center;
+}
+
+.THIS .acn-status-outstanding {
+    background-color: #f99555;
+    color: white;
+}
+
+.THIS .acn-status-outstanding:hover {
+    background-color: #e98545;
+}
+
+.THIS .acn-status-completed {
+    background-color: #5084c5;
+    color: white;
+}
+
+.THIS .acn-status-completed:hover {
+    background-color: #4074b5;
+}
+
+.THIS .acn-date-outstanding {
+    color: #f99555;
+}
+
+.THIS .acn-home-page-list-item svg:hover {
+	fill: white;
+	background-color: #f99555;
+}
+
+.THIS .acn-home-page-list-item.acn-navigation-list-item-name-grid {
+    color: t(colorTextBrand);
+}
+
+.THIS .acn-home-page-list-item.acn-navigation-list-item-name-grid:hover {
+    text-decoration: underline;
+}
+
+.THIS .acn-home-page-list-item-padding-left-none {
+    padding-left: 0;
+}
+
+.THIS .acn-home-page-list-group.acn-list-row-item-container-grid, 
+.THIS .acn-home-page-list-group-item {
+    min-height: 3.25em !important;
+}
+
+.THIS .acn-home-page-list-group span {
+	margin-top: .5em;
+}
+
+.THIS .acn-home-page-list-group svg {
+	max-height: 1.15em;
+}
+
+.THIS .acn-home-page-list-group:nth-child(2) {
+    border-right: 1px solid hsla(0, 0%, 56.9%, 0.2);
+}
+
+.THIS .acn-home-page-list-item-odd svg, 
+.THIS .acn-home-page-list-item-odd, 
+.THIS .acn-home-page-list-group-odd svg, 
+.THIS .acn-home-page-list-group-odd {
+    background-color: white;
+    fill: grey;
+    font-size: 16px;
+}
+
+.THIS .acn-home-page-list-item-even svg, 
+.THIS .acn-home-page-list-item-even, 
+.THIS .acn-home-page-list-group-even svg, 
+.THIS .acn-home-page-list-group-even {
+    background-color: #f4f4f4;
+    fill: grey;
+    font-size: 16px;
+}
+
+.acn-card-edit-button.THIS, 
+.acn-card-delete-button.THIS {
+    margin-top: .5em;
+    margin-right: .5em;
+}
+
+.THIS .acn-card-delete-button, 
+.THIS .acn-card-edit-button {
+    height: 24px;
+}
+
+.THIS .acn-card-delete-button svg, 
+.THIS .acn-card-edit-button svg {
+	background-color: #f4f4f4;
+    fill:  silver; 
+}
+
+.THIS .agn-card-delete-button:hover svg, 
+.THIS .agn-card-edit-button:hover svg {
+	fill:  t(colorTextBrand); 
+}
+
+.THIS .acn-border-radius-small {
+    border-radius: .3em;
+}
+
+.THIS .acn-border-radius-medium {
+    border-radius: .6em;
+}
+
+.THIS .acn-border-radius-large {
+    border-radius: 1.2em;
+}
+
+.THIS .acn-border-radius-half {
+    border-radius: 50%;
+}
+
+.THIS .acn-border-radius-full {
+    border-radius: 100%;
+}
+
+.THIS .acn-border-none {
+    border: none;
+}
+
+.THIS .acn-border-width-thin {
+    border-width: thin;
+}
+
+.THIS .acn-border-width-medium {
+    border-width: medium;
+}
+
+.THIS .acn-border-width-thick {
+    border-width: thick;
+}
+
+.THIS .acn-border-width-one {
+    border-width: 1px;
+}
+
+.THIS .acn-border-style-solid {
+    border-style: solid;
+}
+
+.THIS .acn-border-color-brand {
+    border-color: t(colorBorderBrand);
+}
+
+.THIS .acn-name-max-width-half .acn-navigation-list-item-name-grid {
+    max-width: 60%;
+    clear: right;
+}
+
+.THIS .acn-browser-factor-PHONE .acn-name-max-width-half .acn-navigation-list-item-name-grid, 
+.THIS .acn-browser-factor-TABLET .acn-name-max-width-half .acn-navigation-list-item-name-grid {
+    max-width: 95%;
+    clear: right;
+}
+
+.THIS .acn-max-width-half {
+    /*max-width: 50%;
+    clear: right;*/
+}
+
+.THIS .acn-shadow-hover-small:hover {
+    box-shadow: 0 0 4px 3px rgba(0,0,0,0.1);
+    transition: opacity 200ms ease-in;
+}
+
+.THIS .acn-font-family-helvetica {
+    font-family: "Helvetica";
+}
+
+.THIS .acn-link-brand-inverted div, 
+.THIS .acn-link-brand-inverted p,
+.THIS .acn-link-brand-inverted span {
+    color: t(colorTextBrand);
+}
+
+.THIS .acn-link-brand-inverted:hover div, 
+.THIS .acn-link-brand-inverted:hover p, 
+.THIS .acn-link-brand-inverted:hover span {
+    color: t(colorTextLinkActive);
+}
+
+.THIS .acn-svg-link-hover:hover span, 
+.THIS .acn-svg-link-hover:hover svg {
+    color: t(colorTextLinkActive);
+    fill: t(colorTextLinkActive);
+}
+
+.THIS .acn-svg-medium svg {
+    transform: scale(1.5);
+}
+
+.THIS .acn-background-none, 
+.THIS .acn-background-none svg {
+    background-color: transparent;
+}
+
+.THIS .acn-zoom img {
+    transform: scale(1);
+    transition: all .4s ease-in-out;
+}
+
+.THIS .acn-zoom:hover img {
+    transform: scale(1.1);
+    transition: all .4s ease-in-out;
+}
+
+.THIS .acn-zoom .acn-navigation-list-item-img-Tag.uiOutputRichText {
+    overflow: hidden;
+}
+
+.THIS .acn-padding-hairline {
+    padding: 1px;
+}
+
+.THIS .acn-padding-cell-small {
+    padding: .5em
+}
+
+.THIS .acn-button-brand li {
+    color: t(colorTextButtonBrand);
+    background-color: t(colorBackgroundButtonBrand);
+    max-width: 50%;
+    text-align: center;
+}
+
+.THIS .acn-browser-factor-PHONE .acn-button-brand li, 
+.THIS .acn-browser-factor-TABLET .acn-button-brand li {
+    max-width: 95%;
+}
+
+.THIS .acn-faux-button-brand li {
+    color: t(colorTextButtonBrand);
+    background-color: t(colorBackgroundButtonBrand);
+    max-width: 50%;
+    border-radius: 3px;
+    padding: .5em;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.THIS .acn-browser-factor-PHONE .acn-faux-button-brand li, 
+.THIS .acn-browser-factor-TABLET .acn-faux-button-brand li {
+    max-width: 95%;
+}
+
+.THIS .acn-color-overlay-brand {
+    color: t(colorTextButtonBrand);
+}
+
+.THIS .acn-height-all {
+    min-height: 4em;
+}
+
+.THIS .acn-padding-row-small {
+    padding-top: .5em !important;
+    padding-bottom: .5em !important;
+}
+
+.THIS .acn-justify-content-initial {
+    justify-content: initial;
+}
+
+.THIS .acn-line-height-normal {
+    line-height: 1em;
+}
+
+.THIS .acn-line-height-large {
+    line-height: 1.5em;
+}
+
+.THIS .acn-line-height-larger {
+    line-height: 2.5em;
+}
+
+.THIS .acn-line-height-largest {
+    line-height: 3.5em;
+}
+
+.THIS .acn-cursor-pointer {
+    cursor: pointer !important;
+}
+
+.THIS .acn-cursor-default {
+    cursor: default;
+}
+
+.THIS .acn-image-thumbnail-smallest {
+    width: 24px;
+}
+
+.THIS .acn-image-thumbnail-smaller {
+    width: 48px;
+}
+
+.THIS .acn-image-thumbnail-small {
+    
+}
+
+.THIS .acn-round-border-small {
+    border-radius: .1em;
+}
+
+.THIS .acn-round-border-medium {
+    border-radius: .3em;
+}
+
+.THIS .acn-round-border-normal {
+    border-radius: .5em;
+}
+
+.THIS .acn-round-border-large {
+    border-radius: .7em;
+}
+
+.THIS .acn-round-border-larger {
+    border-radius: .9em;
+}
+
+.THIS .acn-round-border-largest {
+    border-radius: calc(height/2);
+}
+
+.THIS .acn-border-thin {
+    border-width: 1px;
+}
+
+.THIS .acn-border-none {
+    border: none;
+}
+
+.THIS .acn-border-style-solid {
+    border-style: solid;
+}
+
+.THIS .acn-border-brand {
+    border-color: t(colorBorderBrand);
+}
+
+.THIS .acn-border-light {
+    border-color: RGBA(128,128,128,0.5);
+}
+
+.THIS .acn-border-hover-shadow:hover {
+    box-shadow: 1px 2px 4px rgba(128, 128, 128, .5);
+}
+
+.THIS .acn-text-align-left {
+    text-align: left;
+}
+
+.THIS .acn-text-align-right {
+    text-align: right;
+}
+
+.THIS .acn-text-align-center {
+    text-align: center;
+}
+
+.THIS .acn-text-align-inherit {
+    text-align: inherit;
+}
+
+.THIS .acn-text-default, 
+.THIS .acn-text-default svg {
+    color: token(colorTextDefault);
+    fill: token(colorTextDefault);
+}
+
+.THIS .acn-text-default-li li {
+    color: token(colorTextDefault);
+}
+
+.THIS .acn-text-brand {
+    color: token(colorTextBrand);
+}
+
+.THIS .acn-text-brand-li li {
+    color: token(colorTextBrand);
+}
+
+.THIS .acn-text-button-brand {
+    color: token(colorTextButtonBrand);
+}
+
+.THIS .acn-svg-background-color-transparent svg {
+    background-color: transparent;
+}
+
+.THIS .acn-svg-background-color-brand svg {
+    background-color: token(colorBrand);
+}
+
+.THIS .acn-svg-color-brand svg {
+    fill: token(colorTextBrand);
+}
+
+.THIS .acn-background-color-default {
+    background-color: t(colorBackground);
+}
+
+.THIS .acn-background-color-brand {
+    background-color: t(colorBrand);
+}
+
+.THIS .acn-dark {
+    filter: brightness(80%);
+}
+
+.THIS .acn-darker {
+    filter: brightness(60%);
+}
+
+.THIS .acn-darkest {
+    filter: brightness(40%);
+}
+
+.THIS .acn-light {
+    filter: brightness(125%);
+}
+
+.THIS .acn-lighter {
+    filter: brightness(150%);
+}
+
+.THIS .acn-lightest {
+    filter: brightness(175%);
+}
+
+.THIS .acn-font-bold-name .acn-navigation-list-item-name-grid label, 
+.THIS .acn-font-bold-name .acn-navigation-list-item-name-grid p, 
+.THIS .acn-font-bold-name .acn-navigation-list-item-name-grid span, 
+.THIS .acn-font-bold {
+    font-weight: 600;
+}
+
+.THIS .acn-font-bold-name .acn-navigation-list-item-name-grid {
+    font-weight: 600;
+}
+
+
+.THIS .acn-font-bolder {
+    font-weight: 700;
+}
+
+.THIS .acn-font-boldest {
+    font-weight: 800;
+}
+
+.THIS .acn-font-bold-li li {
+    font-weight: 600;
+}
+
+.THIS .acn-font-bolder-li li {
+    font-weight: 700;
+}
+
+.THIS .acn-font-boldest-li li {
+    font-weight: 800;
+}
+
+.THIS .acn-font-smallest div, 
+.THIS .acn-font-smallest div span, 
+.THIS .acn-font-smallest span, 
+.THIS .acn-font-smallest p, 
+.THIS .acn-font-smallest {
+    font-size: .7em;
+}
+
+.THIS .acn-font-smaller div, 
+.THIS .acn-font-smaller div span, 
+.THIS .acn-font-smaller span, 
+.THIS .acn-font-smaller p, 
+.THIS .acn-font-smaller {
+    font-size: .85em;
+}
+
+.THIS .acn-font-small div, 
+.THIS .acn-font-small div span, 
+.THIS .acn-font-small span, 
+.THIS .acn-font-small p, 
+.THIS .acn-font-small {
+    font-size: .9em;
+}
+
+.THIS .acn-font-normal div, 
+.THIS .acn-font-normal div span, 
+.THIS .acn-font-normal span, 
+.THIS .acn-font-normal p, 
+.THIS .acn-font-normal {
+    font-size: 1em;
+}
+
+.THIS .acn-font-normal-x div, 
+.THIS .acn-font-normal-x div span, 
+.THIS .acn-font-normal-x span, 
+.THIS .acn-font-normal-x p, 
+.THIS .acn-font-normal-x {
+    font-size: 1.15em;
+}
+
+.THIS .acn-browser-factor-PHONE .acn-font-normal-x div, 
+.THIS .acn-browser-factor-PHONE .acn-font-normal-x div span, 
+.THIS .acn-browser-factor-PHONE .acn-font-normal-x span, 
+.THIS .acn-browser-factor-PHONE .acn-font-normal-x p, 
+.THIS .acn-browser-factor-PHONE .acn-font-normal-x, 
+.THIS .acn-browser-factor-TABLET .acn-font-normal-x div, 
+.THIS .acn-browser-factor-TABLET .acn-font-normal-x div span, 
+.THIS .acn-browser-factor-TABLET .acn-font-normal-x span, 
+.THIS .acn-browser-factor-TABLET .acn-font-normal-x p, 
+.THIS .acn-browser-factor-TABLET .acn-font-normal-x {
+    font-size: 1.0em;
+}
+
+.THIS .acn-font-large div, 
+.THIS .acn-font-large div span, 
+.THIS .acn-font-large span, 
+.THIS .acn-font-large p, 
+.THIS .acn-font-large {
+    font-size: 1.25em;
+}
+
+.THIS .acn-browser-factor-PHONE .acn-font-large div, 
+.THIS .acn-browser-factor-PHONE .acn-font-large div span, 
+.THIS .acn-browser-factor-PHONE .acn-font-large span, 
+.THIS .acn-browser-factor-PHONE .acn-font-large p, 
+.THIS .acn-browser-factor-PHONE .acn-font-large, 
+.THIS .acn-browser-factor-TABLET .acn-font-large div, 
+.THIS .acn-browser-factor-TABLET .acn-font-large div span, 
+.THIS .acn-browser-factor-TABLET .acn-font-large span, 
+.THIS .acn-browser-factor-TABLET .acn-font-large p, 
+.THIS .acn-browser-factor-TABLET .acn-font-large {
+    font-size: 1.05em;
+}
+
+.THIS .acn-font-large-x div, 
+.THIS .acn-font-large-x div span, 
+.THIS .acn-font-large-x span, 
+.THIS .acn-font-large-x p, 
+.THIS .acn-font-large-x {
+    font-size: 1.35em;
+}
+
+.THIS .acn-browser-factor-PHONE .acn-font-large-x div, 
+.THIS .acn-browser-factor-PHONE .acn-font-large-x div span, 
+.THIS .acn-browser-factor-PHONE .acn-font-large-x span, 
+.THIS .acn-browser-factor-PHONE .acn-font-large-x p, 
+.THIS .acn-browser-factor-PHONE .acn-font-large-x, 
+.THIS .acn-browser-factor-TABLET .acn-font-large-x div, 
+.THIS .acn-browser-factor-TABLET .acn-font-large-x div span, 
+.THIS .acn-browser-factor-TABLET .acn-font-large-x span, 
+.THIS .acn-browser-factor-TABLET .acn-font-large-x p, 
+.THIS .acn-browser-factor-TABLET .acn-font-large-x {
+    font-size: 1em;
+}
+
+.THIS .acn-font-larger div, 
+.THIS .acn-font-larger div span, 
+.THIS .acn-font-larger span, 
+.THIS .acn-font-larger p, 
+.THIS .acn-font-larger {
+    font-size: 1.5em;
+}
+
+.THIS .acn-browser-factor-PHONE .acn-font-larger div, 
+.THIS .acn-browser-factor-PHONE .acn-font-larger div span, 
+.THIS .acn-browser-factor-PHONE .acn-font-larger span, 
+.THIS .acn-browser-factor-PHONE .acn-font-larger p, 
+.THIS .acn-browser-factor-PHONE .acn-font-larger, 
+.THIS .acn-browser-factor-TABLET .acn-font-larger div, 
+.THIS .acn-browser-factor-TABLET .acn-font-larger div span, 
+.THIS .acn-browser-factor-TABLET .acn-font-larger span, 
+.THIS .acn-browser-factor-TABLET .acn-font-larger p, 
+.THIS .acn-browser-factor-TABLET .acn-font-larger {
+    font-size: 1.25em;
+}
+
+.THIS .acn-font-largest div, 
+.THIS .acn-font-largest span, 
+.THIS .acn-font-largest p, 
+.THIS .acn-font-largest {
+    font-size: 2em;
+}
+
+.THIS .acn-browser-factor-PHONE .acn-font-largest div, 
+.THIS .acn-browser-factor-PHONE .acn-font-largest span, 
+.THIS .acn-browser-factor-PHONE .acn-font-largest p, 
+.THIS .acn-browser-factor-PHONE .acn-font-largest, 
+.THIS .acn-browser-factor-TABLET .acn-font-largest div, 
+.THIS .acn-browser-factor-TABLET .acn-font-largest span, 
+.THIS .acn-browser-factor-TABLET .acn-font-largest p, 
+.THIS .acn-browser-factor-TABLET .acn-font-largest {
+    font-size: 1.5em;
+}
+
+.THIS .acn-font-largest-x div, 
+.THIS .acn-font-largest-x div span, 
+.THIS .acn-font-largest-x span, 
+.THIS .acn-font-largest-x p, 
+.THIS .acn-font-largest-x {
+    font-size: 3em;
+}
+
+.THIS .acn-browser-factor-PHONE .acn-font-largest-x div, 
+.THIS .acn-browser-factor-PHONE .acn-font-largest-x div span, 
+.THIS .acn-browser-factor-PHONE .acn-font-largest-x span, 
+.THIS .acn-browser-factor-PHONE .acn-font-largest-x p, 
+.THIS .acn-browser-factor-PHONE .acn-font-largest-x, 
+.THIS .acn-browser-factor-TABLET .acn-font-largest-x div, 
+.THIS .acn-browser-factor-TABLET .acn-font-largest-x div span, 
+.THIS .acn-browser-factor-TABLET .acn-font-largest-x span, 
+.THIS .acn-browser-factor-TABLET .acn-font-largest-x p, 
+.THIS .acn-browser-factor-TABLET .acn-font-largest-x {
+    font-size: 2em;
+}
+
+.THIS .acn-font-largest-xx div, 
+.THIS .acn-font-largest-xx div span, 
+.THIS .acn-font-largest-xx span, 
+.THIS .acn-font-largest-xx p, 
+.THIS .acn-font-largest-xx {
+    font-size: 4em;
+}
+
+.THIS .acn-browser-factor-PHONE .acn-font-largest-xx div, 
+.THIS .acn-browser-factor-PHONE .acn-font-largest-xx div span, 
+.THIS .acn-browser-factor-PHONE .acn-font-largest-xx span, 
+.THIS .acn-browser-factor-PHONE .acn-font-largest-xx p, 
+.THIS .acn-browser-factor-PHONE .acn-font-largest-xx, 
+.THIS .acn-browser-factor-TABLET .acn-font-largest-xx div, 
+.THIS .acn-browser-factor-TABLET .acn-font-largest-xx div span, 
+.THIS .acn-browser-factor-TABLET .acn-font-largest-xx span, 
+.THIS .acn-browser-factor-TABLET .acn-font-largest-xx p, 
+.THIS .acn-browser-factor-TABLET .acn-font-largest-xx {
+    font-size: 3em;
+}
+
+.THIS .acn-font-smallest-li li {
+    font-size: .7em;
+}
+
+.THIS .acn-browser-factor-PHONE .acn-font-smallest-li li, 
+.THIS .acn-browser-factor-TABLET .acn-font-smallest-li li {
+    font-size: .7em;
+}
+
+.THIS .acn-font-smaller-li li {
+    font-size: .8em;
+}
+
+.THIS .acn-browser-factor-PHONE .acn-font-smaller-li li, 
+.THIS .acn-browser-factor-TABLET .acn-font-smaller-li li {
+    font-size: .8em;
+}
+
+.THIS .acn-font-small-li li {
+    font-size: .8em;
+}
+
+.THIS .acn-browser-factor-PHONE .acn-font-small-li li, 
+.THIS .acn-browser-factor-TABLET .acn-font-small-li li {
+    font-size: .9em;
+}
+
+.THIS .acn-font-medium-li li {
+    font-size: .9em;
+}
+
+.THIS .acn-browser-factor-PHONE .acn-font-medium-li li, 
+.THIS .acn-browser-factor-TABLET .acn-font-medium-li li {
+    font-size: .9em;
+}
+
+.THIS .acn-font-normal-li li {
+    font-size: 1em;
+}
+
+.THIS .acn-browser-factor-PHONE .acn-font-normal-li li, 
+.THIS .acn-browser-factor-TABLET .acn-font-normal-li li {
+    font-size: 1em;
+}
+
+.THIS .acn-font-large-li li {
+    font-size: 1.25em;
+}
+
+.THIS .acn-browser-factor-PHONE .acn-font-large-li li, 
+.THIS .acn-browser-factor-TABLET .acn-font-large-li li {
+    font-size: 1.25em;
+}
+
+.THIS .acn-font-larger-li li {
+    font-size: 1.5em;
+}
+
+.THIS .acn-browser-factor-PHONE .acn-font-larger-li li, 
+.THIS .acn-browser-factor-TABLET .acn-font-larger-li li {
+    font-size: 1.5em;
+}
+
+.THIS .acn-font-largest-li li {
+    font-size: 2em;
+}
+
+.THIS .acn-browser-factor-PHONE .acn-font-largest-li li, 
+.THIS .acn-browser-factor-TABLET .acn-font-largest-li li {
+    font-size: 2em;
+}
+
+.THIS .acn-min-height-five-units {
+	min-height: 10em;
+}
+
+.THIS .navigationCardHero-item-container-grid {
+    color: white;
+    cursor: default;
+}
+
+.THIS .navigationCardHero-grid.acn-navigation-list-item-description-grid.uiOutputRichText {
+    color: white;
+    text-align: center;
+    font-size: 4em;
+    font-weight: 600;
+}
+
+.THIS .navigationCardHero-grid.acn-navigation-list-item-description-grid.uiOutputRichText li {
+    font-size: 24px;
+    font-weight: 400;
+    cursor: pointer;
+    padding: 2em;
+    text-align: center;
+    -webkit-transition: font 0.1s ease;
+    -moz-transition: font 0.1s ease;
+    -o-transition: font 0.1s ease;
+    -ms-transition: font 0.1s ease;
+}
+
+.THIS .navigationCardHero-grid.acn-navigation-list-item-description-grid.uiOutputRichText li:hover {
+    font-weight: 600;
+    -webkit-transition: font 0.1s ease;
+    -moz-transition: font 0.1s ease;
+    -o-transition: font 0.1s ease;
+    -ms-transition: font 0.1s ease;
+}
+
+.THIS .navigationCardAlternateBlocksOdd-item-container-grid {
+    background-color: rgb(127, 55, 155);
+    color: white;
+    font-size: 1.45em;
+    margin: 1em;
+    padding: .5em;
+    text-align: center;
+}
+
+.THIS .navigationCardAlternateBlocksOdd-item-container-grid:hover {
+    background-color: rgb(117, 45, 145);
+}
+
+.THIS .navigationCardAlternateBlocksOdd-item-container-grid:active {
+    background-color: rgb(107, 35, 135);
+}
+
+.THIS .navigationCardAlternateBlocksEven-item-container-grid {
+    background-color: #e2e2e2;
+    color: rgb(127, 55, 155);
+    font-size: 1.45em;
+    margin: 1em;
+    padding: .25em;
+    text-align: center;
+}
+
+.THIS .navigationCardAlternateBlocksEven-item-container-grid:hover {
+    background-color: RGBA(216, 216, 216, 1);
+}
+
+.THIS .navigationCardAlternateBlocksEven-item-container-grid:active {
+    background-color: RGBA(206, 206, 206, 1);
+}
+
+.THIS .navigationCardsBlockButtons-item-container-grid {
+    background-color: t(colorBackgroundButtonBrand);
+    /*border: 2px solid white;*/
+    color: white;
+    font-size: 1.25em;
+    margin: 1em 0 1em .25em;
+    padding: .25em;
+    text-align: center;
+}
+
+.THIS .navigationCardsBlockButtons-item-container-grid:hover {
+    background-color: t(colorBackgroundButtonBrandHover);
+}
+
+.THIS .navigationCardsBlockButtons-item-container-grid:active {
+    background-color: t(colorBackgroundButtonBrandActive);
+}
+
+.THIS .navigationCardNews-item-container-grid {
+    background-color: RGBA(253,253,253,.9);
+    cursor: default;
+}
+
+.THIS .navigationCardNews-item-container-grid .acn-navigation-list-item-image-grid .navigationCardNews-grid.acn-navigation-list-item-img-Tag.uiOutputRichText img {
+    width: 100% !important;
+    object-fit: cover;
+}
+
+.THIS .navigationCardNews-item-container-grid .acn-navigation-list-item-name-grid {
+    color: black;
+    font-size: 24px;
+    font-weight: bold;
+    
+}
+
+.THIS .navigationCardNews-grid.acn-navigation-list-item-description-grid.uiOutputRichText {
+    color: black;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.THIS .navigationCardNews-grid.acn-navigation-list-item-description-grid.uiOutputRichText .acn-navigation-item-description-paragraph-last, 
+.THIS .navigationCardNews-grid.acn-navigation-list-item-description-grid.uiOutputRichText li {
+    color: t(colorTextBrand);
+    padding-top: 1em;
+    -webkit-transition: all 0.1s ease;
+    -moz-transition: all 0.1s ease;
+    -o-transition: all 0.1s ease;
+    -ms-transition: all 0.1s ease;
+}
+
+.THIS .navigationCardNews-grid.acn-navigation-list-item-description-grid.uiOutputRichText .acn-navigation-item-description-paragraph-last:hover, 
+.THIS .navigationCardNews-grid.acn-navigation-list-item-description-grid.uiOutputRichText li:hover {
+    color: t(colorTextBrand);
+    cursor: pointer;
+    text-decoration: underline;
+    -webkit-transition: all 0.1s ease;
+    -moz-transition: all 0.1s ease;
+    -o-transition: all 0.1s ease;
+    -ms-transition: all 0.1s ease;
+}
+
+.THIS .navigationBandBandWithButton-item-container-grid {
+    background-color: RGBA(1,1,1,.9);
+    color: white;
+    cursor: default;
+}
+
+.THIS .navigationBandBandWithButton-grid.acn-navigation-list-item-description-grid.uiOutputRichText {
+    color: white;
+    text-align: center;
+    font-size: 36px;
+    font-weight: 100;
+}
+
+.THIS .acn-li-button-border-white,
+.THIS .acn-li-button-border-white li {
+    border-color: white !important;
+}
+
+.THIS .navigationBandBandWithButton-grid.acn-navigation-list-item-description-grid.uiOutputRichText li {
+    border: 1px t(colorBorderBrand) solid;
+    border-radius: .3em;
+    cursor: pointer;
+    min-width: 10em;
+    /*min-height: 4em;*/
+    padding: 10px 0;
+    margin: 25px 40% 10px;
+    font-size: 18px;
+    text-align: center;
+    -webkit-transition: all 0.1s ease;
+    -moz-transition: all 0.1s ease;
+    -o-transition: all 0.1s ease;
+    -ms-transition: all 0.1s ease;
+}
+
+.THIS .navigationBandBandWithButton-grid.acn-navigation-list-item-description-grid.uiOutputRichText li:hover {
+    /*border: 2px white solid;*/
+    background-color: RGBA(1,1,1,.4);
+    /*font-weight: 600;*/
+    -webkit-transition: all 0.1s ease;
+    -moz-transition: all 0.1s ease;
+    -o-transition: all 0.1s ease;
+    -ms-transition: all 0.1s ease;
+}
+
+.THIS .navigationCardFacts-item-container-grid {
+    /*background-color: t(colorBackground);*/
+    /*border: rgba(186, 202, 217, 0.7) 1px solid;
+    border-radius: .3em;*/
+    cursor: default;
+    margin-left: .2em;
+    margin-right: .2em;
+    overflow: hidden;
+}
+
+.THIS .navigationCardFacts-item-container-grid:hover {
+    /*background-color: rgba(206, 222, 237, 0.7);*/
+}
+
+.THIS .navigationCardFacts-item-container-grid:hover .uiOutputRichText {
+    /*color: white !important;*/
+}
+
+.acn-padding-none.THIS, 
+.THIS .acn-padding-none {
+    padding: 0;
+}
+
+.THIS .acn-fact-normal-small .navigationCardFacts-grid.acn-navigation-list-item-description-grid.uiOutputRichText {
+    font-size: .9em;
+}
+
+.THIS .acn-text-brand .navigationCardFacts-grid.acn-navigation-list-item-description-grid.uiOutputRichText {
+    color: token(colorTextDefault);
+    min-height: 7em;
+    padding-top: .5em;
+}
+
+.THIS .navigationCardFacts-grid.acn-navigation-list-item-description-grid.uiOutputRichText .acn-navigation-item-description-paragraph-last, 
+.THIS .navigationCardFacts-grid.acn-navigation-list-item-description-grid.uiOutputRichText li {
+    color: token(colorTextBrand);
+	cursor: default;
+}
+
+.THIS .navigationCardFacts-grid.acn-navigation-list-item-description-grid.uiOutputRichText .acn-navigation-item-description-paragraph-last:hover, 
+.THIS .navigationCardFacts-grid.acn-navigation-list-item-description-grid.uiOutputRichText li:hover {
+	cursor: pointer;
+    text-decoration: underline;
+}
+
+.THIS .navigationCardIconPill-item-container-grid {
+    border: t(colorBorderBrand) 1px solid;
+    border-radius: 2em;
+    min-height: initial;
+    height: initial;
+    margin: .5em;
+    background-color: t(colorBrand);
+    color: white;
+    opacity: .9;
+}
+
+.THIS .navigationCardIconPill-first-grid-item {
+    /*padding: 0;*/
+}
+
+.THIS .navigationCardIconPill-grid.acn-navigation-list-item-description-grid {
+    text-align: center; 
+    font-size: 1.25em;
+}
+
+.THIS .acn-grid-no-padding {
+    padding: 0;
+}
+
+.THIS .acn-font-size-medium div span {
+    /*font-size: 1.5 !important;
+    line-height: 1.5 !important;*/
+}
+
+.THIS .acn-border-radius-none img {
+    border-radius: 0 !important;
+}
+
+.THIS .acn-text-wrap div span {
+    overflow: initial !important;
+    text-overflow: none !important;
+    white-space: initial !important;
+}
+
+.THIS .acn-padding-left-3px {
+    padding-left: 3px !important;
+}
+
+.THIS .acn-padding-right-3px {
+    padding-right: 3px !important;
+}
+
+.THIS .navigationCardTitleViewAll-list-item-grid, 
+.THIS .navigationCardTitleViewAll-item-container-grid, 
+.THIS .navigationCardTitleViewAll-first-grid-item, 
+.THIS .navigationCardTitleViewAll-second-grid-item, 
+.THIS .navigationCardTitleViewAll-third-grid-item {
+    padding-left: 0;
+}
+
+.THIS .navigationCardTitleViewAll.acn-navigation-list-item-name-grid, 
+.THIS .navigationCardTitleViewAll.acn-navigation-list-item-name-grid span {
+    color: t(colorTextLabel);
+    cursor: default;
+}
+
+.THIS .navigationCardTitleViewAll-grid.acn-navigation-list-item-description-grid.uiOutputRichText {
+    text-align: right;
+}
+
+.acn-navigation-item-container.navigationProductCard.THIS {
+    border: .5px t(colorBorderInputDisabled) solid;
+    border-radius: t(borderRadiusSmall);
+    background-color: white;
+    -webkit-box-shadow: 6px 6px 10px -6px rgba(149,149,149,1);
+    -moz-box-shadow: 6px 6px 10px -6px rgba(149,149,149,1);
+    box-shadow: 6px 6px 10px -6px rgba(149,149,149,1);
+    padding-left: .5em;
+    max-height: 4em;
+}
+
+.acn-navigation-item-container.navigationProductCard.THIS:hover {
+    border: .5px t(colorBorder) solid;
+    -webkit-box-shadow: 8px 8px 10px -6px rgba(149,149,149,1);
+    -moz-box-shadow: 8px 8px 10px -6px rgba(149,149,149,1);
+    box-shadow: 8px 8px 10px -6px rgba(149,149,149,1);
+}
+
+.acn-navigation-item-container.navigationProductCard.THIS:active {
+    -webkit-box-shadow: 4px 4px 10px -6px rgba(149,149,149,1);
+    -moz-box-shadow: 4px 4px 10px -6px rgba(149,149,149,1);
+    box-shadow: 4px 4px 10px -6px rgba(149,149,149,1);
+}
+
+.acn-navigation-item-container.navigationProductCard.acn-navigation-list-item-selected.THIS {
+    background-color: rgba(123, 199, 249, .2);
+}
+
+.THIS .navigationProductCard.navigationProductCard-first-grid-item {
+    max-height: 4em;
+}
+
+.THIS .navigationProductCard.acn-navigation-list-item-name-grid span {
+    font-size: 1.5em;
+}
+
+.acn-navigation-item-container.navigationCardCircleFull.THIS {
+    border: .15em t(colorBorderError) solid;
+    border-radius: 50%;
+    padding-bottom: 0vw;
+    width: 15vw;
+    height: 15vw;
+}
+
+.THIS .navigationCardCircleFull.acn-navigation-list-item-name-grid span {
+    color: t(colorTextError);
+}
+
+.acn-navigation-item-container.navigationCardCircleFull.THIS:hover {
+    /*background-color: t(colorBorderError);*/
+}
+
+.acn-navigation-item-container.navigationCardCircleFull.THIS:hover .navigationCardCircleFull.acn-navigation-list-item-name-grid span {
+    color: white;
+}
+
+
+.THIS .navigationCardMenuItem-grid.acn-navigation-list-item-description-grid.uiOutputRichText {
+    background-color: t(colorBrand);
+    color: t(colorTextButtonBrand);
+    text-align: center;
+}
+
+.acn-navigation-item-container.navigationCardMenuItem.acn-navigation-list-item-disabled.THIS:hover a {
+    cursor: default;
+}
+
+
+/************** Navigation Card Contact Start ********************/
+.THIS .navigationCardContact-item-container-grid, 
+.THIS .navigationCardContact-first-grid-item {
+    /*height: 90px;
+    padding: .15em .5em;*/
+}
+
+.THIS .navigationCardContact-grid.acn-navigation-list-item-img-Tag.uiOutputRichText {
+    max-height: 60px;
+    max-width: 60px;
+}
+
+.THIS .navigationCardContact-grid.acn-navigation-list-item-description-grid.uiOutputRichText {
+	color: t(colorTextLabel);
+    line-height: 1.1em;
+    max-height: 3.5em;
+    overflow: hidden;
+}
+
+.THIS .navigationCardContact-second-grid-item.slds-p-around_small {
+    padding: 0.1em;
+}
+
+.THIS .navigationCardContact.acn-navigation-list-item-name-grid {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.THIS .navigationCardContact.acn-navigation-list-item-name-grid span {
+    color: t(colorTextBrand);
+	font-size: 1.25em;
+    font-weight: 600;
+	line-height: 1.0;
+}
+
+.acn-navigation-item-container.navigationCardContact.THIS {
+    border: 1px solid t(colorBorderBrand);
+    border-radius: t(borderRadiusMedium);
+    height: 90px;
+    padding: .3em;
+    box-shadow: 0 0px 0px rgba(0,0,0,0.15);
+	transition: box-shadow 0.05s ease-in-out;
+}
+
+.acn-navigation-item-container.navigationCardContact.THIS:hover  {
+    box-shadow: 0 3px 12px rgba(0,0,0,0.3);
+}
+
+.acn-navigation-item-container.navigationCardContact.THIS:active  {
+    box-shadow: none;
+}
+
+.acn-navigation-item-container.navigationCardContact.acn-navigation-list-item-disabled.THIS:hover  {
+    box-shadow: none;
+}
+
+.acn-navigation-item-container.navigationCardContact.acn-navigation-list-item-disabled.THIS:hover a {
+    cursor: default;
+}
+
+.THIS .navigationCardContact.acn-navigation-list-item-img-Tag.uiOutputRichText, 
+.THIS .navigationCardContact.acn-navigation-list-item-transparent-div, 
+.THIS .navigationCardContact.acn-navigation-list-item-description.uiOutputRichText {
+
+}
+
+.THIS .navigationCardContact.acn-navigation-list-item-img-Tag.uiOutputRichText {
+	clear: both;
+    display: inline-block;
+    height: 64px;
+	margin-top: 15px;
+    width: 64px;
+}
+
+.THIS .navigationCardContact.acn-navigation-list-item-img-Tag.uiOutputRichText img, 
+.THIS .navigationCardContact-grid.acn-navigation-list-item-img-Tag.uiOutputRichText img {
+    border-radius: 50%;
+    object-fit: cover;
+    margin: auto;
+}
+
+.THIS .navigationCardContact.acn-navigation-list-item-transparent-div {
+    display: inline-block;
+    padding-left: 6em;
+    position: absolute;
+}
+
+.THIS .navigationCardContact .acn-navigation-list-item-transparent-div span {
+	font-size: 1.5em;
+	line-height: 1.25;
+    color: t(colorTextBrand);
+}
+
+.THIS .navigationCardContact-grid.acn-navigation-list-item-description-grid.uiOutputRichText {
+    line-height: 1.2;
+}
+
+.THIS .navigationCardContact.acn-navigation-list-item-description.uiOutputRichText {
+    color: t(colorTextLabel);
+    display: inline-block;
+    /*margin-left: 70px;*/
+    margin-top: 30px;
+    padding-left: 6em;
+    position: absolute;
+}
+
+.acn-navigation-item-container.navigationCardContact.acn-navigation-list-item-selected.THIS {
+    background-color: t(colorBackgroundRowSelected);
+}
+
+.THIS .acn-thumbnail.navigationCardContact-item-container-grid .navigationCardContact-grid.acn-navigation-list-item-img-Tag.uiOutputRichText {
+    max-height: 120px;
+    max-width: 100%;
+    overflow: hidden;
+    object-fit: scale-down;
+}
+
+.THIS .acn-thumbnail.navigationCardContact-item-container-grid .navigationCardContact-grid.acn-navigation-list-item-img-Tag.uiOutputRichText img {
+    height: 15em;
+    width: 100%;
+    border-radius: 0;
+    object-fit: scale-down;
+	margin-top: -34px;
+}
+
+.acn-navigation-item-container.navigationCardContact.acn-thumbnail.THIS, 
+.THIS .acn-thumbnail.navigationCardContact-item-container-grid {
+    height: 250px;
+}
+
+.THIS .acn-thumbnail .navigationCardContact.acn-navigation-list-item-name-grid:before {
+    content: " ";
+    border-top: 2px t(colorBorderBrand) solid;
+    width: 30%;
+    height: 2px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    display: block;
+    margin-bottom: .75em;
+    margin-top: .5em;
+}
+
+.THIS .acn-thumbnail .navigationCardContact.acn-navigation-list-item-name-grid span {
+    color: t(colorTextDefault);
+    font-weight: bold;
+    font-family: t(fontFamily);
+    font-size: large;
+}
+
+.THIS .acn-thumbnail .navigationCardContact-grid.acn-navigation-list-item-description-grid.uiOutputRichText {
+    color: t(colorTextLabel);
+    font-family: t(fontFamily);
+    font-weight: bold;
+}
+
+/**************** Navigation Card Contact End ********************/
+
+.THIS .navigationScoreCard-item-container-grid {
+    min-height: 10em;
+}
+
+.THIS .navigationScoreCard-first-grid-item,  
+.THIS .navigationScoreCard-second-grid-item,  
+.THIS .navigationScoreCard-third-grid-item {
+    text-align: center;
+}
+
+.THIS .navigationScoreCard-first-grid-item {
+    height: 4em;
+    vertical-align: middle;
+}
+
+.THIS .navigationScoreCard-second-grid-item {
+    height: 4em;
+}
+
+.THIS .navigationScoreCard-third-grid-item {
+    height: 10em;
+}
+
+.THIS .navigationScoreCard-grid.acn-navigation-list-item-name-grid, 
+.THIS .navigationScoreCard-grid.acn-navigation-list-item-description-grid.uiOutputRichText {
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    height: 100%;
+    padding: 1em;
+}
+
+.THIS .navigationScoreCard-grid.acn-navigation-list-item-description-grid.uiOutputRichText {
+    font-size: token(acnScoreCardDescriptionFontSize);
+    color: token(acnScoreCardDescriptionFontColor);
+    text-align: token(acnScoreCardDescriptionTextAlign);
+}
+
+.acn-navigation-item-container.navigationScoreCard.THIS {
+    border: 1px solid t(acnScoreCardDescriptionFontColor);
+    overflow: hidden;
+    border-radius: 3px;
+}
+
+
+/***********************************************************************************/
+/***********************************************************************************/
+/***********************************************************************************/
+/***********************************************************************************/
+.acn-navigation-item-container.navigationCardIconAndMask.THIS {
+    position: relative;
+    height: 350px;
+}
+
+.THIS .navigationCardIconAndMask.acn-navigation-list-item-transparent-div {
+    position: absolute;
+    right: 0;
+    top: 250px;
+    left: 0;
+    margin: auto;
+}
+
+.THIS .navigationCardIconAndMask.acn-navigation-list-item-transparent-div span {
+	color: t(colorTextDefault);
+    font-weight: 600;
+    font-size: 18px;
+    text-decoration: none;
+    text-transform: lowercase;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.THIS .navigationCardIconAndMask.acn-navigation-list-item-img-Tag {
+    position: relative;
+    max-height: 300px;
+}
+
+.THIS .navigationCardIconAndMask.acn-navigation-list-item-img-Tag p {
+    max-height: 250px;
+    max-width: 250px;
+    margin: auto;
+}
+
+.THIS .navigationCardIconAndMask.acn-navigation-list-item-img-Tag p:nth-child(1):hover {
+    border-radius: 50%;
+    background-color: t(colorBackgroundButtonBrand);
+}
+
+/************** Navigation Card With Rectangle Button Brand Begin ********************/
+.acn-navigation-item-container.navigationCardWithRectangleButtonBrand.THIS {
+    margin: 5px;
+    
+}
+
+.THIS .navigationCardWithRectangleButtonBrand.acn-navigation-list-item-img-Tag p:after, 
+.THIS .navigationCardWithRectangleButtonBrand-fit.acn-navigation-list-item-img-Tag p:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.3);
+    /*z-index: 10;*/
+    top: 0;
+  }
+
+.THIS a.topicLink.navigationCardWithRectangleButtonBrand.acn-navigation-list-anchor {
+    display: block;
+    height: 270px;
+    width: 100%;
+    position: relative;
+    cursor: default;
+}
+
+.THIS .navigationCardWithRectangleButtonBrand.acn-navigation-list-item-transparent-div span {
+	margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 20px;
+    line-height: 1;
+    color: white;
+}
+
+.THIS .navigationCardWithRectangleButtonBrand.acn-navigation-list-item-transparent-div {
+    position: absolute;
+    text-align: left;
+    padding: 0 0 0 20px;
+    top: 25%;
+    width: 100%;
+}
+
+.THIS .navigationCardWithRectangleButtonBrand.acn-navigation-list-item-img-Tag {
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 45%;
+    border-radius: 0px 10px 10px 0px;
+}
+
+.THIS .navigationCardWithRectangleButtonBrand.acn-navigation-list-item-img-Tag p {
+    height: 500px;
+}
+
+.THIS .navigationCardWithRectangleButtonBrand.acn-navigation-list-item-img-Tag img {
+    margin: 0 auto;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.THIS .navigationCardWithRectangleButtonBrand-fit.acn-navigation-list-item-img-Tag img {
+    max-height: 500px !important;
+    object-fit: cover;
+    width:100% !important;
+}
+
+.THIS .navigationCardWithRectangleButtonBrand.acn-navigation-list-item-description {
+    position: absolute;
+    text-align: left;
+    padding: 0 0 0 20px;
+    bottom: 10%;
+    width: 100%;
+    font-family: Arial;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+
+.THIS .navigationCardWithRectangleButtonBrand.acn-navigation-list-item-description p {
+    font-size: 25px;
+    line-height: 40px;
+    color: white;
+}
+
+.THIS .navigationCardWithRectangleButtonBrand.acn-navigation-list-item-description ul {
+    color: white;
+    font-size: 25px;
+    list-style: t(navigationCardWithRectangleButtonDescriptionListListStyle);
+}
+
+.THIS .navigationCardWithRectangleButtonBrand.acn-navigation-list-item-description li:nth-child(1) {
+    line-height: 40px;
+    max-width: 20em;
+}
+
+.THIS .navigationCardWithRectangleButtonBrand.acn-navigation-list-item-description li:nth-child(2) {
+    margin-top: 10px;
+    font-family: kievit-bold;
+    padding: 10px 15px;
+    border: 1px solid #fff;
+    font-size: 12px;
+    width: 9em;
+}
+
+.THIS .navigationCardWithRectangleButtonBrand.acn-navigation-list-item-description li:nth-child(2):hover {
+    transform: scale(1.05);
+}
+
+
+/************** Navigation Card With Rectangle Button Brand End **********************/
+
+.navigationHighlightsGlass.THIS {
+	border-left: 2px solid white;
+    padding-left:2em;
+    margin-left: 1em;
+    min-height: 150px;
+}
+
+.navigationHighlightsGlass.THIS:hover .acn-navigation-list-item-transparent-div, 
+.navigationHighlightsGlass.THIS:hover .acn-navigation-list-item-description {
+	transform: scale(1.05);
+}
+
+.THIS .navigationHighlightsGlass.acn-navigation-list-item-transparent-div {
+    color: t(colorTextButtonBrand);
+    font-weight: 800;
+}
+
+.THIS .navigationHighlightsGlass.acn-navigation-list-item-description {
+    padding-top: 2em;
+    color: white;
+}
+
+.THIS .navigationHighlightsGlass.acn-navigation-list-item-description:hover {
+    /*transform: scale(1.05);*/
+}
+
+.THIS .navigationCardBandSection.acn-lightning-icon-container {
+    width: 100%;
+    position: absolute;
+    display: inline;
+    text-align: center;
+    margin-top: 10%;
+} 
+
+.THIS .navigationCardBandSection.acn-navigation-list-item-transparent-div {
+    position: absolute;
+    font-size: 24px;
+    color: #1a2942;
+    font-family: inherit;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-top: 20%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+}
+
+.THIS .navigationCardBandSection.acn-navigation-list-item-description {
+    position: absolute;
+    font-size: 20px;
+    color: #1a2942;
+    font-family: inherit;
+    font-weight: 200;
+    line-height: 20px;
+    margin-top: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+}
+
+.acn-navigation-item-container.navigationCardIconButton.THIS {
+    min-height: 250px;
+    width: 100%;
+}
+
+.THIS .navigationCardIconButton.acn-navigation-list-item-transparent-div {
+    margin-left: 44%;
+    margin-bottom: 10px;
+    color: #1a2942;
+    font-weight: 700;
+    line-height: 1.1;
+    font-size: 24px;
+    position: absolute;
+} 
+
+.THIS .navigationCardIconButton.acn-lightning-icon-container {
+    margin-left: 41%;
+    position: absolute;
+    display: inline;
+} 
+
+.THIS .navigationCardIconButton.acn-navigation-list-item-img-Tag svg {
+    fill: black;
+}
+
+.THIS .navigationCardIconButton.acn-navigation-list-item-description {
+    margin-left: 33.33333333%;
+    margin-right: 33.33333333%;
+    position: absolute;
+    margin-top: 40px;
+    color: #1a2942;
+    font-size: 21px;
+    font-weight: 200;
+    letter-spacing: .01em;
+    line-height: 20px;
+    text-align: justify;
+}
+
+.THIS .navigationCardIconButton.acn-navigation-list-item-description a:nth-child(1) {
+    color: #1a2942;
+    margin-bottom: 15px;
+    font-size: 21px;
+    font-weight: 200;
+    margin: 0 0 10px;
+    letter-spacing: .01em;
+    line-height: 20px;
+    text-align: justify;
+    /*text-justify: inter-word;*/
+}
+
+.THIS .navigationCardIconButton.acn-navigation-list-item-description a:nth-child(3) {
+    margin: 20px auto;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    background-color: #37474f;
+    border: 1px solid #37474f;
+    color: #fff;
+    border-radius: 2em;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    user-select: none;
+    outline: none!important;
+    height: 40px;
+    box-sizing: border-box;
+    padding-top: 9px;
+}
+
+.THIS .navigationCardIconButton.acn-navigation-list-item-description a:hover:nth-child(3) {
+    background-color: #333;
+    border: 1px solid #333;
+}
+
+.THIS .navigationImageButton.acn-navigation-list-item-transparent-div {
+    background-color: rgba(58, 193, 75, 1);
+    box-sizing: border-box;
+    font-size: 14px;
+    font-weight: 700;
+    height: 40px;
+    border-radius: 3px;
+    line-height: 30px;
+    text-align: center;
+    color: white;
+    width: 106px;
+    float: right;
+    padding-top: 5px;
+    -webkit-box-shadow: 2px 2px 5px 0px rgba(58,193,75,0.26);
+    -moz-box-shadow: 2px 2px 5px 0px rgba(58,193,75,0.26);
+    box-shadow: 2px 2px 5px 0px rgba(58,193,75,0.26);    
+}
+
+.THIS .navigationImageButton.acn-navigation-list-item-transparent-div:hover {
+	width: 106px;
+    border: 1px solid transparent;
+    -webkit-transition: color .25s,background-color .25s,border-color .25s;
+    transition: color .25s,background-color .25s,border-color .25s;
+    background-color: rgba(239, 239, 239, 1);
+    border-color: rgba(229,217,240,1);
+    color: rgba(29, 17, 96, 1);
+	-webkit-box-shadow: 4px 4px 5px 0px rgba(29, 17, 96,0.26);
+    -moz-box-shadow: 4px 4px 5px 0px rgba(29, 17, 96,0.26);
+    box-shadow: 4px 4px 5px 0px rgba(29, 17, 96,0.26);
+}
+
+.THIS .navigationImageButton.acn-navigation-list-item-transparent-div:active {
+    background-color: rgba(58, 193, 75, 1);
+    box-sizing: border-box;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 3px;
+    line-height: 30px;
+    text-align: center;
+    color: white;
+    width: 106px;
+    float: right;
+	-webkit-box-shadow: initial;
+    -moz-box-shadow: initial;
+    box-shadow: initial;
+}
+
+.THIS.navigationCardStarRed, 
+.THIS.navigationCardStarBlue, 
+.THIS.navigationCardStarBrand {
+    min-height: 400px;
+}
+
+.THIS .navigationCardStarRed.acn-navigation-list-item-transparent-div, 
+.THIS .navigationCardStarBlue.acn-navigation-list-item-transparent-div, 
+.THIS .navigationCardStarBrand.acn-navigation-list-item-transparent-div {
+    /*position: absolute;*/
+    text-decoration: none;
+    height: 200px;
+    margin-left: 5px;
+    margin-right: 5px;
+    text-align: center;
+    padding-top: 120px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+}
+
+.THIS .navigationCardStarRed.acn-navigation-list-item-transparent-div,
+.THIS .navigationCardStarRed.acn-navigation-list-item-img-Tag svg, 
+.THIS .navigationCardStarRed.acn-navigation-list-item-img-Tag {
+    background-color: RGB(241,52,41);
+}
+
+.THIS .navigationCardStarBlue.acn-navigation-list-item-transparent-div,
+.THIS .navigationCardStarBlue.acn-navigation-list-item-img-Tag svg, 
+.THIS .navigationCardStarBlue.acn-navigation-list-item-img-Tag {
+    background-color: RGB(41,52,241);
+}
+
+.THIS .navigationCardStarBrand.acn-navigation-list-item-transparent-div, 
+.THIS .navigationCardStarBrand.acn-navigation-list-item-img-Tag svg, 
+.THIS .navigationCardStarBrand.acn-navigation-list-item-img-Tag {
+    background-color: t(colorBrand);
+}
+
+.THIS .navigationCardStarRed.acn-navigation-list-item-transparent-div span, 
+.THIS .navigationCardStarBlue.acn-navigation-list-item-transparent-div span, 
+.THIS .navigationCardStarBrand.acn-navigation-list-item-transparent-div span {
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.THIS .navigationCardStarRed.acn-lightning-icon-container, 
+.THIS .navigationCardStarBlue.acn-lightning-icon-container, 
+.THIS .navigationCardStarBrand.acn-lightning-icon-container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50px;
+    text-align: center;
+    margin-top: -330px;
+}
+
+.THIS .navigationCardStarRed.acn-navigation-list-item-img-Tag svg, 
+.THIS .navigationCardStarBlue.acn-navigation-list-item-img-Tag svg, 
+.THIS .navigationCardStarBrand.acn-navigation-list-item-img-Tag svg {
+    height: 16px;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+    fill: white;
+    border: none !important;
+}
+
+.THIS .navigationCardStarRed.acn-navigation-list-item-img-Tag, 
+.THIS .navigationCardStarBlue.acn-navigation-list-item-img-Tag, 
+.THIS .navigationCardStarBrand.acn-navigation-list-item-img-Tag {
+    top: 5px;
+    width: 100%;
+}
+
+.THIS .navigationCardStarRed.acn-navigation-list-item-description, 
+.THIS .navigationCardStarBlue.acn-navigation-list-item-description, 
+.THIS .navigationCardStarBrand.acn-navigation-list-item-description {
+    padding-top: 10px;
+    text-decoration: none;
+    font-size: 16px;
+    justify-content: space-around;
+    text-align: center;
+    color: rgb(51, 51, 51);
+    line-height: 1.375;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    height: 180px;
+}
+
+.THIS .navigationCardStarRed.acn-navigation-list-item-description li:last-child {
+    color: RGB(241,52,41);
+}
+
+.THIS .navigationCardStarBlue.acn-navigation-list-item-description li:last-child {
+    color: RGB(41,52,241);
+}
+
+.THIS .navigationCardStarBrand.acn-navigation-list-item-description li:last-child{
+    color: t(colorTextBrand);
+}
+
+.THIS .navigationCardStarRed.acn-navigation-list-item-description .acn-navigationstarcard-red-container, 
+.THIS .navigationCardStarBlue.acn-navigation-list-item-description .acn-navigationstarcard-red-container, 
+.THIS .navigationCardStarBrand.acn-navigation-list-item-description .acn-navigationstarcard-red-container {
+    height: 180px;
+    position:relative;
+}
+
+.THIS .navigationCardStarRed.acn-navigation-list-item-description .acn-navigationstarcard-red-link, 
+.THIS .navigationCardStarRed.acn-navigation-list-item-description::last-line {
+    color: RGB(241,52,41);
+}
+
+.THIS .navigationCardStarBlue.acn-navigation-list-item-description .acn-navigationstarcard-red-link, 
+.THIS .navigationCardStarBlue.acn-navigation-list-item-description::last-line {
+    color: RGB(41,52,241) !important;
+}
+
+.THIS .navigationCardStarBrand.acn-navigation-list-item-description .acn-navigationstarcard-red-link, 
+.THIS .navigationCardStarBrand.acn-navigation-list-item-description::last-line {
+    color: t(colorTextBrand);
+}
+
+.THIS .navigationCardStarRed.acn-navigation-list-item-description .acn-navigationstarcard-red-text, 
+.THIS .navigationCardStarRed.acn-navigation-list-item-description li:nth-child(1),
+.THIS .navigationCardStarBlue.acn-navigation-list-item-description .acn-navigationstarcard-red-text, 
+.THIS .navigationCardStarBlule.acn-navigation-list-item-description li:nth-child(1), 
+.THIS .navigationCardStarBrand.acn-navigation-list-item-description .acn-navigationstarcard-red-text, 
+.THIS .navigationCardStarBrand.acn-navigation-list-item-description li:nth-child(1) {
+    color: rgb(51, 51, 51);
+    font-weight: 400;
+    font-family: Lato;
+}
+
+.THIS .navigationCardStarRed.acn-navigation-list-item-description .acn-navigationstarcard-red-link, 
+.THIS .navigationCardStarRed.acn-navigation-list-item-description li:last-child, 
+.THIS .navigationCardStarRed.acn-navigation-list-item-description::last-line, 
+.THIS .navigationCardStarBlue.acn-navigation-list-item-description .acn-navigationstarcard-red-link, 
+.THIS .navigationCardStarBlue.acn-navigation-list-item-description li:last-child, 
+.THIS .navigationCardStarBlue.acn-navigation-list-item-description::last-line, 
+.THIS .navigationCardStarBrand.acn-navigation-list-item-description .acn-navigationstarcard-red-link, 
+.THIS .navigationCardStarBrand.acn-navigation-list-item-description li:last-child, 
+.THIS .navigationCardStarBrand.acn-navigation-list-item-description::last-line {
+    font-family: 'georgia,serif';
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.THIS .navigationCardStarRed.acn-navigation-list-item-description .acn-navigationstarcard-red-link-container, 
+.THIS .navigationCardStarBlue.acn-navigation-list-item-description .acn-navigationstarcard-red-link-container, 
+.THIS .navigationCardStarBrand.acn-navigation-list-item-description .acn-navigationstarcard-red-link-container {
+    margin-top: 30px;
+}
+
+.THIS .navigationCardStarRed.acn-navigation-list-item-description::last-line, 
+.THIS .navigationCardStarRed.acn-navigation-list-item-description li:nth-child(2), 
+.THIS .navigationCardStarBlue.acn-navigation-list-item-description::last-line, 
+.THIS .navigationCardStarBlue.acn-navigation-list-item-description li:nth-child(2), 
+.THIS .navigationCardStarBrand.acn-navigation-list-item-description::last-line, 
+.THIS .navigationCardStarBrand.acn-navigation-list-item-description li:nth-child(2) {
+    font-weight: bold;
+}
+
+.THIS .carouselStretched {
+    
+}
+
+.THIS .carouselStretched.acn-navigation-list-item-description {
+    position: absolute;
+    font-size: 32px;
+    color: white;
+    font-weight: bold;
+    bottom: 30px;
+    left: 20px;
+}
+
+.THIS a.navigationMenuItem span {
+    margin-left: 30px;
+    position: absolute;
+    font-weight: bold;
+}
+
+.THIS a.navigationMenuItem span:hover {
+	color: black;
+}
+
+.THIS a.navigationMenuItem .acn-navigation-list-item-img-Tag {
+    text-align: center;
+    width: 20px;
+}
+
+.THIS a.navigationMenuItem .acn-navigation-list-item-img-Tag img {
+    height: 14px !important;
+    width: auto !important;
+    margin-top: -3px;
+}
+
+@media screen and (max-width: 550px) {
+    .cACN_NavigationItem .navigationMenuItem .acn-navigation-list-item-img-Tag>img {
+        height: initial !important;
+        width: initial !important;
+    }
+}
+
+.THIS .acn-navigation-list-item-message {
+    /*margin-top: -10px;*/
+}
+
+.THIS .acn-navigation-list-item-button-container {
+    border-width: 0px;
+    position: absolute;
+    max-width: 300px;
+    /*width: 50%;*/
+    min-width: 200px;
+    height: 63px;
+    font-family: 'Montserrat';
+    font-weight: 500;
+    font-style: normal;
+    font-size: 14px;
+    text-align: center;
+    line-height: 15px;
+    top: 75px;
+    margin-left: auto;
+    margin-right: auto;
+    /*padding-top: 10px;*/
+}
+
+.THIS .acn-navigation-list-item-button {
+    border-width: 0px;
+    /*position: absolute;
+    left: 0px;
+    top: 0px;*/
+    /*width: 300px;*/
+    max-width: 300px;
+    min-width: 200px;
+    height: 63px;
+    background: inherit;
+    background-color: white !important;
+    border: 1px solid rgba(204, 204, 204, 1);
+    border-radius: 32px;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    padding-top: 25px;
+    color: #333333;
+}
+
+
+.THIS .acn-navigation-list-item-button:hover {
+    background-color: t(colorBrand) !important;
+    color: white;
+    cursor: auto;
+}
+
+/************** Navigation Card With Button Begin ********************/
+.acn-navigation-item-container.navigationCardWithButton.THIS {
+    border-radius: 10px;
+    border: 1px solid rgba(204, 204, 204, 1);
+    margin: 5px;
+}
+
+.THIS a.topicLink.navigationCardWithButton.acn-navigation-list-anchor {
+    display: block;
+    height: 460px;
+    width: 100%;
+    position: relative;
+    cursor: default;
+}
+
+.THIS .navigationCardWithButton.acn-navigation-list-item-transparent-div span {
+    text-rendering: optimizeLegibility;
+    -webkit-font-feature-settings: "kern";
+    font-kerning: normal;
+    word-wrap: break-word;
+    font-family: 'Montserrat';
+    font-weight: 500;
+    font-style: normal;
+    font-size: 18px;
+    color: #000000;
+    text-align: left;
+    line-height: 16px;
+}
+
+.THIS .navigationCardWithButton.acn-navigation-list-item-description div span:first-child {
+    /*display: none;*/
+}
+
+.THIS .navigationCardWithButton.acn-navigation-list-item-transparent-div {
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    width: 100%;
+}
+
+.THIS .navigationCardWithButton.acn-navigation-list-item-img-Tag {
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 45%;
+    border-radius: 0px 10px 10px 0px;
+    z-index: -1;
+}
+
+.THIS .navigationCardWithButton.acn-navigation-list-item-img-Tag p {
+    height: 100%;
+}
+
+.THIS .navigationCardWithButton.acn-navigation-list-item-img-Tag img {
+    margin: 0 auto;
+    display: block;
+    width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.THIS .navigationCardWithButton.acn-navigation-list-item-description {
+	bottom: t(acnScoreCardDescriptionBottom);
+    display: t(acnScoreCardDescriptionDisplay);
+    font-family: t(acnScoreCardDescriptionFontFamily);
+    font-size: t(acnScoreCardDescriptionFontSize);
+    font-weight: t(acnScoreCardDescriptionFontWeight);
+    justify-content: t(acnScoreCardDescriptionJustifyContent);
+    margin: t(acnScoreCardDescriptionMargin);
+    padding: t(acnScoreCardDescriptionPadding);
+    position: t(acnScoreCardDescriptionPosition);
+    text-align: t(acnScoreCardDescriptionTextAlign);
+    text-rendering: t(acnScoreCardDescriptionTextRendering);
+    width: t(acnScoreCardDescriptionWidth);
+    word-wrap: t(acnScoreCardDescriptionWordWrap);
+    
+    font-feature-settings: "kern" 1;
+    -webkit-font-feature-settings: "kern";
+    -moz-font-feature-settings: "kern";
+    -moz-font-feature-settings: "kern=1";
+    font-kerning: normal;
+    font-style: normal;
+    color: #333333;
+    line-height: 24px; 
+
+}
+
+
+.THIS .navigationCardWithButton.acn-navigation-list-item-description p {
+    color: t(acnScoreCardDescriptionParagraphFontColor);
+    display: t(acnScoreCardDescriptionParagraphDisplay);
+    font-size: t(acnScoreCardDescriptionParagraphFontSize);
+    position: t(acnScoreCardDescriptionParagraphPosition);
+    text-align: t(acnScoreCardDescriptionParagraphTextAlign);
+    width: t(acnScoreCardDescriptionParagraphWidth);
+}
+
+.THIS .navigationCardWithButton.acn-navigation-list-item-description li:nth-child(1) {
+    margin: t(acnScoreCardDescriptionTextMargin);
+    padding: t(acnScoreCardDescriptionTextPadding);
+}
+
+.THIS .navigationCardWithButton.acn-navigation-list-item-description li:nth-child(2) {
+    background-color: t(colorBrand);
+    border-radius: t(acnScoreCardDescriptionButtonBorderRadius);
+    color: t(colorTextButtonBrand);
+    height: t(acnScoreCardDescriptionButtonHeight);
+    margin: t(acnScoreCardDescriptionButtonMargin);
+    padding: t(acnScoreCardDescriptionButtonPadding);
+}
+
+.THIS .navigationCardWithButton.acn-navigation-list-item-description li:nth-child(2):hover {
+    opacity: .95;
+    -webkit-box-shadow: 0em .1em .1em 0em t(colorBackgroundButtonBrandHover);
+    -moz-box-shadow: 0em .1em .1em 0em t(colorBackgroundButtonBrandHover);
+    box-shadow: 0em .1em .1em 0em t(colorBackgroundButtonBrandHover);
+    transform: scale(1.01);
+}
+
+
+/************** Navigation Card With Button End **********************/
+
+/************** Navigation Card With Rectangle Button Begin ********************/
+.acn-navigation-item-container.navigationCardWithRectangleButton.THIS {
+    margin: 5px;
+}
+
+.THIS a.topicLink.navigationCardWithRectangleButton.acn-navigation-list-anchor {
+    display: block;
+    height: 270px;
+    width: 100%;
+    position: relative;
+    cursor: default;
+}
+
+.THIS .navigationCardWithRectangleButton.acn-navigation-list-item-transparent-div span {
+    text-rendering: optimizeLegibility;
+    -webkit-font-feature-settings: "kern";
+    font-kerning: normal;
+    word-wrap: break-word;
+    font-family: 'Montserrat';
+    font-weight: 500;
+    font-style: normal;
+    font-size: 18px;
+    color: #000000;
+    text-align: left;
+    line-height: 16px;
+}
+
+.THIS .navigationCardWithRectangleButton.acn-navigation-list-item-transparent-div {
+    position: absolute;
+    text-align: center;
+    top: 10%;
+    width: 100%;
+}
+
+.THIS .navigationCardWithRectangleButton.acn-navigation-list-item-transparent-div span:after {
+	content: '';
+    display: block;
+    position: absolute;
+    width: 46px;
+    height: 5px;
+    bottom: -20px;
+    left: 50%;
+    margin-left: -23px;
+    background-color: #6dc4e9;    
+}
+
+.THIS .navigationCardWithRectangleButton.acn-navigation-list-item-img-Tag {
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 45%;
+    border-radius: 0px 10px 10px 0px;
+    z-index: -1;
+}
+
+.THIS .navigationCardWithRectangleButton.acn-navigation-list-item-img-Tag p {
+    height: 100%;
+}
+
+.THIS .navigationCardWithRectangleButton.acn-navigation-list-item-img-Tag img {
+    margin: 0 auto;
+    display: block;
+    width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.THIS .navigationCardWithRectangleButton.acn-navigation-list-item-description {
+	bottom: t(navigationCardWithRectangleButtonDescriptionBottom);
+    display: t(acnScoreCardDescriptionDisplay);
+    font-family: t(acnScoreCardDescriptionFontFamily);
+    font-size: t(acnScoreCardDescriptionFontSize);
+    font-weight: t(acnScoreCardDescriptionFontWeight);
+    justify-content: t(acnScoreCardDescriptionJustifyContent);
+    margin: t(acnScoreCardDescriptionMargin);
+    padding: t(acnScoreCardDescriptionPadding);
+    position: t(acnScoreCardDescriptionPosition);
+    text-align: t(acnScoreCardDescriptionTextAlign);
+    text-rendering: t(acnScoreCardDescriptionTextRendering);
+    width: t(acnScoreCardDescriptionWidth);
+    word-wrap: t(acnScoreCardDescriptionWordWrap);
+    
+    font-feature-settings: "kern" 1;
+    -webkit-font-feature-settings: "kern";
+    -moz-font-feature-settings: "kern";
+    -moz-font-feature-settings: "kern=1";
+    font-kerning: normal;
+    font-style: normal;
+    color: #333333;
+    line-height: 24px; 
+
+}
+
+
+.THIS .navigationCardWithRectangleButton.acn-navigation-list-item-description p {
+    color: t(acnScoreCardDescriptionParagraphFontColor);
+    display: t(acnScoreCardDescriptionParagraphDisplay);
+    font-size: t(acnScoreCardDescriptionParagraphFontSize);
+    position: t(acnScoreCardDescriptionParagraphPosition);
+    text-align: t(acnScoreCardDescriptionParagraphTextAlign);
+    width: t(acnScoreCardDescriptionParagraphWidth);
+}
+
+.THIS .navigationCardWithRectangleButton.acn-navigation-list-item-description ul {
+    text-align: t(navigationCardWithRectangleButtonDescriptionListTextAlign);
+    list-style: t(navigationCardWithRectangleButtonDescriptionListListStyle);
+}
+
+.THIS .navigationCardWithRectangleButton.acn-navigation-list-item-description li:nth-child(1) {
+    max-width: 60em;
+    margin: t(navigationCardWithRectangleButtonDescriptionTextMargin);
+    padding: t(acnScoreCardDescriptionTextPadding);
+}
+
+.THIS .navigationCardWithRectangleButton.acn-navigation-list-item-description li:nth-child(2) {
+    background-color: t(colorBackground);
+    /*border-radius: t(acnScoreCardDescriptionButtonBorderRadius);*/
+    border: 3px solid t(colorBorderButtonBrand);
+    max-width: 20em;
+    color: t(colorTextBrand);
+    text-transform: uppercase;
+    height: t(acnScoreCardDescriptionButtonHeight);
+    margin: t(navigationCardWithRectangleButtonDescriptionTextMargin);
+    padding: t(acnScoreCardDescriptionButtonPadding);
+}
+
+.THIS .navigationCardWithRectangleButton.acn-navigation-list-item-description li:nth-child(2):hover {
+    background-color: t(colorBackgroundButtonBrand);
+    color: t(colorTextButtonBrand);
+}
+
+
+/************** Navigation Card With Rectangle Button End **********************/
+
+
+.THIS .carouselCenteredContents.acn-navigation-list-item-description.uiOutputRichText {
+    
+}
+
+.THIS .carouselCenteredContents.acn-navigation-list-item-description.uiOutputRichText {
+    position: absolute;
+    height: 485px;
+    width: 100%;
+    z-index: 4;
+    display: block;
+    text-align: left;
+    line-height: 15px;
+    font-size: 15px;
+    font-weight: 500;
+    padding-top: 100px;
+    color: white;
+    background: -webkit-linear-gradient(top, transparent 5%, black 105%);
+    background: -ms-linear-gradient(top,transparent 5%, black 105%);
+    text-align: center;
+}
+
+.THIS .acn-navigation-list-carousel-item-icon {
+    width: 148px;
+    height: 148px;
+    margin-top: 0px;
+}
+
+.THIS .acn-navigation-list-carousel-item-title {
+    font-size: 32px;
+    word-wrap: break-word;
+    font-kerning: normal;
+    text-rendering: optimizeLegibility;
+    -webkit-font-feature-settings: "kern";
+    line-height: 1.2;
+}
+
+.THIS .acn-navigation-list-carousel-item-separator-line-container {
+    height: 30px;
+}
+
+.THIS .acn-navigation-list-carousel-item-button-container {
+    border-width: 0px;
+    position: absolute;
+    left: 350px;
+    top: 400px;
+    width: 300px;
+    height: 63px;
+    font-family: 'Montserrat';
+    font-weight: 500;
+    font-style: normal;
+    font-size: 14px;
+    color: #FFFFFF;
+    text-align: center;
+    line-height: 15px;    
+}
+
+.THIS .acn-navigation-list-carousel-item-button {
+    border-width: 0px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 300px;
+    height: 63px;
+    background: inherit;
+    background-color: t(acnZeppelinButtonBackgroundColor) !important;
+    border: none;
+    border-radius: 32px;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    padding-top: 25px;
+}
+
+.THIS .acn-navigation-list-carousel-item-button:hover {
+    background-color: t(acnZeppelinButtonBackgroundColorHover) !important;
+}
+
+.THIS .acn-navigation-list-carousel-item-button span {
+    
+}
+
+.THIS .acn-navigation-list-carousel-item-message {
+    text-rendering: optimizeLegibility;
+    -webkit-font-feature-settings: "kern";
+    font-kerning: normal;
+    word-wrap: break-word;
+    font-size: 18px;
+    line-height: 30px;
+    text-align: center;
+    width: 580px !important;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/****************** General Begin ************************/
+.THIS a {
+    text-decoration: none;
+}
+
+.THIS .star-rating{
+    font-size:0;
+    white-space:nowrap;
+    display:inline-block;
+    width:250px;
+    height:50px;
+    overflow:hidden;
+    position:relative;
+    background:
+        url('data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMjBweCIgaGVpZ2h0PSIyMHB4IiB2aWV3Qm94PSIwIDAgMjAgMjAiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDIwIDIwIiB4bWw6c3BhY2U9InByZXNlcnZlIj48cG9seWdvbiBmaWxsPSIjREREREREIiBwb2ludHM9IjEwLDAgMTMuMDksNi41ODMgMjAsNy42MzkgMTUsMTIuNzY0IDE2LjE4LDIwIDEwLDE2LjU4MyAzLjgyLDIwIDUsMTIuNzY0IDAsNy42MzkgNi45MSw2LjU4MyAiLz48L3N2Zz4=');
+    background-size: contain;
+}
+
+.THIS .acn-lightning-icon-container {
+    text-align: center;
+}
+
+.THIS .acn-lightning-icon-container slds-icon_container {
+    position: unset !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-top: 10px;
+}
+
+.THIS .acn-navigation-list-item-description-hidden {
+    display: none;
+}
+
+.THIS {
+    font-family: t(fontFamily);
+    /*font-stretch: normal;
+    font-weight: lighter;*/
+}
+
+.THIS .slds-icon_container {
+    background-color: t(acnBrandLightningIconBackgroundColor);
+}
+
+.THIS svg {
+    background-color: t(acnBrandLightningIconBackgroundColor);
+    cursor: pointer;
+    fill: t(acnBrandLightningIconColor);
+    border: none !important;
+}
+
+.THIS .navbaricon {
+    background-color: white;
+}
+
+/* 654*/
+@media screen and (max-width: 550px) {
+    .THIS .acn-custom-nav-anchor > span{
+        margin-left: token(acnNavigationScoreCardMarginLeftMobile);
+    }
+    
+    .THIS .acn-custom-nav-anchor .acn-custom-nav-img{
+        margin-left: token(acnNavigationScoreCardMarginLeftMobile) ;
+    }
+    
+    .THIS .acn-navigation-list-item-image {
+        /*height: 100%;
+        width: 200px;
+        background-size: token(acnNavigationListItemImgTagBGSizeMobile);*/
+    }
+    
+    .THIS .acn-navigation-list-item-img-Tag > img {
+        /*height: token(acnNavigationListItemImgTagImgPhoneHeight) !important;
+        width: 199px !important;*/
+    }
+}
+
+/* ----------- Galaxy S5 ----------- */
+/* ----------- HTC One ----------- */
+/* Portrait and Landscape */
+@media screen and (device-width: 360px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 3) {
+    .THIS .navigationCardCarousel.acn-navigation-list-item-description {
+        font-size: 25px;
+        font-weight: 500;
+        padding-top: 45px;
+        line-height: 1em;
+        letter-spacing: 0;
+    }
+}
+
+/* ----------- Everything else ----------- */
+@media only screen and (max-width: 500px) {
+    .THIS .navigationCardCarousel.acn-navigation-list-item-description, .THIS .carouselCenteredContents.acn-navigation-list-item-description {
+        font-size: 25px;
+        font-weight: 500;
+        padding-top: 45px !important;
+        line-height: 1em;
+        letter-spacing: 0;
+    }
+}
+
+/* ----------- Galaxy S4 ----------- */
+/* Portrait and Landscape */
+@media screen and (device-width: 320px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 3) {
+    .THIS .navigationCardCarousel.acn-navigation-list-item-description, .THIS .carouselCenteredContents.acn-navigation-list-item-description {
+        font-size: 25px;
+        font-weight: 500;
+        padding-top: 45px;
+        line-height: 1em;
+        letter-spacing: 0;
+    }
+}
+
+/* ----------- Galaxy S3 ----------- */
+/* Portrait and Landscape */
+@media screen and (device-width: 320px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 2) {
+    .THIS .navigationCardCarousel.acn-navigation-list-item-description, .THIS .carouselCenteredContents.acn-navigation-list-item-description {
+        font-size: 25px;
+        font-weight: 500;
+        padding-top: 45px;
+        line-height: 1em;
+        letter-spacing: 0;
+    }
+}
+
+/* ----------- iPhone 6+ ----------- */
+/* Portrait and Landscape */
+@media only screen and (min-width: 414px) and (max-width: 736px) and (-webkit-min-device-pixel-ratio: 3) { 
+    .THIS .navigationCardCarousel.acn-navigation-list-item-description, .THIS .carouselCenteredContents.acn-navigation-list-item-description {
+        font-size: 25px;
+        font-weight: 500;
+        padding-top: 45px;
+        line-height: 1em;
+        letter-spacing: 0;
+    }
+}
+
+/* ----------- iPhone 6 ----------- */
+/* Portrait and Landscape */
+@media only screen and (min-width: 375px) and (max-width: 667px) and (-webkit-min-device-pixel-ratio: 2) { 
+    .THIS .navigationCardCarousel.acn-navigation-list-item-description, .THIS .carouselCenteredContents.acn-navigation-list-item-description {
+        font-size: 25px;
+        font-weight: 500;
+        padding-top: 45px;
+        line-height: 1em;
+        letter-spacing: 0;
+    }
+}
+
+/* ----------- iPhone 5 and 5S ----------- */
+/* Portrait and Landscape */
+@media only screen and (min-width: 320px) and (max-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
+    .THIS .navigationCardCarousel.acn-navigation-list-item-description,.THIS .carouselCenteredContents.acn-navigation-list-item-description {
+        font-size: 25px;
+        font-weight: 500;
+        padding-top: 45px;
+        line-height: 1em;
+        letter-spacing: 0;
+    }
+}
+
+/* portrait */
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+    .THIS .acn-navigation-list-item-transparent-div {
+        font-size: 12px !important;
+        top: 65px !important;
+    }
+    
+    .THIS .navigationCardPill.acn-group-body-list-item {
+        display: -ms-flexbox;
+        display: inline-table;
+        -webkit-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -ms-flex-pack: center;
+        width: 0% !important;
+        margin-bottom: 8px;
+        margin-right: 10px;
+    }
+    
+    .THIS .navigationScoreCard.acn-navigation-list-item-img-Tag>img {
+        height: 40px !important;
+        width: 40px !important;
+    }
+    
+    .THIS .navigationScoreCard.acn-navigation-list-item-transparent-div {
+        margin-top: -19px !important;
+        font-size: 15px !important;
+    }
+    
+    .THIS .navigationScoreCard.acn-navigation-list-item-description {
+        padding: 0 2px 5px 2px;
+    }
+}
+
+/****************** General End **************************/
+
+/***************** Quick Action Card Begin **********************/
+.THIS a.navigationCardQuickAction {
+    display: block;
+    min-height: 140px;
+}
+
+.THIS .navigationCardQuickAction.acn-navigation-list-item-transparent-div {
+	position: absolute;
+    margin-top: 50%;
+    margin-bottom: auto;
+    vertical-align: sub;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 100%;
+    color: t(colorTextDefault);
+    font-weight: 700;
+    font-family: Roboto,sans-serif;
+}
+
+
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+    .THIS .navigationCardQuickAction.acn-navigation-list-item-transparent-div, 
+    .THIS .navigationCardQuickAction.acn-navigation-list-item-description {
+        margin-top: 30%;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .THIS .navigationCardQuickAction.acn-navigation-list-item-transparent-div, 
+    .THIS .navigationCardQuickAction.acn-navigation-list-item-description {
+        margin-top: 30%;
+    }    
+}
+
+.THIS div.navigationCardQuickAction.acn-navigation-list-item-img-Tag, 
+.THIS div.navigationCardQuickAction.acn-lightning-icon-container {
+    background-color: t(colorBorder);
+    height: 60px;
+    padding-top: 20px;
+}
+
+.THIS div.navigationCardQuickAction.acn-lightning-icon-container svg {
+    background-color: t(colorBorder);
+    fill: t(colorTextDefault);
+}
+
+/***************** Quick Action Card End ************************/
+
+
+/***************** Topic Card Begin **********************/
+.THIS .navigationCard.acn-navigation-list-item-transparent-div {
+    height: token(acnNavigationListItemTransparentDivHeight);
+    width: token(acnNavigationListItemTransparentDivWidth);
+    z-index: 2;
+    background-color: token(acnNavigationListItemTransparentDivBGColor);
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    font-family: Montserrat;
+    font-weight: token(acnNavigationListItemTransparentDivFontWeight);
+    font-size: 14px;
+    display:flex;
+    align-items: center; 
+    justify-content: center; 
+    position: absolute; 
+    border-radius: token(myDefaultRadius);
+    transition: background-color 0.5s ease;
+}
+
+.THIS .navigationCard.acn-navigation-list-item-transparent-div span {
+    display: inline-block;
+    vertical-align: middle !important;
+    line-height: 16px;
+    font-family: lato;
+    font-size: token(acnNavigationListItemTransparentDivFontSize);
+}
+
+.THIS .navigationCard.acn-navigation-list-item-transparent-div:hover {
+    background-color: rgba(25, 124, 190, 0.9);
+    font-size: 15px;
+}
+
+.THIS .navigationCard .hidden {
+    display: none;
+}
+
+.THIS .navigationCard {
+    height: 100%;
+    width: 100%;
+    display:block;
+    position:relative;
+}
+
+.THIS .navigationCard.acn-navigation-list-anchor {
+    display:block;
+}
+
+.THIS .navigationCard.acn-navigation-list-item-image {
+    border-radius: token(myDefaultRadius);
+    margin: 0 auto;
+    vertical-align: middle;
+    width: token(acnNavigationListItemImageWidth);
+    position: relative;
+    -webkit-box-shadow: token(acnNavigationListItemImgTagBoxShadow);
+    -moz-box-shadow: token(acnNavigationListItemImgTagBoxShadow);
+    box-shadow: token(acnNavigationListItemImgTagBoxShadow);
+    
+    padding: token(acnNavigationListItemImgTagPadding);
+    background: token(acnNavigationListItemImgTagBackground);
+    
+    -webkit-filter: token(acnNavigationListItemImgTagWebFilter);
+    background: token(acnNavigationListItemImgTagBGRadial);
+    
+    background-size: token(acnNavigationListItemImgTagBGSize);
+    background-position: token(acnNavigationListItemImgTagBGPosition); 
+}
+
+.THIS .navigationCard.acn-navigation-list-item-container-div {
+    display: none;
+}
+
+.THIS .navigationCard.div.acn-navigation-list-item-img-Tag {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.THIS .navigationCard.acn-navigation-list-item-img-Tag > img {
+    max-width:100%;
+    object-fit: cover;
+    box-shadow: token(acnNavigationListItemImgTagBoxShadow);
+    border-radius: token(myDefaultRadius);
+    width: auto !important;
+    height: token(acnNavigationElementDimensionsDesktop) !important ;
+}
+
+/* 654*/
+@media screen and (max-width: 550px) {
+    .THIS .navigationCard .acn-navigation-list-item-img-Tag>img{
+        height: 199px !important;
+        width: 100% !important;
+    }
+    
+    .THIS a.navigationCard.acn-navigation-list-anchor {
+        display: block;
+        height: 100%;
+        width: 100%;
+        
+        margin: 0 auto;
+    }
+    
+    .THIS .topicLink.navigationCard.acn-navigation-list-anchor {
+        width: 100% ;
+        height: 100% ;
+    }
+}
+
+/***************** Topic Card End ************************/
+
+
+/**************** Score Card Begin ***********************/
+.THIS a.topicLink.navigationScoreCard.acn-navigation-list-anchor {
+    display: block;
+    height: token(acnGroupBodyListItemHeightScoreCard);
+    width: 100%;
+    position: relative;
+    
+}
+
+.THIS .navigationScoreCard.acn-navigation-list-item-description {
+    position: absolute;
+    bottom: 15px;
+    display: flex;
+    
+    justify-content: center;
+    width: 100%;
+}
+
+.THIS .navigationScoreCard.acn-navigation-list-item-description p {
+    font-size: token(acnScoreCardDescriptionFontSize);
+    color: token(acnScoreCardDescriptionFontColor);
+    text-align: token(acnScoreCardDescriptionTextAlign);
+}
+
+.THIS .navigationScoreCard.acn-navigation-list-item-transparent-div span {
+    font-size: token(acnScoreCardNameFontSize);
+    /*color: token(acnScoreCardNameFontColor);*/
+    color: token(colorTextBrand);
+    text-align: token(acnScoreCardNameTextAlign);
+}
+
+.THIS .navigationScoreCard.acn-navigation-list-item-description div span:first-child {
+    display: none;
+}
+
+.THIS .navigationScoreCard.acn-navigation-list-item-transparent-div {
+    position: absolute;
+    text-align: center;
+    top: 80px;
+    width: 100%;
+    margin-top: -29px;
+    font-size: 15px;
+}
+
+.THIS .navigationScoreCard.acn-navigation-list-item-img-Tag {
+    /*position: absolute;*/
+    margin-top: 10px;
+    width: 100%;
+}
+
+.THIS .navigationScoreCard.acn-navigation-list-item-img-Tag > img {
+    margin: 0 auto;
+    display: block;
+    height: 50px;
+    width: 50px;
+}
+
+.THIS .navigationScoreCard svg {
+    background-color: t(colorBackground);
+    fill: t(colorTextBrand);
+}
+
+.THIS .navigationScoreCard.acn-navigation-list-item-description {
+    font-size: 10pt;
+    color: #bfbfbf;
+    text-align: center;
+    padding: 0 5px 5px 5px;
+}
+
+@media screen and (max-width: 885px ){
+    .THIS .navigationScoreCard.acn-navigation-list-item-transparent-div {
+        top: 60px;
+        font-size: 20px;
+    }
+}
+
+/* 654*/
+@media screen and (max-width: 550px) {
+    .THIS .navigationScoreCard.acn-navigation-list-item-transparent-div {
+        top: 70px;
+        font-size: 12px;
+    }
+    
+    .THIS .navigationScoreCard.acn-navigation-list-item-img-Tag > img{
+        height: 30px !important;
+        width: 30px !important;
+    }
+}
+
+/***************** Score Card End ************************/
+
+/************** Article Preview Begin ********************/
+.THIS a.topicLink.navigationArticlePreview.acn-navigation-list-anchor {
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 00;
+}
+
+.THIS .navigationArticlePreview.acn-navigation-list-item-transparent-div {
+    margin: 20px;
+    margin-bottom: 0;
+}
+
+.THIS .navigationArticlePreview.acn-navigation-list-item-description.uiOutputRichText {
+    margin: 10px 20px;
+    margin-top: 0;
+}
+
+.THIS .navigationArticlePreview.acn-navigation-list-item-img-Tag{
+    margin-bottom: -1px;
+}
+
+.THIS .navigationArticlePreview.acn-navigation-list-item-img-Tag img {
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    width: 100% !important;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.THIS .navigationArticlePreview.acn-navigation-list-item-transparent-div span {
+    color: black;
+    font-weight: 700;
+}
+
+.THIS .navigationArticlePreview.acn-navigation-list-item-description.uiOutputRichText span {
+    font-size: small;
+    color: #9B9B9B;
+    font-weight: lighter;
+    
+}
+
+.THIS .navigationArticlePreview.acn-navigation-list-item-description.uiOutputRichText p {
+    color: #666666;
+    font-weight: 300;
+    font-size: 14px;
+    margin-top: 22px;
+}
+
+/************** Article Preview End **********************/
+
+/******************** Pill Begin *************************/
+.THIS .navigationCardPill.acn-navigation-list-item-transparent-div span:hover {
+    background-color: token(acnPillCardColor);
+    white-space: token(acnPillCardWhiteSpace);
+}
+
+.THIS a.navigationCardPill.topicLink.acn-navigation-list-anchor {
+    display: inline-flex;
+    text-decoration: none;
+    padding: 10px;
+    border: 1px solid token(acnPillCardColor);
+    border-radius: 3px;
+    color: token(acnPillCardColor);
+    white-space: nowrap;
+}
+
+.THIS a.navigationCardPill.topicLink.acn-navigation-list-anchor:visited,
+.THIS a.navigationCardPill.topicLink.acn-navigation-list-anchor:active
+{
+    color: white;
+    
+}
+
+.THIS a.navigationCardPill.topicLink.acn-navigation-list-anchor:hover,
+.THIS a.navigationCardPill.topicLink.acn-navigation-list-anchor:visited:hover,
+.THIS a.navigationCardPill.topicLink.acn-navigation-list-anchor:active:hover
+{
+    
+    background-color: token(acnPillCardColor);
+    color: white;
+}
+.THIS .navigationCardPill.acn-navigation-list-item-img-Tag.uiOutputRichText {
+    display: none;
+}
+
+/******************** Pill End ***************************/
+
+/***************** Mobile Tile Begin *********************/
+.THIS .navigationCardMobileTile.acn-navigation-list-item-transparent-div span:after {
+    content: " >";
+    position: absolute;
+}
+
+.THIS .navigationCardMobileTile.acn-navigation-list-item-transparent-div span {
+    white-space: nowrap;
+    color: t(acnBrandColor);
+    font-size: 14px;
+    padding: 10px 15px 10px 15px;
+    display: flex;
+}
+
+.THIS .navigationCardMobileTile.acn-navigation-list-item-transparent-div {
+    order: 2;
+}
+
+.THIS .navigationCardMobileTile.acn-navigation-list-item-transparent-div span:hover {
+    color: t(acnPillCardColor);
+}
+
+.THIS .navigationCardMobileTile.acn-lightning-icon-container {
+    text-align: initial;
+    position: absolute;
+    order: 1;
+    margin-top: -42px;
+    margin-left: -2px;
+}
+
+.THIS .navigationCardMobileTile.acn-navigation-list-item-img-Tag img {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+}
+
+.THIS .navigationCardMobileTile.acn-navigation-list-item-img-Tag svg {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+}
+
+
+/***************** Mobile Tile End ***********************/
+
+/*************** KSA Breadcrumbs Begin *******************/
+
+/*************** KSA Breadcrumbs End *********************/
+
+/******************* KSA Text Begin **********************/
+.THIS .navigationCardKSAText.acn-navigation-list-item-img-Tag.uiOutputRichText {
+    display: none;
+}
+.THIS .navigationCardKSAText.acn-navigation-list-item-description.uiOutputRichText{
+    display: none;
+}
+
+.THIS .navigationCardKSAText.acn-navigation-list-item-transparent-div {
+    display: flex;
+    align-items: center;
+    
+}
+
+.THIS .navigationCardKSAText.acn-navigation-list-item-transparent-div span {
+    font-size: 16px;
+    white-space: nowrap;
+}
+
+.THIS .navigationCardKSAText.navigationCardKSAText acn-group-body-list-item span {
+    font-size: x-large;
+    white-space: token(acnPillCardWhiteSpace);
+    color: token(acnPillCardColor);
+}
+
+.THIS a.navigationCardKSAText.topicLink.acn-navigation-list-anchor {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+    height: auto;
+    border-radius: 7px;
+    margin-right: 10px;
+    color: gray;
+}
+
+.THIS .navigationCardKSAText.acn-navigation-list-item-transparent-div span {
+    white-space: nowrap;
+    font-size: 16px;
+    letter-spacing: 0;
+    font-weight: 300;
+}
+
+.THIS .navigationCardKSAText.navigationPathSegmentWrapperDiv {
+    color: gray;
+}
+
+/******************* KSA Text End ************************/
+
+/**************** Selection Pill Begin *******************/
+
+/**************** Selection Pill End *********************/
+
+/****************** Quick Link Begin *********************/
+.THIS a.navigationQuickLink {
+    color: t(acnLinkColor);
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.THIS a.navigationQuickLink:hover {
+    color: t(acnLinkHoverColor);
+}
+
+
+.THIS a.navigationQuickLink {
+    color: t(acnLinkColor);
+    font-size: 14px;
+    text-decoration: none;
+}
+
+/****************** Quick Link End ***********************/
+
+/****************** Icon Button Begin ********************/
+
+/****************** Icon Button End **********************/
+
+/********************* Chart Begin ***********************/
+.acn-navigation-item-container.navigationChart.THIS {
+    height: 200px;
+    width: 100% !important;
+    z-index: -1;
+    border: silver solid 1px;
+    padding: 3px;
+}
+
+.acn-navigation-item-container.navigationChart.THIS:hover {
+    border: t(acnBrandColor) solid 1px;
+    -o-box-shadow: 2px 2px 19px #CCC;
+    -webkit-box-shadow: 2px 2px 19px #CCC;
+    -moz-box-shadow: 2px 2px 19px #CCC;
+}
+
+.acn-navigation-item-container.navigationChart.THIS:active {
+    -o-box-shadow: 2px 2px 19px t(acnBrandColor);
+    -webkit-box-shadow: 2px 2px 19px t(acnBrandColor);
+    -moz-box-shadow: 2px 2px 19px t(acnBrandColor);
+}
+
+/********************* Chart End ***********************/
+
+/****************** Carousel Begin ***********************/
+.THIS .navigationCard-fit > img {
+    height: 100% !important;
+    width: 100% !important;
+}
+
+.THIS .navigationCard-fit.acn-navigation-list-item-img-Tag.uiOutputRichText {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+.THIS a.navigationCardCarousel-fit,  .THIS a.carouselCenteredContents-fit {
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+
+.THIS .navigationCardCarousel.acn-navigation-list-item-transparent-div {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 4;
+    display: block;
+    text-align: center;
+    font-size: 30px;
+    line-height: 40px;
+    color: white;
+    font-weight: bold;
+}
+
+.THIS .navigationCardCarousel.acn-navigation-list-item-transparent-div span {
+	position: relative;
+    top: 40%;
+}
+
+.THIS .navigationCardCarousel.acn-navigation-list-item-description {
+    background: -webkit-linear-gradient(top, transparent 55%, black 105%);
+    background: -ms-linear-gradient(top,transparent 55%, black 105%);
+    bottom: 0;
+    color: #A9A9A9;
+    display: block;
+    font-size: 15px;
+    font-weight: 500;
+    height: 100%;
+    line-height: 15px;
+    margin-top: 1em;
+    padding-top: 380px;
+    padding-left: 20px;
+    position: absolute;
+    text-align: left;
+    width: 100%;
+    z-index: 4;
+}
+
+.THIS .navigationCardCarousel.acn-navigation-list-item-description::first-line {
+    font-size: 30px;
+    line-height: 40px;
+    color: white;
+    font-weight: bold;
+}
+
+.THIS .navigationCardCarousel-fit.acn-navigation-list-item-img-Tag {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border: 1px solid #d5d5d5;
+    border-radius: 3px;
+}
+
+.THIS .carouselCenteredContents-fit.acn-navigation-list-item-img-Tag {
+    position: absolute;
+    width: 100%;
+    border: 1px solid #d5d5d5;
+    border-radius: 3px;
+}
+
+
+.THIS .navigationCardCarousel-fit.acn-navigation-list-item-img-Tag > img, .THIS .carouselCenteredContents-fit.acn-navigation-list-item-img-Tag > img {
+    height: 100% !important;
+    width: 100% !important;
+    display: block;
+    object-fit: token(acnCarouselItemObjectFit); 
+    border-radius: 3px;
+}
+
+
+.THIS .navigationCardCarousel.acn-navigation-list-item-description div span:first-child span span {
+    font-size: 19pt;
+}
+
+@media screen and (max-width: 885px ){
+    .THIS .acn-fit-group-body-list .acn-navigation-list-item-image{
+        width: 200px;
+    }
+    
+    .THIS .acn-fit-group-body-list .acn-navigation-list-item-img-Tag>img{
+        width: 200px !important;
+        height: 200px !important;
+    }
+}
+
+/* tablet - portrait */
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+    .THIS .navigationCardCarousel.acn-navigation-list-item-description {
+        line-height: 15px;
+        font-size: 12px;
+        padding-top: 266px;
+        padding-left: 10px;
+    }
+    
+    .THIS .navigationCardCarousel.acn-navigation-list-item-description::first-line {
+        font-size: 26px;
+        line-height: 32px;
+    }
+}
+
+/* 654*/
+@media screen and (max-width: 550px) {
+    .THIS .navigationCard-fit .acn-navigation-list-item-img-Tag>img {
+        height: 100% !important;
+        width: 100% !important;
+        object-fit: token(acnCarouselItemObjectFit); 
+    }
+    
+    .THIS .navigationCard-fit .acn-navigation-list-item-image{
+        height: 100% !important;
+    }
+    
+    .THIS .navigationCard-fit > img {
+        height: token(acnNavigationCarouselHeightMobile) !important;
+        width: 100% !important;
+        object-fit: token(acnCarouselItemObjectFit); 
+    }
+    
+    .THIS .navigationCardCarousel.acn-navigation-list-item-description div span:first-child span span {
+        font-size: 19pt !important;
+    }
+    
+    .THIS .navigationCardCarousel.acn-navigation-list-item-description div span:nth-child(2) span span {
+        font-size: 11pt !important;
+    }
+    
+    .THIS .navigationCardCarousel.acn-navigation-list-item-description div span:nth-child(3) span span {
+        font-size: 11pt !important;
+    }
+    
+    .THIS .navigationCardCarousel-fit.acn-navigation-list-item-img-Tag > img {
+        height: 100% !important;
+        /*width: auto !important;*/
+        display: block;
+        border-radius: 3px;
+        /*max-width: 100%;*/
+        object-fit: token(acnCarouselItemObjectFit); 
+    }
+    
+    .THIS .navigationCardCarousel.acn-navigation-list-item-description {
+        display: none;
+    }
+}
+
+/****************** Carousel End *************************/
+
+
+/***************** Topic Card Begin **********************/
+
+.navigationCardIconPill.THIS  {
+    /*
+    height: 60px;
+    min-width: 230px;
+    max-width: 230px;
+    border-radius: 30px;
+    position: relative;
+    display: inline-block;
+    border: 1px #2d73b9 solid;
+    padding: 3px;
+    -webkit-box-shadow: 1px 10px 17px -9px rgba(45,115,185,1);
+    -moz-box-shadow: 1px 10px 17px -9px rgba(45,115,185,1);
+    box-shadow: 1px 10px 17px -9px rgba(45,115,185,1);
+    */
+}
+
+.THIS .navigationCardIconPill.acn-navigation-list-item-transparent-div {
+    text-align: center;
+    color: #2d73b9;
+    font-stretch: condensed;
+    font-weight: 600;
+}
+
+.THIS .navigationCardIconPill.acn-navigation-list-item-img-Tag {
+    text-align: center;
+}
+
+.THIS .navigationCardIconPill.acn-navigation-list-item-img-Tag img {
+    object-fit: cover;
+    object-position: 0 0;
+    max-width: 200px;
+    height: 30px;
+}
+
+.THIS .navigationProductCard.acn-navigation-list-item-img-Tag {
+    text-align: center;
+}
+
+.THIS .navigationProductCard.acn-navigation-list-item-img-Tag img {
+    object-fit: contain;
+    object-position: 0 0;
+    max-width: 200px;
+    height: 100px;
+}
+
+/*************************** Navigation Card Icon *******************/
+.THIS a.navigationCardIcon {
+    margin: t(acnNavigationCardIconListItemMargin);
+    min-height: t(acnNavigationCardIconListItemMinimumHeight);
+    width: t(acnNavigationCardIconListItemWidth);
+}
+
+.THIS a.navigationCardIcon img {
+    height: t(acnNavigationCardIconListItemImageSize);
+    margin-left: t(acnNavigationCardIconListItemMargin);
+    margin-right: t(acnNavigationCardIconListItemMargin);
+    max-height: t(acnNavigationCardIconListItemImageSize);
+    max-width: t(acnNavigationCardIconListItemImageSize);
+    /*object-fit: t(acnNavigationCardIconListItemImageObjectFit);*/
+    object-fit: scale-down;
+    object-position: t(acnNavigationCardIconListItemImageObjectPosition);
+	/*transform: t(acnNavigationCardIconListItemImageTransform);*/
+    /*transition: t(acnNavigationCardIconListItemTransformHoverTransition);*/
+}
+
+.navigationCardIcon.THIS:hover img, 
+.navigationCardIcon.THIS:hover .acn-masked-bitmap-image {
+	transform: t(acnNavigationCardIconListItemImageTransformHover);
+    /*transition: t(acnNavigationCardIconListItemTransformHoverTransition);*/
+}
+    
+.THIS .navigationCardIcon.acn-masked-bitmap-image-container {
+    height: t(acnNavigationCardIconListItemImageHeight);
+    width: t(acnNavigationCardIconListItemImageWidth);
+    margin: t(acnNavigationCardIconListItemMaskImageMargin);
+}
+
+.THIS .navigationCardIcon.acn-masked-bitmap-image {
+    -webkit-mask-size: t(acnNavigationCardIconListItemMaskImageSize);
+	/*transform: t(acnNavigationCardIconListItemImageTransform);*/
+    /*transition: t(acnNavigationCardIconListItemTransformHoverTransition);*/
+}
+
+.THIS .navigationCardIcon.acn-masked-bitmap-image-color {
+    background-color: t(colorBrand);
+    height: t(acnNavigationCardIconListItemImageHeight);
+    width: t(acnNavigationCardIconListItemImageWidth);
+    margin: auto;
+}
+
+.THIS .navigationCardIcon.acn-navigation-list-item-transparent-div {
+    color: t(colorTextActionLabel);
+    font-size: t(acnNavigationCardIconListItemNameFontSize);
+    font-weight: t(acnNavigationCardIconListItemNameFontWeight);
+    /*margin: t(acnNavigationCardIconListItemNameMargin); */
+    margin: 0 auto;
+    padding: t(acnNavigationCardIconListItemNamePadding);
+    max-width: t(acnNavigationCardIconListItemNameMaximumWidth);
+}
+
+.navigationCardIcon.THIS:hover a, 
+.navigationCardIcon.THIS:hover a span {
+    font-weight: t(acnNavigationCardIconListItemNameFontWeightHover) !important;
+    text-decoration: t(acnNavigationCardIconListItemNameTextDecorationHover) !important;
+}
+
+/*************************** Navigation Card Paragraph *******************/
+.THIS .acn-navigation-list-item-description-hidden {
+    display: none !important;
+}
+
+.THIS .navigationCardParagraph.acn-navigation-list-item-description {
+    color: t(colorTextPlaceholder);
+    /*font-family: t('"' + acnThemeFontRoman + '"');*/
+    font-weight: t(acnNavigationCardParagraphFontWeight);
+}
+
+.THIS .navigationCardParagraph.acn-navigation-list-item-transparent-div {
+    /*font-family: t('"' + acnThemeFontRoman + '"');*/
+    color: t(colorTextActionLabel);
+    padding-bottom: 5px;
+   /* padding-left: t(acnNavigationCardParagraphPaddingLeft); */
+}
+
+.THIS .navigationCardParagraph.acn-navigation-list-item-transparent-div:hover{
+	color: t(colorTextLink);
+}
+
+.THIS .navigationCardParagraphTitle.acn-navigation-list-item-transparent-div {
+    color: t(colorTextBrand);
+    /*font-family: t('"' + acnThemeFontMedium + '"');*/
+	font-size: t(acnNavigationCardParagraphListTitleLevel01FontSize);
+    width: t(acnNavigationCardIconListWidth);
+}
+
+.THIS .navigationCardParagraph.acn-navigation-list-item-description:hover {
+    color: t(colorTextLink);
+    /*font-family: t('"' + acnThemeFontRoman + '"');*/
+    font-weight: t(acnNavigationCardParagraphFontWeightHover);
+}
+
+.THIS a.navigationCardParagraph:active, 
+.THIS a.navigationCardParagraphTitle:active, 
+.THIS a.navigationCardParagraph:focus, 
+.THIS a.navigationCardParagraphTitle:focus, 
+.THIS a.navigationCardParagraph:hover, 
+.THIS a.navigationCardParagraphTitle:hover { 
+    color: t(colorTextLink);
+    /*font-family: t('"' + acnThemeFontRoman + '"');*/
+    font-weight: t(acnNavigationCardParagraphFontWeightHover);
+    text-decoration: t(acnNavigationCardParagraphTextDecoration) !important;
+}
+
+.THIS a.navigationCardParagraph:hover{
+ color: #25254b;   
+}
+
+.THIS a.navigationCardParagraphTitle:hover .navigationCardParagraphTitle.acn-navigation-list-item-description.uiOutputRichText{
+    color: t(colorTextActionLabel);
+}
+
+.THIS a.navigationCardParagraphTitle {
+    padding-right: 5px;
+    /*font-family: t('"' + acnThemeFontRoman + '"');*/
+}
+
+.THIS .navigationCardParagraphTitle {
+    /*display: inline-flex;*/
+}
+
+.THIS .navigationCardParagraphTitle.acn-navigation-list-item-img-Tag.acn-masked-bitmap-image-color {
+	background-color: t(colorBrand);
+    height: 24px;
+    width: 24px;
+}
+
+.THIS .navigationCardParagraphTitle.acn-masked-bitmap-image-container {
+    height: 24px;
+    width: 24px;
+    display: inline-flex;
+    /*margin: t(acnNavigationCardIconListItemMaskImageMargin);*/
+}
+
+.THIS .navigationCardParagraphTitle.acn-masked-bitmap-image {
+    -webkit-mask-size: 24px;
+    /*margin-bottom: -15px;*/
+	/*transform: t(acnNavigationCardIconListItemImageTransform);*/
+    /*transition: t(acnNavigationCardIconListItemTransformHoverTransition);*/
+}
+
+.THIS .navigationCardParagraphTitle.acn-navigation-list-item-description.uiOutputRichText{
+    color: t(colorTextActionLabel);
+}
+
+.THIS .navigationCardParagraphTitle.acn-navigation-list-item-description.uiOutputRichText:hover{
+    color: t(colorTextActionLabel);
+}
+
+/*************************** Navigation Card Picture *******************/
+.navigationCardPicture.THIS {
+    margin-top: t(acnNavigationCardIconListItemMarginTop);
+    max-width: t(acnNavigationCardIconListItemMaximumWidth);
+}
+
+.THIS .navigationCardPicture.acn-navigation-list-item-description {
+
+}
+
+.THIS a.navigationCardPicture {
+    text-decoration: t(acnNavigationCardPictureListItemNameTextDecoration) !important;
+}
+
+.THIS a.navigationCardPicture:hover {
+    transform: scale(1.1);
+}
+
+.THIS a.navigationCardPicture img {
+    height: t(acnNavigationCardPictureListItemImageHeight);
+    margin-left: t(acnNavigationCardIconListItemMargin);
+    margin-right: t(acnNavigationCardIconListItemMargin);
+    max-height: t(acnNavigationCardPictureListItemImageHeight);
+    max-width: t(acnNavigationCardPictureListItemImageWidth);
+    min-height: t(acnNavigationCardPictureListItemImageHeight);
+    min-width: t(acnNavigationCardPictureListItemImageWidth);
+    object-fit: t(acnNavigationCardIconListItemImageObjectFit);
+    object-position: t(acnNavigationCardIconListItemImageObjectPosition);
+}
+
+.THIS a.navigationCardPicture .acn-navigation-list-item-transparent-div {
+    border-radius: t(borderRadiusMedium);
+    color: t(acnNavigationCardPictureListItemNameColor);
+    /*font-family: t('"' + acnThemeFontCondensedBold + '"');*/
+    font-size: t(acnNavigationCardPictureListItemNameFontSize);
+    font-stretch: t(acnNavigationCardPictureListItemNameTextStretch);
+    /*font-weight: t(acnNavigationCardPictureListItemNameFontWeight);*/
+    margin: t(acnNavigationCardPictureListItemNameMargin);
+    padding-top: t(acnNavigationCardPictureListItemNamePaddingTop);
+    text-decoration: t(acnNavigationCardPictureListItemNameTextDecoration) !important;
+    text-transform: t(acnNavigationCardPictureListItemNameTextTransform);
+}
+
+.THIS a.navigationCardPicture .acn-navigation-list-item-transparent-div:hover {
+    text-decoration: t(acnNavigationCardPictureListItemNameTextDecoration) !important;
+}
+
+.THIS a.navigationCardPicture .acn-navigation-list-item-description {
+    color: t(colorTextPlaceholder);
+    margin-left: t(acnNavigationCardPictureListItemDescriptionMargin);
+    margin-right: t(acnNavigationCardPictureListItemDescriptionMargin);
+    max-width: t(acnNavigationCardPictureListItemDescriptionMaximumWidth);
+    /*font-family: t('"' + acnThemeFontLight + '"');*/
+    /*font-weight: t(acnNavigationCardPictureListItemDescriptionFontWeight);*/
+    vertical-align: t(acnNavigationCardPictureListItemDescriptionVerticalAlign);
+    text-decoration: t(acnNavigationCardPictureListItemNameTextDecoration) !important;
+}
+
+/*************************** Navigation Card Button *******************/
+.THIS .navigationCardButton.acn-navigation-list-item-transparent-div {
+    background-color: t(colorBackgroundButtonBrand);
+    border-radius: t(borderRadiusMedium);
+    color: t(colorTextButtonBrand);
+    /*font-family: t('"' + acnThemeFontRoman + '"');*/
+    font-size: t(acnNavigationCardButtonListItemNameFontSize);
+    font-weight: t(acnNavigationCardButtonListItemNameFontWeight);
+    margin: t(acnNavigationCardButtonListItemNameMargin);
+    max-width: t(acnNavigationCardButtonListItemNameMaximumWidth);
+    padding: t(acnNavigationCardButtonListItemNamePadding);
+}
+
+.THIS .navigationCardButton.acn-navigation-list-item-transparent-div:hover {
+    background-color: t(colorBackgroundButtonBrandHover);
+    box-shadow: t(shadowDropDown);
+    color: t(colorTextButtonBrandHover);
+    /*font-family: t('"' + acnThemeFontRoman + '"');*/
+}
+
+/************************ Navigation Card Text ***********************/
+.THIS .navigationCardText.acn-navigation-list-item-transparent-div span{
+    /*font-family: t('"' + acnThemeFontRoman + '"');*/
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.THIS .navigationCardText.acn-navigation-list-item-description.uiOutputRichText{
+    color: token(colorTextActionLabel);
+    /*font-family: t('"' + acnThemeFontRoman + '"');*/
+    font-weight: 500;
+}
+
+.THIS a.navigationCardText.topicLink.acn-navigation-list-anchor {
+    /*font-family: t('"' + acnThemeFontRoman + '"');*/
+    text-decoration: none;
+}
+
+.THIS a.navigationCardTileLevel02.topicLink.acn-navigation-list-anchor{
+    color: rgb(51, 51, 102) !important;
+    font-family: "Helvetica Neue (Roman)";
+    font-size: 1em;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.THIS a.navigationCardTileLevel02.topicLink.acn-navigation-list-anchor:hover{
+    font-weight: bolder;
+}
+/************************ Navigation Card Text End ********************/
+
+.THIS .acn-no-target {
+    cursor: default;
+}
+
+
+/*
+.THIS .navigationCardIconPill.acn-navigation-list-item-transparent-div {
+    height: 50px;
+    min-width: 150px;
+    border-radius: 25px !important;
+    z-index: 2;
+    background-color: token(acnNavigationListItemTransparentDivBGColor);
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    font-family: Montserrat;
+    font-weight: token(acnNavigationListItemTransparentDivFontWeight);
+    font-size: 14px;
+    display:flex;
+    align-items: center; 
+    justify-content: center; 
+    position: absolute; 
+    border-radius: token(myDefaultRadius);
+    transition: background-color 0.5s ease;
+}
+
+.THIS .navigationCardIconPill.acn-navigation-list-item-transparent-div span {
+    display: inline-block;
+    vertical-align: middle !important;
+    line-height: 16px;
+    font-family: lato;
+    font-size: token(acnNavigationListItemTransparentDivFontSize);
+}
+
+.THIS .navigationCardIconPill.acn-navigation-list-item-transparent-div:hover {
+    background-color: rgba(25, 124, 190, 0.9);
+    font-size: 15px;
+}
+
+.THIS .navigationCardIconPill .hidden {
+    display: none;
+}
+
+.THIS .navigationCardIconPill {
+    height: 100%;
+    width: 100%;
+    display:block;
+    position:relative;
+}
+
+.THIS .navigationCardIconPill.acn-navigation-list-anchor {
+    display:block;
+}
+
+.THIS .navigationCardIconPill.acn-navigation-list-item-image {
+    border-radius: 25px;
+    margin: 0 auto;
+    vertical-align: middle;
+    width: token(acnNavigationListItemImageWidth);
+    position: relative;
+    -webkit-box-shadow: token(acnNavigationListItemImgTagBoxShadow);
+    -moz-box-shadow: token(acnNavigationListItemImgTagBoxShadow);
+    box-shadow: token(acnNavigationListItemImgTagBoxShadow);
+    
+    padding: token(acnNavigationListItemImgTagPadding);
+    background: token(acnNavigationListItemImgTagBackground);
+    
+    -webkit-filter: token(acnNavigationListItemImgTagWebFilter);
+    background: token(acnNavigationListItemImgTagBGRadial);
+    
+    background-size: token(acnNavigationListItemImgTagBGSize);
+    background-position: token(acnNavigationListItemImgTagBGPosition); 
+}
+
+.THIS .navigationCardIconPill.acn-navigation-list-item-container-div {
+    display: none;
+}
+
+.THIS .navigationCardIconPill.div.acn-navigation-list-item-img-Tag {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.THIS .navigationCardIconPill.acn-navigation-list-item-img-Tag > img {
+    max-width:100%;
+    object-fit: cover;
+    box-shadow: token(acnNavigationListItemImgTagBoxShadow);
+    border-radius: 25px !important;
+    width: auto !important;
+    height: 50px !important ;
+}
+
+.THIS .navigationCardIconPill.acn-navigation-list-item-description-hidden {
+    display: none;
+}
+*/

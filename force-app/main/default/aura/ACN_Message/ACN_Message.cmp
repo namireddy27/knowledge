@@ -1,0 +1,29 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global" >
+    <aura:attribute name="title" type="String" access="global" default="" />
+    <aura:attribute name="message" type="String" access="global" default="" />
+    <aura:attribute name="adminMessage" type="String" access="global" default="" />
+    <aura:attribute name="severity" type="String" access="global" default="message" />
+    <aura:attribute name="isClosable" type="Boolean" access="global" default="true" />
+    <aura:attribute name="isVisible" type="Boolean" access="global" default="true" />
+    <aura:attribute name="showAdminMessage" type="Boolean" access="global" default="false" />
+    
+    <div class="acn-message-container-outer">
+        <div class="acn-message-container-inner">
+            <aura:if isTrue="{!v.isVisible}">
+                <ui:message title="{!v.title}" severity="{!v.severity}" closable="{!v.isClosable}" click="{!c.handleClose}">
+                    <div>
+                        <h1>{!v.message}</h1>
+                        <aura:if isTrue="{!v.showAdminMessage}">
+                            <a id="hide1" href="#hide1" class="hide">{!$Label.c.ACN_MessageShowErrorDescription}</a>
+                            <a id="show1" href="#show1" class="show">{!$Label.c.ACN_MessageHideErrorDescription}</a>
+                            <div class="details">
+                                {!v.adminMessage}
+                            </div>
+                        </aura:if>
+                    </div>
+                </ui:message>
+            </aura:if>
+        </div>
+    </div>
+    
+</aura:component>

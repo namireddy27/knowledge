@@ -1,0 +1,51 @@
+.THIS {
+    background-color: #f2f2f2;
+    padding: 12px;
+}
+
+.THIS div.acn-navigation-filter-hidden {
+    display: none;
+}
+
+.THIS h3.acn-navigation-filter-title {
+    color: token(acnGroupH2Color);
+    font-size: 20px;
+    display: block;
+    padding: 6px 3px 0 12px;
+    margin: 0;
+}
+ 
+.THIS div.acn-navigation-filter-container ul {
+    padding-top: 0;
+    margin-top: 0;
+    min-height: 80px;
+}
+
+.THIS div.acn-navigation-filter-container ul li.acn-filter-list-item {
+    padding: 4px 0;
+}
+
+.THIS div.acn-navigation-filter-container ul li.acn-filter-list-item label {
+    font-size: 14px;
+}
+
+.THIS select {
+    background-color: token(acnFormInputBackgroundColor);
+    border-color: token(acnFormInputBorderColor);
+    height: 2.25rem !important;
+    padding: 4px;
+}
+
+.THIS .slds-form-element__label {
+    display: inline;	
+}
+
+.THIS .slds-form-element__control {
+    display: inline-block;
+}
+
+.THIS input[type=checkbox].slds-input {
+    position: relative;
+    top: 12px;
+    width: inherit;
+}

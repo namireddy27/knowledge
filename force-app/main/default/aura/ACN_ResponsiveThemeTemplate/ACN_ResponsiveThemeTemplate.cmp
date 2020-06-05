@@ -1,0 +1,510 @@
+<aura:component implements="forceCommunity:themeLayout,c:ACN_Pageable" access="global" description="Sample Custom Theme Layout" extensible="true">
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <!--
+    <aura:handler event="c:ACN_BrowserFormFactorChanged" action="{!c.handleBrowserFormFactorChanged}"/>
+ -->
+    
+    <div class="acn-responsive-theme-layout-container-outer">
+        <div class="acn-responsive-theme-layout-container-inner">
+            <lightning:layout 
+                              class="acn-theme-page-template-drawer-container acn-margin-none acn-padding-none" 
+                              title="" 
+                              horizontalAlign="center" 
+                              verticalAlign="start" 
+                              multipleRows="false" 
+                              pullToBoundary="small" 
+                              >
+                <lightning:layoutItem 
+                                      class="acn-theme-page-template-drawer-containercontent acn-margin-none acn-padding-none" 
+                                      alignmentBump="top" 
+                                      flexibility="auto" 
+                                      padding="horizontal-small" 
+                                      size="{!v.showDrawer ? 9 : 12}" 
+                                      smallDeviceSize="{!v.showDrawer ? 9 : 12}" 
+                                      mediumDeviceSize="{!v.showDrawer ? 9 : 12}" 
+                                      largeDeviceSize="{!v.showDrawer ? 9 : 12}">
+                    <div class="acn-responsive-theme-layout-container">
+                        <aura:if isTrue="{!v.isHeaderFixed}">
+                            <div style="{!'width:100%;height:' + v.fixedHeaderPadding + ';background:transparent;'}">
+                            </div>
+                        </aura:if>
+                        <div class="{!'acn-theme-layout-pre-header' + (v.templateLayoutClass == '' ? '' : ' ' + v.templateLayoutClass)}">
+                            <lightning:layout 
+                                              class="{!'acn-header-top acn-header-top-' + v.browserFormFactor + (v.isHeaderFixed ? ' acn-page-theme-layout-header-fixed' : '') + (v.templateLayoutClass == '' ? '' : ' ' + v.templateLayoutClass)}" 
+                                              title="{!v.templateLayoutTitle}" 
+                                              horizontalAlign="{!v.templateLayoutHorizontalAlign}" 
+                                              verticalAlign="{!v.templateLayoutVerticalAlign}" 
+                                              multipleRows="{!v.templateLayoutMultipleRows}" 
+                                              pullToBoundary="{!v.templateLayoutPullToBoundary}" 
+                                              >
+                                <aura:if isTrue="{!v.browserFormFactor == 'DESKTOP' ? v.showGuttersInTopHeader ? v.leftGutterSize > 0 ? true : false : false : false}">
+                                    <lightning:layoutItem 
+                                                          class="{!'acn-header-content' + (v.templateLayoutClass == '' ? '' : ' ' + v.templateLayoutClass)}" 
+                                                          alignmentBump="top" 
+                                                          flexibility="auto" 
+                                                          padding="horizontal-small" 
+                                                          size="12" 
+                                                          smallDeviceSize="0" 
+                                                          mediumDeviceSize="0" 
+                                                          largeDeviceSize="{!v.showGuttersInTopHeader ? v.browserFormFactor == 'DESKTOP' ? v.leftGutterSize : 0 : 0}">
+                                    </lightning:layoutItem>
+                                </aura:if>
+                                <lightning:layoutItem 
+                                                      class="{!'acn-header-content acn-header-content-' + v.browserFormFactor + (v.isHeaderFixed ? ' acn-page-theme-layout-header-fixed' : '') + (v.templateLayoutClass == '' ? '' : ' ' + v.templateLayoutClass)}" 
+                                                      alignmentBump="top" 
+                                                      flexibility="auto" 
+                                                      padding="horizontal-small" 
+                                                      size="12" 
+                                                      smallDeviceSize="12" 
+                                                      mediumDeviceSize="12" 
+                                                      largeDeviceSize="{!v.showGuttersInTopHeader ? v.browserFormFactor == 'DESKTOP' ? (12 - v.leftGutterSize - v.rightGutterSize) : 12 : 12}">
+                                    {!v.headerTop}                
+                                </lightning:layoutItem>
+                                <aura:if isTrue="{!v.browserFormFactor == 'DESKTOP' ? v.showGuttersInTopHeader ? v.rightGutterSize > 0 ? true : false : false : false}">
+                                    <lightning:layoutItem 
+                                                          class="{!'acn-header-content' + (v.templateLayoutClass == '' ? '' : ' ' + v.templateLayoutClass)}" 
+                                                          alignmentBump="top" 
+                                                          flexibility="auto" 
+                                                          padding="horizontal-small" 
+                                                          size="12" 
+                                                          smallDeviceSize="0" 
+                                                          mediumDeviceSize="0" 
+                                                          largeDeviceSize="{!v.browserFormFactor == 'DESKTOP' ? v.showGuttersInTopHeader ? v.rightGutterSize : 0 : 0}">
+                                    </lightning:layoutItem>
+                                </aura:if>
+                            </lightning:layout>
+                            <lightning:layout 
+                                              class="{!'acn-header-' + v.browserFormFactor + (v.isHeaderFixed ? ' acn-page-theme-layout-header-fixed' : '') + (v.templateLayoutClass == '' ? '' : ' ' + v.templateLayoutClass)}" 
+                                              title="{!v.templateLayoutTitle}" 
+                                              horizontalAlign="{!v.templateLayoutHorizontalAlign}" 
+                                              verticalAlign="{!v.templateLayoutVerticalAlign}" 
+                                              multipleRows="{!v.templateLayoutMultipleRows}" 
+                                              pullToBoundary="{!v.templateLayoutPullToBoundary}" 
+                                              >
+                                <aura:if isTrue="{!v.browserFormFactor == 'DESKTOP' ? v.showGuttersInHeader ? v.leftGutterSize > 0 ? true : false : false : false}">
+                                    <lightning:layoutItem 
+                                                          class="{!'acn-header-content' + (v.templateLayoutClass == '' ? '' : ' ' + v.templateLayoutClass)}" 
+                                                          alignmentBump="top" 
+                                                          flexibility="auto" 
+                                                          padding="horizontal-small" 
+                                                          size="12" 
+                                                          smallDeviceSize="0" 
+                                                          mediumDeviceSize="0" 
+                                                          largeDeviceSize="{!v.showGuttersInHeader ? v.browserFormFactor == 'DESKTOP' ? v.leftGutterSize : 0 : 0}">
+                                    </lightning:layoutItem>
+                                </aura:if>
+                                <lightning:layoutItem 
+                                                      class="{!'acn-header-content acn-header-content-' + v.browserFormFactor + (v.isHeaderFixed ? ' acn-page-theme-layout-header-fixed' : '') + (v.templateLayoutClass == '' ? '' : ' ' + v.templateLayoutClass)}" 
+                                                      alignmentBump="top" 
+                                                      flexibility="auto" 
+                                                      padding="horizontal-small" 
+                                                      size="12" 
+                                                      smallDeviceSize="12" 
+                                                      mediumDeviceSize="12" 
+                                                      largeDeviceSize="{!v.showGuttersInHeader ? v.browserFormFactor == 'DESKTOP' ? (12 - v.leftGutterSize - v.rightGutterSize) : 12 : 12}">
+                                    {!v.header}                
+                                </lightning:layoutItem>
+                                <aura:if isTrue="{!v.browserFormFactor == 'DESKTOP' ? v.showGuttersInHeader ? v.rightGutterSize > 0 ? true : false : false : false}">
+                                    <lightning:layoutItem 
+                                                          class="{!'acn-header-content' + (v.templateLayoutClass == '' ? '' : ' ' + v.templateLayoutClass)}" 
+                                                          alignmentBump="top" 
+                                                          flexibility="auto" 
+                                                          padding="horizontal-small" 
+                                                          size="12" 
+                                                          smallDeviceSize="0" 
+                                                          mediumDeviceSize="0" 
+                                                          largeDeviceSize="{!v.browserFormFactor == 'DESKTOP' ? v.showGuttersInTopHeader ? v.rightGutterSize : 0 : 0}">
+                                    </lightning:layoutItem>
+                                </aura:if>
+                            </lightning:layout>
+                        </div>
+                        <div class="{!'acn-theme-layout-header' + (v.templateLayoutClass == '' ? '' : ' ' + v.templateLayoutClass)}" style="{!(v.showHero ? v.heroBackgroundImage == '' ? '' : 'background-image: url(' + v.heroBackgroundImage + ');' + (v.heroBackgroundImageWidth == '' ? 'background-size: cover;' : v.heroBackgroundImageHeight == '' ? 'background-size: cover;' : 'height: ' + (v.browserFormFactor == 'DESKTOP' ? v.heroBackgroundImageHeightArray[0] : (v.browserFormFactor == 'TABLET' ? v.heroBackgroundImageHeightArray[2] : v.heroBackgroundImageHeightArray[3] ) ) + ';background-size: cover;') + (v.heroBackgroundImagePosition == '' ? '' : 'background-position: ' + v.heroBackgroundImagePosition + ';') : '') + (v.headerBackground != '' ? v.headerBackground : '')}">
+                            <lightning:layout 
+                                              class="{!'acn-header-' + v.browserFormFactor + (v.isHeaderFixed ? ' acn-page-theme-layout-header-fixed' : '') + (v.templateLayoutClass == '' ? '' : ' ' + v.templateLayoutClass)}" 
+                                              title="{!v.templateLayoutTitle}" 
+                                              horizontalAlign="{!v.templateLayoutHorizontalAlign}" 
+                                              verticalAlign="{!v.templateLayoutVerticalAlign}" 
+                                              multipleRows="{!v.templateLayoutMultipleRows}" 
+                                              pullToBoundary="{!v.templateLayoutPullToBoundary}" 
+                                              >
+                                <aura:if isTrue="{!v.browserFormFactor == 'DESKTOP' ? v.showGuttersInHeaderContent ? v.leftGutterSize > 0 ? true : false : false : false}">
+                                    <lightning:layoutItem 
+                                                          class="{!'acn-header-content' + (v.templateLayoutClass == '' ? '' : ' ' + v.templateLayoutClass)}" 
+                                                          alignmentBump="top" 
+                                                          flexibility="auto" 
+                                                          padding="horizontal-small" 
+                                                          size="12" 
+                                                          smallDeviceSize="0" 
+                                                          mediumDeviceSize="0" 
+                                                          largeDeviceSize="{!v.showGuttersInHeaderContent ? v.browserFormFactor == 'DESKTOP' ? v.leftGutterSize : 0 : 0}">
+                                    </lightning:layoutItem>
+                                </aura:if>
+                                <lightning:layoutItem 
+                                                      class="{!'acn-header-content acn-header-content-' + v.browserFormFactor + (v.isHeaderFixed ? ' acn-page-theme-layout-header-fixed' : '') + (v.templateLayoutClass == '' ? '' : ' ' + v.templateLayoutClass)}" 
+                                                      alignmentBump="top" 
+                                                      flexibility="auto" 
+                                                      padding="horizontal-small" 
+                                                      size="12" 
+                                                      smallDeviceSize="0" 
+                                                      mediumDeviceSize="0" 
+                                                      largeDeviceSize="{!v.showGuttersInHeaderContent ? v.browserFormFactor == 'DESKTOP' ? (12 - v.leftGutterSize - v.rightGutterSize) : 12 : 12}">
+                                    <lightning:layout 
+                                                      class="{!'acn-header-grid-' + v.browserFormFactor + (v.isHeaderFixed ? ' acn-page-theme-layout-header-fixed' : '') + (v.templateLayoutClass == '' ? '' : ' ' + v.templateLayoutClass)}" 
+                                                      title="{!v.templateLayoutTitle}" 
+                                                      horizontalAlign="{!v.templateLayoutHorizontalAlign}" 
+                                                      verticalAlign="{!v.templateLayoutVerticalAlign}" 
+                                                      multipleRows="{!v.templateLayoutMultipleRows}" 
+                                                      pullToBoundary="{!v.templateLayoutPullToBoundary}" 
+                                                      >
+                                        <aura:if isTrue="{!v.logoHeaderIndex == '1' || v.searchHeaderIndex == '1' || v.profileMenuHeaderIndex == '1' || v.navigationMenuHeaderIndex == '1' || v.headerFooterIndex == '1' || v.headerBandIndex == '1'}">
+                                            <lightning:layoutItem 
+                                                                  title="{!v.firstElementTitle}" 
+                                                                  class="{!v.firstElementStyleClass}" 
+                                                                  flexibility="{!v.firstElementFlexibility}" 
+                                                                  padding="{!v.firstElementPadding}" 
+                                                                  alignmentBump="{!v.firstElementAlignmentBump}" 
+                                                                  size="{!v.firstElementWidth[0]}" 
+                                                                  smallDeviceSize="{!v.firstElementWidth[3]}" 
+                                                                  mediumDeviceSize="{!v.firstElementWidth[2]}" 
+                                                                  largeDeviceSize="{!v.firstElementWidth[1]}"
+                                                                  >
+                                                <aura:if isTrue="{!v.logoHeaderIndex == '1'}">
+                                                    <div class="brandingLogo" style="{!'height: ' + v.companyLogoHeight + ';'}">
+                                                        <aura:if isTrue="{!v.showCompanyLogo}">
+                                                            {!v.logo}
+                                                        </aura:if>
+                                                    </div>
+                                                </aura:if>
+                                                <aura:if isTrue="{!v.searchHeaderIndex == '1'}">
+                                                    <aura:if isTrue="{!v.showSearch}">
+                                                        {!v.search}
+                                                    </aura:if>
+                                                </aura:if>
+                                                <aura:if isTrue="{!v.profileMenuHeaderIndex == '1'}">
+                                                    <aura:if isTrue="{!v.showProfileMenu}">
+                                                        {!v.profileMenu}
+                                                    </aura:if>
+                                                </aura:if>
+                                                <aura:if isTrue="{!v.navigationMenuHeaderIndex == '1'}">
+                                                    <aura:if isTrue="{!v.showNavigationMenu}">
+                                                        <div class="{!'acn-navigation-menu' + (v.customNavigationMenuStyleClass == '' ? '' : ' ' + v.customNavigationMenuStyleClass) + (v.showNavigationMenuHome ? '' : ' acn-navigation-menu-home-item-hidden')}">
+                                                            {!v.navBar}
+                                                        </div>
+                                                    </aura:if>
+                                                </aura:if>
+                                                <aura:if isTrue="{!v.headerFooterIndex == '1'}">
+                                                    <aura:if isTrue="{!v.showHeaderFooter}">
+                                                        {!v.headerFooter}
+                                                    </aura:if>
+                                                </aura:if>
+                                                <aura:if isTrue="{!v.headerBandIndex == '1'}">
+                                                    {!v.headerBand}
+                                                </aura:if>
+                                            </lightning:layoutItem>
+                                        </aura:if>
+                                        <aura:if isTrue="{!v.logoHeaderIndex == '2' || v.searchHeaderIndex == '2' || v.profileMenuHeaderIndex == '2' || v.navigationMenuHeaderIndex == '2' || v.headerFooterIndex == '2' || v.headerBandIndex == '2'}">
+                                            <lightning:layoutItem 
+                                                                  title="{!v.secondElementTitle}" 
+                                                                  class="{!v.secondElementStyleClass}" 
+                                                                  flexibility="{!v.secondElementFlexibility}" 
+                                                                  padding="{!v.secondElementPadding}" 
+                                                                  alignmentBump="{!v.secondElementAlignmentBump}" 
+                                                                  size="{!v.secondElementWidth[0]}" 
+                                                                  smallDeviceSize="{!v.secondElementWidth[3]}" 
+                                                                  mediumDeviceSize="{!v.secondElementWidth[2]}" 
+                                                                  largeDeviceSize="{!v.secondElementWidth[1]}"
+                                                                  >
+                                                <aura:if isTrue="{!v.logoHeaderIndex == '2'}">
+                                                    <div class="brandingLogo" style="{!'height: ' + v.companyLogoHeight + ';'}">
+                                                        <aura:if isTrue="{!v.showCompanyLogo}">
+                                                            {!v.logo}
+                                                        </aura:if>
+                                                    </div>
+                                                </aura:if>
+                                                <aura:if isTrue="{!v.searchHeaderIndex == '2'}">
+                                                    <aura:if isTrue="{!v.showSearch}">
+                                                        {!v.search}
+                                                    </aura:if>
+                                                </aura:if>
+                                                <aura:if isTrue="{!v.profileMenuHeaderIndex == '2'}">
+                                                    <aura:if isTrue="{!v.showProfileMenu}">
+                                                        {!v.profileMenu}
+                                                    </aura:if>
+                                                </aura:if>
+                                                <aura:if isTrue="{!v.navigationMenuHeaderIndex == '2'}">
+                                                    <aura:if isTrue="{!v.showNavigationMenu}">
+                                                        <div class="{!'acn-navigation-menu' + (v.customNavigationMenuStyleClass == '' ? '' : ' ' + v.customNavigationMenuStyleClass) + (v.showNavigationMenuHome ? '' : ' acn-navigation-menu-home-item-hidden')}">
+                                                            {!v.navBar}
+                                                        </div>
+                                                    </aura:if>
+                                                </aura:if>
+                                                <aura:if isTrue="{!v.headerFooterIndex == '2'}">
+                                                    <aura:if isTrue="{!v.showHeaderFooter}">
+                                                        {!v.headerFooter}
+                                                    </aura:if>
+                                                </aura:if>
+                                                <aura:if isTrue="{!v.headerBandIndex == '2'}">
+                                                    {!v.headerBand}
+                                                </aura:if>
+                                            </lightning:layoutItem>
+                                        </aura:if>
+                                        <aura:if isTrue="{!v.logoHeaderIndex == '3' || v.searchHeaderIndex == '3' || v.profileMenuHeaderIndex == '3' || v.navigationMenuHeaderIndex == '3' || v.headerFooterIndex == '3' || v.headerBandIndex == '3'}">
+                                            <lightning:layoutItem 
+                                                                  title="{!v.thirdElementTitle}" 
+                                                                  class="{!v.thirdElementStyleClass}" 
+                                                                  flexibility="{!v.thirdElementFlexibility}" 
+                                                                  padding="{!v.thirdElementPadding}" 
+                                                                  alignmentBump="{!v.thirdElementAlignmentBump}" 
+                                                                  size="{!v.thirdElementWidth[0]}" 
+                                                                  smallDeviceSize="{!v.thirdElementWidth[3]}" 
+                                                                  mediumDeviceSize="{!v.thirdElementWidth[2]}" 
+                                                                  largeDeviceSize="{!v.thirdElementWidth[1]}"
+                                                                  >
+                                                <aura:if isTrue="{!v.logoHeaderIndex == '3'}">
+                                                    <div class="brandingLogo" style="{!'height: ' + v.companyLogoHeight + ';'}">
+                                                        <aura:if isTrue="{!v.showCompanyLogo}">
+                                                            {!v.logo}
+                                                        </aura:if>
+                                                    </div>
+                                                </aura:if>
+                                                <aura:if isTrue="{!v.searchHeaderIndex == '3'}">
+                                                    <aura:if isTrue="{!v.showSearch}">
+                                                        {!v.search}
+                                                    </aura:if>
+                                                </aura:if>
+                                                <aura:if isTrue="{!v.profileMenuHeaderIndex == '3'}">
+                                                    <aura:if isTrue="{!v.showProfileMenu}">
+                                                        {!v.profileMenu}
+                                                    </aura:if>
+                                                </aura:if>
+                                                <aura:if isTrue="{!v.navigationMenuHeaderIndex == '3'}">
+                                                    <aura:if isTrue="{!v.showNavigationMenu}">
+                                                        <div class="{!'acn-navigation-menu' + (v.customNavigationMenuStyleClass == '' ? '' : ' ' + v.customNavigationMenuStyleClass) + (v.showNavigationMenuHome ? '' : ' acn-navigation-menu-home-item-hidden')}">
+                                                            {!v.navBar}
+                                                        </div>
+                                                    </aura:if>
+                                                </aura:if>
+                                                <aura:if isTrue="{!v.headerFooterIndex == '3'}">
+                                                    <aura:if isTrue="{!v.showHeaderFooter}">
+                                                        {!v.headerFooter}
+                                                    </aura:if>
+                                                </aura:if>
+                                                <aura:if isTrue="{!v.headerBandIndex == '3'}">
+                                                    {!v.headerBand}
+                                                </aura:if>
+                                            </lightning:layoutItem>
+                                        </aura:if>
+                                        <aura:if isTrue="{!v.logoHeaderIndex == '4' || v.searchHeaderIndex == '4' || v.profileMenuHeaderIndex == '4' || v.navigationMenuHeaderIndex == '4' || v.headerFooterIndex == '4' || v.headerBandIndex == '4'}">
+                                            <lightning:layoutItem 
+                                                                  title="{!v.fourthElementTitle}" 
+                                                                  class="{!v.fourthElementStyleClass}" 
+                                                                  flexibility="{!v.fourthElementFlexibility}" 
+                                                                  padding="{!v.fourthElementPadding}" 
+                                                                  alignmentBump="{!v.fourthElementAlignmentBump}" 
+                                                                  size="{!v.fourthElementWidth[0]}" 
+                                                                  smallDeviceSize="{!v.fourthElementWidth[3]}" 
+                                                                  mediumDeviceSize="{!v.fourthElementWidth[2]}" 
+                                                                  largeDeviceSize="{!v.fourthElementWidth[1]}"
+                                                                  >
+                                                <aura:if isTrue="{!v.logoHeaderIndex == '4'}">
+                                                    <div class="brandingLogo" style="{!'height: ' + v.companyLogoHeight + ';'}">
+                                                        <aura:if isTrue="{!v.showCompanyLogo}">
+                                                            {!v.logo}
+                                                        </aura:if>
+                                                    </div>
+                                                </aura:if>
+                                                <aura:if isTrue="{!v.searchHeaderIndex == '4'}">
+                                                    <aura:if isTrue="{!v.showSearch}">
+                                                        {!v.search}
+                                                    </aura:if>
+                                                </aura:if>
+                                                <aura:if isTrue="{!v.profileMenuHeaderIndex == '4'}">
+                                                    <aura:if isTrue="{!v.showProfileMenu}">
+                                                        {!v.profileMenu}
+                                                    </aura:if>
+                                                </aura:if>
+                                                <aura:if isTrue="{!v.navigationMenuHeaderIndex == '4'}">
+                                                    <aura:if isTrue="{!v.showNavigationMenu}">
+                                                        <div class="{!'acn-navigation-menu' + (v.customNavigationMenuStyleClass == '' ? '' : ' ' + v.customNavigationMenuStyleClass) + (v.showNavigationMenuHome ? '' : ' acn-navigation-menu-home-item-hidden')}">
+                                                            {!v.navBar}
+                                                        </div>
+                                                    </aura:if>
+                                                </aura:if>
+                                                <aura:if isTrue="{!v.headerFooterIndex == '4'}">
+                                                    <aura:if isTrue="{!v.showHeaderFooter}">
+                                                        {!v.headerFooter}
+                                                    </aura:if>
+                                                </aura:if>
+                                                <aura:if isTrue="{!v.headerBandIndex == '4'}">
+                                                    {!v.headerBand}
+                                                </aura:if>
+                                            </lightning:layoutItem>
+                                        </aura:if>
+                                        <aura:if isTrue="{!v.logoHeaderIndex == '5' || v.searchHeaderIndex == '5' || v.profileMenuHeaderIndex == '5' || v.navigationMenuHeaderIndex == '5' || v.headerFooterIndex == '5' || v.headerBandIndex == '5'}">
+                                            <lightning:layoutItem 
+                                                                  title="{!v.fifthElementTitle}" 
+                                                                  class="{!v.fifthElementStyleClass}" 
+                                                                  flexibility="{!v.fifthElementFlexibility}" 
+                                                                  padding="{!v.fifthElementPadding}" 
+                                                                  alignmentBump="{!v.fifthElementAlignmentBump}" 
+                                                                  size="{!v.fifthElementWidth[0]}" 
+                                                                  smallDeviceSize="{!v.fifthElementWidth[3]}" 
+                                                                  mediumDeviceSize="{!v.fifthElementWidth[2]}" 
+                                                                  largeDeviceSize="{!v.fifthElementWidth[1]}"
+                                                                  >
+                                                <aura:if isTrue="{!v.logoHeaderIndex == '5'}">
+                                                    <div class="brandingLogo" style="{!'height: ' + v.companyLogoHeight + ';'}">
+                                                        <aura:if isTrue="{!v.showCompanyLogo}">
+                                                            {!v.logo}
+                                                        </aura:if>
+                                                    </div>
+                                                </aura:if>
+                                                <aura:if isTrue="{!v.searchHeaderIndex == '5'}">
+                                                    <aura:if isTrue="{!v.showSearch}">
+                                                        {!v.search}
+                                                    </aura:if>
+                                                </aura:if>
+                                                <aura:if isTrue="{!v.profileMenuHeaderIndex == '5'}">
+                                                    <aura:if isTrue="{!v.showProfileMenu}">
+                                                        {!v.profileMenu}
+                                                    </aura:if>
+                                                </aura:if>
+                                                <aura:if isTrue="{!v.navigationMenuHeaderIndex == '5'}">
+                                                    <aura:if isTrue="{!v.showNavigationMenu}">
+                                                        <div class="{!'acn-navigation-menu' + (v.customNavigationMenuStyleClass == '' ? '' : ' ' + v.customNavigationMenuStyleClass) + (v.showNavigationMenuHome ? '' : ' acn-navigation-menu-home-item-hidden')}">
+                                                            {!v.navBar}
+                                                        </div>
+                                                    </aura:if>
+                                                </aura:if>
+                                                <aura:if isTrue="{!v.headerFooterIndex == '5'}">
+                                                    <aura:if isTrue="{!v.showHeaderFooter}">
+                                                        {!v.headerFooter}
+                                                    </aura:if>
+                                                </aura:if>
+                                                <aura:if isTrue="{!v.headerBandIndex == '5'}">
+                                                    {!v.headerBand}
+                                                </aura:if>
+                                            </lightning:layoutItem>
+                                        </aura:if>
+                                    </lightning:layout>
+                                </lightning:layoutItem>
+                                <aura:if isTrue="{!v.browserFormFactor == 'DESKTOP' ? v.showGuttersInHeaderContent ? v.rightGutterSize > 0 ? true : false : false : false}">
+                                    <lightning:layoutItem 
+                                                          class="{!'acn-header-content' + (v.templateLayoutClass == '' ? '' : ' ' + v.templateLayoutClass)}" 
+                                                          alignmentBump="top" 
+                                                          flexibility="auto" 
+                                                          padding="horizontal-small" 
+                                                          size="12" 
+                                                          smallDeviceSize="0" 
+                                                          mediumDeviceSize="0" 
+                                                          largeDeviceSize="{!v.browserFormFactor == 'DESKTOP' ? v.showGuttersInHeader ? v.rightGutterSize : 0 : 0}">
+                                    </lightning:layoutItem>
+                                </aura:if>
+                            </lightning:layout>
+                        </div>
+                        <div class="acn-theme-layout-body">
+                            <lightning:layout 
+                                              class="{!'acn-body-' + v.browserFormFactor + (v.templateLayoutClass == '' ? '' : ' ' + v.templateLayoutClass)}" 
+                                              title="{!v.templateLayoutTitle}" 
+                                              horizontalAlign="{!v.templateLayoutHorizontalAlign}" 
+                                              verticalAlign="{!v.templateLayoutVerticalAlign}" 
+                                              multipleRows="{!v.templateLayoutMultipleRows}" 
+                                              pullToBoundary="{!v.templateLayoutPullToBoundary}" 
+                                              >
+                                <aura:if isTrue="{!v.browserFormFactor == 'DESKTOP'}">
+                                    <lightning:layoutItem class="{!v.customNavigationMenuPosition == 'left' ? 'acn-custom-navigation-menu-left-container' : ''}" alignmentBump="bottom" flexibility="auto" padding="horizontal-small" size="12" smallDeviceSize="0" mediumDeviceSize="0" largeDeviceSize="{!v.showGutters ? v.browserFormFactor == 'DESKTOP' ? v.leftGutterSize : 0 : 0}">
+                                        <aura:if isTrue="{!v.showCustomNavigationMenu}">
+                                            <aura:if isTrue="{!v.customNavigationMenuPosition == 'left' ? v.browserFormFactor != 'PHONE' ? true : false : false}">
+                                                <div class="{!'acn-custom-navigation-menu-' + v.customNavigationMenuPosition + (v.customNavigationMenuStyleClass == '' ? '' : ' ' + v.customNavigationMenuStyleClass) + (v.showNavigationMenuHome ? '' : ' acn-navigation-menu-home-item-hidden')}">
+                                                    <c:ACN_CommunityNavigationMenu 
+                                                                                   dataProviderName="{!v.customNavigationMenuDataProvider}"
+                                                                                   itemSize="{!v.customNavigationMenuItemSizeVertical}" 
+                                                                                   layoutVerticalAlign="top" 
+                                                                                   styleClass="{!v.customNavigationMenuStyleClass}"
+                                                                                   menuPosition ="{!v.customNavigationMenuPosition}"
+                                                                                   />
+                                                </div>
+                                            </aura:if>
+                                        </aura:if>
+                                    </lightning:layoutItem>
+                                </aura:if>
+                                <lightning:layoutItem 
+                                                      flexibility="auto" 
+                                                      alignmentBump="bottom" 
+                                                      padding="horizontal-small" 
+                                                      size="12" 
+                                                      smallDeviceSize="12" 
+                                                      mediumDeviceSize="12" 
+                                                      largeDeviceSize="{!v.showGutters ? v.browserFormFactor == 'DESKTOP' ? (12 - v.leftGutterSize - v.rightGutterSize) : 12 : 12}"
+                                                      >
+                                    <div class="mainContentArea">
+                                        {!v.body}
+                                    </div>
+                                </lightning:layoutItem>
+                                <aura:if isTrue="{!v.browserFormFactor == 'DESKTOP'}">
+                                    <lightning:layoutItem flexibility="auto" padding="horizontal-small" size="12" smallDeviceSize="0" mediumDeviceSize="0" largeDeviceSize="{!v.showGutters ? v.browserFormFactor == 'DESKTOP' ? v.rightGutterSize : 0 : 0}">
+                                    </lightning:layoutItem>
+                                </aura:if>
+                            </lightning:layout>
+                        </div>
+                        <aura:if isTrue="{!v.isFooterFixed}">
+                            <div style="{!'width:100%;min-height:' + v.fixedHeaderPadding + ';background:transparent;'}">
+                                <div style="{!'width:100%;height:' + v.fixedHeaderPadding + ';background:transparent;'}">
+                                    
+                                </div>
+                            </div>
+                        </aura:if>
+                        <div class="{!'acn-theme-layout-footer' + (v.footerStyleClass == '' ? '' : ' ' + v.footerStyleClass) + (v.isFooterFixed ? ' acn-page-theme-layout-footer-fixed' : '')}" style="{!(v.footerBackground != '' ? v.footerBackground : '') + (v.isFooterFixed ? 'min-height:' + v.fixedHeaderPadding + ';' : '')}">
+                            <lightning:layout 
+                                              class="{!'acn-footer-' + v.browserFormFactor + (v.templateLayoutClass == '' ? '' : ' ' + v.templateLayoutClass)}" 
+                                              title="{!v.templateLayoutTitle}" 
+                                              horizontalAlign="{!v.templateLayoutHorizontalAlign}" 
+                                              verticalAlign="{!v.templateLayoutVerticalAlign}" 
+                                              multipleRows="{!v.templateLayoutMultipleRows}" 
+                                              pullToBoundary="{!v.templateLayoutPullToBoundary}" 
+                                              >
+                                <aura:if isTrue="{!v.browserFormFactor == 'DESKTOP' ? v.showGuttersInFooter ? v.leftGutterSize > 0 ? true : false : false : false}">
+                                    <lightning:layoutItem 
+                                                          class="{!'acn-footer-content acn-footer-content-left acn-footer-content-' + v.browserFormFactor + (v.templateLayoutClass == '' ? '' : ' ' + v.templateLayoutClass)}" 
+                                                          alignmentBump="top" 
+                                                          flexibility="auto" 
+                                                          padding="horizontal-small" 
+                                                          size="{!(v.browserFormFactor == 'DESKTOP' ? 12 : 0)}" 
+                                                          smallDeviceSize="0" 
+                                                          mediumDeviceSize="0" 
+                                                          largeDeviceSize="{!v.showGuttersInFooter ? v.browserFormFactor == 'DESKTOP' ? v.leftGutterSize : 0 : 0}">
+                                    </lightning:layoutItem>                        
+                                </aura:if>
+                                <lightning:layoutItem 
+                                                      class="{!'acn-footer-content acn-footer-content-center acn-footer-content-' + v.browserFormFactor + (v.templateLayoutClass == '' ? '' : ' ' + v.templateLayoutClass)}" 
+                                                      alignmentBump="top" 
+                                                      flexibility="auto" 
+                                                      padding="horizontal-small" 
+                                                      size="12" 
+                                                      smallDeviceSize="0" 
+                                                      mediumDeviceSize="0" 
+                                                      largeDeviceSize="{!v.showGuttersInFooter ? v.browserFormFactor == 'DESKTOP' ? (12 - v.leftGutterSize - v.rightGutterSize) : 12 : 12}">
+                                    <aura:if isTrue="{!v.showFooter}">
+                                        {!v.footer}
+                                    </aura:if>
+                                </lightning:layoutItem>
+                                <aura:if isTrue="{!v.browserFormFactor == 'DESKTOP' ? v.showGuttersInFooter ? v.rightGutterSize > 0 ? true : false : false : false}">
+                                    <lightning:layoutItem 
+                                                          class="{!'acn-footer-content acn-footer-content-right acn-footer-content-' + v.browserFormFactor + (v.templateLayoutClass == '' ? '' : ' ' + v.templateLayoutClass)}" 
+                                                          alignmentBump="top" 
+                                                          flexibility="auto" 
+                                                          padding="horizontal-small" 
+                                                          size="{!(v.browserFormFactor == 'DESKTOP' ? 12 : 12)}" 
+                                                          smallDeviceSize="0" 
+                                                          mediumDeviceSize="0" 
+                                                          largeDeviceSize="{!v.browserFormFactor == 'DESKTOP' ? v.showGuttersInFooter ? v.rightGutterSize : 0 : 0}">
+                                    </lightning:layoutItem>
+                                </aura:if>
+                            </lightning:layout>
+                        </div>
+                    </div>
+                </lightning:layoutItem>
+            </lightning:layout>
+        </div>
+    </div>
+</aura:component>

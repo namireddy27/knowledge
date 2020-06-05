@@ -1,0 +1,113 @@
+.THIS .social-media span {
+    margin: 0 10px;
+}
+
+.THIS .footer-icon {
+    width: 30px;
+    height: 30px;
+    display: block;
+}
+
+.THIS .footer-links .slds-size_1-of-11:not(:last-of-type) span::after {
+    content: "|";
+    margin: 0 10px;
+}
+
+.THIS .tsa-blog {
+    background: url("https://tsa-dhs--dev2--c.visualforce.com/resource/PortalCustom_SeRF/assets/icons/icon-tsablog-30x30.jpg") no-repeat 0 0;
+}
+
+.THIS .instagram {
+    background: url("https://tsa-dhs--dev2--c.visualforce.com/resource/PortalCustom_SeRF/assets/icons/icon-instagram-30x30.jpg") no-repeat 0 0;
+}
+
+.THIS .twitter {
+    background: url("https://tsa-dhs--dev2--c.visualforce.com/resource/PortalCustom_SeRF/assets/icons/icon-twitter-30x30.jpg") no-repeat 0 0;
+}
+
+.THIS .facebook {
+    background: url("https://tsa-dhs--dev2--c.visualforce.com/resource/PortalCustom_SeRF/assets/icons/icon-facebook-homepage-30x30.jpg") no-repeat 0 0;
+}
+
+.THIS .youtube {
+    background: url("https://tsa-dhs--dev2--c.visualforce.com/resource/PortalCustom_SeRF/assets/icons/icon-youtube-30x30.jpg") no-repeat 0 0;
+}
+
+.THIS .subscribe {
+    background: url("https://tsa-dhs--dev2--c.visualforce.com/resource/PortalCustom_SeRF/assets/icons/icon-govdelivery-30x30.jpg") no-repeat 0 0;
+}
+
+.THIS .facebook-messenger {
+    background: url("https://tsa-dhs--dev2--c.visualforce.com/resource/PortalCustom_SeRF/assets/icons/icon-fbmessenger-30x30.jpg") no-repeat 0 0;
+}
+
+/* ** TRAVIS **
+	********************************************** */
+/*  SECTIONS  */
+
+.THIS.footerWrapper {
+    background:#CCC;
+    padding: 20px 0 20px 0;
+	margin: 0;
+    line-height:20px;
+	font-size: 0.875rem;
+	color: #333;
+	font-family: "Open Sans", Arial, Verdana, serif;
+}
+.THIS.footerWrapper h3 {
+	letter-spacing: .04rem;
+    font-weight:700;
+}
+.THIS a {
+	text-decoration: none;
+	color: #333;
+}
+.THIS.sectionFooter {
+	clear: both;
+}
+/*  COLUMN SETUP  */
+.THIS .col {
+	display: block;
+	float:left;
+	margin: 0; /*1% 0 1% 1.6%; */
+}
+.THIS .col:first-child { margin-left: 0; }
+
+/*  GROUPING  */
+.THIS .group:before,
+.THIS .group:after { content:""; display:table; }
+.THIS .group:after { clear:both;}
+.THIS .group { zoom:1; /* For IE 6/7 */ }
+/*  GRID OF FOUR  */
+.THIS .span_1_of_4 {
+	width: 35%;
+	background: image('https://tsa-dhs--dev2--c.visualforce.com/resource/1581537802000/TSA-logo-horizontal.svg') no-repeat;
+	padding: 10px 0 0 20px;
+   /* background:papayawhip; */
+}
+.THIS .span_2_of_4 {
+	width: 24%;
+    padding:10px;
+   /* background:orange; */
+}
+.THIS .span_3_of_4 {
+	width: 20%;
+    padding:10px;
+   /* background:yellow; */
+}
+.THIS .span_4_of_4 {
+	width: 20%;
+    padding:10px;
+   /* background:pink; */
+}
+
+/*  GO FULL WIDTH BELOW 480 PIXELS */
+@media only screen and (max-width: 480px) {
+	.THIS .col {  margin: 1% 0 1% 0%; }
+	.THIS .span_1_of_4, .THIS .span_2_of_4 { width: 100%; }
+}		
+@media only screen and (max-width: 480px) {
+	.THIS .col {  margin: 1% 0 1% 0%; }
+	.THIS .span_3_of_4, .THIS .span_4_of_4 { width: 50%; }
+}
+/* /END/ */

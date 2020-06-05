@@ -1,0 +1,84 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global" >
+    <aura:attribute name="contextIdentifier" type="String" access="global" />
+    <aura:attribute name="styleClass" type="String" access="global" />
+    <aura:attribute name="showScoringStars" type="Boolean" access="global" default="false" />
+    <aura:attribute name="averageFiveStarsRating" type="String" access="global" default="0.0" />
+    <aura:attribute name="averageFiveStarsRatingNumber" type="Decimal" access="global" default="0.0" />
+    <aura:attribute name="fiveStarsRatingCount" type="Integer" access="global" default="0" />
+    <aura:attribute name="starIconValue" type="String" access="global" default="&#59415;" />
+    <aura:attribute name="starsColors" type="String[]" access="global" default="[]" />
+    <aura:attribute name="showScoringLoveIt" type="Boolean" access="global" default="false" />
+    <aura:attribute name="isLoved" type="Boolean" access="global" default="false" />
+    <aura:attribute name="isLovedText" type="String" access="global" default="Love It!" />
+    <aura:attribute name="isLovedIconName" type="String" access="global" default="Heart (Full)" />
+    <aura:attribute name="isLovedIconValue" type="String" access="global" default="&#10084;" />
+    <aura:attribute name="showScoringVotes" type="Boolean" access="global" default="false" />
+    <aura:attribute name="isLiked" type="Boolean" access="global" default="false" />
+    <aura:attribute name="isLikedCount" type="Integer" access="global" default="0" />
+    <aura:attribute name="isLikedText" type="String" access="global" default="Thumbs Up" />
+    <aura:attribute name="isLikedIconName" type="String" access="global" default="Thumbs Up" />
+    <aura:attribute name="isLikedIconValue" type="String" access="global" default="&#59424;" />
+    <aura:attribute name="showIsLikedCount" type="Boolean" access="global" default="false" />
+    <aura:attribute name="isNotLiked" type="Boolean" access="global" default="false" />
+    <aura:attribute name="isNotLikedCount" type="Integer" access="global" default="0" />
+    <aura:attribute name="isNotLikedText" type="String" access="global" default="Thumbs Down" />
+    <aura:attribute name="isNotLikedIconName" type="String" access="global" default="Thumbs Down" />
+    <aura:attribute name="isNotLikedIconValue" type="String" access="global" default="&#59493;" />
+    <aura:attribute name="showIsNotLikedCount" type="Boolean" access="global" default="false" />
+    <aura:attribute name="inactiveIconColor" type="String" access="global" default="#EEEEEE" />
+    <aura:attribute name="activeIconColor" type="String" access="global" default="#00A1E0" />
+    <aura:attribute name="iconsNameValuePair" type="Object[]" access="global" default="[]" />
+    <aura:attribute name="showScoringViews" type="Boolean" access="global" default="false" />
+    <aura:attribute name="isViewed" type="Boolean" access="global" default="false" />
+    <aura:attribute name="isViewedText" type="String" access="global" default="Views" />
+    <aura:attribute name="isViewedIconName" type="String" access="global" default="eye" />
+    <aura:attribute name="isViewedIconValue" type="String" access="global" default="&#59481;" />
+    <aura:attribute name="isViewedCount" type="Integer" access="global" default="0" />
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <div class="{!'acn-scoring-container-outer' + (v.styleClass != '' ? ' ' + v.styleClass : '')}">
+        <div class="{!'acn-scoring-container-inner' + (v.styleClass != '' ? ' ' + v.styleClass : '')}">
+            <div class="{!'acn-scoring-container' + (v.styleClass != '' ? ' ' + v.styleClass : '')}">
+                <aura:if isTrue="{!v.showScoringViews}">
+                    <div>
+                        <div class="{!(v.styleClass != '' ? v.styleClass + ' ' : '' ) + (v.isViewed ? 'acn-scoring-lightning-icon-active ' : 'acn-scoring-lightning-icon-inactive ') + 'acn-scoring-lightning-icon-container'}">
+                            <lightning:icon iconName="utility:preview" size="small" alternativeText="{!v.isViewedText}" title="{!v.isViewedText}" class="acn-scoring-lightning-icon" variant="bare" />
+                            <span class="{!v.styleClass + ' icon icon-key'}">{!v.isViewedCount}</span>
+                        </div>
+                    </div>
+                </aura:if>
+                <aura:if isTrue="{!v.showScoringStars}">
+                    <div class="{!v.styleClass}" style="">
+                        <div class="{!v.styleClass}" style="{!'float: right;color: ' + v.inactiveIconColor + ' !important;padding-left: 3px;margin-right: 10px;'}">
+                            <div class="{!v.styleClass}" style="{!'padding-left: 3px;color: ' + starColor + ' !important;white-space: nowrap;display: inline-block;'}" >
+                                <aura:iteration items="{!v.starsColors}" var="starColor">
+                                    <span class="{!v.styleClass + ' icon-fallback-text forceIcon'}" style="{!'color: ' + starColor + ' !important;'}" data-icon="{!v.starIconValue}">
+                                    </span>
+                                </aura:iteration>
+                            </div>
+                            <span class="{!v.styleClass + ' icon icon-key'}" style="{!'color: ' + v.activeIconColor + ';'}">({!v.fiveStarsRatingCount})</span>
+                        </div>
+                    </div>
+                </aura:if>
+                <aura:if isTrue="{!v.showScoringLoveIt}">
+                    <div class="{!(v.styleClass != '' ? v.styleClass + ' ' : '' ) + 'acn-scoring-element-container'}">
+                        <div class="{!(v.styleClass != '' ? v.styleClass + ' ' : '' ) + (v.isLoved ? 'acn-scoring-lightning-icon-active ' : 'acn-scoring-lightning-icon-inactive ') + 'acn-scoring-lightning-icon-container'}">
+                            <lightning:icon iconName="utility:favorite" size="small" alternativeText="{!v.isLovedText}" title="{!v.isLovedText}" class="acn-scoring-lightning-icon" variant="bare" />
+                        </div>
+                    </div>
+                </aura:if>
+                <aura:if isTrue="{!v.showScoringVotes}">
+                    <div class="{!(v.styleClass != '' ? v.styleClass + ' ' : '' ) + (v.isNotLiked ? 'acn-scoring-lightning-icon-active ' : 'acn-scoring-lightning-icon-inactive ') + 'acn-scoring-lightning-icon-container'}">
+                        <lightning:icon iconName="utility:dislike" size="small" alternativeText="{!v.isNotLikedText}" title="{!v.isNotLikedText}" class="acn-scoring-lightning-icon" variant="bare" />
+                        <span class="icon icon-key">{!v.isNotLikedCount}</span>
+                    </div>
+                    
+                    <div class="{!(v.styleClass != '' ? v.styleClass + ' ' : '' ) + (v.isLiked ? 'acn-scoring-lightning-icon-active ' : 'acn-scoring-lightning-icon-inactive ') + 'acn-scoring-lightning-icon-container'}">
+                        <lightning:icon iconName="utility:like" size="small" alternativeText="{!v.isLikedText}" title="{!v.isLikedText}" class="acn-scoring-lightning-icon" variant="bare" />
+                        <span class="icon icon-key">{!v.isLikedCount}</span> 
+                    </div>
+                </aura:if>
+            </div>
+        </div>
+    </div>
+</aura:component>

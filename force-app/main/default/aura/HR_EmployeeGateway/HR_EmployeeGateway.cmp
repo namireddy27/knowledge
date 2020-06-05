@@ -1,0 +1,8 @@
+<aura:component implements="flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes,force:hasRecordId" access="global">
+    <div class="navy">TSA Employee Gateway</div>
+<div class="border">
+    Access your Employment Gateway, where you can access your W4, Payment Information, 401(k), and more. <br/> <br/> <br/> 
+    
+    My Employee Gateway (button TBD)
+    </div>
+</aura:component>

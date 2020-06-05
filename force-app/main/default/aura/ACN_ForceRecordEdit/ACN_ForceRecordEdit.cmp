@@ -1,0 +1,67 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction,c:ACN_Componentable,c:ACN_Validationable" access="global" >
+    <aura:attribute name="recordIdsCsv" type="String" access="global" />
+    <aura:attribute name="recordIds" type="String[]" access="global" />
+    <aura:attribute name="recordId" type="String" access="global" />
+    <aura:attribute name="sectionId" type="String" access="global" />
+    <aura:attribute name="isAutoSaveEnabled" type="Boolean" access="global" default="false" />
+    <aura:attribute name="isSaving" type="Boolean" access="global" default="false" />
+    <aura:attribute name="hasSaveException" type="Boolean" access="global" default="false" />
+    <aura:attribute name="saveNow" type="Boolean" access="global" default="false" />
+    <aura:attribute name="exceptionMessageInterval" type="Integer" access="global" default="-1" />
+    <aura:attribute name="isReadOnly" type="Boolean" access="global" default="false" />
+
+    <aura:registerEvent name="forceRecordEditSaveRequested" type="c:ACN_ForceRecordEditSaveRequested" />
+    <aura:registerEvent name="forceRecordEditSaveCompleted" type="c:ACN_ForceRecordEditSaveCompleted" />
+    
+	<aura:handler name="onSaveSuccess" event="force:recordSaveSuccess" action="{!c.handleSaveSuccess}"/>
+    <aura:handler event="c:ACN_ForceRecordEditSaveRequested" action="{!c.handleForceRecordEditSaveRequested}" />
+    <aura:handler event="c:ACN_ExternalValidationRequestCompleted" action="{!c.handleExternalValidationRequestCompleted}" />
+    <aura:handler name="change" value="{!v.saveNow}" action="{!c.saveNowChangedHandler}"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:handler event="c:ACN_ReloadSectionsRequested" action="{!c.handleReloadSectionsRequested}" />
+
+    <aura:attribute name="targetRecord" type="Object" access="global" default="" description="The record object to be displayed"/>
+    <aura:attribute name="targetFields" type="Object" access="global" default="" description="A simplified view record object to be displayed"/>
+    <aura:attribute name="targetError" type="String" access="global" default="" description="An error message bound to force:recordData"/>
+    <aura:attribute name="fields" type="String[]" access="global" default="Id,SectionOrder__c,Order__c" description="The field names string array."/>
+    <aura:attribute name="layoutType" type="String" access="global" default="FULL" description="The force record data page layout (COMPACT/FULL)"/>
+    <aura:attribute name="mode" type="String" access="global" default="EDIT" description="The force record data mode (VIEW/EDIT)."/>
+    
+    <force:recordData aura:id="forceRecord"
+                      layoutType="{!v.layoutType}"
+                      recordId="{!v.recordId}"
+                      targetError="{!v.targetError}"
+                      fields="{!v.fields}"
+                      targetFields="{!v.targetFields}"
+                      targetRecord="{!v.targetRecord}"
+                      mode="{!v.mode}" 
+                      recordUpdated="{!c.recordUpdated}"
+                      />
+    
+    <div class="acn-force-record-edit-container-outer">
+        <div class="acn-force-record-edit-container-inner">
+            <div class="acn-force-record-edit-container" aura:id="acn_print_region">
+                <aura:iteration items="{!v.recordIds}" var="recordId">
+                    <aura:if isTrue="{!v.validationIsFailed}">
+                        <ui:message title="{!v.validationTitle}" severity="error" closable="false">
+                            {!v.validationMessage}
+                        </ui:message>
+                    </aura:if>
+                    <div id="{!'acn-record-edit-id-' + recordId}" class="acn-force-record-edit-component">
+                        <aura:if isTrue="{!v.isLightningComponent}">
+                            {!v.customLightningComponent}
+                            <aura:set attribute="else">
+                                <aura:if isTrue="{!v.isReadOnly}">
+                                    <force:recordView recordId="{!recordId}" />
+                                    <aura:set attribute="else">
+                                        <force:recordEdit aura:id="acn-force-record-edit" recordId="{!recordId}" />
+                                    </aura:set>
+                                </aura:if>
+                            </aura:set>
+                        </aura:if>
+                    </div>
+                </aura:iteration>
+            </div>
+        </div>
+    </div>
+</aura:component>

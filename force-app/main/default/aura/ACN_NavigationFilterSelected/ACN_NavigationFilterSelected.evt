@@ -1,0 +1,4 @@
+<aura:event type="APPLICATION" description="Use this event to notify when a navigation filter was selected.">
+    <aura:attribute name="filterListItem" type="ACN_NavigationLibrary.NavigationFilterItem"/>
+    <aura:attribute name="filterContextIdentifier" type="String"/>
+</aura:event>

@@ -1,5 +1,5 @@
 global with sharing class ACN_NavigationChartProvider implements ACN_NavigationProviderService {
-/*    final String DEFAULT_GROUP_KEY = 'defaultGroup';
+    final String DEFAULT_GROUP_KEY = 'defaultGroup';
 
     global ACN_CommunityNavigationConfig__c settings {get; set;}
     
@@ -447,5 +447,5 @@ global with sharing class ACN_NavigationChartProvider implements ACN_NavigationP
     private Static List<String> getIdsForKeyWords (String keyWord) {
         List<String> ids = new List<String>();    
         return ids;
-    }*/
+    }
 }

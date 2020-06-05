@@ -1,0 +1,3 @@
+<aura:event type="APPLICATION" description="Use this lightning event to notify when a new transaction creation event has been requested.">
+   	<aura:attribute name="transactionParameters" type="Map" access="global" />
+</aura:event>

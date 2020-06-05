@@ -1,5 +1,5 @@
 global with sharing class ACN_NavigationCX {
-/*    public Boolean IsLightningEnabled {get; set;}
+    public Boolean IsLightningEnabled {get; set;}
     public ACN_CommunityNavigationConfig__c NavigationSettings {get; set;}
     private ACN_NavigationProvider navigationProvider {get; set;}
     public ACN_NavigationLibrary.NavigationList NavigationList {get; set;}
@@ -17,9 +17,10 @@ global with sharing class ACN_NavigationCX {
         
         ACN_NavigationLibrary.NavigationRequest request = new ACN_NavigationLibrary.NavigationRequest();
         request.Level = 1;
-        
+        system.debug('request'+request.NavigationProviderName);
         if(!String.isEmpty(request.NavigationProviderName)) {
             this.navigationProvider = new ACN_NavigationProvider(request.NavigationProviderName);
+            system.debug('request'+request.NavigationProviderName);
         }
         else {
             this.navigationProvider = new ACN_NavigationProvider(this.NavigationSettings.NavigationProvider__c);
@@ -76,5 +77,4 @@ global with sharing class ACN_NavigationCX {
 
         return JSON.serialize(navigationList);
     }
-*/
 }

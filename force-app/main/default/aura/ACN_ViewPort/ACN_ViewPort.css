@@ -1,0 +1,9 @@
+.forceLoaderBar.forceCanvasApp.THIS {
+    display: none !important;
+}
+
+.THIS .acn-debug-values {
+    width: 100%;
+    min-height: 10em; 
+    
+}

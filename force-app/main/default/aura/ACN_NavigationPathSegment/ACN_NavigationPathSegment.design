@@ -1,0 +1,3 @@
+<design:component>
+	<design:attribute name="styleClass" label="CSS Style Class Name" description="The CSS Style Class Name to be applied to the Component."/>	
+</design:component>

@@ -1,0 +1,4 @@
+<aura:event type="APPLICATION" description="Use this event to notify when the navigation filter values have changed.">
+    <aura:attribute name="filterItems" type="ACN_NavigationLibrary.NavigationFilterItem[]" access="global" default="" />
+    <aura:attribute name="filterContextIdentifier" type="String" access="global" default="" />
+</aura:event>

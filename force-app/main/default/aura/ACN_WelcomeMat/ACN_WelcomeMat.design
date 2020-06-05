@@ -1,0 +1,17 @@
+<design:component>
+	<design:attribute name="greetingMessage" label="Greeting Message" description="Specifies the greeting message of the welcome mat. To use current user merge variables, use the %userInfo.[field name]% syntax. To merge Query parameters, use the %queryParam.[query parameter name]% syntax." />
+	<design:attribute name="welcomeMessage" label="Welcome message" description="Specifies the welcome message of the welcome mat. To use current user merge variables, use the %userInfo.[field name]% syntax. To merge Query parameters, use the %queryParam.[query parameter name]% syntax." />	
+	<design:attribute name="greetingMessageAlign" label="Greeting Message Alignment" description="Specifies the alignment of the greeting message of the welcome mat." datasource="left,center,right" />
+	<design:attribute name="greetingMessageFontSize" label="Greeting Message Font Size" description="Specifies the font size of the welcome message of the welcome mat." />
+	<design:attribute name="greetingMessageFontColor" label="Greeting Message Font Color" description="Specifies the font color of the welcome message of the welcome mat." />
+	<design:attribute name="greetingMessageFontBold" label="Greeting Message Font Bold" description="Specifies if the greeting message font should be bolded on the welcome mat." />
+	<design:attribute name="welcomeMessageAlign" label="Welcome Message Alignment" description="Specifies the alignment of the welcome message of the welcome mat." datasource="left,center,right" />
+	<design:attribute name="welcomeMessageFontSize" label="Welcome Message Font Size" description="Specifies the font size of the welcome message of the welcome mat." />
+	<design:attribute name="welcomeMessageFontColor" label="Welcome Message Font Color" description="Specifies the font color of the welcome message of the welcome mat." />
+	<design:attribute name="welcomeMessageFontBold" label="Welcome Message Font Bold" description="Specifies if the welcome message font should be bolded on the welcome mat." />
+	<design:attribute name="backgroundColor" label="Background Color" description="Specifies the background color of the welcome mat." />
+	<design:attribute name="width" label="Width" description="Specifies the width of the welcome mat." />
+	<design:attribute name="height" label="Height" description="Specifies the height of the welcome mat." />
+	<design:attribute name="margin" label="Margin" description="Specifies the margin of the welcome mat." />
+	<design:attribute name="css" label="Additional CSS" description="Specifies the additional CSS of the welcome mat." />
+</design:component>

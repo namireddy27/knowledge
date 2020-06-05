@@ -1,0 +1,8 @@
+<design:component>
+    <design:attribute name="recordId" label="Record Id" description="Use this attribte to specify the record Id for the force record edit component." />
+    <design:attribute name="recordIdsCsv" label="Record Ids (CSV)" description="Use this attribte to specify a comma separated list of record Ids for the force record edit component." />
+    <design:attribute name="sectionId" label="Section Id" description="Use this attribte to specify the section Id for the force record edit component." />
+    <design:attribute name="isAutoSaveEnabled" label="Autosave enabled?" description="Use this attribte to specify if the force record edit component should save the record after leaving each field (uses the renderer to add save event event to each input)." />
+    <design:attribute name="exceptionMessageInterval" label="Interval to check for Record Message (seconds)" description="Use this attribte to specify the seconds the component will check for record messages after the record save event was requested." />
+    <design:attribute name="isReadOnly" label="Read Only Mode?" description="Use this attribte to specify if the records should be displayed in read only mode." />
+</design:component>

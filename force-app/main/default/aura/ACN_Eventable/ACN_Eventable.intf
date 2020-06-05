@@ -1,0 +1,3 @@
+<aura:interface description="Use this lightning interface to provide support for raising events by reference.">
+    <aura:registerEvent name="newTransactionRequestedEvent" type="c:ACN_NewTransactionRequested"/>
+</aura:interface>

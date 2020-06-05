@@ -1,0 +1,8 @@
+<aura:interface description="Use this interface to provide support value overriding.">
+    <aura:attribute name="nameFieldOverride" type="String" access="global" default="" /> 
+    <aura:attribute name="descriptionFieldOverride" type="String" access="global" default="" /> 
+    <aura:attribute name="imageFieldOverride" type="String" access="global" default="" /> 
+    <aura:attribute name="targetFieldOverride" type="String" access="global" default="" /> 
+    <aura:attribute name="groupFieldOverride" type="String" access="global" default="" /> 
+    <aura:attribute name="sortFieldOverride" type="String" access="global" default="" /> 
+</aura:interface>

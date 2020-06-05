@@ -1,0 +1,39 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name="navigationItem" type="ACN_NavigationLibrary.NavigationListItem"/>
+	<aura:attribute name="styleClass" type="String" access="global" />
+	<aura:attribute name="showChart" type="Boolean" access="global" default="false" />
+    <aura:attribute name="chartDataProvider" type="String" default="ACN_ChartDataStaticProviderPie" required="true" description="Apex Class Name which provides JSON data to draw chart. As for JSON data format, two sample providers are available as ACN_ChartDataStaticProvider and ACN_ChartDataSObjectProvider. Refer to http://www.chartjs.org/ for more details." />
+    <aura:attribute name="serializedChartSeries" type="String" description="Serialized Generic Chart Series Data." />
+    <aura:attribute name="serializedChartData" type="String" description="Provides support for serialized data without the need to use a data provider." />
+	<aura:attribute name="chartType" type="String" access="global" default="Pie" />
+	<aura:attribute name="chartTitle" type="String" access="global" default="" />
+    <aura:attribute name="contextParentIdentifier" type="String" description="Unique context parent identifier of the component. Ex.This value will be used to filter data based on the current context (i.e. record id)." />
+    <aura:attribute name="contextChartIdentifier" type="String" description="Unique context chart identifier of the component. Ex.This value will be used by the data update Event to specify which component should be affected. So this value should be unique amoung the application or component which this component belongs to." />
+	<aura:attribute name="showChartTitle" type="Boolean" access="global" default="false" />
+	<aura:attribute name="showChartLegend" type="Boolean" access="global" default="false" />
+	<aura:attribute name="showSeriesBubble" type="Boolean" access="global" default="false" />
+	<aura:attribute name="xAxisFontSize" type="Integer" access="global" default="12" />
+	<aura:attribute name="yAxisFontSize" type="Integer" access="global" default="12" />
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" description="Initialization process." />
+    
+    <div class="{!v.styleClass + ' acn-navigation-chart-container'}" >
+        <aura:if isTrue="{!v.showChart}">
+            <div class="{!v.styleClass + ' acn-mini-chart-container'}" >
+                <c:ACN_Chart chartDataProvider="{!v.chartDataProvider}" 
+                             chartType="{!v.chartType}" 
+                             chartTitle="{!v.chartTitle}" 
+                             contextParentIdentifier="{!v.contextParentIdentifier}" 
+                             contextChartIdentifier="{!v.contextParentIdentifier}" 
+                             styleClass="{!v.styleClass}" 
+                             serializedChartSeries="{!v.serializedChartSeries}" 
+                             showChartTitle="{!v.showChartTitle}"
+                             showChartLegend="{!v.showChartLegend}"
+                             showSeriesBubble="{!v.showSeriesBubble}"
+                             xAxisFontSize="{!v.xAxisFontSize}" 
+                             yAxisFontSize="{!v.yAxisFontSize}" 
+                             />
+            </div>
+        </aura:if>
+    </div>
+</aura:component>

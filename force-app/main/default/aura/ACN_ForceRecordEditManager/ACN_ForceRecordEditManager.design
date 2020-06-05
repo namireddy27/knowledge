@@ -1,0 +1,8 @@
+<design:component>
+    <design:attribute name="recordId" label="Record Id" description="Use this attribte to specify the record Id for the force record edit component." />
+	<design:attribute name="isReadOnly" label="Is Read Only?" description="Use this attribute to specify if the record should be displayed in read only mode."/>
+	<design:attribute name="showRecordActions" label="Show Record Actions" description="Use this attribute to specify if the actions for the record should be visible."/>
+	<design:attribute name="isEditEnabled" label="Is Edit Enabled?" description="Use this attribute to specify if the edit action for the record should be visible."/>
+	<design:attribute name="isSaveEnabled" label="Is Save Enabled?" description="Use this attribute to specify if the save action for the record should be visible."/>
+	<design:attribute name="isRefreshEnabled" label="Is Refresh Enabled?" description="Use this attribute to specify if the refresh action for the record should be visible."/>
+</design:component>

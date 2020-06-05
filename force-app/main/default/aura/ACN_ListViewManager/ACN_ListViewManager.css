@@ -1,0 +1,88 @@
+.THIS .acn-listview-manager-header-hidden .slds-page-header {
+    display: none;
+}
+
+.THIS .acn-listview-manager-index-column-hidden .slds-table th:nth-child(1), 
+.THIS .acn-listview-manager-index-column-hidden .slds-table td:nth-child(1) {
+    display: none;
+}
+
+.THIS .acn-list-view-manager-object-name-hidden .forceListViewManagerHeader .slds-media__body nav {
+    display: none;
+}
+
+.THIS .acn-list-view-manager-object-information-hidden .forceListViewManagerHeader .slds-media__body h2 {
+    display: none;
+}
+
+.THIS .acn-list-view-manager-object-icon-hidden .forceListViewManagerHeader .slds-media__figure {
+    display: none;
+}
+
+.THIS .acn-list-view-manager-object-stats-hidden .forceListViewManagerHeader p {
+    display: none;
+}
+
+.THIS .acn-list-view-manager-action-button-hidden .forceListViewManagerHeader .branding-actions {
+    display: none;
+}
+
+.THIS .acn-list-view-manager-multi-select-hidden .forceListViewManagerHeader .branding-actions {
+    display: none;
+}
+
+.THIS .acn-list-view-manager-multi-select-hidden .forceVirtualCheckbox {
+    display: none;
+}
+
+.THIS .acn-list-view-manager-controls-hidden .test-listViewSettingsMenu  {
+    display: none;
+}
+
+.THIS .acn-list-view-manager-refresh-button-hidden .forceRefreshButton {
+    display: none;
+}
+
+.THIS .acn-listview-manager-data-vertical-alignment-top .slds-table .cellContainer {
+    /*vertical-align: top;
+    font-size: 14px;*/
+}
+
+.THIS .acn-listview-manager-data-vertical-alignment-top .slds-table .cellContainer .slds-truncate {
+    /*white-space: initial;
+    text-overflow: initial;*/
+}
+
+.THIS .acn-listview-manager-container {
+    border-top: 1px solid t(acnBrandColor);
+}
+
+.THIS .slds-table--header-fixed_container, .THIS .listViewContainer {
+    /*background-color: t(colorBrand);*/
+}
+
+.THIS .listViewContainer {
+    /*border: 1px solid t(colorBorderBrand);*/
+    /*box-shadow: 3px 3px rgba(200,200,200,0.18);*/
+}
+
+.THIS tr.slds-text-title--caps th div.slds-cell-fixed {
+    /*background-color: t(colorBrand);*/
+    color: t(colorTextBrand);
+}
+
+.THIS th.slds-cell-fixed {
+    /*background: transparent;*/
+}
+
+.THIS .acn-listview-manager-container .slds-dropdown-trigger button span svg {
+    /*fill: white;*/
+}
+
+.THIS .forceListViewManagerPrimaryDisplayManager {
+    /*padding: 0px;*/
+}
+
+.THIS table {
+    /*width: initial;*/
+}

@@ -1,0 +1,5 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global" >
+    <div>
+		<c:HR_CandidateEditButton></c:HR_CandidateEditButton>
+    </div>
+ </aura:component>

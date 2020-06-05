@@ -1,0 +1,69 @@
+<!--
+  @File Name          : searchForPositionsPaginator.html
+  @Description        : 
+  @Author             : Peter Tran
+  @Group              : 
+  @Last Modified By   : Peter Tran
+  @Last Modified On   : 2/2/2020, 8:48:40 PM
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    1/30/2020   Peter Tran     Initial Version
+-->
+
+<template>
+  <lightning-layout>
+    <lightning-layout-item>
+      <!-- First button -->
+      <lightning-button 
+        label="First" 
+        icon-name="utility:chevronleft" 
+        onclick={handleFirst} 
+        disabled={showFirstButton}>
+      </lightning-button>
+    </lightning-layout-item>
+
+    <!-- Previous button -->
+    <lightning-layout-item>
+      <lightning-button 
+        label="Previous" 
+        icon-name="utility:chevronleft" 
+        onclick={handlePrevious}
+        disabled={showFirstButton}>
+      </lightning-button>
+    </lightning-layout-item>
+
+    <!-- Create some space between the first two and last three buttons -->
+    <lightning-layout-item 
+      flexibility="grow">
+    </lightning-layout-item>
+
+    <!-- Next button -->
+    <lightning-layout-item>
+      <lightning-button label="Next" 
+        icon-name="utility:chevronright" 
+        icon-position="right" 
+        onclick={handleNext}
+        disabled={showLastButton}>
+      </lightning-button>
+    </lightning-layout-item>
+
+    <!-- Last button -->
+    <lightning-layout-item>
+      <lightning-button label="Last" 
+        icon-name="utility:chevronright" 
+        icon-position="right" 
+        onclick={handleLast}
+        disabled={showLastButton}>
+      </lightning-button>
+    </lightning-layout-item>
+
+    <!-- Submit button -->
+    <lightning-layout-item>
+      <lightning-button label="Submit" 
+        icon-name="utility:chevronright" 
+        icon-position="right" 
+        onclick={handleSubmit}>
+      </lightning-button>
+    </lightning-layout-item>
+  </lightning-layout>
+</template>

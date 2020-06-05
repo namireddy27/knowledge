@@ -1,0 +1,57 @@
+/*
+.acn-filter-input.Checkbox.THIS > .lightningInput {
+display: flex;
+flex-flow: column;
+}
+
+.acn-filter-input.Checkbox.THIS > .lightningInput label {
+order:2;
+padding-left: 15px;
+}
+
+.acn-filter-input.Checkbox.THIS > .lightningInput div {
+order:1;
+}
+*/
+
+/*
+.acn-filter-input.Checkbox.THIS > .lightningInput {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    
+    -ms-box-orient: horizontal;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: flex;
+    
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+}
+
+.acn-filter-input.Checkbox.THIS > .lightningInput label {
+	order: 1; 
+}
+.acn-filter-input.Checkbox.THIS > .lightningInput div { 
+    order: 2; 
+}
+*/
+
+.acn-filter-input.Checkbox.THIS > .lightningInput  {
+    /*
+    background: tomato;
+    padding: 5px;
+    width: 100px;
+    height: 100px;
+    margin: 5px;
+    
+    line-height: 100px;
+    color: white;
+    font-weight: bold;
+    font-size: 2em;
+    text-align: center;
+    */
+}

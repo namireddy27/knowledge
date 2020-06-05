@@ -1,0 +1,6 @@
+<aura:event type="APPLICATION" description="Use this lightning event to notify when an external validation request has been completed.">
+    <aura:attribute name="validationContextId" type="String" access="global" default="" />
+    <aura:attribute name="validationIsRunning" type="Boolean" access="global" default="false" />
+    <aura:attribute name="validationIsFailed" type="Boolean" access="global" default="false" />
+    <aura:attribute name="validationMessage" type="String" access="global" default="" />
+</aura:event>

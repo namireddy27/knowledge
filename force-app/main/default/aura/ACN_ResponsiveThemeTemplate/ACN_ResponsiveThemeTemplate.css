@@ -1,0 +1,384 @@
+/* Fonts */
+/*
+@font-face {
+    / *Gotham Round Book* /
+    font-family: "Gotham Round Book";
+    src: t('url(' + fontRoot + 'fonts/GothamRndBook.otf?#iefix)');
+    src: t('url(' + fontRoot + 'fonts/GothamRndBook.otf?#iefix)') format("otf"), t('url(' + fontRoot + 'fonts/GothamRndBook.otf?#iefix)') format("truetype");
+}
+
+@font-face {
+    / *HelveticaNeueW02-77BdCn 694069* /
+    font-family: "Helvetica Neue (Condensed Bold Italics)";
+    src: url("fonts/HelveticaNeueCondensedBoldItalics.eot?#iefix");
+    src: url("fonts/HelveticaNeueCondensedBoldItalics.eot?#iefix") format("eot"), url("fonts/HelveticaNeueCondensedBoldItalics.svg#HelveticaNeueCondensedBoldItalics") format("svg"),url("fonts/HelveticaNeueCondensedBoldItalics.woff") format("woff"), url("fonts/HelveticaNeueCondensedBoldItalics.ttf") format("truetype");
+}
+
+.THIS * {
+    font-family: t(clientFontFamily);
+}
+
+*/
+
+.THIS .acn-navigation-menu-home-item-hidden .comm-navigation__list li:nth-child(1){
+    display: none;
+}
+
+.THIS .forceCommunityGlobalNavigation .slds-is-fixed>.slds-list_vertical {
+    height: 600px;
+    width: 100%;
+    z-index: 9999
+}
+
+.THIS .acn-justify-content-initial {
+    justify-content: initial;
+}
+
+.THIS .acn-gutter-left {
+    margin-left: 6em !important;
+}
+
+.THIS .acn-group-header.acn-border-light-top, 
+.THIS .acn-border-light-top {
+    border-top: solid 1px;
+}
+
+.THIS .acn-border-color-silver {
+    border-color: silver;
+}
+
+.THIS .acn-background-color-default {
+    background-color: token(colorBackground);
+}
+
+.THIS .acn-background-color-brand {
+    background-color: t(colorBrand);
+    
+}
+
+.THIS .acn-dark {
+    filter: brightness(90%);
+}
+
+.THIS .acn-darker {
+    filter: brightness(80%);
+}
+
+.THIS .acn-darkest {
+    filter: brightness(70%);
+}
+
+.THIS .acn-light {
+    filter: brightness(110%);
+}
+
+.THIS .acn-lighter {
+    filter: brightness(120%);
+}
+
+.THIS .acn-lightest {
+    filter: brightness(130%);
+}
+
+.THIS .acn-float-right {
+    float: right;
+}
+
+.THIS .acn-float-left {
+    float: right;
+}
+
+.THIS .acn-float-initial {
+    float: initial;
+}
+
+.THIS .acn-border-radius-small {
+    border-radius: .25em;
+}
+
+.THIS .acn-overflow-hidden {
+	overflow: hidden;
+}
+
+.THIS .acn-text-align-left {
+    text-align: left;
+}
+
+.THIS .acn-text-align-right {
+    text-align: right;
+    margin-left: auto;
+}
+
+.THIS .acn-text-align-center {
+    text-align: center;
+}
+
+.THIS .acn-text-default {
+    color: token(colorTextDefault);
+}
+
+.THIS .acn-text-default-li li {
+    color: token(colorTextDefault);
+}
+
+.THIS .acn-text-brand {
+    color: token(colorTextBrand);
+}
+
+.THIS .acn-text-brand-li li {
+    color: token(colorTextBrand);
+}
+
+.THIS .acn-text-button-brand {
+    color: token(colorTextButtonBrand);
+}
+
+.THIS .acn-font-bold {
+    font-weight: 600;
+}
+
+.THIS .acn-font-bolder {
+    font-weight: 700;
+}
+
+.THIS .acn-font-boldest {
+    font-weight: 800;
+}
+
+.THIS .acn-font-bold-li li {
+    font-weight: 600;
+}
+
+.THIS .acn-font-bolder-li li {
+    font-weight: 700;
+}
+
+.THIS .acn-font-boldest-li li {
+    font-weight: 800;
+}
+
+.THIS .acn-font-normal {
+    font-size: 1em;
+    line-height: 1.5em;
+}
+
+.THIS .acn-font-large {
+    font-size: 1.25em;
+    line-height: 1.75em;
+}
+
+.THIS .acn-font-larger {
+    font-size: 1.5em;
+    line-height: 2em;
+}
+
+.THIS .acn-font-largest {
+    font-size: 2em;
+    line-height: 2.5em;
+}
+
+.THIS .acn-font-normal-li li {
+    font-size: 1em;
+}
+
+.THIS .acn-font-large-li li {
+    font-size: 1.25em;
+}
+
+.THIS .acn-font-larger-li li {
+    font-size: 1.5em;
+}
+
+.THIS .acn-font-largest-li li {
+    font-size: 2em;
+}
+
+.THIS .acn-min-height-five-units {
+	min-height: 10em;
+}
+
+.THIS .acn-title-level-01.navigationCardAlternateBlocks {
+    color: rgb(127, 55, 155);
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+.THIS .acn-title-level-01.navigationCardsBlockButtons {
+    color: white;
+    font-size: 1.5em;
+    font-weight: 600;
+    /*margin: .75em 0 1em 1em;*/
+    /*position: absolute;*/
+    /*width: 60%;*/
+    z-index: 99;
+}
+
+.acn-padding-none.THIS, 
+.THIS .acn-padding-none {
+    padding: 0;
+}
+
+.acn-margin-none.THIS, 
+.THIS .acn-margin-none {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.acn-horizontal-padding-both-small.THIS, 
+.THIS .acn-horizontal-padding-both-small {
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.acn-horizontal-padding-both-medium.THIS, 
+.THIS .acn-horizontal-padding-both-medium {
+    padding-left: 3em;
+    padding-right: 3em;
+}
+
+.acn-horizontal-padding-both-large.THIS, 
+.THIS .acn-horizontal-padding-both-large {
+    padding-left: 5em;
+    padding-right: 5em;
+}
+
+.THIS .acn-justify-content-initial {
+    justify-content: initial;
+}
+
+.THIS .acn-gutter-left {
+    margin-left: 6em !important;
+}
+
+.THIS .acn-responsive-theme-layout-container-inner {
+    /*width: 100vw;*/
+}
+
+.THIS .acn-header-grid-DESKTOP.acn-top-band-overlay:before {
+    background-color: rgb(46, 133, 64);
+    content: " ";
+    height: 60px;
+    position: absolute;
+    width: 100%;
+}
+
+.THIS .brandingLogo {
+    background-image: t('url(' + brandLogoImage  + ')');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin: 1em;
+}
+
+.acn-padding-none.THIS, 
+.THIS .acn-padding-none {
+    padding: 0;
+}
+
+.acn-margin-none.THIS, 
+.THIS .acn-margin-none {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.THIS .acn-custom-navigation-menu-left {
+
+}
+
+/*.THIS .acn-custom-navigation-menu-left, 
+.THIS .acn-custom-navigation-menu-left-container, */
+.THIS .acn-custom-navigation-menu-top {
+    background-color: t(colorBackgroundButtonBrand);
+}
+
+.THIS .acn-page-theme-layout-footer-fixed {
+    margin-top: -500px;
+    bottom: 0;
+    opacity: .9;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+}
+
+.THIS .acn-page-theme-layout-header-fixed {
+    top: 0;
+    opacity: .9;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+}
+
+.THIS .acn-theme-layout-footer {
+    /*background-color: #f7f7f7;*/
+}
+
+.THIS .acn-page-theme-layout-header-fixed-padding-top {
+    /*height: 18em;*/
+}
+
+.THIS .acn-page-theme-layout-footer-fixed-padding-bottom {
+    /*height: 3em;*/
+}
+
+.THIS .acn-custom-navigation-menu-left {
+
+}
+
+/*.THIS .acn-custom-navigation-menu-left, 
+.THIS .acn-custom-navigation-menu-left-container, */
+.THIS .acn-custom-navigation-menu-top {
+    background-color: t(colorBackgroundButtonBrand);
+}
+
+.THIS .acn-hide-related-list-first-column .uiVirtualDataGrid th:nth-child(1), 
+.THIS .acn-hide-related-list-first-column .uiVirtualDataGrid td:nth-child(1), 
+.THIS .acn-hide-related-list-first-column .uiVirtualDataTable th:nth-child(1), 
+.THIS .acn-hide-related-list-first-column .uiVirtualDataTable td:nth-child(1) {
+    display: none !important;
+}
+
+.THIS .acn-hide-related-list-second-column .uiVirtualDataGrid th:nth-child(2), 
+.THIS .acn-hide-related-list-second-column .uiVirtualDataGrid td:nth-child(2), 
+.THIS .acn-hide-related-list-first-column .uiVirtualDataTable th:nth-child(2), 
+.THIS .acn-hide-related-list-first-column .uiVirtualDataTable td:nth-child(2)  {
+    display: none !important;
+}
+
+.THIS .forceCommunityGlobalSearchInput {
+    background-color: RGBA(250, 250, 250, .5);
+}
+
+.THIS .acn-modal-dialog-width-widest .slds-modal__container {
+    max-width: 100% !important;
+    min-width: 85% !important;
+}
+
+.THIS .acn-modal-dialog-width-wider .slds-modal__container {
+    max-width: 85% !important;
+    min-width: 70% !important;
+}
+
+.THIS .acn-modal-dialog-width-wide .slds-modal__container {
+    max-width: 70% !important;
+    min-width: 55% !important;
+}
+
+.THIS .acn-modal-dialog-width-normal .slds-modal__container {
+    max-width: 55% !important;
+    min-width: 40% !important;
+}
+
+.THIS .acn-modal-dialog-width-narrow .slds-modal__container {
+    max-width: 40% !important;
+    min-width: 35% !important;
+}
+
+.THIS .acn-modal-dialog-width-narrower .slds-modal__container {
+    max-width: 35% !important;
+    min-width: 30% !important;
+}
+
+.THIS .acn-modal-dialog-width-narrowest .slds-modal__container {
+    max-width: 30% !important;
+    min-width: 25% !important;
+}

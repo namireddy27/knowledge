@@ -1,0 +1,13 @@
+<aura:interface description="Use this interface to provide support for scoring.">
+    <aura:attribute name="showArticleViewCount" type="Boolean" access="global" default="false" />
+    <aura:attribute name="showArticlePublishDate" type="Boolean" access="global" default="true" />
+    <aura:attribute name="showArticleType" type="Boolean" access="global" default="false" />
+    <aura:attribute name="showArticleRating" type="Boolean" access="global" default="true" />
+    <aura:attribute name="showScoringStars" type="Boolean" access="global" default="false" />
+    <aura:attribute name="showScoringVotes" type="Boolean" access="global" default="false" />
+    <aura:attribute name="showScoringLoveIt" type="Boolean" access="global" default="false" />
+    <aura:attribute name="showScoringViews" type="Boolean" access="global" default="false" />
+    <aura:attribute name="hasScoring" type="Boolean" access="global" default="false" />
+    <aura:attribute name="scoring" type="Object[]" access="global" />
+    <aura:attribute name="badges" type="Object[]" access="global" />
+</aura:interface>

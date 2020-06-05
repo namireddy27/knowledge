@@ -1,0 +1,9 @@
+.THIS .details,
+.THIS .show,
+.THIS .hide:target {
+	display: none;
+}
+.THIS .hide:target + .show,
+.THIS .hide:target ~ .details {
+	display: block;
+}

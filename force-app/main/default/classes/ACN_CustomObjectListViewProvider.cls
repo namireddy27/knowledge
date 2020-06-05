@@ -1,16 +1,4 @@
 global with sharing class ACN_CustomObjectListViewProvider implements ACN_NavigationProviderService {
-    /*
-
-
-
-
-
-
-
-
-    
-    
-    
     final String DEFAULT_GROUP_KEY = 'defaultGroup';
 
     global ACN_CommunityNavigationConfig__c settings {get; set;}
@@ -19,12 +7,6 @@ global with sharing class ACN_CustomObjectListViewProvider implements ACN_Naviga
         settings = ACN_CommunityNavigationConfig__c.getInstance();
     }
     
-
-
-    
-
-
-
     global ACN_NavigationLibrary.NavigationList GetNavigationList (ACN_NavigationLibrary.NavigationRequest request) {
         ACN_NavigationLibrary.NavigationList navList = new ACN_NavigationLibrary.NavigationList();
         navList.ParentId = request.Id;
@@ -637,5 +619,5 @@ global with sharing class ACN_CustomObjectListViewProvider implements ACN_Naviga
 
         
         return ids;
-    } */
+    }
 }

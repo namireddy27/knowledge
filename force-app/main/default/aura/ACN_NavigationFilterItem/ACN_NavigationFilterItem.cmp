@@ -1,0 +1,18 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name="filterListItem" type="ACN_NavigationLibrary.NavigationFilterItem" />
+    <aura:attribute name="filterContextIdentifier" type="String" access="global" default="" />
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:handler event="c:ACN_NavigationFilterClearAllRequested" action="{!c.handleNavigationFilterClearAllRequested}"/>
+    
+    <aura:registerEvent name="navigationFilterItemPressed" type="c:ACN_NavigationFilterItemPressed" />
+
+    <div class="{!'acn-filter-input ' + v.filterListItem.Type}">
+        <aura:if isTrue="{!v.filterListItem.Type != '' ? v.filterListItem.Type=='Select' ? true : false : false}">
+            <option value="{!v.filterListItem.Id}" text="{!v.filterListItem.Name}"></option>
+        </aura:if>
+        <aura:if isTrue="{!v.filterListItem.Type != '' ? v.filterListItem.Type!='Select' ? true : false : false}">
+            <lightning:input aura:id="filterSelection" type="{!v.filterListItem.Type}" label="{!v.filterListItem.Name ? v.filterListItem.Name : ' '}" name="{!v.filterListItem.Id}" checked="{!v.filterListItem.IsSelected}" onchange="{!c.handleNavigationFilterSelected}" />
+        </aura:if>
+    </div>
+</aura:component>

@@ -1,0 +1,49 @@
+.navigationArticlePreview.THIS {
+    position: relative;
+	right: 15px;
+    min-width: 50%;
+    float: right;
+}
+
+.THIS {
+    /*margin-top: -1px;
+    margin-left: auto;
+    width: 30px;*/
+}
+
+.THIS div.acn-scoring-lightning-icon-inactive svg {
+    background-color: white;
+    cursor: pointer;
+    fill: t(acnScoringInactiveColor);
+    border: none !important;
+    width: 20px;
+}
+
+.THIS div.acn-scoring-lightning-icon-active svg {
+    background-color: white;
+    cursor: pointer;
+    fill: t(colorTextBrand);
+    border: none !important;
+    width: 20px;
+}
+
+.THIS div.acn-scoring-lightning-icon-container {
+    margin-right: 15px;
+    float: right;
+    border-radius: 50%;
+    width: 30px;
+    height: 28px;
+    padding-right: 3px;
+    padding-top: 1px;
+    left: 150px;
+    white-space: nowrap;
+}
+
+.THIS div.acn-scoring-lightning-icon-container span.icon-key {
+    vertical-align: middle;
+    padding: 1px;
+}
+
+.THIS div.navigationCardLauncher.acn-scoring-lightning-icon-inactive {
+    display: none;
+}

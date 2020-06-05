@@ -1,0 +1,48 @@
+.THIS .slds-col .ui-widget {
+   margin: 16px 0;
+}
+ 
+.THIS .slds-col.content {
+   width: 1140px;
+}
+
+.THIS .acn-custom-navigation-menu-item.acn-custom-navigation-menu-top-grid-item {
+    background-color: t(colorBackgroundButtonBrand);
+    color: t(colorTextButtonBrand);
+}
+
+.THIS .acn-custom-navigation-menu-item.acn-custom-navigation-menu-top-grid-item:hover a {
+    background-color: rgb(255, 255, 255, .2);
+}
+
+.THIS .acn-custom-navigation-menu-item.acn-custom-navigation-menu-left-grid-item {
+    /*color: t(colorTextButtonBrand);*/
+    color: t(colorTextLabel);
+}
+
+.THIS .acn-custom-navigation-menu-item.acn-custom-navigation-menu-left-grid-item:hover {
+    color: t(colorTextTabLabelSelected);
+}
+
+.THIS .acn-custom-navigation-menu-item.acn-custom-navigation-menu-left-grid-item:active, 
+.THIS .acn-custom-navigation-menu-item.acn-custom-navigation-menu-left-grid-item.slds-is-active {
+    color: t(colorTextActionLabelActive);
+}
+
+.THIS .acn-custom-navigation-menu-item.acn-custom-navigation-menu-left-grid-item.slds-is-active {
+    background-color: t(colorBackgroundRowSelected);
+}
+
+.THIS .acn-nav-menu-01-grid-item {
+    font-weight: bold;
+}
+
+.THIS .slds-is-active.acn-nav-menu-01-grid-item a {
+    color: #FF5307;
+    background-color: white;
+}
+
+.THIS .acn-nav-menu-01-grid-item a:hover{
+    color: #2f79e7;
+    background-color: white;
+}

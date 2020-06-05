@@ -1,0 +1,112 @@
+<aura:interface description="Use this interface to provide grouping capabilities to lightning components.">
+    <aura:attribute name="groupsGridLayoutClass" type="String" default="acn-padding-none acn-margin-none" access="global" />
+    <aura:attribute name="groupsGridLayoutTitle" type="String" default="" access="global" />
+    <aura:attribute name="groupsGridLayoutHorizontalAlign" type="String" default="center" access="global" />
+    <aura:attribute name="groupsGridLayoutVerticalAlign" type="String" default="start" access="global" />
+    <aura:attribute name="groupsGridLayoutMultipleRows" type="Boolean" default="true" access="global" />
+    <aura:attribute name="groupsGridLayoutPullToBoundary" type="String" default="small" access="global" />
+
+    <aura:attribute name="groupsGridLayoutItemClass" type="String" default="acn-padding-none acn-margin-none" access="global" />
+    <aura:attribute name="groupsGridLayoutItemTitle" type="String" default="" access="global" />
+    <aura:attribute name="groupsGridLayoutItemSize" type="String" default="12,12,12,12" access="global" />
+    <aura:attribute name="groupsGridLayoutItemSizeArray" type="Integer[]" default="[]" access="global" />
+    <aura:attribute name="groupsGridLayoutItemFlexibility" type="String" default="auto" access="global" />
+    <aura:attribute name="groupsGridLayoutItemPadding" type="String" default="around-small" access="global" />
+    <aura:attribute name="groupsGridLayoutItemAlignmentBump" type="String" default="left" access="global" />
+    
+    <aura:attribute name="groupLayoutClass" type="String" default="acn-padding-none acn-margin-none" access="global" />
+    <aura:attribute name="groupLayoutTitle" type="String" default="" access="global" />
+    <aura:attribute name="groupLayoutHorizontalAlign" type="String" default="center" access="global" />
+    <aura:attribute name="groupLayoutVerticalAlign" type="String" default="start" access="global" />
+    <aura:attribute name="groupLayoutMultipleRows" type="Boolean" default="true" access="global" />
+    <aura:attribute name="groupLayoutPullToBoundary" type="String" default="small" access="global" />
+
+    <aura:attribute name="groupLayoutItemHeaderClass" type="String" default="acn-padding-none acn-margin-none" access="global" />
+    <aura:attribute name="groupLayoutItemHeaderTitle" type="String" default="" access="global" />
+    <aura:attribute name="groupLayoutItemHeaderSize" type="String" default="12,12,12,12" access="global" />
+    <aura:attribute name="groupLayoutItemHeaderSizeArray" type="Integer[]" default="[]" access="global" />
+    <aura:attribute name="groupLayoutItemHeaderFlexibility" type="String" default="auto" access="global" />
+    <aura:attribute name="groupLayoutItemHeaderPadding" type="String" default="around-small" access="global" />
+    <aura:attribute name="groupLayoutItemHeaderAlignmentBump" type="String" default="left" access="global" />
+
+    <aura:attribute name="groupLayoutItemBodyClass" type="String" default="acn-padding-none acn-margin-none" access="global" />
+    <aura:attribute name="groupLayoutItemBodyTitle" type="String" default="" access="global" />
+    <aura:attribute name="groupLayoutItemBodySize" type="String" default="12,12,12,12" access="global" />
+    <aura:attribute name="groupLayoutItemBodySizeArray" type="Integer[]" default="[]" access="global" />
+    <aura:attribute name="groupLayoutItemBodyFlexibility" type="String" default="auto" access="global" />
+    <aura:attribute name="groupLayoutItemBodyPadding" type="String" default="around-small" access="global" />
+    <aura:attribute name="groupLayoutItemBodyAlignmentBump" type="String" default="left" access="global" />
+
+    <aura:attribute name="groupLayoutItemFooterClass" type="String" default="acn-padding-none acn-margin-none" access="global" />
+    <aura:attribute name="groupLayoutItemFooterTitle" type="String" default="" access="global" />
+    <aura:attribute name="groupLayoutItemFooterSize" type="String" default="12,12,12,12" access="global" />
+    <aura:attribute name="groupLayoutItemFooterSizeArray" type="Integer[]" default="[]" access="global" />
+    <aura:attribute name="groupLayoutItemFooterFlexibility" type="String" default="auto" access="global" />
+    <aura:attribute name="groupLayoutItemFooterPadding" type="String" default="around-small" access="global" />
+    <aura:attribute name="groupLayoutItemFooterAlignmentBump" type="String" default="left" access="global" />
+    
+    <aura:attribute name="groupHeaderLayoutClass" type="String" default="acn-padding-none acn-margin-none" access="global" />
+    <aura:attribute name="groupHeaderLayoutTitle" type="String" default="" access="global" />
+    <aura:attribute name="groupHeaderLayoutHorizontalAlign" type="String" default="center" access="global" />
+    <aura:attribute name="groupHeaderLayoutVerticalAlign" type="String" default="start" access="global" />
+    <aura:attribute name="groupHeaderLayoutMultipleRows" type="Boolean" default="true" access="global" />
+    <aura:attribute name="groupHeaderLayoutPullToBoundary" type="String" default="small" access="global" />
+
+    <aura:attribute name="groupHeaderLayoutFirstItemClass" type="String" default="acn-padding-none acn-margin-none" access="global" />
+    <aura:attribute name="groupHeaderLayoutFirstItemTitle" type="String" default="" access="global" />
+    <aura:attribute name="groupHeaderLayoutFirstItemSize" type="String" default="12,12,12,12" access="global" />
+    <aura:attribute name="groupHeaderLayoutFirstItemSizeArray" type="Integer[]" default="[]" access="global" />
+    <aura:attribute name="groupHeaderLayoutFirstItemFlexibility" type="String" default="auto" access="global" />
+    <aura:attribute name="groupHeaderLayoutFirstItemPadding" type="String" default="around-small" access="global" />
+    <aura:attribute name="groupHeaderLayoutFirstItemAlignmentBump" type="String" default="left" access="global" />
+
+    <aura:attribute name="groupHeaderLayoutSecondItemClass" type="String" default="acn-padding-none acn-margin-none" access="global" />
+    <aura:attribute name="groupHeaderLayoutSecondItemTitle" type="String" default="" access="global" />
+    <aura:attribute name="groupHeaderLayoutSecondItemSize" type="String" default="12,12,12,12" access="global" />
+    <aura:attribute name="groupHeaderLayoutSecondItemSizeArray" type="Integer[]" default="[]" access="global" />
+    <aura:attribute name="groupHeaderLayoutSecondItemFlexibility" type="String" default="auto" access="global" />
+    <aura:attribute name="groupHeaderLayoutSecondItemPadding" type="String" default="around-small" access="global" />
+    <aura:attribute name="groupHeaderLayoutSecondItemAlignmentBump" type="String" default="left" access="global" />
+
+    <aura:attribute name="groupHeaderLayoutThirdItemClass" type="String" default="acn-padding-none acn-margin-none" access="global" />
+    <aura:attribute name="groupHeaderLayoutThirdItemTitle" type="String" default="" access="global" />
+    <aura:attribute name="groupHeaderLayoutThirdItemSize" type="String" default="12,12,12,12" access="global" />
+    <aura:attribute name="groupHeaderLayoutThirdItemSizeArray" type="Integer[]" default="[]" access="global" />
+    <aura:attribute name="groupHeaderLayoutThirdItemFlexibility" type="String" default="auto" access="global" />
+    <aura:attribute name="groupHeaderLayoutThirdItemPadding" type="String" default="around-small" access="global" />
+    <aura:attribute name="groupHeaderLayoutThirdItemAlignmentBump" type="String" default="left" access="global" />
+
+    <aura:attribute name="groupFooterLayoutClass" type="String" default="acn-padding-none acn-margin-none" access="global" />
+    <aura:attribute name="groupFooterLayoutTitle" type="String" default="" access="global" />
+    <aura:attribute name="groupFooterLayoutHorizontalAlign" type="String" default="center" access="global" />
+    <aura:attribute name="groupFooterLayoutVerticalAlign" type="String" default="start" access="global" />
+    <aura:attribute name="groupFooterLayoutMultipleRows" type="Boolean" default="true" access="global" />
+    <aura:attribute name="groupFooterLayoutPullToBoundary" type="String" default="small" access="global" />
+
+    <aura:attribute name="groupFooterLayoutFirstItemClass" type="String" default="acn-padding-none acn-margin-none" access="global" />
+    <aura:attribute name="groupFooterLayoutFirstItemTitle" type="String" default="" access="global" />
+    <aura:attribute name="groupFooterLayoutFirstItemSize" type="String" default="12,12,12,12" access="global" />
+    <aura:attribute name="groupFooterLayoutFirstItemSizeArray" type="Integer[]" default="[]" access="global" />
+    <aura:attribute name="groupFooterLayoutFirstItemFlexibility" type="String" default="auto" access="global" />
+    <aura:attribute name="groupFooterLayoutFirstItemPadding" type="String" default="around-small" access="global" />
+    <aura:attribute name="groupFooterLayoutFirstItemAlignmentBump" type="String" default="left" access="global" />
+
+    <aura:attribute name="groupFooterLayoutSecondItemClass" type="String" default="acn-padding-none acn-margin-none" access="global" />
+    <aura:attribute name="groupFooterLayoutSecondItemTitle" type="String" default="" access="global" />
+    <aura:attribute name="groupFooterLayoutSecondItemSize" type="String" default="12,12,12,12" access="global" />
+    <aura:attribute name="groupFooterLayoutSecondItemSizeArray" type="Integer[]" default="[]" access="global" />
+    <aura:attribute name="groupFooterLayoutSecondItemFlexibility" type="String" default="auto" access="global" />
+    <aura:attribute name="groupFooterLayoutSecondItemPadding" type="String" default="around-small" access="global" />
+    <aura:attribute name="groupFooterLayoutSecondItemAlignmentBump" type="String" default="left" access="global" />
+
+    <aura:attribute name="groupFooterLayoutThirdItemClass" type="String" default="acn-padding-none acn-margin-none" access="global" />
+    <aura:attribute name="groupFooterLayoutThirdItemTitle" type="String" default="" access="global" />
+    <aura:attribute name="groupFooterLayoutThirdItemSize" type="String" default="12,12,12,12" access="global" />
+    <aura:attribute name="groupFooterLayoutThirdItemSizeArray" type="Integer[]" default="[]" access="global" />
+    <aura:attribute name="groupFooterLayoutThirdItemFlexibility" type="String" default="auto" access="global" />
+    <aura:attribute name="groupFooterLayoutThirdItemPadding" type="String" default="around-small" access="global" />
+    <aura:attribute name="groupFooterLayoutThirdItemAlignmentBump" type="String" default="left" access="global" />
+
+    <aura:attribute name="isGroupCollapsible" type="Boolean" default="false" access="global" />
+    <aura:attribute name="groupsMap" type="Object" access="global" />
+</aura:interface>

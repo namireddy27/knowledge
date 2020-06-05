@@ -1,0 +1,10 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global" controller="ACN_NavigationCX">
+	<aura:attribute name="contextualMenuItemLinkText" type="String" access="global" default="" />
+    <aura:attribute name="contextParentIdentifier" type="String" access="global" default="" />
+
+    <aura:registerEvent name="navigationMenuChanged" type="c:ACN_NavigationMenuChanged"/>
+    
+    <div class="acn-contextual-menu-link">
+        <a href="javascript:void(0);" onclick="{!c.selectMenu}"><span class="acn-contextual-menu-link-span">{!v.contextualMenuItemLinkText}</span></a>
+    </div>
+</aura:component>

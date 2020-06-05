@@ -1,0 +1,36 @@
+.acn-filter-list.THIS {
+    background-color: t(acnDefaultBackgroundAlternate);
+    padding: 0 12px;
+}
+
+.THIS .slds-button--destructive {
+    background-color: t(acnDefaultBackground);
+    border-color: t(acnGroupDestructiveButtonColor);
+    color: t(acnGroupDestructiveButtonColor);
+    width: 100%;
+}
+
+.THIS .slds-button--destructive:hover {
+    background-color: t(acnGroupDestructiveButtonHoverColor);
+}
+
+.THIS .acn-badge {
+    background-color: t(colorBackgroundButtonBrand);
+}
+
+.THIS .acn-button-disabled {
+    color: t(acnFormInputFieldBorderDisabled);
+    /*border-color: t(acnFormInputFieldBorderDisabled);*/
+}
+
+.THIS .acn-button-disabled:hover {
+    background-color: t(acnDefaultBackground);
+}
+
+.THIS .acn-filter-list-hidden {
+    /*display: none;*/
+}
+
+.THIS .acn-filter-list-visible {
+    /*display: block;*/
+}

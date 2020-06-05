@@ -1,0 +1,52 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" 
+                access="global" >
+    <aura:attribute name="entityName" type="String" required="true" default="Account" />
+    <aura:attribute name="listName" type="String" required="true" default="Recent" />
+    <aura:attribute name="listDisplayedRowsCount" type="Integer" required="false" default="5" />
+    <aura:attribute name="showListActionBar" type="Boolean" required="false" default="true" />
+    <aura:attribute name="isListDataEditable" type="Boolean" required="false" default="false" />
+    <aura:attribute name="showListRowActions" type="Boolean" required="false" default="false" />
+    <aura:attribute name="verticalAlignment" type="String" required="false" default="top" />
+    <aura:attribute name="showListHeader" type="Boolean" required="false" default="true" />
+    <aura:attribute name="showIndexColumn" type="Boolean" required="false" default="true" />
+    <aura:attribute name="placeHolderArray" type="Integer[]" required="false" default="" />
+    <aura:attribute name="showObjectName" type="Boolean" required="false" default="true" />
+    <aura:attribute name="showObjectInformation" type="Boolean" required="false" default="true" />
+    <aura:attribute name="showObjectIcon" type="Boolean" required="false" default="true" />
+    <aura:attribute name="showObjectStats" type="Boolean" required="false" default="true" />
+    <aura:attribute name="showActionButtons" type="Boolean" required="false" default="true" />
+    <aura:attribute name="showMultiSelect" type="Boolean" required="false" default="true" />
+    <aura:attribute name="showListViewControls" type="Boolean" required="false" default="true" />
+    <aura:attribute name="showRefresh" type="Boolean" required="false" default="true" />
+    <aura:attribute name="showSearchBar" type="Boolean" required="false" default="true" />
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    
+    <div class="acn-listview-manager-container-outer">
+        <div class="acn-listview-manager-container-inner">
+            <div class="{!'acn-listview-manager-container' + (' acn-listview-manager-data-vertical-alignment-' + v.verticalAlignment) + (!v.showListHeader ? ' acn-listview-manager-header-hidden' : '') + (!v.showIndexColumn ? ' acn-listview-manager-index-column-hidden' : '')}">
+                <aura:iteration items="{!v.placeHolderArray}" var="arrayElement">
+                    <div class="{!(v.showObjectName ? '' : 'acn-list-view-manager-object-name-hidden ') 
+                                + (v.showObjectInformation ? '' : 'acn-list-view-manager-object-information-hidden ') 
+                                + (v.showObjectIcon ? '' : 'acn-list-view-manager-object-icon-hidden ') 
+                                + (v.showObjectStats ? '' : 'acn-list-view-manager-object-stats-hidden ') 
+                                + (v.showActionButtons ? '' : 'acn-list-view-manager-action-button-hidden ')
+                                + (v.showMultiSelect ? '' : 'acn-list-view-manager-multi-select-hidden ')
+                                + (v.showListViewControls ? '' : 'acn-list-view-manager-controls-hidden ')
+                                + (v.showRefresh ? '' : 'acn-list-view-manager-refresh-button-hidden ')
+                                }">
+                        <lightning:listView aura:id="listviewManager"
+                                            objectApiName="{!v.entityName}"
+                                            listName="{!v.listName}"
+                                            rows="{!v.listDisplayedRowsCount}"
+                                            showActionBar="{!v.showListActionBar}"
+                                            enableInlineEdit="{!v.isListDataEditable}"
+                                            showRowLevelActions="{!v.showListRowActions}"
+                                            showSearchBar="{!v.showSearchBar}"
+                                            />
+                    </div>
+                </aura:iteration>
+            </div>  
+        </div>
+    </div>
+</aura:component>

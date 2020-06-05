@@ -1,0 +1,4 @@
+<design:component>
+	<design:attribute name="contentPreviewIdentifier" label="Content Preview Identifier" description="The content preview identifier where the pressed navigation item content can be previewed."/>	
+	<design:attribute name="noContentsMessage" label="No Contents Message" description="The Message to be displayed when the selected navigation item content does not point to any contents."/>	
+</design:component>

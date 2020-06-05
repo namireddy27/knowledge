@@ -1,0 +1,24 @@
+<aura:component >
+    <!-- Bitbucket MJD Aug 15 2019 -->
+    <aura:attribute name="filterListItem" type="ACN_NavigationLibrary.NavigationFilterItem" />
+    <aura:attribute name="filterContextIdentifier" type="String" access="global" default="" />
+    <aura:attribute name="filterItemGroup" type="Object" description="Group of options as NavigationFilterItem" />
+    <aura:attribute name="filterOptions" type="List" description="Options to display" />
+    <aura:attribute name="searchValue" type="String" default="" description="Search value" />
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:handler event="c:ACN_NavigationFilterClearAllRequested"
+        action="{!c.handleNavigationFilterClearAllRequested}" />
+
+    <aura:registerEvent name="navigationFilterItemPressed" type="c:ACN_NavigationFilterItemPressed" />
+
+    <div onkeyup="{! c.handleKeyUp }">
+        <lightning:input aura:id="searchFilter"  
+                         name="searchFilter" 
+                         label="" 
+                         value="{!v.searchValue}" 
+                         type="search"
+                         class="search-width"
+                         placeholder="{!v.filterItemGroup.groupLabel}"/>	
+    </div>
+</aura:component>

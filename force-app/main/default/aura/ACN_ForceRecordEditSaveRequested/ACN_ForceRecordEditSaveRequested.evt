@@ -1,0 +1,4 @@
+<aura:event type="APPLICATION" description="Use this lightning event to notify when the force record edit component save event was requested.">
+    <aura:attribute name="recordId" type="String" access="global" />
+    <aura:attribute name="sectionId" type="String" access="global" />
+</aura:event>

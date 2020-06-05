@@ -1,0 +1,18 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    
+    <aura:attribute type="String" name="recordId" />
+    <aura:attribute type="String" name="applicationId" default=""/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    
+    <div>
+        <aura:if isTrue= "{!v.applicationId !=''}">
+	   		<c:HR_CandidateOfferAccepted recordId="{!v.applicationId}"></c:HR_CandidateOfferAccepted>
+	     	<c:HR_CandidateOfferDeclined recordId="{!v.applicationId}"></c:HR_CandidateOfferDeclined> 
+	        <c:HR_CandidateWithdrawal recordId="{!v.applicationId}"></c:HR_CandidateWithdrawal>
+	        <c:HR_Schedule_CBT recordId="{!v.applicationId}"></c:HR_Schedule_CBT>
+           <c:HR_ApplicationSchedulerButton recordId="{!v.applicationId}" ></c:HR_ApplicationSchedulerButton>
+        </aura:if>
+
+       </div>
+    
+</aura:component>

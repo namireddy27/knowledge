@@ -1,0 +1,73 @@
+<aura:interface description="Use this interface to provide ACN Navigation features.">
+    <!-- Navigation Attributes Definition -->
+    <aura:attribute name="navigationListItem" type="ACN_NavigationLibrary.NavigationListItem" />
+    <aura:attribute name="navigationListItems" type="ACN_NavigationLibrary.NavigationListItem[]" />
+    <aura:attribute name="navigationDataProviderName" type="String" access="global" />
+    <aura:attribute name="navigationListItemsUnfiltered" type="ACN_NavigationLibrary.NavigationListItem[]"/>
+    <aura:attribute name="selectedNavigationItem" type="ACN_NavigationLibrary.NavigationListItem"/>
+    <aura:attribute name="selectedNavigationItemId" type="String"/>
+    <aura:attribute name="selectedPathSegment" type="ACN_NavigationLibrary.NavigationPathSegment"/>
+    <aura:attribute name="navigationListItemsPage" type="ACN_NavigationLibrary.NavigationListItem[]"/>
+    <aura:attribute name="carouselItems" type="ACN_NavigationLibrary.NavigationListItem[]"/>
+    <aura:attribute name="navigationListSelectedPage" type="Integer" default="1" />
+    <aura:attribute name="navigationListTotalPageArray" type="Integer[]"  />
+    <aura:attribute name="currentCarouselPage" type="Integer" default="0" />
+    <aura:attribute name="navigationListTotalPages" type="Integer" default="1" />
+    <aura:attribute name="navigationListPageSize" type="Integer" default="3" />
+    <aura:attribute name="showNavigationList" type="Boolean" access="global" default="true" />
+    <aura:attribute name="showCarouselList" type="Boolean" access="global" default="false" />
+    <aura:attribute name="showCustomNavList" type="Boolean" access="global" default="false" /> 
+    <aura:attribute name="showNavigationPath" type="Boolean" access="global" default="true" />
+    <aura:attribute name="carouselIntervalInSeconds" type="Integer" access="global" />
+    <aura:attribute name="lastCarouselDirection" type="String" access="global" />
+    <aura:attribute name="showNavigationListGroups" type="Boolean" access="global" default="false" /> 
+    <aura:attribute name="groupIndexes" type="Integer[]" access="global" /> 
+    <aura:attribute name="navigationListItemGroups" type="Object[]" access="global" /> 
+    <aura:attribute name="showAllDescendants" type="Boolean" access="global" default="false" />
+    <aura:attribute name="useContextForCarousel" type="Boolean" access="global" default="false" />
+    <aura:attribute name="includeParentNavigationItem" type="Boolean" access="global" default="false" /> 
+    <aura:attribute name="notifyNavigationToMenu" type="Boolean" access="global" default="false" /> 
+    <aura:attribute name="navigationPathSegments" type="ACN_NavigationLibrary.NavigationPathSegment[]" access="global" />
+    <aura:attribute name="navigationPathSegment" type="ACN_NavigationLibrary.NavigationPathSegment" access="global" />
+    <aura:attribute name="selectedPathSegment" type="ACN_NavigationLibrary.NavigationPathSegment" access="global"/>
+    <aura:attribute name="rootNavigationPathLabel" type="String" access="global" default="{!$Label.c.ACN_NavigationPathHome}" />
+    <aura:attribute name="rootNavigationPathLabelDefaultValue" type="String" access="global" default="{!$Label.c.ACN_NavigationPathHome}" />
+    <aura:attribute name="isNavigationEnabled" type="Boolean" access="global" default="true" /> 
+    <aura:attribute name="selectedItemIdentifier" type="String" access="global" default="" />
+    <aura:attribute name="inactiveTargetIdentifier" type="String" access="global" default="#" />
+    <aura:attribute name="extendedProperty" type="Map" access="global" default="" />
+    <aura:attribute name="isInitialLoad" type="Boolean" access="global" default="true" />
+
+    <aura:attribute name="navigationPathException" type="Object" access="global" />
+    
+    <aura:attribute name="navigationItem" type="ACN_NavigationLibrary.NavigationListItem"/>
+    <aura:attribute name="navigationItemId" type="String" default="" access="global" />
+    <aura:attribute name="navigationItemName" type="String" default="" access="global" />
+    <aura:attribute name="navigationItemImage" type="String" default="" access="global" />
+    <aura:attribute name="navigationItemString" type="String"/>
+    <aura:attribute name="navigationItemException" type="Object"/>
+    <aura:attribute name="navigationItemLabel" type="String"/>
+    <aura:attribute name="navigationItemDescription" type="String"/>
+    <aura:attribute name="navigationItemImageUrl" type="String"/>
+    <aura:attribute name="navigationItemNavigationType" type="String"/>
+    <aura:attribute name="navigationItemNavigationTarget" type="String"/>
+    
+    <aura:attribute name="initialPageSize" type="Integer" default="0" access="global" />
+    <aura:attribute name="pageSize" type="Integer" default="0" access="global" />
+    <aura:attribute name="currentPage" type="Integer" default="1" access="global" />
+    <aura:attribute name="itemsOffset" type="Integer" default="0" access="global" />
+    <aura:attribute name="isInfiniteLoading" type="Boolean" default="false" access="global" />
+    <aura:attribute name="itemsCountLimit" type="Integer" default="100" access="global" />
+    
+    <!-- Navigation Events Registration -->
+    <aura:registerEvent name="navigationPathChanged" type="c:ACN_NavigationPathChanged"/>
+    <aura:registerEvent name="carouselNavigationPressed" type="c:ACN_CarouselNavigationPressed"/>
+    <aura:registerEvent name="navigationFilterValuesChanged" type="c:ACN_NavigationFilterValuesChanged"/>  
+    <aura:registerEvent name="navigationItemSelected" type="c:ACN_NavigationItemSelected"/>
+    <aura:registerEvent name="navigationListRefreshAllRequestedEvent" type="c:ACN_NavigationListRefreshAllRequested"/>
+    <aura:registerEvent name="selectedNavigationItemRequested" type="c:ACN_SelectedNavigationItemRequested"/>
+    <aura:registerEvent name="navigationListItemPressed" type="c:ACN_NavigationListItemPressed"/>  
+    <aura:registerEvent name="navigationMenuChanged" type="c:ACN_NavigationMenuChanged"/>
+    <aura:registerEvent name="navigationItemContentPreviewPressed" type="c:ACN_NavigationItemContentPreviewPressed"/>  
+    <aura:registerEvent name="navigationSelectionUpdated" type="c:ACN_NavigationSelectionUpdated"/>  
+</aura:interface>

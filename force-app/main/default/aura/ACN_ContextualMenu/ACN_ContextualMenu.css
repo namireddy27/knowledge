@@ -1,0 +1,110 @@
+.THIS .acn-contextual-menu-item-label:focus, 
+.THIS .acn-contextual-menu-item-label:hover, 
+.THIS .acn-contextual-menu-item-label:active, 
+.THIS .acn-contextual-menu-item-label, 
+.THIS a {
+    text-decoration: none !important;
+    border-bottom: none !important;
+}
+
+.THIS {
+    background-color: transparent;
+}
+
+.THIS ul.acn-contextual-menu {
+    max-width: 1000px;
+    margin: 0 auto;
+    font-family: Montserrat;
+    font-weight: 300;
+    color: grey !important;
+    overflow-x: auto;
+    /*border-top: 1px solid #f4f4f4;*/
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.THIS ul {
+    /*border-bottom: 1px solid #f4f4f4;*/
+    border-bottom: none;
+}
+
+.THIS li.slds-active {
+    height: 3.1rem;
+    border-bottom: 1px solid t(acnBrandColor);
+}
+
+.THIS .acn-lightning-icon-small svg {
+    height: 16px;
+    width: 16px;
+    padding-right: 3px;
+    margin-top: -2px;
+}
+
+.THIS .acn-lightning-icon-small svg:hover {
+    height: 16px;
+    width: 16px;
+    padding-right: 3px;
+    margin-top: -2px;
+}
+
+.THIS a .acn-lightning-icon-container:hover svg {
+    fill: t(acnBrandColor);
+}
+
+.THIS li.slds-active a .acn-lightning-icon-container svg {
+    fill: t(acnBrandColor);
+}
+
+.THIS ul li.slds-active a {
+    font-weight: bold;
+}
+
+.THIS ul:hover {
+    /*border-bottom: none;*/
+}
+
+.THIS ul.acn-contextual-menu::-webkit-scrollbar {
+ 	height: 0px;
+}
+
+.THIS ul.acn-contextual-menu li a {
+    overflow: hidden;
+	text-overflow: initial;
+	white-space: nowrap;
+	display: block;
+	text-decoration: none;
+	cursor: pointer;
+	height: 3.2rem;
+	line-height: 3.2rem;
+	color: token(acnContextualMenuItemFontColor);
+	font-family: Segoe UI,Helvetica Neue,Helvetica !important;
+	
+	text-transform: capitalize;
+	font-size: 16px;
+	letter-spacing: 0;
+	margin-right: 5px;
+	font-weight: 300;
+    padding: 0 !important;
+}
+
+.THIS ul li a:hover {
+    /*color: #000;*/
+    text-decoration: none;
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 48em) {
+    
+    .THIS ul.acn-contextual-menu {
+        padding-left: 12px;
+    }
+    
+}
+
+@media screen and (max-width: 550px) {
+    	
+    .THIS ul.acn-contextual-menu {
+        /*display: none;*/
+    }
+    
+}

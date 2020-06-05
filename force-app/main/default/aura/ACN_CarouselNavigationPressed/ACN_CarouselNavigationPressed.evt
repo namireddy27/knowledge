@@ -1,0 +1,4 @@
+<aura:event type="COMPONENT" description="Fired when any of the carousel navigation options are pressed">
+    <aura:attribute name="carouselNavigationOption" type="String" description="The carousel navigation option pressed"/>
+    <aura:attribute name="carouselNavigationPageIndex" type="Integer" description="The carousel navigation page to jump to"/>
+</aura:event>

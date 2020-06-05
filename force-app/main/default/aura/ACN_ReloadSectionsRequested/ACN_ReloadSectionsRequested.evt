@@ -1,0 +1,3 @@
+<aura:event type="APPLICATION" description="Use this event to notify when a reload section request is required.">
+    <aura:attribute name="sections" type="Object[]" default="[]" access="global" />
+</aura:event>

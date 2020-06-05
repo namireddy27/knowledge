@@ -1,0 +1,93 @@
+/* COMPONENT TITLE NAVY */
+
+.THIS.pcMainDesign {
+    background-color: #F4F4F4; 
+    padding-top: 20px; 
+    border:none;
+    font-size: 2.875rem; 
+    text-align:center;
+}
+
+.THIS.pcMainDesign #chartContainer {
+    margin: 0 auto;
+    padding-bottom: 20px;
+    width: 400px;
+    height: 200px;
+}
+
+.THIS.pcMainDesign .pcFooterDesign {
+    background-color: #F4F4F4; /* #E6E6E6; */
+    padding:20px;
+    padding-bottom: 30px;
+    font-size: 0.875rem; 
+    text-align:center; 
+    line-height: 2em;
+}
+
+.THIS.pcMainDesign .pcFooterDesign,
+.THIS.pcMainDesign .pcFooterDesign span {
+    font-size: 1rem;
+    line-height: 1.25;
+}
+
+
+.THIS.pcResponsiveLayout {
+    padding-left: 6%; 
+    padding-bottom: 20px;
+}
+
+.THIS.progressHeaderLayout {
+    background-color: #F4F4F4;
+    padding-top: 42px;
+    padding-left: 25px;
+    
+}
+
+
+.THIS.progressHeaderLayout .progressHeader {
+    color: #333333;
+    background-color: #F4F4F4; /* #fff; */
+    border-left: 3px solid #cc0033;
+    font-family: Font_Tinos;
+    font-size: 1.625rem;
+    padding: 8px 0 8px 20px;
+}
+
+.THIS.progressHeaderLayout .progressHeader h2 {
+    color: #333;
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 0;
+    margin: 0;
+}
+
+.THIS.pcMainDesign .withdrawnIcon {
+    padding: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    
+}
+
+
+
+
+h2.THIS { 
+    font-weight: 700; }
+
+
+
+h1.THIS{ 
+    font-size:36pt; 
+    }
+
+.THIS.right {
+  text-align: right;
+}
+
+.THIS.cpCircleFooter {
+    background-color: #F3F2F2; 
+    padding:20px; 
+    font-size: 0.875rem; 
+    text-align:center;
+    line-height: 2em;
+}

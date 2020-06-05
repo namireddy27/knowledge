@@ -1,0 +1,91 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" controller="HR_CurrentUserController">
+<aura:attribute name="showConfirtmation" type="boolean" default="false" />  
+        <aura:attribute name="currentUser" type="User" /> 
+     	<aura:attribute name="contact" type="Object" /> 
+    <aura:handler name="init" value="{!this}" action="{!c.doinit}" />
+  
+<header class="header-section">
+			<a href="#" class="site-logo" title="Homepage">
+				<img src="{!$Resource.itechlogo}" alt=": TS Transportation Corporation"></img>
+    		</a>
+			<nav class="header-nav">
+				<ul class="main-menu">
+                    <li>
+						<a href="#" class="active" title="Profile">Profile</a>
+					</li>
+                    <li class="active">|</li>
+					<li class="return-site">
+						<a href="#" class="active" title="Career Management Homepage">Return to Career Management</a>
+					</li>
+					<li>
+						<a href="#" class="active" title="Logout of Candidate Portal" onclick="{!c.logout}">Logout</a>
+					</li>
+					<li>
+						<img src="{!$Resource.HRCPHeaderMenuIcon}" alt="TS Transportation Corporation" style="margin-bottom: 15px;"></img>
+                    </li>
+					<li>
+					  <div class="candidate-info">
+						<div>{!v.contact.Name}</div>
+                        <div>ID:{!v.currentUser.Email}</div>
+					  </div>
+					</li>
+				</ul>
+
+				<ul class="mobile-menu-nav">
+					<li>
+                        <a onclick="{!c.handleMobileMenu}" class="active" title="Menu Navigation">Menu</a>
+					</li>
+					<li>
+						<a onclick="{!c.handleMobileMenu}" title="Menu Navigation">
+                            <img src="{!$Resource.HRCPHeaderMenuIcon}" alt="TS Transportation Corporation" style="margin-bottom: 15px;"></img>
+                        </a>
+                    </li>
+				</ul>
+                
+                <!-- Mobile Menu: Modal Popup Panel --> 
+                <aura:if isTrue="{!v.showConfirtmation}">
+                    <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                        <div class="slds-modal__container">
+                            <!-- Modal/Popup Box Header Starts here-->
+                            <header class="slds-modal__header" style="border-bottom: 1px solid #FFBE2E;">
+                                <lightning:buttonIcon iconName="utility:close"
+                                                      onclick="{! c.closeModel }"
+                                                      alternativeText="close"
+                                                      variant="bare-inverse"
+                                                      class="slds-modal__close"/>
+                                <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate" style="font-size:1.1rem;"><strong>Candidate Portal Menu</strong></h2>
+                            </header>
+                            <!--Modal/Popup Box Body Starts here-->
+                            <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                                <!--Mobile Menu Content Starts here-->
+
+                                    <div class="mobile-candidate-info">
+                                            <div>{!v.currentUser.Name}</div>
+                                            <div>ID: {!v.currentUser.Account.HR_Candidate_ID__c}</div>
+                                    </div>
+
+                                
+                                <div class="mobile-content-layout">
+                                    <span><a href="{!$Label.c.Profile}" class="active" title="Profile">Profile</a></span> &nbsp;&nbsp;|&nbsp;&nbsp; <span><a href="#" class="active" title="Career Management Homepage">Return to Career Management</a></span>
+                                </div>
+                                
+                                <div class="logout">
+                                   <a href="#" title="Logout" class="active">Logout</a>  &nbsp;&nbsp;<img src="{!$Resource.HRCPHeaderMenuIcon}" alt="U.S. Department of Homeland Security: Transportation Security Administration" style="margin-bottom: 15px;"></img>
+                                </div>
+                                
+                                <!--/End of Mobile Menu Content-->
+                            </div>
+                            <footer class="slds-modal__footer" style="border-top:1px solid #FFBE2E; background-color: #f3f2f2; text-align: right;">
+      							<button onclick="{! c.closeModel }" alternativeText="close" class="slds-button slds-button_neutral">Close</button>
+    						</footer>
+                        </div>
+                    </section>
+                    <div class="slds-backdrop slds-backdrop_open"></div>
+                </aura:if>
+			</nav>
+
+		</header>
+    
+		
+
+</aura:component>

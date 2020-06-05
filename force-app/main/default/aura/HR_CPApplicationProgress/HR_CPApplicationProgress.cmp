@@ -1,0 +1,55 @@
+<aura:component implements="flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes,force:hasRecordId" access="global">
+       	<aura:attribute name="record" type="Object" />
+     	<aura:attribute name="nvRecord" type="Object" />
+		<aura:handler event="force:refreshView" action="{!c.doInit}" /> 
+    
+    <div class="progressHeaderLayout">
+        <div class="progressHeader">
+           <h2>Application Progress</h2>
+        </div>
+    </div>  
+          	
+        <force:recordData aura:id="forceRecordCmp" 
+    		recordId="{!v.recordId}"
+                          layoutType="FULL"
+                       
+    		mode="VIEW"
+    		targetRecord="{!v.record}"
+    		targetFields="{!v.nvRecord}" 
+			fields="Id, Name,Job_Title__c,Application_Status__c,Percentage_Complete__c,JOA_Name__c "
+		/>
+  		<div class="pcMainDesign"> 
+            <div class="slds-align_absolute-center">
+                <Aura:if isTrue="{!v.nvRecord.Application_Status__c =='Withdrawn'}">
+                <div class="withdrawnIcon">    
+<!--                <img src="{!$Resource.HR_CircleProgressWithdrawnIcon}" alt="Application Withdrawn Status Icon"></img> -->
+                </div>
+                </Aura:if> 
+                
+                <Aura:if isTrue="{!v.nvRecord.Application_Status__c!='Withdrawn'}">                 
+                <Aura:if isTrue="{!v.nvRecord.Percentage_Complete__c!=null}">
+                    <c:HR_ApplicationProgressDetails recordId='{!v.recordId}'  Percentage_Complete ='{!v.nvRecord.Percentage_Complete__c}'></c:HR_ApplicationProgressDetails> 
+                </Aura:if>
+                        </Aura:if>      
+    		</div>
+            <div class="pcFooterDesign">   
+					
+                    <span>
+                          <strong>
+                      
+                        {!v.nvRecord.Job_Title__c}
+                        <br />
+                        {!v.nvRecord.Application_Status__c}
+                     </strong>
+                    	&nbsp;&nbsp;{!v.nvRecord.JOA_Name__c} 
+                	</span>
+                <Aura:if isTrue="{!v.nvRecord.Application_Status__c!='Withdrawn'}"> 
+                <p style="padding-top: 20px;">
+                    <c:HR_CandidateWithdrawal recordId='{!v.recordId}' ></c:HR_CandidateWithdrawal> 
+                	</p>
+                </Aura:if>  
+       		</div>   
+
+    	</div>
+
+</aura:component>

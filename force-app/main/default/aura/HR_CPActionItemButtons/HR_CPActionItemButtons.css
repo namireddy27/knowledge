@@ -1,0 +1,58 @@
+.THIS .cHR_CandidateApplicationWithdrawn {
+    font-size: 0.8125rem !important;
+    background: #FFF !important;
+    color: #333 !important;
+    border: 1px solid #FFF !important;
+    text-transform: capitalize !important;
+    text-decoration: underline !important;
+}
+
+/* ** ACCEPT BUTTON ** */
+.THIS .cHR_CandidateOfferAccepted {
+    background: #006699;
+    font-size: 0.875rem;
+    padding: .6rem 0.9rem 0.6rem 0.9rem;
+    text-transform: uppercase;
+    color: #fff;
+    border-radius: 4px;
+    text-decoration: none;
+    border: 1px solid #006699;
+}
+
+/* ** DECLINE BUTTON ** */
+.THIS .cHR_CandidateOfferDeclined {
+    background: #FFF !important;
+    font-size: 0.875rem;
+    padding: .6rem 0.9rem 0.6rem 0.9rem;
+    text-transform: uppercase;
+    color: #006699;
+    border-radius: 4px;
+    text-decoration: none;
+    border: 1px solid #006699 !important;
+}
+
+/* ** DEFAULT SLDS BUTTONS ** */
+.THIS .slds-button_brand, .THIS .slds-button--brand {
+    padding: .6rem 0.9rem 0.6rem 0.9rem;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #006699;
+   /* justify-content: center;
+    border: 1px solid #006699 !important; */
+    font-size: 0.875rem;
+   	text-transform: uppercase;
+    border-radius: 4px;
+    margin-right: 0.875rem;
+}
+
+/* ** BUTTON HOVER ** */
+.THIS .slds-button_brand:hover, .THIS .slds-button--brand:hover, .THIS .cHR_CandidateOfferDeclined:hover {
+    background-color: #E4F2FD !important;
+    color: #006699;
+    border: 1px solid #006699;
+}
+
+.THIS .cHR_CandidateApplicationWithdrawn:hover {
+    background: #FFF !important;
+    text-decoration: none !important;
+}

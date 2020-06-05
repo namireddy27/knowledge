@@ -1,0 +1,8 @@
+<aura:interface description="Use this interface to provide support for filtering.">
+    <aura:attribute name="filterContextIdentifier" type="String" access="global" default="" />
+    <aura:attribute name="navigationFilter" type="String[]" access="global" default="" />
+    <aura:attribute name="filterItems" type="ACN_NavigationLibrary.NavigationFilterItem[]" access="global" default="" />
+    <aura:attribute name="filterItemsString" type="String" access="global" default="" />
+    <aura:attribute name="isFilterListLoaded" type="Boolean" access="global" default="false" />
+    <aura:attribute name="isRefreshAllHandled" type="Boolean" access="global" default="false" />
+</aura:interface>

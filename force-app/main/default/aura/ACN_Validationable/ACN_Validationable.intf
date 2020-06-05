@@ -1,0 +1,12 @@
+<aura:interface description="Use this lightning interface to provide support for complex validations.">
+    <aura:attribute name="validationProviderName" type="String" access="global" default="" />
+    <aura:attribute name="validationContextId" type="String" access="global" default="" />
+    <aura:attribute name="validationIsRequired" type="Boolean" access="global" default="false" />
+    <aura:attribute name="validationIsRunning" type="Boolean" access="global" default="false" />
+    <aura:attribute name="validationIsFailed" type="Boolean" access="global" default="false" />
+    <aura:attribute name="validationMessage" type="String" access="global" default="" />
+    <aura:attribute name="validationTitle" type="String" access="global" default="" />
+
+    <aura:registerEvent name="externalValidationRequested" type="c:ACN_ExternalValidationRequested" />
+    <aura:registerEvent name="externalValidationRequestCompleted" type="c:ACN_ExternalValidationRequestCompleted" />
+</aura:interface>

@@ -1,0 +1,3 @@
+<aura:interface description="Use this Lightning Interface to provide debug support for Lightning Components.">
+    <aura:attribute name="isInDebugMode" type="Boolean" access="global" default="false" description="Use this attribute to specify if debug mode is active." />
+</aura:interface>

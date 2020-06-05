@@ -1,8 +1,5 @@
 <aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" controller="HR_DynamicStageSetPathController" >
     <aura:attribute name="myChild" type="String" default=""/>
-    <!--<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
--->
-    
     <aura:attribute name="steps" type="String[]" default="[]"/>
     <aura:attribute name="statusValue" type="String" default=""/>
     <aura:attribute name="failedStep" type="Boolean" default=""/>
@@ -11,17 +8,16 @@
     <aura:handler name="init" action="{!c.doInit}" value="{!this}" />
 <!--    <aura:registerEvent name="AppHiringStageEvent" type="c:AppHiringStageEvent"/> -->
     <aura:method name="refreshPath" action="{!c.doInit}"/>
-    <div style="position: relative;">
-      <lightning:progressIndicator currentStep="{!v.statusValue}" type="path" hasError="false">
-            <aura:iteration items="{! v.steps }" var="step" indexVar="index">
+    <div style="position: relative;"><!--Hover Text  -->
+        <lightning:progressIndicator currentStep="{!v.statusValue}" type="path" hasError="false">
+            <aura:iteration items="{! v.steps }" var="step">
                 <aura:if isTrue="{!and(step.step == v.statusValue, v.failedStep)}">
-                    <lightning:progressStep class="slds-path-item slds-is-lost slds-is-current" label="{! step.step }" value="{! step.step }" onstepmouseleave="{!c.handlestepblur}" onstepmouseenter="{!c.handlestepfocus}"/>
+                    <lightning:progressStep class="slds-path-item slds-is-lost slds-is-current" label="{! step.step }" value="{! step.step }"  onstepmouseleave="{!c.handlestepblur}" onstepmouseenter="{!c.handlestepfocus}"/><!--Hover Text changes -->
                     <aura:set attribute="else">
-                        <lightning:progressStep class="slds-path-item" label="{! step.step }" value="{! step.step }" onstepmouseleave="{!c.handlestepblur}" onstepmouseenter="{!c.handlestepfocus}"/>
+                        <lightning:progressStep class="slds-path-item" label="{! step.step }" value="{! step.step }"  onstepmouseleave="{!c.handlestepblur}" onstepmouseenter="{!c.handlestepfocus}"/>
                     </aura:set>
                 </aura:if>
-                
-                <!--Assistive text-->
+                  <!--Hover Text Start -->
                 <aura:if isTrue="{!step.showHover}">
                   <div class="slds-popover slds-popover_tooltip slds-nubbin_top"  role="tooltip" style="{!step.style}">
                       <div class="slds-popover__body">{! step.step}<br/>
@@ -35,9 +31,8 @@
                         
                       </div>
                   </div>
-                    </aura:if>
+                    </aura:if> <!--Hover Text End -->
             </aura:iteration>
         </lightning:progressIndicator>
-
     </div>
 </aura:component>

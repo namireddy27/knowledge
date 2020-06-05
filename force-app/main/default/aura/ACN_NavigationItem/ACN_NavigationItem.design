@@ -1,3 +1,57 @@
-<design:component>
-	
+<design:component >
+	<design:attribute name="isNavigationEnabled" label="Is Navigation Enabled?" description="Specifies if the Component should navigate whn a navigation item is pressed."/>	
+	<design:attribute name="showItemName" label="Show List Item Name" description="Specifies if the Component should show the Name field on the Navigation Item."/>	
+	<design:attribute name="showItemImage" label="Show List Item Image" description="Specifies if the Component should show the Image field on the Navigation Item."/>	
+	<design:attribute name="showItemImageBehind" label="Show List Item Image Behind" description="Specifies if the Component should show the Image behind the text on the Navigation Item."/>	
+	<design:attribute name="showItemDescription" label="Show List Item Description" description="Specifies if the Component should show the Description field on the Navigation Item."/>	
+    <design:attribute name="styleClass" label="CSS Style Class Name" description="The CSS Style Class Name to be applied to the Component." datasource="apex://ACN_NavigationStyleClassDataSource"/>
+    <design:attribute name="selectedStyleClass" label="Selected and Hover CSS Style Class Name" description="The selected and hover CSS Style Class Name to be applied to the Component." />
+    <design:attribute name="activeStyleClass" label="Active CSS Style Class Name" description="The active CSS Style Class Name to be applied to the Component." />
+	<design:attribute name="overrideItemClassName" label="Override Item Class" description="Specifies if the CSS Class Name should override the pre-assigned Navigation Item CSS Class."/>	
+	<design:attribute name="navigationItemLabel" label="Label Text" description="Specifies the label text for the navigation item." />
+	<design:attribute name="navigationItemDescription" label="Description" description="Specifies the description for the navigation item." />
+	<design:attribute name="navigationItemImageUrl" label="Image Url" description="Specifies the Image Url for the navigation item." />
+	<design:attribute name="navigationItemNavigationType" label="Navigation Type" description="Specifies the navigation type for the navigation item." datasource=",Community Page,External URL,Navigational Topic,Salesforce Object,Preview" />
+	<design:attribute name="navigationItemNavigationTarget" label="Navigation Target" description="Specifies the navigation target for the navigation item." />
+	<design:attribute name="inactiveTargetIdentifier" label="Inactive Target Identifier" description="Specifies the inactive navigation target identifier for the navigation item." />
+    <design:attribute name="fitInContainer" label="Fit In Container" description="Specifies if the navigation item should stretch to fit in its container." />
+	<design:attribute name="contentPreviewIdentifier" label="Content Preview Identifier" description="The content preview identifier where the pressed navigation item content can be previewed."/>	
+	<design:attribute name="notifyNavigationToMenu" label="Notify Navigation To Menu" description="Specifies if the change in navigation should be notified to a menu."/>	
+	<design:attribute name="showScoringStars" label="Show 5 Stars Rating" description="Specifies if the Component should show the Five Stars Rating Scoring."/>	
+    <design:attribute name="showScoringVotes" label="Show Votes" description="Specifies if the Component should show the Like/Not Like Votes Scoring."/>	
+    <design:attribute name="showScoringLoveIt" label="Show Love It!" description="Specifies if the Component should show the Love It/Favorite Scoring."/>	
+    <design:attribute name="showScoringViews" label="Show Views" description="Specifies if the Component should show the Views Scoring."/>	
+	<design:attribute name="useBrandColorForImage" label="Use Brand Color for Image" description="Use this attribute to specify if the navigation item image should display using the brand color." />
+
+    <design:attribute name="imageElementIndex" label="Image Element Index" description="Use this attribute to specify the placeholder element for the image (hidden,1,2,3)." datasource="hidden,1,2,3" />
+	<design:attribute name="nameElementIndex" label="Name Element Index" description="Use this attribute to specify the placeholder element for the name (hidden,1,2,3)." datasource="hidden,1,2,3" />
+	<design:attribute name="descriptionElementIndex" label="Description Element Index" description="Use this attribute to specify the placeholder element for the description (hidden,1,2,3)." datasource="hidden,1,2,3" />
+	<design:attribute name="scoreElementIndex" label="Score Element Index" description="Use this attribute to specify the placeholder element for the score (hidden,1,2,3)." datasource="hidden,1,2,3" />
+	<design:attribute name="badgeElementIndex" label="Badge Element Index" description="Use this attribute to specify the placeholder element for the badge (hidden,1,2,3)." datasource="hidden,1,2,3" />
+	<design:attribute name="chartElementIndex" label="Chart Element Index" description="Use this attribute to specify the placeholder element for the chart (hidden,1,2,3)." datasource="hidden,1,2,3" />
+
+	<design:attribute name="layoutClass" label="Item Layout Style Class Name" description="Use this attribute to specify the list item layout style class name." />
+	<design:attribute name="layoutTitle" label="Item Layout Title" description="Use this attribute to specify the list item layout style class name." />
+    <design:attribute name="layoutHorizontalAlign" label="Item Layout Horizontal Align" description="Use this attribute to specify how to spread the layout items horizontally. The alignment options are center, space, spread, and end." datasource="center,space,spread,end" />
+	<design:attribute name="layoutVerticalAlign" label="Item Layout Vertical Align" description="Use this attribute to specify how to spread the layout items vertically. The alignment options are start, center, end, and stretch." datasource="start,center,end,stretch" />
+	<design:attribute name="layoutMultipleRows" label="Wrap Item Layout Elements" description="Use this attribute to specify if the list item layout items wrap in multiple rows based on their size." />
+	<design:attribute name="layoutPullToBoundary" label="Pull Item Layout Elements to Boundary" description="Use this attribute to specify the list item layout pull to boundary option." datasource="small,medium,large" />
+    <design:attribute name="firstLayoutItemClass" label="First Element Style Class" description="Use this attribute to specify the first element style class." />
+    <design:attribute name="firstLayoutItemTitle" label="First Element Title" description="Use this attribute to specify the first element title." />
+    <design:attribute name="firstLayoutItemSize" label="First Element Size Array" description="Use this attribute to specify the first element size array (number of grid elements, width in grid elements for desktop browser factor, width in grid elements for tablet browser factor, width in grid elements for phone browser factor)." />
+    <design:attribute name="firstLayoutItemFlexibility" label="First Element Flexibility" description="Use this attribute to specify the first element flexibility (auto (columns grow or shrink equally as space allows), shrink (columns shrink equally as space decreases), no-shrink (columns don't shrink as space reduces), grow (columns grow equally as space increases), no-grow (columns don't grow as space increases), no-flex (columns don't grow or shrink as space changes). Use a comma-separated value for multiple options, such as 'auto, no-shrink')." />
+    <design:attribute name="firstLayoutItemPadding" label="First Element Padding" description="Use this attribute to specify the first element padding (horizontal-small, horizontal-medium, horizontal-large, around-small, around-medium, around-large)." datasource="horizontal-small,horizontal-medium,horizontal-large,around-small,around-medium,around-large" />
+    <design:attribute name="firstLayoutItemAlignmentBump" label="First Element Alignment Bump" description="Use this attribute to specify the first element alignment bump (left,top,right,bottom)." datasource="left,top,right,bottom" />
+    <design:attribute name="secondLayoutItemClass" label="Second Element Style Class" description="Use this attribute to specify the second element style class." />
+    <design:attribute name="secondLayoutItemTitle" label="Second Element Title" description="Use this attribute to specify the second element title." />
+    <design:attribute name="secondLayoutItemSize" label="Second Element Size Array" description="Use this attribute to specify the second element size array (number of grid elements, width in grid elements for desktop browser factor, width in grid elements for tablet browser factor, width in grid elements for phone browser factor)." />
+    <design:attribute name="secondLayoutItemFlexibility" label="Second Element Flexibility" description="Use this attribute to specify the second element flexibility (auto (columns grow or shrink equally as space allows), shrink (columns shrink equally as space decreases), no-shrink (columns don't shrink as space reduces), grow (columns grow equally as space increases), no-grow (columns don't grow as space increases), no-flex (columns don't grow or shrink as space changes). Use a comma-separated value for multiple options, such as 'auto, no-shrink')." />
+    <design:attribute name="secondLayoutItemPadding" label="Second Element Padding" description="Use this attribute to specify the second element padding (horizontal-small, horizontal-medium, horizontal-large, around-small, around-medium, around-large)." datasource="horizontal-small,horizontal-medium,horizontal-large,around-small,around-medium,around-large" />
+    <design:attribute name="secondLayoutItemAlignmentBump" label="Second Element Alignment Bump" description="Use this attribute to specify the second element aligntment bump (left,top,right,bottom)." datasource="left,top,right,bottom" />
+    <design:attribute name="thirdLayoutItemClass" label="Third Element Style Class" description="Use this attribute to specify the third element style class." />
+    <design:attribute name="thirdLayoutItemTitle" label="Third Element Title" description="Use this attribute to specify the third element title." />
+    <design:attribute name="thirdLayoutItemSize" label="Third Element Size Array" description="Use this attribute to specify the third element size array (number of grid elements, width in grid elements for desktop browser factor, width in grid elements for tablet browser factor, width in grid elements for phone browser factor)." />
+    <design:attribute name="thirdLayoutItemFlexibility" label="Third Element Flexibility" description="Use this attribute to specify the third element flexibility (auto (columns grow or shrink equally as space allows), shrink (columns shrink equally as space decreases), no-shrink (columns don't shrink as space reduces), grow (columns grow equally as space increases), no-grow (columns don't grow as space increases), no-flex (columns don't grow or shrink as space changes). Use a comma-separated value for multiple options, such as 'auto, no-shrink')." />
+    <design:attribute name="thirdLayoutItemPadding" label="Third Element Padding" description="Use this attribute to specify the third element padding (horizontal-small, horizontal-medium, horizontal-large, around-small, around-medium, around-large)." datasource="horizontal-small,horizontal-medium,horizontal-large,around-small,around-medium,around-large" />
+    <design:attribute name="thirdLayoutItemAlignmentBump" label="Third Element Alignment Bump" description="Use this attribute to specify the third element alignment bump (left,top,right,bottom)." datasource="left,top,right,bottom" />
 </design:component>

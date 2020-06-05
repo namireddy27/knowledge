@@ -1,0 +1,16 @@
+.THIS .acn-preview-content {
+    opacity: 0 !important;
+    display: none;
+}
+
+.THIS div.acn-fade-in {
+    -webkit-animation: fadeIn;
+    animation: fadeIn;
+    opacity: 1;
+}
+
+.THIS div.acn-fade-out {
+    -webkit-animation: fadeOut;
+    animation: fadeOut;
+    opacity: 0;
+}

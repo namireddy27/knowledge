@@ -1,0 +1,4 @@
+<aura:event type="APPLICATION" description="Use this event to notify of a navigation filter item pre selection.">
+    <aura:attribute name="filterList" type="String[]"/>
+    <aura:attribute name="filterContextIdentifier" type="String"/>
+</aura:event>

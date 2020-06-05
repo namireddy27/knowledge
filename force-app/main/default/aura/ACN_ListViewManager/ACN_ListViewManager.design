@@ -1,0 +1,20 @@
+<design:component >
+    <design:attribute name="entityName" label="Entity Name" description="Use this attribute to specify the data entity name." />
+    <design:attribute name="listName" label="List Name" description="Use this attribute to specify the list name."  />
+    <design:attribute name="listDisplayedRowsCount" label="Visible Rows #" description="Use this attribute to specify the visible rows number for the list."  />
+    <design:attribute name="isListDataEditable" label="Is List data Editable?" description="Use this attribute to specify if the data on the list should be editable."  />
+    <design:attribute name="showListHeader" label="Show List Header" description="Use this attribute to specify if the list header should be visible."  />
+    <design:attribute name="showObjectName" label="Show Object Name" description="Use this attribute to specify if the object name should be visible."  />
+    <design:attribute name="showObjectInformation" label="Show Object Information" description="Use this attribute to specify if the object information should be visible."  />
+    <design:attribute name="showObjectIcon" label="Show Object Icon" description="Use this attribute to specify if the object icon should be visible."  />
+    <design:attribute name="showObjectStats" label="Show Object Stats" description="Use this attribute to specify if the object stats should be visible."  />
+    <design:attribute name="showSearchBar" label="Show Search Bar" description="Use this attribute to specify if the search bar should be visible."  />
+    <design:attribute name="showActionButtons" label="Show Action buttons" description="Use this attribute to specify if the action buttons should be visible."  />
+    <design:attribute name="showListViewControls" label="Show List View Controls" description="Use this attribute to specify if the list view controls should be visible."  />
+    <design:attribute name="showRefresh" label="Show Refresh" description="Use this attribute to specify if the list view refresh button should be visible."  />
+    <design:attribute name="showMultiSelect" label="Show Multi-select Column" description="Use this attribute to specify if the row level actions should be visible."  />
+    <design:attribute name="showIndexColumn" label="Show Index Column" description="Use this attribute to specify if the row multi-select checkboxes should be visible."  />
+    <design:attribute name="verticalAlignment" label="Data Vertical Alignment" description="Use this attribute to specify the data position on the list cells." datasource="top,middle,bottom" />
+    <design:attribute name="showListActionBar" label="Show List Actions" description="Use this attribute to specify if the list level actions should be visible."  />
+    <design:attribute name="showListRowActions" label="Show Row Actions" description="Use this attribute to specify if the row level actions should be visible."  />
+</design:component>

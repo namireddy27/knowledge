@@ -1,0 +1,3 @@
+<aura:event type="APPLICATION" description="Use this event to provide support for refreshing a specific navigation list.">
+    <aura:attribute name="componentIds" type="String[]" description="The list of component ids to be refreshed."/>
+</aura:event>

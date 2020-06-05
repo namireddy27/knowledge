@@ -1,0 +1,3 @@
+<aura:event type="COMPONENT" description="Fired when an the navigation path segment is pressed">
+    <aura:attribute name="navigationPathSegment" type="ACN_NavigationLibrary.NavigationPathSegment" description="The navigation path segment last pressed"/>
+</aura:event>

@@ -1,0 +1,134 @@
+<aura:component implements="forceCommunity:layout,c:ACN_Pageable" access="global" description="3 Columns, 2 Headers, 2 Footers" extends="c:ACN_ResponsiveThemeTemplate">
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    
+    <div class="{!'acn-page-layout-container acn-page-layout-container-' + v.browserFormFactor + (v.pageLayoutClass == '' ? '' : ' ' + v.pageLayoutClass)}">
+        <lightning:layout 
+                          class="{!'acn-page-layout-' + v.browserFormFactor + (v.pageLayoutClass == '' ? '' : ' ' + v.pageLayoutClass)}" 
+                          title="{!v.pageLayoutTitle}" 
+                          horizontalAlign="{!v.pageLayoutHorizontalAlign}" 
+                          verticalAlign="{!v.pageLayoutVerticalAlign}" 
+                          multipleRows="{!v.pageLayoutMultipleRows}" 
+                          pullToBoundary="{!v.pageLayoutPullToBoundary}" 
+                          >
+            <aura:if isTrue="{!v.showTop}">
+                <lightning:layoutItem 
+                                      class="{!'acn-page-layout-top acn-page-layout-top-' + v.browserFormFactor + (v.pageLayoutClass == '' ? '' : ' ' + v.pageLayoutClass)}" 
+                                      title="{!v.topTitle}" 
+                                      alignmentBump="{!v.topAlignmentBump}" 
+                                      flexibility="{!v.topFlexibility}" 
+                                      padding="{!v.topPadding}" 
+                                      size="{!v.topWidth[0]}" 
+                                      smallDeviceSize="{!v.topWidth[3]}" 
+                                      mediumDeviceSize="{!v.topWidth[2]}" 
+                                      largeDeviceSize="{!v.topWidth[1]}"
+                                      >
+                    {!v.top}
+                </lightning:layoutItem>
+            </aura:if>
+            <lightning:layoutItem 
+                                  class="{!'acn-page-layout-header acn-page-layout-header-' + v.browserFormFactor + (v.pageLayoutClass == '' ? '' : ' ' + v.pageLayoutClass)}" 
+                                  title="{!v.headerTitle}" 
+                                  alignmentBump="{!v.headerAlignmentBump}" 
+                                  flexibility="{!v.headerFlexibility}" 
+                                  padding="{!v.headerPadding}" 
+                                  size="{!v.headerWidth[0]}" 
+                                  smallDeviceSize="{!v.headerWidth[3]}" 
+                                  mediumDeviceSize="{!v.headerWidth[2]}" 
+                                  largeDeviceSize="{!v.headerWidth[1]}"
+                                  >
+                {!v.header}
+            </lightning:layoutItem>
+            <lightning:layoutItem 
+                                  class="{!'acn-page-layout-content acn-page-layout-content-' + v.browserFormFactor + (v.pageLayoutClass == '' ? '' : ' ' + v.pageLayoutClass)}" 
+                                  title="{!v.contentTitle}" 
+                                  alignmentBump="{!v.contentAlignmentBump}" 
+                                  flexibility="{!v.contentFlexibility}" 
+                                  padding="{!v.contentPadding}" 
+                                  size="{!v.contentWidth[0]}" 
+                                  smallDeviceSize="{!v.contentWidth[3]}" 
+                                  mediumDeviceSize="{!v.contentWidth[2]}" 
+                                  largeDeviceSize="{!v.contentWidth[1]}"
+                                  >
+                {!v.content}
+            </lightning:layoutItem>
+            <lightning:layoutItem 
+                                  class="{!'acn-page-layout-middle acn-page-layout-middle-' + v.browserFormFactor + (v.pageLayoutClass == '' ? '' : ' ' + v.pageLayoutClass)}" 
+                                  title="{!v.middleTitle}" 
+                                  alignmentBump="{!v.middleAlignmentBump}" 
+                                  flexibility="{!v.middleFlexibility}" 
+                                  padding="{!v.middlePadding}" 
+                                  size="{!v.middleWidth[0]}" 
+                                  smallDeviceSize="{!v.middleWidth[3]}" 
+                                  mediumDeviceSize="{!v.middleWidth[2]}" 
+                                  largeDeviceSize="{!v.middleWidth[1]}"
+                                  >
+                {!v.middle}
+            </lightning:layoutItem>
+            <lightning:layoutItem 
+                                  class="{!'acn-page-layout-detail acn-page-layout-detail-' + v.browserFormFactor + (v.pageLayoutClass == '' ? '' : ' ' + v.pageLayoutClass)}" 
+                                  title="{!v.detailTitle}" 
+                                  alignmentBump="{!v.detailAlignmentBump}" 
+                                  flexibility="{!v.detailFlexibility}" 
+                                  padding="{!v.detailPadding}" 
+                                  size="{!v.detailWidth[0]}" 
+                                  smallDeviceSize="{!v.detailWidth[3]}" 
+                                  mediumDeviceSize="{!v.detailWidth[2]}" 
+                                  largeDeviceSize="{!v.detailWidth[1]}"
+                                  >
+                {!v.detail}
+            </lightning:layoutItem>
+            <lightning:layoutItem 
+                                  class="{!'acn-page-layout-divider acn-page-layout-divider-' + v.browserFormFactor + (v.pageLayoutClass == '' ? '' : ' ' + v.pageLayoutClass)}" 
+                                  title="{!v.dividerTitle}" 
+                                  alignmentBump="{!v.dividerAlignmentBump}" 
+                                  flexibility="{!v.dividerFlexibility}" 
+                                  padding="{!v.dividerPadding}" 
+                                  size="{!v.dividerWidth[0]}" 
+                                  smallDeviceSize="{!v.dividerWidth[3]}" 
+                                  mediumDeviceSize="{!v.dividerWidth[2]}" 
+                                  largeDeviceSize="{!v.dividerWidth[1]}"
+                                  >
+                {!v.divider}
+            </lightning:layoutItem>
+            <lightning:layoutItem 
+                                  class="{!'acn-page-layout-summary acn-page-layout-summary-' + v.browserFormFactor + (v.pageLayoutClass == '' ? '' : ' ' + v.pageLayoutClass)}" 
+                                  title="{!v.summaryTitle}" 
+                                  alignmentBump="{!v.summaryAlignmentBump}" 
+                                  flexibility="{!v.summaryFlexibility}" 
+                                  padding="{!v.summaryPadding}" 
+                                  size="{!v.summaryWidth[0]}" 
+                                  smallDeviceSize="{!v.summaryWidth[3]}" 
+                                  mediumDeviceSize="{!v.summaryWidth[2]}" 
+                                  largeDeviceSize="{!v.summaryWidth[1]}"
+                                  >
+                {!v.summary}
+            </lightning:layoutItem>
+            <lightning:layoutItem 
+                                  class="{!'acn-page-layout-footer acn-page-layout-footer-' + v.browserFormFactor + (v.pageLayoutClass == '' ? '' : ' ' + v.pageLayoutClass)}" 
+                                  title="{!v.footerTitle}" 
+                                  alignmentBump="{!v.footerAlignmentBump}" 
+                                  flexibility="{!v.footerFlexibility}" 
+                                  padding="{!v.footerPadding}" 
+                                  size="{!v.footerWidth[0]}" 
+                                  smallDeviceSize="{!v.footerWidth[3]}" 
+                                  mediumDeviceSize="{!v.footerWidth[2]}" 
+                                  largeDeviceSize="{!v.footerWidth[1]}"
+                                  >
+                {!v.footer}
+            </lightning:layoutItem>
+            <lightning:layoutItem 
+                                  class="{!'acn-page-layout-bottom acn-page-layout-bottom-' + v.browserFormFactor + (v.pageLayoutClass == '' ? '' : ' ' + v.pageLayoutClass)}" 
+                                  title="{!v.bottomTitle}" 
+                                  alignmentBump="{!v.bottomAlignmentBump}" 
+                                  flexibility="{!v.bottomFlexibility}" 
+                                  padding="{!v.bottomPadding}" 
+                                  size="{!v.bottomWidth[0]}" 
+                                  smallDeviceSize="{!v.bottomWidth[3]}" 
+                                  mediumDeviceSize="{!v.bottomWidth[2]}" 
+                                  largeDeviceSize="{!v.bottomWidth[1]}"
+                                  >
+                {!v.bottom}
+            </lightning:layoutItem>
+        </lightning:layout>	
+    </div>
+</aura:component>

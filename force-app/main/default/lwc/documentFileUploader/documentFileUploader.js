@@ -4,11 +4,13 @@ import {ShowToastEvent} from 'lightning/platformShowToastEvent';
 import { getPicklistValues, getObjectInfo } from 'lightning/uiObjectInfoApi';
 import DOCUMENT_OBJECT from '@salesforce/schema/Document__c';
 import DOCUMENT_TYPE_FIELD from '@salesforce/schema/Document__c.Document_Type__c';
+import { FlowNavigationNextEvent } from 'lightning/flowSupport';
 
 
 export default class CustomFileUploader extends LightningElement {
     @api recordId;
     @api lookUpObject;
+    @api isFlow;
     @track docType = '';
     @track data;
     @track fileName = '';
@@ -21,7 +23,7 @@ export default class CustomFileUploader extends LightningElement {
     fileContents;
     fileReader;
     content;
-    MAX_FILE_SIZE = 1500000;
+    MAX_FILE_SIZE = 250000000;
 
     @wire(getObjectInfo, { objectApiName: DOCUMENT_OBJECT })
     objectInfo;
@@ -64,10 +66,13 @@ export default class CustomFileUploader extends LightningElement {
 
     uploadHelper() {
         this.file = this.filesUploaded[0];
+        
        if (this.file.size > this.MAX_FILE_SIZE) {
-            window.console.log('File Size is to long');
+            window.console.log('File Size is too long');
+            window.console.log('File size: ' + this.file.size);
             return ;
         }
+        
         this.showLoadingSpinner = true;
         // create a FileReader object 
         this.fileReader= new FileReader();
@@ -90,6 +95,7 @@ export default class CustomFileUploader extends LightningElement {
         saveFile({ idParent: this.recordId, docType: this.docType, lookUpObject: this.lookUpObject, strFileName: this.file.name, base64Data: encodeURIComponent(this.fileContents)})
         .then(result => {
             window.console.log('result ====> ' +result);
+            window.console.log('File size: ' + this.file.size);
 
             this.fileName = this.fileName + ' - uploaded successfully';
             this.UploadFile = 'File Uploaded';
@@ -104,6 +110,10 @@ export default class CustomFileUploader extends LightningElement {
                     variant: 'success',
                 }),
             );
+            if(this.isFlow === true){
+                const navigateNextEvent = new FlowNavigationNextEvent();
+                this.dispatchEvent(navigateNextEvent);
+            }
         })
         .catch(error => {
             // Showing errors if any while inserting the files

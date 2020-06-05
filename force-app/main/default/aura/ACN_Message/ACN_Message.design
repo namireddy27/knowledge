@@ -1,0 +1,9 @@
+<design:component >
+    <design:attribute name="title" label="Title" description="The title of the message to be displayed." />
+    <design:attribute name="message" label="Contents" description="The contents of the message to be displayed." />
+    <design:attribute name="adminMessage" label="Admin Contents" description="The contents of the message to be displayed for Administrators." />
+    <design:attribute name="severity" label="Severity" description="The severity of the message to be displayed." datasource="message,confirm,info,warning,error" />
+    <design:attribute name="isClosable" label="Is Closable?" description="Allows to specify if the message can be closed by the user." />
+    <design:attribute name="isVisible" label="Is Visible?" description="Allows to specify if the message is visible." />
+    <design:attribute name="showAdminMessage" label="Show Advance Message? (Admins)" description="Allows to specify if the administrator message should be visible." />
+</design:component>

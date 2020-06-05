@@ -1,0 +1,64 @@
+<aura:interface description="Use this interface to provide title and sub title capabilities to lightning components.">
+	<aura:attribute name="titleLevel01" type="String" default="" description="Use this attribute to provide a level 1 title."/>
+	<aura:attribute name="titleLevel01Alignment" type="String" default="" description="Use this attribute to specify the level 1 title alignment."/>
+	<aura:attribute name="titleLevel02" type="String" default="" description="Use this attribute to provide a level 2 title."/>
+	<aura:attribute name="titleLevel02Alignment" type="String" default="" description="Use this attribute to specify the level 2 title alignment."/>
+	<aura:attribute name="titleLevel03" type="String" default="" description="Use this attribute to provide a level 3 title."/>
+	<aura:attribute name="titleLevel03Alignment" type="String" default="" description="Use this attribute to specify the level 3 title alignment."/>
+
+    <aura:attribute name="containerLayoutClass" type="String" default="acn-padding-none acn-margin-none" access="global" />
+    <aura:attribute name="containerLayoutTitle" type="String" default="" access="global" />
+    <aura:attribute name="containerLayoutHorizontalAlign" type="String" default="center" access="global" />
+    <aura:attribute name="containerLayoutVerticalAlign" type="String" default="start" access="global" />
+    <aura:attribute name="containerLayoutMultipleRows" type="Boolean" default="true" access="global" />
+    <aura:attribute name="containerLayoutPullToBoundary" type="String" default="small" access="global" />
+
+    <aura:attribute name="contentTitleLayoutItemClass" type="String" default="acn-padding-none acn-margin-none" access="global" />
+    <aura:attribute name="contentTitleLayoutItemTitle" type="String" default="" access="global" />
+    <aura:attribute name="contentTitleLayoutItemSize" type="String" default="12,12,12,12" access="global" />
+    <aura:attribute name="contentTitleLayoutItemSizeArray" type="Integer[]" default="[]" access="global" />
+    <aura:attribute name="contentTitleLayoutItemFlexibility" type="String" default="auto" access="global" />
+    <aura:attribute name="contentTitleLayoutItemPadding" type="String" default="around-small" access="global" />
+    <aura:attribute name="contentTitleLayoutItemAlignmentBump" type="String" default="left" access="global" />
+
+    <aura:attribute name="contentBodyLayoutItemClass" type="String" default="acn-padding-none acn-margin-none" access="global" />
+    <aura:attribute name="contentBodyLayoutItemTitle" type="String" default="" access="global" />
+    <aura:attribute name="contentBodyLayoutItemSize" type="String" default="12,12,12,12" access="global" />
+    <aura:attribute name="contentBodyLayoutItemSizeArray" type="Integer[]" default="[]" access="global" />
+    <aura:attribute name="contentBodyLayoutItemFlexibility" type="String" default="auto" access="global" />
+    <aura:attribute name="contentBodyLayoutItemPadding" type="String" default="around-small" access="global" />
+    <aura:attribute name="contentBodyLayoutItemAlignmentBump" type="String" default="left" access="global" />
+
+    <aura:attribute name="contentTitleLayoutClass" type="String" default="acn-padding-none acn-margin-none" access="global" />
+    <aura:attribute name="contentTitleLayoutTitle" type="String" default="" access="global" />
+    <aura:attribute name="contentTitleLayoutHorizontalAlign" type="String" default="center" access="global" />
+    <aura:attribute name="contentTitleLayoutVerticalAlign" type="String" default="start" access="global" />
+    <aura:attribute name="contentTitleLayoutMultipleRows" type="Boolean" default="true" access="global" />
+    <aura:attribute name="contentTitleLayoutPullToBoundary" type="String" default="small" access="global" />
+
+    <aura:attribute name="contentTitleLayoutItemLevel01Class" type="String" default="acn-padding-none acn-margin-none" access="global" />
+    <aura:attribute name="contentTitleLayoutItemLevel01Title" type="String" default="" access="global" />
+    <aura:attribute name="contentTitleLayoutItemLevel01Size" type="String" default="12,12,12,12" access="global" />
+    <aura:attribute name="contentTitleLayoutItemLevel01SizeArray" type="Integer[]" default="[]" access="global" />
+    <aura:attribute name="contentTitleLayoutItemLevel01Flexibility" type="String" default="auto" access="global" />
+    <aura:attribute name="contentTitleLayoutItemLevel01Padding" type="String" default="around-small" access="global" />
+    <aura:attribute name="contentTitleLayoutItemLevel01AlignmentBump" type="String" default="left" access="global" />
+
+    <aura:attribute name="contentTitleLayoutItemLevel02Class" type="String" default="acn-padding-none acn-margin-none" access="global" />
+    <aura:attribute name="contentTitleLayoutItemLevel02Title" type="String" default="" access="global" />
+    <aura:attribute name="contentTitleLayoutItemLevel02Size" type="String" default="12,12,12,12" access="global" />
+    <aura:attribute name="contentTitleLayoutItemLevel02SizeArray" type="Integer[]" default="[]" access="global" />
+    <aura:attribute name="contentTitleLayoutItemLevel02Flexibility" type="String" default="auto" access="global" />
+    <aura:attribute name="contentTitleLayoutItemLevel02Padding" type="String" default="around-small" access="global" />
+    <aura:attribute name="contentTitleLayoutItemLevel02AlignmentBump" type="String" default="left" access="global" />
+
+    <aura:attribute name="contentTitleLayoutItemLevel03Class" type="String" default="acn-padding-none acn-margin-none" access="global" />
+    <aura:attribute name="contentTitleLayoutItemLevel03Title" type="String" default="" access="global" />
+    <aura:attribute name="contentTitleLayoutItemLevel03Size" type="String" default="12,12,12,12" access="global" />
+    <aura:attribute name="contentTitleLayoutItemLevel03SizeArray" type="Integer[]" default="[]" access="global" />
+    <aura:attribute name="contentTitleLayoutItemLevel03Flexibility" type="String" default="auto" access="global" />
+    <aura:attribute name="contentTitleLayoutItemLevel03Padding" type="String" default="around-small" access="global" />
+    <aura:attribute name="contentTitleLayoutItemLevel03AlignmentBump" type="String" default="left" access="global" />
+    
+    <aura:registerEvent name="titleUpdateRequested" type="c:ACN_TitleUpdateRequested"/>
+</aura:interface>

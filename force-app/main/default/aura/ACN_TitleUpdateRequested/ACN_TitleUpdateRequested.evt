@@ -1,0 +1,5 @@
+<aura:event type="APPLICATION" description="Use this lightning event to notify when a title update was requested.">
+	<aura:attribute name="titleLevel01" type="String" default="" description="Use this attribute to provide a level 1 title."/>
+	<aura:attribute name="titleLevel02" type="String" default="" description="Use this attribute to provide a level 2 title."/>
+	<aura:attribute name="titleLevel03" type="String" default="" description="Use this attribute to provide a level 3 title."/>
+</aura:event>

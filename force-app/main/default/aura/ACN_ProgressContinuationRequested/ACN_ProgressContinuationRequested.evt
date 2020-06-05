@@ -1,0 +1,3 @@
+<aura:event type="APPLICATION" description="Use this lightning event to notify when progress continuation has been requested.">
+    <aura:attribute name="section" type="Object" default="" access="global"/>
+</aura:event>
