@@ -1,0 +1,10 @@
+<template>
+        <lightning-layout vertical-align="center">
+            <lightning-layout-item flexibility="grow" class="slds-p-horizontal_small" padding="around-small">
+                <p><a href="#" onclick={handleViewDetailsClick}>{location.Name}</a></p>
+                <p>City: <lightning-formatted-text value={location.City__c}></lightning-formatted-text></p>
+                <p>State: <lightning-formatted-text value={location.State__c}></lightning-formatted-text></p>
+                <p>Duty Location Code: <lightning-formatted-text value={location.Airport_Code__c}></lightning-formatted-text></p>
+            </lightning-layout-item>
+        </lightning-layout>
+    </template>

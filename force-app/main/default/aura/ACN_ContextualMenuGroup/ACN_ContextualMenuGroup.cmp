@@ -1,0 +1,40 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global">
+    <!-- <ltng:require styles="/resource/slds201/assets/styles/salesforce-lightning-design-system.min.css"/> -->
+
+	<aura:attribute name="dataProviderName" type="String" access="global" />
+    <aura:attribute name="styleClass" type="String" access="global" default="" />
+	<aura:attribute name="contextualMenuesLevels" type="Object[]"/>
+    <aura:attribute name="topContextParentIdentifier" type="String" access="global" default="" />
+    <aura:attribute name="pressedContextIdentifier" type="String" access="global" default="" />
+	<aura:attribute name="contextualMenuItems" type="ACN_NavigationLibrary.NavigationListItem[]"/>
+	<aura:attribute name="lastPressedNavigationListItem" type="ACN_NavigationLibrary.NavigationListItem"/>
+    <aura:attribute name="auraId" type="String" access="global" default="" /> 
+	<aura:attribute name="browserFormFactor" type="Object" access="global" default="{!$Browser.formFactor}" />
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:handler name="contextualMenuItemPressed" event="c:ACN_ContextualMenuItemPressed" action="{!c.handleContextualMenuItemPressed}" />
+    
+    
+    <div class="acn-aura-container" id="{!v.auraId}">
+        <ul>
+            <aura:iteration items="{!v.contextualMenuesLevels}" var="menu">
+                <li>
+                    <c:ACN_ContextualMenu contextParentIdentifier="{!v.topContextParentIdentifier}" 
+                                          topContextParentIdentifier="{!v.topContextParentIdentifier}" 
+                                          dataProviderName="{!v.dataProviderName}" 
+                                          lastPressedNavigationListItem="{!v.lastPressedNavigationListItem}" />
+                </li>
+            </aura:iteration>
+        </ul>
+        <ul>
+            <aura:iteration items="{!v.contextualMenuesLevels}" var="menu">
+                <li>
+                    <c:ACN_ContextualMenu contextParentIdentifier="{!v.pressedContextIdentifier}" 
+                                          topContextParentIdentifier="{!v.topContextParentIdentifier}" 
+                                          dataProviderName="{!v.dataProviderName}" 
+                                          lastPressedNavigationListItem="{!v.lastPressedNavigationListItem}" />
+                </li>
+            </aura:iteration>
+        </ul>
+    </div>
+</aura:component>

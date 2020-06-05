@@ -1,0 +1,51 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name="contentParentIdentifier" type="String" access="global" default="" />
+    <aura:attribute name="filterContextIdentifier" type="String" access="global" default="" />
+    <aura:attribute name="filterGroupNames" type="String[]" access="global" default="" />
+    <aura:attribute name="filterGroupNamesCsv" type="String" access="global" default="" />
+    <aura:attribute name="showGroupNamesTitle" type="Boolean" access="global" default="false" />
+    <aura:attribute name="filterListItems" type="ACN_NavigationLibrary.NavigationFilterItem[]"/>
+    <aura:attribute name="filterItemGroup" type="List" description="Object to hold NavigationFilterItems by GroupName" />
+    <aura:attribute name="dataProviderName" type="String" access="global" />
+    <aura:attribute name="styleClass" type="String" access="global" />
+    <aura:attribute name="selectName" type="String" access="global" default="" />
+    <aura:attribute name="selectLabel" type="String" access="global" default="x " />
+    <aura:attribute name="selectIsRequired" type="Boolean" access="global" default="false" />
+    <aura:attribute name="isSelectPresent" type="Boolean" access="global" default="false" />
+    <aura:attribute name="isLoading" type="Boolean" access="global" default="false" />
+    <aura:attribute name="filterAlignment" type="String" default="vertical" access="global" description="Direction to align Filters." />
+    <aura:attribute name="groupStyle" type="String" default="acn-navigation-filtergroup-vertical" access="global" description="Style to apply to filter group" />
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    
+    <aura:registerEvent name="navigationFilterItemPreSelected" type="c:ACN_NavigationFilterItemPreSelected" />
+    <aura:registerEvent name="filterSelected" type="c:ACN_NavigationFilterSelected" />
+    <aura:registerEvent name="navigationFilterItemPressed" type="c:ACN_NavigationFilterItemPressed" />
+    
+    <aura:handler name="navigationFilterItemPressed" event="c:ACN_NavigationFilterItemPressed" action="{!c.handleNavigationFilterItemPressed}"/>
+    <aura:handler event="c:ACN_NavigationFilterValuesChanged" action="{!c.handleNavigationFilterValuesChanged}"/>
+    
+    <div class="acn-navigation-filter-container">
+        <div class="{!v.filterListItems.length == 0 ? 'acn-navigation-filter-hidden' : ''}">
+            <aura:iteration items="{!v.filterGroupNames}" var="groupItem">
+                <div class="{!v.groupStyle}">
+                    <aura:if isTrue="{!groupItem.groupType =='checkbox'}" >
+                        <c:ACN_NavigationFilterCheckbox filterItemGroup="{!groupItem}" filterContextIdentifier="{!v.filterContextIdentifier}" />
+                    </aura:if>
+                    <aura:if isTrue="{!groupItem.groupType =='multiSelect'}" >
+                        <c:ACN_NavigationFilterMultiSelect filterItemGroup="{!groupItem}" filterContextIdentifier="{!v.filterContextIdentifier}" />
+                    </aura:if>
+                    <aura:if isTrue="{!groupItem.groupType =='select'}" >
+                        <c:ACN_NavigationFilterSelect filterItemGroup="{!groupItem}" filterContextIdentifier="{!v.filterContextIdentifier}" />
+                    </aura:if>
+                    <aura:if isTrue="{!groupItem.groupType =='search'}" >
+                        <c:ACN_NavigationFilterSearch filterItemGroup="{!groupItem}" filterContextIdentifier="{!v.filterContextIdentifier}" />
+                    </aura:if>
+                    <aura:if isTrue="{!groupItem.groupType =='date'}" >
+                        <c:ACN_NavigationFilterDate filterItemGroup="{!groupItem}" filterContextIdentifier="{!v.filterContextIdentifier}" />
+                    </aura:if>
+                </div>
+            </aura:iteration>
+        </div>
+    </div>
+</aura:component>

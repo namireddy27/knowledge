@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path style="fill:#a81536; stroke:none;" d="M0 0L0 64L64 64L64 0L0 0z"/>
+        <path style="fill:#ffffff; stroke:none;" d="M12 11L11 12L11 29L12 30L22 30L23 29L23 12L22 11L12 11M27 11L26 12L26 29L27 30L37 30L38 29L38 12L37 11L27 11M42 11L41 12L41 29L42 30L52 30L53 29L53 12L52 11L42 11M12 33L11 34L11 51L12 52L22 52L23 51L23 34L22 33L12 33M27 33L26 34L26 51L27 52L37 52L38 51L38 34L37 33L27 33M42 33L41 34L41 51L42 52L52 52L53 51L53 34L52 33L42 33z"/>
+	</g>
+</svg>

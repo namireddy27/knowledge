@@ -12,21 +12,49 @@
                 let environment = component.get("v.environmentType");
                 console.log(environment);
                 if(environment === 'Community'){
-                    component.set("v.statusValue",v.Candidate_Portal_Hiring_Stage__c);
+                    var v = v.Candidate_Portal_Hiring_Stage__c == 'Medical_Drug' ? 'Medical/Drug':v.Candidate_Portal_Hiring_Stage__c;  
+					component.set("v.statusValue",v);
+//                    component.set("v.statusValue",v.Candidate_Portal_Hiring_Stage__c);
                 }
                 else if(environment === 'Lightning'){
                     console.log("value: ");
-                    component.set("v.statusValue", v.Hiring_Stage__c);
+                    var v = v.Hiring_Stage__c == 'Medical_Drug' ? 'Medical/Drug':v.Hiring_Stage__c;  
+                    component.set("v.statusValue", v);
+//                    component.set("v.statusValue", v.Hiring_Stage__c);
+                   
                 }
-                //component.set("v.myChild",v.Candidate_Portal_Hiring_Stage__c);    
-                helper.getPickListValues(component, event, helper); // added this from controller
+                //component.set("v.myChild",v.Candidate_Portal_Hiring_Stage__c);
+               helper.getPickListValues(component, event, helper); // added this from controller for hover text 
             }
             else
                 console.log('Search Error::'+ response.getError());
         });
         $A.enqueueAction(appl);
     },
+/*//without hover text commned on 4/9
     getPickListValues : function(component,event,helper) {
+        var action = component.get("c.getStatusValues");
+        var para =  component.get("v.recordId");
+        var environment = component.get("v.environmentType");
+//        var currentStage = component.get("v.statusValue");      ////
+       
+        action.setParams( {
+            "appId" :para,
+            "environmentType" : environment
+        }) ;
+        action.setCallback(this, function(response) {
+           var state = response.getState();
+            if(state == 'SUCCESS') {
+               component.set('v.steps',response.getReturnValue());
+               
+            }
+         
+        });
+        $A.enqueueAction(action)  
+}, */     //  commened on 4/9
+    //hover text start
+
+        getPickListValues : function(component,event,helper) {
         var action = component.get("c.getStatusValues");
         var para =  component.get("v.recordId");
         var environment = component.get("v.environmentType");
@@ -71,7 +99,7 @@
                         completed = 2;
                     }
                   
-                    stagesDetails.push({step: stages[i], style: 'left:' + ((i * lengthofoneblock )) + 'px' , showHover: false, completed:completed });
+                    stagesDetails.push({step: stages[i], style: 'left:' + ((i * lengthofoneblock  ) +  (i * (310 / stages.length))) + 'px' , showHover: false, completed:completed });
                 }
                 //set steps object for iteration
                component.set('v.steps',stagesDetails);
@@ -80,8 +108,9 @@
          
         });
         $A.enqueueAction(action);
-    },
-    
+        }, 
+// end of hover text 
+   
     checkApplicationStatus : function(component,event,helper){
         var action = component.get("c.shouldHiringStageBeRed");
         var para =  component.get("v.recordId");

@@ -1,0 +1,31 @@
+<aura:tokens extends="forceCommunity:base">
+	<aura:token name="acnCarouselBackGroundColor" value="transparent"/>
+    <aura:token name="acnCarouselIndicatorActiveState" value="#3d3d6d"/>
+    <aura:token name="acnCarouselButtonHeight" value="100%"/> <!-- 40px -->
+    <aura:token name="acnCarouselHeight" value="260px" />
+    <aura:token name="acnCarouselWidth" value="100%" />
+    <!--
+        /* Keyword values */
+        object-fit: fill;
+        object-fit: contain;
+        object-fit: cover;
+        object-fit: none;
+        object-fit: scale-down;
+        
+        /* Global values */
+        object-fit: inherit;
+        object-fit: initial;
+        object-fit: unset;
+	-->
+    <aura:token name="acnCarouselItemObjectFit" value="cover" />
+    <aura:token name="acnCarouselHeightMobile" value="140px" />
+    <aura:token name="acnNavigationElementCarouselHeight" value="100%" /> 
+    <aura:token name="acnCarouselNavigationCardHeight" value="460px" />
+    <aura:token name="acnNavigationCarouselHeight" value="440px" /> <!--266px -->
+	<!--
+	<aura:token name="acnCarouselPageSelectorColor" value="#3d3d6d" />
+	-->
+    <aura:token name="acnCarouselPageSelectorColor" value="#b10820" />
+    <aura:token name="acnCarouselPageSelectorColorNotSelected" value="#700017" />
+    
+</aura:tokens>

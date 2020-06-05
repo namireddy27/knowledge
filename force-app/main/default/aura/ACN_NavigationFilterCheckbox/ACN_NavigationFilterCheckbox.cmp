@@ -1,0 +1,32 @@
+<aura:component>
+    <aura:attribute name="filterListItem" type="ACN_NavigationLibrary.NavigationFilterItem" />
+    <aura:attribute name="filterContextIdentifier" type="String" access="global" default="" />
+    <aura:attribute name="filterItemGroup" type="Object" description="Group of options as NavigationFilterItem" />
+    <aura:attribute name="filterOptions" type="List" description="Options to display" />
+    <aura:attribute name="value" type="List" description="List of selected options" />
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:handler event="c:ACN_NavigationFilterClearAllRequested" action="{!c.handleNavigationFilterClearAllRequested}"/>
+    
+    <aura:registerEvent name="navigationFilterItemPressed" type="c:ACN_NavigationFilterItemPressed" />
+
+    <h3 class="acn-navigation-filter-title">
+        {! v.filterItemGroup.groupLabel}
+    </h3>
+    <ul class="acn-filter-list">
+            <aura:iteration items="{!v.filterItemGroup.option}" var="filterItem">
+                    <li class="acn-filter-list-item">
+                        <c:ACN_NavigationFilterItem filterListItem="{!filterItem}" filterContextIdentifier="{!v.filterContextIdentifier}" />
+                    </li>
+            </aura:iteration>
+    </ul>
+    <!--
+    <lightning:checkboxGroup
+        aura:id="myCheckboxFilter" 
+        name="{! v.filterItemGroup.groupName}" 
+        label="{! v.filterItemGroup.groupLabel}" 
+        options="{! v.filterOptions}" 
+        value="{! v.value}" 
+        onchange="{! c.handleNavigationFilterSelected}" />
+    -->
+</aura:component>

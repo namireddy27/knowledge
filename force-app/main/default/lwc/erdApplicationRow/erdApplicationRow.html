@@ -1,0 +1,47 @@
+<template>
+    <tr key={applicationId}>
+        <th scope="row">
+            <div class="slds-truncate">{candidate}</div>
+        </th>
+        <td>
+            <div class="slds-truncate">{application}</div>
+        </td>
+        <td>
+            <div class="slds-truncate">{gender}</div>
+        </td>
+        <td>
+            <div class="slds-truncate">{ptq1}</div>
+        </td>
+        <td>
+            <div class="slds-truncate">{ptq2}</div>
+        </td>
+        <td>
+            <div class="slds-truncate">{ptq3}</div>
+        </td>
+        <td>
+            <div class="slds-truncate">{ptq4}</div>
+        </td>
+        <td>
+            <div class="slds-truncate">{ptqtotal}</div>
+        </td>
+        <td>
+            <!-- Conditionally render if checkbox has been selected -->
+            <template if:true={isCheckboxSelected}>
+              <lightning-input 
+                value={positionid}
+                type="checkbox"
+                checked
+                onclick={handleCheckboxSelect}
+              ></lightning-input>
+            </template>
+            <!-- Conditionally render if checkbox has not been selected -->
+            <template if:false={isCheckboxSelected}>
+              <lightning-input 
+                value={positionid}
+                type="checkbox"
+                onclick={handleCheckboxSelect}
+              ></lightning-input>
+            </template>
+          </td>
+    </tr>
+</template>

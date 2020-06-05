@@ -1,0 +1,23 @@
+<design:component>
+	<design:attribute name="isCanvas" label="Show Canvas Application" description="Specifies if the component should show a canvas application in the viewport."/>
+	<design:attribute name="canvasAppDeveloperName" label="Canvas Application Developer Name" description="Specifies the API name of the canvas application to show in the viewport. This name is defined when the canvas app is created and can be viewed in the Canvas App Previewer. Either developerName or referenceId is required."/>
+	<design:attribute name="canvasAppName" label="Canvas Application Name" description="Specifies the canvas name or label of the canvas application to show in the viewport. Used to display the app's name while Canvas is loading."/>
+	<design:attribute name="canvasId" label="Canvas Identifier" description="Specifies the canvas application instance id."/>	
+	<design:attribute name="canvasAppNamespacePrefix" label="Canvas Application Namespace Prefix" description="Specifies the namespace value of the Developer Edition organization in which the canvas application to show in the viewport was created. Optional if the canvas app wasn’t created in a Developer Edition organization. If not specified, defaults to null."/>
+	<design:attribute name="canvasAppParameters" label="Canvas Application Parameters" description="Specifies the parameters of the canvas application to show in the viewport. Object representation of parameters passed to the canvas app. This should be supplied in JSON format or as a JavaScript object literal. Here’s an example of parameters in a JavaScript object literal: {param1:'value1',param2:'value2'}. If not specified, defaults to null."/>
+	<design:attribute name="showCanvasLoading" label="Show Canvas Loading Message" description="Specifies if the Canvas application should show the loading message."/>
+	<design:attribute name="dataProviderName" label="Parameters Data Provider" description="Specifies the parameters data provider of the canvas application to show in the viewport." datasource="apex://ACN_CanvasDataProviderDataSource" />
+	<design:attribute name="contextParentIdentifier" label="Context Parent Identifier" description="The contextual parent identifier for the data provider."/>	
+    <design:attribute name="isCacheEnabled" label="Is Data Provider Cache Enabled?" description="Use this property to specify if the data provider should try to use platform cache." />
+    <design:attribute name="isDataLoadAsynchronous" label="Is Data Load Asynchronous?" description="Use this property to specify if the data provider should load data in asynchronously." />
+	<design:attribute name="currentUrl" label="Uri" description="Specifies the uri for the viewport."/>
+	<design:attribute name="recordId" label="recordId" description="Specifies the if of the record with the Uri for the viewport (only available on record pages)."/>
+	<design:attribute name="urlFieldName" label="Uri field name" description="Specifies the field name with the Uri for the viewport (only available on record pages)."/>
+	<design:attribute name="width" label="Width" description="Specifies the width for the viewport."/>
+	<design:attribute name="maxWidth" label="Maximum Width" description="Specifies the maximum width for the viewport."/>
+	<design:attribute name="height" label="Height" description="Specifies the height for the viewport."/>
+	<design:attribute name="maxHeight" label="Maximum Height" description="Specifies the maximum height for the viewport."/>
+	<design:attribute name="scrolling" label="Show Scroll Bars?" description="Specifies if the viewport should show scrollbar when the contents are larger than the visible area."/>
+	<design:attribute name="border" label="Border" description="Specifies the border for the viewport."/>
+    <design:attribute name="isDebugModeOn" label="Is Debug mode On?" description="Use this property to specify if the debug mode is on." />
+</design:component>

@@ -1,0 +1,57 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global">
+    <!--lightningRecEditFormComp-->
+    <aura:attribute name="showConfirtmation" type="boolean" default="false" />
+    <aura:attribute name="disabled" type="Boolean" default="false" />
+    <aura:attribute name="saved" type="Boolean" default="false" />
+    <aura:attribute name="showSpinner" type="Boolean" default="true" />
+    <aura:attribute name="AccountId" type="String" default="true" />
+    <aura:if isTrue="{!!v.saved}">
+        <lightning:recordEditForm
+                                  aura:id="createAccountForm"
+                                  onsuccess="{!c.handleSuccess}"
+                                  recordId="{!v.AccountId}"
+                                  objectApiName="User"
+                                  >
+            <lightning:messages />
+            <lightning:inputField fieldName="FirstName" disabled="true"/>
+            <lightning:inputField fieldName="LastName" disabled="true"/>
+            <lightning:inputField fieldName="Type" />
+            <lightning:inputField fieldName="Email" />
+            <lightning:inputField fieldName="Phone" />
+            <lightning:inputField fieldName="Street" aura:id="newStreetField" />
+            <lightning:inputField fieldName="City" required="true"/>
+            <lightning:inputField fieldName="State" required="true"/>
+            <lightning:inputField fieldName="PostalCode" required="true" />
+            <!--
+            <lightning:inputField fieldName="FirstName" disabled="true"/>
+             <lightning:inputField fieldName="MiddleName" />            
+             <lightning:inputField fieldName="LastName" disabled="true" /> 
+                <lightning:inputField fieldName="Suffix" />  
+
+                <lightning:inputField fieldName="Address" /> 
+            
+             <lightning:inputField fieldName="Phone" />
+                <lightning:inputField fieldName="MobilePhone" /> 
+                <lightning:inputField fieldName="Email" /> -->
+            <div class="info">
+                <span>
+                    <lightning:icon iconName="utility:info" size="small" style="float:left; padding: 10px;" />
+                    <p style="font-size:0.75rem;">
+                        If your legal name or Social Security number require changes, please fax current Federal or State issued documentation (i.e. Social Security card, Driver's License, Marriage Certificate, etc.).
+                    </p>
+                </span>
+            </div>  
+            <div class="slds-modal__content slds-p-around_medium button rwBtnRow" id="modal-content-id-1">
+                <div class="rwCancelbtn">
+                    <lightning:button label="Cancel" Type="cancel" title="Cancel" onclick="{! c.closeModel }"/>
+                    <span class="no">
+                        <lightning:button  variant="brand" type="submit" name="save" title="Save" label="Save" />
+                    </span>
+                </div>
+            </div>               	
+        </lightning:recordEditForm>
+        <aura:set attribute="else">
+            <p>Saved!</p>
+        </aura:set>
+    </aura:if>
+</aura:component>

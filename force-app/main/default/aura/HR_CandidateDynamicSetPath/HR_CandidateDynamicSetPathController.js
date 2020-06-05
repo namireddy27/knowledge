@@ -6,8 +6,8 @@
     },
     ononstepblurO : function(component,event,helper) {
         event.preventDefault();
-    },
-    handlestepblur: function(component,event,helper)
+    }, //hover start
+        handlestepblur: function(component,event,helper)
     {
         var steps = component.get('v.steps');
         
@@ -22,6 +22,6 @@
     	var stepIndex = event.getParam('index');
         steps[stepIndex].showHover = true;
         component.set('v.steps',steps);
-     
-	}
+    } // end of hover    
+    
 })

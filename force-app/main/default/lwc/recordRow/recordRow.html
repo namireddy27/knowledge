@@ -1,0 +1,41 @@
+<!--
+  @File Name          : recordRow.html
+  @Description        : 
+  @Author             : ChangeMeIn@UserSettingsUnder.SFDoc
+  @Group              : 
+  @Last Modified By   : Peter Tran
+  @Last Modified On   : 1/31/2020, 12:23:24 PM
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    1/30/2020   ChangeMeIn@UserSettingsUnder.SFDoc     Initial Version
+-->
+<template>
+  <tr key={key}>
+    <th scope="row">
+      <div class="slds-truncate">{pcc}</div>
+    </th>
+    <td>
+      <div class="slds-truncate">{ipn}</div>
+    </td>
+    <td>
+      <div class="slds-truncate">{occ}</div>
+    </td>
+    <td>
+      <div class="slds-truncate">{mrn}</div>
+    </td>
+    <td>
+      <div class="slds-truncate">{band}</div>
+    </td>
+    <td>
+      <div class="slds-truncate">{positiontitle}</div>
+    </td>
+    <td>
+      <lightning-input 
+        value={key}
+        type="checkbox"
+        onclick={handleCheckboxSelect}
+      ></lightning-input>
+      {displaytext}
+    </td>
+  </tr>
+</template>

@@ -1,0 +1,42 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global" controller="ACN_NavigationCX">
+    <aura:attribute name="contextualMenuItems" type="ACN_NavigationLibrary.NavigationListItem[]"/>
+    <aura:attribute name="styleClass" type="String" access="global" default="" />
+    <aura:attribute name="selectedMenuItem" type="ACN_NavigationLibrary.NavigationListItem"/>
+    <aura:attribute name="topContextParentIdentifier" type="String" access="global" default="" />
+    <aura:attribute name="contextParentIdentifier" type="String" access="global" default="" />
+    <aura:attribute name="isIdRequired" type="Boolean" access="global" default="false" />
+    <aura:attribute name="defaultContextParentIdentifier" type="String" access="global" default="" />
+    <aura:attribute name="contextIdentifier" type="String" access="global" default="" />
+    <aura:attribute name="showAllDescendants" type="Boolean" access="global" default="false" />
+    <aura:attribute name="dataProviderName" type="String" access="global" />
+    <aura:attribute name="lastPressedNavigationListItem" type="ACN_NavigationLibrary.NavigationListItem"/>
+    <aura:attribute name="browserFormFactor" type="Object" access="global" default="{!$Browser.formFactor}" />
+    <aura:attribute name="lightningIcon" type="String" access="global" default="" />
+    <aura:attribute name="lightningIconSize" type="String" access="global" default="small" />
+    <aura:attribute name="lightningIconVariant" type="String" access="global" default="brand" />
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:handler name="change" value="{!v.contextParentIdentifier}" action="{!c.doInit}"/>
+    <aura:handler event="c:ACN_NavigationMenuChanged" action="{!c.handleNavigationMenuChanged}" />
+    
+    <aura:registerEvent name="contextualMenuItemPressed" type="c:ACN_ContextualMenuItemPressed"/>  
+    
+    <div class="slds-tabs--default">
+        <ul class="slds-tabs--default__nav acn-contextual-menu" role="tablist">
+            <aura:iteration items="{!v.contextualMenuItems}" var="menuItem">
+                <li class="{!menuItem.IsActive ? 'slds-tabs--default__item slds-text-title--caps slds-active' : 'slds-tabs--default__item slds-text-title--caps'}" title="{!menuItem.Name}" role="presentation">
+                    <a class="slds-tabs--default__link" href="javascript:void(0);" role="tab" tabindex="0" aria-selected="true" aria-controls="{!'tab-default-' + menuItem.Id}" id="{!'tab-default-' + menuItem.Id + '__item'}" onclick="{!c.setActiveTab}" >
+                        <div class="{!'acn-lightning-icon-container acn-lightning-icon-' + menuItem.IconSize}" id="{!menuItem.Id + ':' + menuItem.Name}">
+                            <aura:if isTrue="{!v.lightningIcon != ''}">
+                                <lightning:icon iconName="{!menuItem.IconName}" size="{!menuItem.IconSize}" variant="{!menuItem.IconVariant}" alternativeText="{!menuItem.Name}" title="{!menuItem.Name}" class="{!v.styleClass + ' acn-navigation-menu-item-img'}" />
+                            </aura:if>
+                            <span class="acn-contextual-menu-item-label">
+                                {!menuItem.Name}
+                            </span>
+                        </div>
+                    </a>
+                </li>
+            </aura:iteration>
+        </ul>
+    </div>
+</aura:component>

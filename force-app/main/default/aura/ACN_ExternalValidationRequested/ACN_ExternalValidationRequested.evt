@@ -1,0 +1,5 @@
+<aura:event type="APPLICATION" description="Use this lightning event to notify when an external validation has been requested.">
+    <aura:attribute name="validationProviderName" type="String" access="global" default="" />
+    <aura:attribute name="validationContextId" type="String" access="global" default="" />
+    
+</aura:event>

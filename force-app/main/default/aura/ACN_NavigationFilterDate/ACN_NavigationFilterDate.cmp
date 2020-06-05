@@ -1,0 +1,23 @@
+<aura:component>
+    <!-- Update text -->
+    <aura:attribute name="filterListItem" type="ACN_NavigationLibrary.NavigationFilterItem" />
+    <aura:attribute name="filterContextIdentifier" type="String" access="global" default="" />
+    <aura:attribute name="filterItemGroup" type="Object" description="Group of options as NavigationFilterItem" />
+    <aura:attribute name="filterOptions" type="List" description="Options to display" />
+    <aura:attribute name="dateValue" type="String" access="global" default="" />
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:handler event="c:ACN_NavigationFilterClearAllRequested"
+        action="{!c.handleNavigationFilterClearAllRequested}" /> 
+
+    <aura:registerEvent name="navigationFilterItemPressed" type="c:ACN_NavigationFilterItemPressed" />
+
+    <lightning:input type="date" 
+                        name="dateFilter" 
+                        label="" 
+                        dataStyle="short" 
+                        value="{!v.dateValue}"
+                        placeholder="{!v.filterItemGroup.groupLabel}"
+                        onchange="{!c.handleNavigationFilterSelected}"/>
+
+</aura:component>

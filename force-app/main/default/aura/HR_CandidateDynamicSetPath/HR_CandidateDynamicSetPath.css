@@ -37,10 +37,9 @@
     background-color: grey !important;
 }
 
-.THIS .slds-readonly-path{
+.THIS.slds-readonly-path{
 pointer-events: none;
 }
-
 .THIS .slds-popover_tooltip{
       top:50px;
     position:absolute;

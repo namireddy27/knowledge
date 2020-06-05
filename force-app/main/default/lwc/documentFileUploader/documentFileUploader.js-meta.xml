@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+
 <LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>47.0</apiVersion>
     <isExposed>true</isExposed>
@@ -7,11 +7,12 @@
         <target>lightning__RecordPage</target>
         <target>lightningCommunity__Page</target>
         <target>lightningCommunity__Default</target>
+        <target>lightning__FlowScreen</target>
     </targets>
     <targetConfigs>
         <targetConfig targets="lightning__RecordPage">
             <objects>
-                <object>HR_App__c</object>
+                <object>HR_Application__c</object>
                 <object>Account</object>
                 <object>HR_Cert__c</object>
                 <object>HR_JOA__c</object>
@@ -23,6 +24,11 @@
         <targetConfig targets="lightningCommunity__Default">
             <property name="recordId" type="String" label="Record Id To find similarities" description="Default uses the current page's record id" default="{!recordId}"/>
             <property name="lookUpObject" type="String" default="{!lookUpObject}" label="Document Lookup API Name"/>
+        </targetConfig>
+        <targetConfig targets="lightning__FlowScreen">
+            <property name="recordId" type="String" label="Record Id To find similarities"/>
+            <property name="lookUpObject" type="String" default="{!lookUpObject}" label="Document Lookup API Name"/>
+            <property name="isFlow" type="Boolean" default="false" label="Is Component being used in a flow?" description="Check this box if you are using this component in a flow and require a document to be uploaded before moving on to the next step"/>
         </targetConfig>
     </targetConfigs>
 </LightningComponentBundle>

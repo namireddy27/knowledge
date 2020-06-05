@@ -1,0 +1,107 @@
+/****************** General Begin ************************/
+.THIS a.navigationPathSegmentChevron {
+    color: white !important;
+    text-decoration: none;
+    padding: 10px 0 10px 65px;
+    background: #313e62;
+    background: #313e62;
+    position: relative;
+    display: block;
+}
+
+.THIS a.navigationPathSegmentChevron:after {
+    content: " ";
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 50px solid transparent;
+    border-bottom: 50px solid transparent;
+    border-left: 30px solid #313e62;
+    position: absolute;
+    top: 50%;
+    margin-top: -50px;
+    left: 100%;
+    z-index: 2;
+}
+
+.THIS a.navigationPathSegmentChevron:before {
+    content: " ";
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 50px solid transparent;
+    border-bottom: 50px solid transparent;
+    border-left: 30px solid white;
+    position: absolute;
+    top: 50%;
+    margin-top: -50px;
+    margin-left: 1px;
+    left: 100%;
+    z-index: 1;
+}
+
+.THIS {
+    font-family: Montserrat;
+}
+
+.THIS a {
+    text-decoration: none;
+}
+
+/****************** General End **************************/
+
+/******************** Pill Begin *************************/
+
+/******************** Pill End ***************************/
+
+/*************** KSA Breadcrumbs Begin *******************/
+.THIS div.navigationCardKSABreadCrumbs.navigationPathSegmentWrapperDiv:hover{
+    color: black;
+}
+
+.THIS a.navigationCardKSABreadCrumbs:hover:after {
+    border-left-color: t(acnBrandColor) !important;
+}
+
+.THIS a.navigationCardKSABreadCrumbs {
+    color: t(acnBrandColor);
+    font-family: Helvetica;
+}
+
+.THIS div.navigationCardKSABreadCrumbs.navigationPathSegmentWrapperDiv {
+    color: gray;
+    font-weight: 300;
+    font-family: Helvetica;
+}
+
+@media screen and (max-width: 654px) {
+    .THIS a.navigationCardPill {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        font-size: 11px;
+        min-height: 42px;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+    }
+}
+
+/*************** KSA Breadcrumbs End *********************/
+
+/***************** Mobile Tile Begin *********************/
+.THIS a.navigationCardMobileTile {
+    color: t(acnBrandColor);
+    font-family: Helvetica;
+}
+
+/***************** Mobile Tile End ***********************/
+
+/***************** Quick Card Action Begin *********************/
+.navigationCardQuickAction.THIS navigationPathSegmentWrapperDiv {
+    /*color: t(acnBrandColor);
+    font-family: Helvetica;
+    margin-right: 5px;
+    padding: 3px;*/
+}
+
+/***************** Quick Card Action End ***********************/

@@ -1,0 +1,33 @@
+<aura:component controller="DeleteContactController_LT" implements="force:lightningQuickActionWithoutHeader,force:hasRecordId">
+    <aura:html tag="style">
+        .cuf-content {
+            padding: 0 0rem !important;
+        }
+        .slds-p-around--medium {
+            padding: 0rem !important;
+        }       
+        .slds-modal__content {
+            overflow-y:hidden !important;
+            height:unset !important;
+            max-height:unset !important;
+            margin-top: 1em !important;
+            margin-bottom: 1em !important;
+        }
+    </aura:html>
+    <aura:attribute name="errors" type="String" />
+
+    <div class="modal-header slds-modal__header slds-size_1-of-1">
+        <h4 class="title slds-text-heading--medium" >Confirm Delete</h4>
+    </div>
+            
+    <div class="slds-modal__content slds-p-around--x-small slds-align_absolute-center slds-size_1-of-1 slds-is-relative" aura:id="modalbody" id="modalbody">
+        <span>Are you sure you want to delete this Contact?</span>
+    </div>
+    <aura:if isTrue="{! v.errors }">
+        <ui:message>{! v.errors }</ui:message>
+    </aura:if>        
+    <div class="modal-footer slds-modal__footer slds-size_1-of-1">
+        <ui:button class="slds-button slds-button--brand" label="Delete" press="{!c.onDelete}"/>
+        <ui:button class="slds-button slds-button_neutral" label="Cancel" press="{!c.onCancel}" />
+    </div>    
+</aura:component>

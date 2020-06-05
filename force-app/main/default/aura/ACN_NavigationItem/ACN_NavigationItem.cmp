@@ -1,3 +1,522 @@
-<aura:component >
-	
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,c:ACN_Navigationable,c:ACN_Gridable,c:ACN_Cardable,c:ACN_Overrideable,c:ACN_Identifiable,c:ACN_Styleable,c:ACN_Scoreable" 
+                access="global" 
+                controller="ACN_NavigationCX" 
+                description="Navigation Item">
+    <aura:attribute name="isStandAlone" type="Boolean" access="global" default="false" />
+    <aura:attribute name="isUrlImage" type="Boolean" access="global" default="false" />
+    <aura:attribute name="imageUrl" type="String" access="global" default="" />
+    <aura:attribute name="navigationItemMaskedImageUrl" type="String" default="" access="global" />
+    <aura:attribute name="thirdLayoutItemTitle" type="String" default="" access="global" />
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    
+    <aura:if isTrue="{!v.showNavigationList}">
+        <aura:if isTrue="{!
+                         v.scoreElementIndex != 'hidden' 
+                         || v.imageElementIndex != 'hidden' 
+                         || v.nameElementIndex != 'hidden' 
+                         || v.descriptionElementIndex != 'hidden' 
+                         || v.badgeElementIndex != 'hidden' 
+                         }"
+                 >
+            <div class="{!'acn-navigation-item-container ' + (v.fitInContainer ? v.itemClassName + '-fit' : v.itemClassName) + (v.navigationItem.IsSelected || v.navigationItem.Id == v.selectedItemIdentifier ? ' acn-navigation-list-item-selected ' + v.selectedStyleClass : '' ) + (!v.isNavigationEnabled ? ' acn-navigation-list-item-disabled' : '') + (v.layoutClass=='' ? '' : ' ' + v.layoutClass) + (v.navigationItem.DecorationClassItemBody != '' ? ' ' + v.navigationItem.DecorationClassItemBody: '')}">
+                <aura:if isTrue="{!v.isNavigationEnabled}">
+                    <a class="{!(v.fitInContainer ? v.itemClassName + '-fit' : v.itemClassName + '-grid topicLink ' + ' acn-navigation-list-anchor-grid') + (v.navigationItem.NavigationTarget == '' || v.navigationItem.NavigationTarget == v.inactiveTargetIdentifier ? ' acn-no-target' : '')}" href="javascript:void(0);" onclick="{!c.onClickEventHandler}">
+                        <lightning:layout 
+                                          class="{!v.browserFormFactor + ' acn-item-grid-layout ' + v.layoutClass + ( v.itemClassName == '' ? '' : ' ' + v.itemClassName + '-item-container-grid') + (v.selectedNavigationItemId == v.navigationItem.Id ? ' acn-navigation-list-item-selected ' + v.selectedStyleClass: '') + (v.navigationItem.DecorationClassItemBody != '' ? ' ' + v.navigationItem.DecorationClassItemBody: '')}" 
+                                          title="{!v.layoutTitle}" 
+                                          horizontalAlign="{!v.layoutHorizontalAlign}" 
+                                          verticalAlign="{!v.layoutVerticalAlign}" 
+                                          multipleRows="{!v.layoutMultipleRows}" 
+                                          pullToBoundary="{!v.layoutPullToBoundary}" 
+                                          >
+                            <lightning:layoutItem 
+                                                  class="{!v.browserFormFactor + ' ' + v.firstLayoutItemClass + ( v.itemClassName == '' ? '' : ' ' + v.itemClassName + '-first-grid-item') + (v.navigationItem.DecorationClassItemBodyBlock01 != '' ? ' ' + v.navigationItem.DecorationClassItemBodyBlock01: '')}"
+                                                  title="{!v.firstLayoutItemTitle}"
+                                                  size="{!v.browserFormFactor == 'PHONE' ? v.firstLayoutItemSizeArray[3] : v.firstLayoutItemSizeArray[0]}" 
+                                                  largeDeviceSize="{!v.firstLayoutItemSizeArray[1]}"
+                                                  mediumDeviceSize="{!v.firstLayoutItemSizeArray[2]}" 
+                                                  smallDeviceSize="{!v.firstLayoutItemSizeArray[3]}" 
+                                                  flexibility="{!v.firstLayoutItemFlexibility}"
+                                                  padding="{!v.firstLayoutItemPadding}"
+                                                  alignmentBump="{!v.firstLayoutItemAlignmentBump}"
+                                                  >
+                                <aura:if isTrue="{!v.scoreElementIndex == '1'}">
+                                    <aura:if isTrue="{!v.hasScoring}">
+                                        <c:ACN_Scoring contextIdentifier="{!v.navigationItem.Id}" 
+                                                       styleClass="{!v.browserFormFactor + ' ' + v.itemClassName + '-grid'}" 
+                                                       showScoringStars="{!v.showScoringStars}" 
+                                                       averageFiveStarsRating="{!v.scoring[0].AverageFiveStarsRating}" 
+                                                       fiveStarsRatingCount="{!v.scoring[0].FiveStarsRatingCount}" 
+                                                       showScoringVotes="{!v.showScoringVotes}" 
+                                                       showScoringLoveIt="{!v.showScoringLoveIt}" 
+                                                       isLoved="{!v.scoring[0].IsLoved}" 
+                                                       isLiked="{!v.scoring[0].IsLiked}" 
+                                                       isLikedCount="{!v.scoring[0].IsLikedCount}" 
+                                                       isNotLiked="{!v.scoring[0].IsNotLiked}" 
+                                                       isNotLikedCount="{!v.scoring[0].IsNotLikedCount}" 
+                                                       inactiveIconColor="silver" 
+                                                       showScoringViews="{!v.showScoringViews}" 
+                                                       isViewed="{!v.scoring[0].IsViewed}" 
+                                                       isViewedCount="{!v.scoring[0].IsViewedCount}" 
+                                                       activeIconColor="#700d1b" />
+                                        
+                                    </aura:if>                            
+                                </aura:if>
+                                <aura:if isTrue="{!v.imageElementIndex == '1'}">
+                                    <aura:if isTrue="{!v.navigationItem.ImageUrl != 'no image'}">
+                                        <div class="{!V.itemClassName + ' acn-navigation-list-item-image-grid' + (v.firstLayoutItemClass == '' ? '' : ' ' + v.firstLayoutItemClass)}">
+                                            <c:ACN_NavigationItemImage 
+                                                                       navigationItem="{!v.navigationItem}" 
+                                                                       showItemImage="{!v.showItemImage}" 
+                                                                       itemClassName="{!v.browserFormFactor + ' ' + v.itemClassName + '-grid'}" 
+                                                                       lightningIcon="{!v.lightningIcon}" 
+                                                                       lightningIconSize="{!v.lightningIconSize}" 
+                                                                       lightningIconVariant="{!v.lightningIconVariant}" 
+                                                                       isUrlImage="{!v.isUrlImage}" 
+                                                                       imageUrl="{!v.imageUrl}" 
+                                                                       useBrandColorForImage="{!v.useBrandColorForImage}" 
+                                                                       navigationItemMaskedImageUrl="{!v.navigationItemMaskedImageUrl}" 
+                                                                       fitInContainer="{!v.fitInContainer}" 
+                                                                       />
+                                        </div>
+                                    </aura:if>
+                                    <aura:if isTrue="{!v.chartElementIndex == '1'}">
+                                        <c:ACN_NavigationChart navigationItem="{!v.navigationItem}" />
+                                    </aura:if>
+                                </aura:if>
+                                <aura:if isTrue="{!v.nameElementIndex == '1'}">
+                                    <div class="{!v.browserFormFactor + ' ' + v.itemClassName + ' acn-navigation-list-item-name-grid'}">
+                                        <span style="{!v.showItemName ? '' : 'display:none'}">
+                                            {!v.navigationItem.Name}
+                                        </span>
+                                    </div>
+                                </aura:if>
+                                <aura:if isTrue="{!v.descriptionElementIndex == '1'}">
+                                    <ui:outputRichText value="{!v.navigationItem.Description}" class="{!v.showItemDescription ? v.itemClassName + '-grid acn-navigation-list-item-description-grid' : v.itemClassName + '-grid acn-navigation-list-item-description-grid-hidden'}" /> 
+                                </aura:if>
+                            </lightning:layoutItem>
+                            <lightning:layoutItem
+                                                  class="{!v.browserFormFactor + ' ' + v.secondLayoutItemClass + ( v.itemClassName == '' ? '' : ' ' + v.itemClassName + '-second-grid-item') + (v.navigationItem.DecorationClassItemBodyBlock02 != '' ? ' ' + v.navigationItem.DecorationClassItemBodyBlock02: '')}"
+                                                  title="{!v.secondLayoutItemTitle}"
+                                                  size="{!v.browserFormFactor == 'PHONE' ? v.secondLayoutItemSizeArray[3] : v.secondLayoutItemSizeArray[0]}" 
+                                                  largeDeviceSize="{!v.secondLayoutItemSizeArray[1]}"
+                                                  mediumDeviceSize="{!v.secondLayoutItemSizeArray[2]}" 
+                                                  smallDeviceSize="{!v.secondLayoutItemSizeArray[3]}" 
+                                                  flexibility="{!v.secondLayoutItemFlexibility}"
+                                                  padding="{!v.secondLayoutItemPadding}"
+                                                  alignmentBump="{!v.secondLayoutItemAlignmentBump}"
+                                                  >
+                                <aura:if isTrue="{!v.scoreElementIndex == '2'}">
+                                    <aura:if isTrue="{!v.hasScoring}">
+                                        <c:ACN_Scoring contextIdentifier="{!v.navigationItem.Id}" 
+                                                       styleClass="{!v.browserFormFactor + ' ' + v.itemClassName + '-grid'}" 
+                                                       showScoringStars="{!v.showScoringStars}" 
+                                                       averageFiveStarsRating="{!v.scoring[0].AverageFiveStarsRating}" 
+                                                       fiveStarsRatingCount="{!v.scoring[0].FiveStarsRatingCount}" 
+                                                       showScoringVotes="{!v.showScoringVotes}" 
+                                                       showScoringLoveIt="{!v.showScoringLoveIt}" 
+                                                       isLoved="{!v.scoring[0].IsLoved}" 
+                                                       isLiked="{!v.scoring[0].IsLiked}" 
+                                                       isLikedCount="{!v.scoring[0].IsLikedCount}" 
+                                                       isNotLiked="{!v.scoring[0].IsNotLiked}" 
+                                                       isNotLikedCount="{!v.scoring[0].IsNotLikedCount}" 
+                                                       inactiveIconColor="silver" 
+                                                       showScoringViews="{!v.showScoringViews}" 
+                                                       isViewed="{!v.scoring[0].IsViewed}" 
+                                                       isViewedCount="{!v.scoring[0].IsViewedCount}" 
+                                                       activeIconColor="#700d1b" />
+                                        
+                                    </aura:if>                            
+                                </aura:if>
+                                <aura:if isTrue="{!v.imageElementIndex == '2'}">
+                                    <aura:if isTrue="{!v.navigationItem.ImageUrl != 'no image'}">
+                                        <c:ACN_NavigationItemImage 
+                                                                   navigationItem="{!v.navigationItem}" 
+                                                                   showItemImage="{!v.showItemImage + '-grid'}" 
+                                                                   itemClassName="{!v.browserFormFactor + ' ' + v.itemClassName}" 
+                                                                   lightningIcon="{!v.lightningIcon}" 
+                                                                   lightningIconSize="{!v.lightningIconSize}" 
+                                                                   lightningIconVariant="{!v.lightningIconVariant}" 
+                                                                   isUrlImage="{!v.isUrlImage}" 
+                                                                   imageUrl="{!v.imageUrl}" 
+                                                                   useBrandColorForImage="{!v.useBrandColorForImage}" 
+                                                                   navigationItemMaskedImageUrl="{!v.navigationItemMaskedImageUrl}" 
+                                                                   fitInContainer="{!v.fitInContainer}" 
+                                                                   />
+                                        
+                                    </aura:if>
+                                    <aura:if isTrue="{!v.chartElementIndex == '2'}">
+                                        <c:ACN_NavigationChart navigationItem="{!v.navigationItem}" />
+                                    </aura:if>
+                                </aura:if>
+                                <aura:if isTrue="{!v.nameElementIndex == '2'}">
+                                    <div class="{!v.browserFormFactor + ' ' + v.itemClassName + ' acn-navigation-list-item-name-grid'}">
+                                        <span style="{!v.showItemName ? '' : 'display:none'}">
+                                            {!v.navigationItem.Name}
+                                        </span>
+                                    </div>
+                                </aura:if>
+                                <aura:if isTrue="{!v.descriptionElementIndex == '2'}">
+                                    <ui:outputRichText value="{!v.navigationItem.Description}" class="{!v.showItemDescription ? v.itemClassName + '-grid acn-navigation-list-item-description-grid' : v.itemClassName + '-grid acn-navigation-list-item-description-grid-hidden'}" /> 
+                                </aura:if>
+                            </lightning:layoutItem>
+                            <lightning:layoutItem
+                                                  class="{!v.browserFormFactor + ' ' + v.thirdLayoutItemClass + ( v.itemClassName == '' ? '' : ' ' + v.itemClassName + '-third-grid-item') + (v.navigationItem.DecorationClassItemBodyBlock03 != '' ? ' ' + v.navigationItem.DecorationClassItemBodyBlock03: '')}"
+                                                  title="{!v.thirdLayoutItemTitle}"
+                                                  size="{!v.browserFormFactor == 'PHONE' ? v.thirdLayoutItemSizeArray[3] : v.thirdLayoutItemSizeArray[0]}" 
+                                                  largeDeviceSize="{!v.thirdLayoutItemSizeArray[1]}"
+                                                  mediumDeviceSize="{!v.thirdLayoutItemSizeArray[2]}" 
+                                                  smallDeviceSize="{!v.thirdLayoutItemSizeArray[3]}" 
+                                                  flexibility="{!v.thirdLayoutItemFlexibility}"
+                                                  padding="{!v.thirdLayoutItemPadding}"
+                                                  alignmentBump="{!v.thirdLayoutItemAlignmentBump}"
+                                                  >
+                                <aura:if isTrue="{!v.scoreElementIndex == '3'}">
+                                    <aura:if isTrue="{!v.hasScoring}">
+                                        <c:ACN_Scoring contextIdentifier="{!v.navigationItem.Id}" 
+                                                       styleClass="{!v.browserFormFactor + ' ' + v.itemClassName + '-grid'}" 
+                                                       showScoringStars="{!v.showScoringStars}" 
+                                                       averageFiveStarsRating="{!v.scoring[0].AverageFiveStarsRating}" 
+                                                       fiveStarsRatingCount="{!v.scoring[0].FiveStarsRatingCount}" 
+                                                       showScoringVotes="{!v.showScoringVotes}" 
+                                                       showScoringLoveIt="{!v.showScoringLoveIt}" 
+                                                       isLoved="{!v.scoring[0].IsLoved}" 
+                                                       isLiked="{!v.scoring[0].IsLiked}" 
+                                                       isLikedCount="{!v.scoring[0].IsLikedCount}" 
+                                                       isNotLiked="{!v.scoring[0].IsNotLiked}" 
+                                                       isNotLikedCount="{!v.scoring[0].IsNotLikedCount}" 
+                                                       inactiveIconColor="silver" 
+                                                       showScoringViews="{!v.showScoringViews}" 
+                                                       isViewed="{!v.scoring[0].IsViewed}" 
+                                                       isViewedCount="{!v.scoring[0].IsViewedCount}" 
+                                                       activeIconColor="#700d1b" />
+                                        
+                                    </aura:if>                            
+                                </aura:if>
+                                <aura:if isTrue="{!v.imageElementIndex == '3'}">
+                                    <aura:if isTrue="{!v.navigationItem.ImageUrl != 'no image'}">
+                                        <c:ACN_NavigationItemImage 
+                                                                   navigationItem="{!v.navigationItem}" 
+                                                                   showItemImage="{!v.showItemImage}" 
+                                                                   itemClassName="{!v.browserFormFactor + ' ' + v.itemClassName + '-grid'}" 
+                                                                   lightningIcon="{!v.lightningIcon}" 
+                                                                   lightningIconSize="{!v.lightningIconSize}" 
+                                                                   lightningIconVariant="{!v.lightningIconVariant}" 
+                                                                   isUrlImage="{!v.isUrlImage}" 
+                                                                   imageUrl="{!v.imageUrl}" 
+                                                                   useBrandColorForImage="{!v.useBrandColorForImage}" 
+                                                                   navigationItemMaskedImageUrl="{!v.navigationItemMaskedImageUrl}" 
+                                                                   fitInContainer="{!v.fitInContainer}" 
+                                                                   />
+                                    </aura:if>
+                                    <aura:if isTrue="{!v.chartElementIndex == '3'}">
+                                        <c:ACN_NavigationChart navigationItem="{!v.navigationItem}" />
+                                    </aura:if>
+                                </aura:if>
+                                <aura:if isTrue="{!v.nameElementIndex == '3'}">
+                                    <div class="{!v.browserFormFactor + ' ' + v.itemClassName + ' acn-navigation-list-item-name-grid'}">
+                                        <span style="{!v.showItemName ? '' : 'display:none'}">
+                                            {!v.navigationItem.Name}
+                                        </span>
+                                    </div>
+                                </aura:if>
+                                <aura:if isTrue="{!v.descriptionElementIndex == '3'}">
+                                    <ui:outputRichText value="{!v.navigationItem.Description}" class="{!v.showItemDescription ? v.itemClassName + '-grid acn-navigation-list-item-description-grid' : v.itemClassName + '-grid acn-navigation-list-item-description-grid-hidden'}" /> 
+                                </aura:if>
+                            </lightning:layoutItem>
+                        </lightning:layout>
+                    </a>
+                    <aura:set attribute="else">
+                        <lightning:layout 
+                                          class="{!v.browserFormFactor + ' ' + v.layoutClass + ( v.itemClassName == '' ? '' : ' ' + v.itemClassName + '-item-container-grid') + (v.selectedNavigationItemId == v.navigationItem.Id ? ' acn-navigation-list-item-selected ' + v.selectedStyleClass : '') + (v.navigationItem.DecorationClassItemBody != '' ? ' ' + v.navigationItem.DecorationClassItemBody: '')}" 
+                                          title="{!v.layoutTitle}" 
+                                          horizontalAlign="{!v.layoutHorizontalAlign}" 
+                                          verticalAlign="{!v.layoutVerticalAlign}" 
+                                          multipleRows="{!v.layoutMultipleRows}" 
+                                          pullToBoundary="{!v.layoutPullToBoundary}" 
+                                          >
+                            <lightning:layoutItem 
+                                                  class="{!v.browserFormFactor + ' ' + v.firstLayoutItemClass + ( v.itemClassName == '' ? '' : ' ' + v.itemClassName + '-first-grid-item') + (v.navigationItem.DecorationClassItemBodyBlock01 != '' ? ' ' + v.navigationItem.DecorationClassItemBodyBlock01: '')}"
+                                                  title="{!v.firstLayoutItemTitle}"
+                                                  size="{!v.browserFormFactor == 'PHONE' ? v.firstLayoutItemSizeArray[3] : v.firstLayoutItemSizeArray[0]}" 
+                                                  largeDeviceSize="{!v.firstLayoutItemSizeArray[1]}"
+                                                  mediumDeviceSize="{!v.firstLayoutItemSizeArray[2]}" 
+                                                  smallDeviceSize="{!v.firstLayoutItemSizeArray[3]}" 
+                                                  flexibility="{!v.firstLayoutItemFlexibility}"
+                                                  padding="{!v.firstLayoutItemPadding}"
+                                                  alignmentBump="{!v.firstLayoutItemAlignmentBump}"
+                                                  >
+                                <aura:if isTrue="{!v.scoreElementIndex == '1'}">
+                                    <aura:if isTrue="{!v.hasScoring}">
+                                        <c:ACN_Scoring contextIdentifier="{!v.navigationItem.Id}" 
+                                                       styleClass="{!v.browserFormFactor + ' ' + v.itemClassName + '-grid'}" 
+                                                       showScoringStars="{!v.showScoringStars}" 
+                                                       averageFiveStarsRating="{!v.scoring[0].AverageFiveStarsRating}" 
+                                                       fiveStarsRatingCount="{!v.scoring[0].FiveStarsRatingCount}" 
+                                                       showScoringVotes="{!v.showScoringVotes}" 
+                                                       showScoringLoveIt="{!v.showScoringLoveIt}" 
+                                                       isLoved="{!v.scoring[0].IsLoved}" 
+                                                       isLiked="{!v.scoring[0].IsLiked}" 
+                                                       isLikedCount="{!v.scoring[0].IsLikedCount}" 
+                                                       isNotLiked="{!v.scoring[0].IsNotLiked}" 
+                                                       isNotLikedCount="{!v.scoring[0].IsNotLikedCount}" 
+                                                       inactiveIconColor="silver" 
+                                                       showScoringViews="{!v.showScoringViews}" 
+                                                       isViewed="{!v.scoring[0].IsViewed}" 
+                                                       isViewedCount="{!v.scoring[0].IsViewedCount}" 
+                                                       activeIconColor="#700d1b" />
+                                        
+                                    </aura:if>                            
+                                </aura:if>
+                                <aura:if isTrue="{!v.imageElementIndex == '1'}">
+                                    <aura:if isTrue="{!v.navigationItem.ImageUrl != 'no image'}">
+                                        <div class="{!v.browserFormFactor + ' ' + v.itemClassName + ' acn-navigation-list-item-image-grid' + (v.firstLayoutItemClass == '' ? '' : ' ' + v.firstLayoutItemClass)}" onclick="{!c.handleElementPressed}">
+                                            <c:ACN_NavigationItemImage 
+                                                                       navigationItem="{!v.navigationItem}" 
+                                                                       showItemImage="{!v.showItemImage}" 
+                                                                       itemClassName="{!v.itemClassName + '-grid'}" 
+                                                                       lightningIcon="{!v.lightningIcon}" 
+                                                                       lightningIconSize="{!v.lightningIconSize}" 
+                                                                       lightningIconVariant="{!v.lightningIconVariant}" 
+                                                                       isUrlImage="{!v.isUrlImage}" 
+                                                                       imageUrl="{!v.imageUrl}" 
+                                                                       useBrandColorForImage="{!v.useBrandColorForImage}" 
+                                                                       navigationItemMaskedImageUrl="{!v.navigationItemMaskedImageUrl}" 
+                                                                       fitInContainer="{!v.fitInContainer}" 
+                                                                       />
+                                        </div>
+                                    </aura:if>
+                                    <aura:if isTrue="{!v.chartElementIndex == '1'}">
+                                        <c:ACN_NavigationChart navigationItem="{!v.navigationItem}" />
+                                    </aura:if>
+                                </aura:if>
+                                <aura:if isTrue="{!v.nameElementIndex == '1'}">
+                                    <div class="{!v.browserFormFactor + ' ' + v.itemClassName + ' acn-navigation-list-item-name-grid'}" onclick="{!c.handleElementPressed}">
+                                        <span style="{!v.showItemName ? '' : 'display:none'}">
+                                            {!v.navigationItem.Name}
+                                        </span>
+                                    </div>
+                                </aura:if>
+                                <aura:if isTrue="{!v.descriptionElementIndex == '1'}">
+                                    <div class="acn-navigation-item-element-container" onclick="{!c.handleElementPressed}">
+	                                    <ui:outputRichText value="{!v.navigationItem.Description}" class="{!v.showItemDescription ? v.itemClassName + '-grid acn-navigation-list-item-description-grid' : v.itemClassName + '-grid acn-navigation-list-item-description-grid-hidden'}" /> 
+                                    </div>
+                                </aura:if>
+                            </lightning:layoutItem>
+                            <lightning:layoutItem
+                                                  class="{!v.browserFormFactor + ' ' + v.secondLayoutItemClass + ( v.itemClassName == '' ? '' : ' ' + v.itemClassName + '-second-grid-item') + (v.navigationItem.DecorationClassItemBodyBlock02 != '' ? ' ' + v.navigationItem.DecorationClassItemBodyBlock02: '')}"
+                                                  title="{!v.secondLayoutItemTitle}"
+                                                  size="{!v.browserFormFactor == 'PHONE' ? v.secondLayoutItemSizeArray[3] : v.secondLayoutItemSizeArray[0]}" 
+                                                  largeDeviceSize="{!v.secondLayoutItemSizeArray[1]}"
+                                                  mediumDeviceSize="{!v.secondLayoutItemSizeArray[2]}" 
+                                                  smallDeviceSize="{!v.secondLayoutItemSizeArray[3]}" 
+                                                  flexibility="{!v.secondLayoutItemFlexibility}"
+                                                  padding="{!v.secondLayoutItemPadding}"
+                                                  alignmentBump="{!v.secondLayoutItemAlignmentBump}"
+                                                  >
+                                <aura:if isTrue="{!v.scoreElementIndex == '2'}">
+                                    <aura:if isTrue="{!v.hasScoring}">
+                                        <c:ACN_Scoring contextIdentifier="{!v.navigationItem.Id}" 
+                                                       styleClass="{!v.browserFormFactor + ' ' + v.itemClassName + '-grid'}" 
+                                                       showScoringStars="{!v.showScoringStars}" 
+                                                       averageFiveStarsRating="{!v.scoring[0].AverageFiveStarsRating}" 
+                                                       fiveStarsRatingCount="{!v.scoring[0].FiveStarsRatingCount}" 
+                                                       showScoringVotes="{!v.showScoringVotes}" 
+                                                       showScoringLoveIt="{!v.showScoringLoveIt}" 
+                                                       isLoved="{!v.scoring[0].IsLoved}" 
+                                                       isLiked="{!v.scoring[0].IsLiked}" 
+                                                       isLikedCount="{!v.scoring[0].IsLikedCount}" 
+                                                       isNotLiked="{!v.scoring[0].IsNotLiked}" 
+                                                       isNotLikedCount="{!v.scoring[0].IsNotLikedCount}" 
+                                                       inactiveIconColor="silver" 
+                                                       showScoringViews="{!v.showScoringViews}" 
+                                                       isViewed="{!v.scoring[0].IsViewed}" 
+                                                       isViewedCount="{!v.scoring[0].IsViewedCount}" 
+                                                       activeIconColor="#700d1b" />
+                                        
+                                    </aura:if>                            
+                                </aura:if>
+                                <aura:if isTrue="{!v.imageElementIndex == '2'}">
+                                    <aura:if isTrue="{!v.navigationItem.ImageUrl != 'no image'}">
+                                        <div class="{!v.browserFormFactor + ' ' + v.itemClassName + ' acn-navigation-list-item-image-grid' + (v.firstLayoutItemClass == '' ? '' : ' ' + v.firstLayoutItemClass)}" onclick="{!c.handleElementPressed}">
+                                            <c:ACN_NavigationItemImage 
+                                                                       navigationItem="{!v.navigationItem}" 
+                                                                       showItemImage="{!v.showItemImage + '-grid'}" 
+                                                                       itemClassName="{!v.browserFormFactor + ' ' + v.itemClassName}" 
+                                                                       lightningIcon="{!v.lightningIcon}" 
+                                                                       lightningIconSize="{!v.lightningIconSize}" 
+                                                                       lightningIconVariant="{!v.lightningIconVariant}" 
+                                                                       isUrlImage="{!v.isUrlImage}" 
+                                                                       imageUrl="{!v.imageUrl}" 
+                                                                       useBrandColorForImage="{!v.useBrandColorForImage}" 
+                                                                       navigationItemMaskedImageUrl="{!v.navigationItemMaskedImageUrl}" 
+                                                                       fitInContainer="{!v.fitInContainer}" 
+                                                                       />
+                                        </div>
+                                    </aura:if>
+                                    <aura:if isTrue="{!v.chartElementIndex == '2'}">
+                                        <c:ACN_NavigationChart navigationItem="{!v.navigationItem}" />
+                                    </aura:if>
+                                </aura:if>
+                                <aura:if isTrue="{!v.nameElementIndex == '2'}">
+                                    <div class="{!v.browserFormFactor + ' ' + v.itemClassName + ' acn-navigation-list-item-name-grid'}" onclick="{!c.handleElementPressed}">
+                                        <span style="{!v.showItemName ? '' : 'display:none'}">
+                                            {!v.navigationItem.Name}
+                                        </span>
+                                    </div>
+                                </aura:if>
+                                <aura:if isTrue="{!v.descriptionElementIndex == '2'}">
+                                    <div class="acn-navigation-item-element-container" onclick="{!c.handleElementPressed}">
+	                                    <ui:outputRichText value="{!v.navigationItem.Description}" class="{!v.showItemDescription ? v.itemClassName + '-grid acn-navigation-list-item-description-grid' : v.itemClassName + '-grid acn-navigation-list-item-description-grid-hidden'}"  click="{!c.handleElementPressed}" /> 
+                                    </div>
+                                </aura:if>
+                            </lightning:layoutItem>
+                            <lightning:layoutItem
+                                                  class="{!v.browserFormFactor + ' ' + v.thirdLayoutItemClass + ( v.itemClassName == '' ? '' : ' ' + v.itemClassName + '-third-grid-item') + (v.navigationItem.DecorationClassItemBodyBlock03 != '' ? ' ' + v.navigationItem.DecorationClassItemBodyBlock03: '')}"
+                                                  title="{!v.thirdLayoutItemTitle}"
+                                                  size="{!v.browserFormFactor == 'PHONE' ? v.thirdLayoutItemSizeArray[3] : v.thirdLayoutItemSizeArray[0]}" 
+                                                  largeDeviceSize="{!v.thirdLayoutItemSizeArray[1]}"
+                                                  mediumDeviceSize="{!v.thirdLayoutItemSizeArray[2]}" 
+                                                  smallDeviceSize="{!v.thirdLayoutItemSizeArray[3]}" 
+                                                  flexibility="{!v.thirdLayoutItemFlexibility}"
+                                                  padding="{!v.thirdLayoutItemPadding}"
+                                                  alignmentBump="{!v.thirdLayoutItemAlignmentBump}"
+                                                  >
+                                <aura:if isTrue="{!v.scoreElementIndex == '3'}">
+                                    <aura:if isTrue="{!v.hasScoring}">
+                                        <c:ACN_Scoring contextIdentifier="{!v.navigationItem.Id}" 
+                                                       styleClass="{!v.browserFormFactor + ' ' + v.itemClassName + '-grid'}" 
+                                                       showScoringStars="{!v.showScoringStars}" 
+                                                       averageFiveStarsRating="{!v.scoring[0].AverageFiveStarsRating}" 
+                                                       fiveStarsRatingCount="{!v.scoring[0].FiveStarsRatingCount}" 
+                                                       showScoringVotes="{!v.showScoringVotes}" 
+                                                       showScoringLoveIt="{!v.showScoringLoveIt}" 
+                                                       isLoved="{!v.scoring[0].IsLoved}" 
+                                                       isLiked="{!v.scoring[0].IsLiked}" 
+                                                       isLikedCount="{!v.scoring[0].IsLikedCount}" 
+                                                       isNotLiked="{!v.scoring[0].IsNotLiked}" 
+                                                       isNotLikedCount="{!v.scoring[0].IsNotLikedCount}" 
+                                                       inactiveIconColor="silver" 
+                                                       showScoringViews="{!v.showScoringViews}" 
+                                                       isViewed="{!v.scoring[0].IsViewed}" 
+                                                       isViewedCount="{!v.scoring[0].IsViewedCount}" 
+                                                       activeIconColor="#700d1b" />
+                                        
+                                    </aura:if>                            
+                                </aura:if>
+                                <aura:if isTrue="{!v.imageElementIndex == '3'}">
+                                    <aura:if isTrue="{!v.navigationItem.ImageUrl != 'no image'}">
+                                        <div class="{!v.browserFormFactor + ' ' + v.itemClassName + ' acn-navigation-list-item-image-grid' + (v.firstLayoutItemClass == '' ? '' : ' ' + v.firstLayoutItemClass)}" onclick="{!c.handleElementPressed}">
+                                            <c:ACN_NavigationItemImage 
+                                                                       navigationItem="{!v.navigationItem}" 
+                                                                       showItemImage="{!v.showItemImage}" 
+                                                                       itemClassName="{!v.browserFormFactor + ' ' + v.itemClassName + '-grid'}" 
+                                                                       lightningIcon="{!v.lightningIcon}" 
+                                                                       lightningIconSize="{!v.lightningIconSize}" 
+                                                                       lightningIconVariant="{!v.lightningIconVariant}" 
+                                                                       isUrlImage="{!v.isUrlImage}" 
+                                                                       imageUrl="{!v.imageUrl}" 
+                                                                       useBrandColorForImage="{!v.useBrandColorForImage}" 
+                                                                       navigationItemMaskedImageUrl="{!v.navigationItemMaskedImageUrl}" 
+                                                                       fitInContainer="{!v.fitInContainer}" 
+                                                                       />
+                                        </div>
+                                    </aura:if>
+                                    <aura:if isTrue="{!v.chartElementIndex == '3'}">
+                                        <c:ACN_NavigationChart navigationItem="{!v.navigationItem}" />
+                                    </aura:if>
+                                </aura:if>
+                                <aura:if isTrue="{!v.nameElementIndex == '3'}">
+                                    <div class="{!v.browserFormFactor + ' ' + v.itemClassName + ' acn-navigation-list-item-name-grid'}" onclick="{!c.handleElementPressed}">
+                                        <span style="{!v.showItemName ? '' : 'display:none'}">
+                                            {!v.navigationItem.Name}
+                                        </span>
+                                    </div>
+                                </aura:if>
+                                <aura:if isTrue="{!v.descriptionElementIndex == '3'}">
+                                    <div class="acn-navigation-item-element-container" onclick="{!c.handleElementPressed}">
+	                                    <ui:outputRichText value="{!v.navigationItem.Description}" class="{!v.showItemDescription ? v.itemClassName + '-grid acn-navigation-list-item-description-grid' : v.itemClassName + '-grid acn-navigation-list-item-description-grid-hidden'}"  click="{!c.handleElementPressed}" /> 
+                                    </div>
+                                </aura:if>
+                            </lightning:layoutItem>
+                        </lightning:layout>
+                    </aura:set>
+                </aura:if>
+            </div>
+            <aura:set attribute="else">
+                <div class="{!v.browserFormFactor + ' ' + 'acn-navigation-item-container ' + (v.fitInContainer ? v.itemClassName + '-fit' : v.itemClassName) + (v.navigationItem.IsSelected ? ' acn-navigation-list-item-selected' : '' )}">
+                    <a class="{!(v.fitInContainer ? v.itemClassName + '-fit' : v.itemClassName + ' topicLink ' + ' acn-navigation-list-anchor') + (v.navigationItem.NavigationTarget == '' || v.navigationItem.NavigationTarget == v.inactiveTargetIdentifier ? ' acn-no-target' : '')}" href="javascript:void(0);" onclick="{!c.onClickEventHandler}">
+                        <aura:if isTrue="{!v.navigationItem.ImageUrl != 'no image'}">
+                            <aura:if isTrue="{!v.showItemImageBehind}">
+                                <c:ACN_NavigationItemImage 
+                                                           navigationItem="{!v.navigationItem}" 
+                                                           showItemImage="{!v.showItemImage}" 
+                                                           itemClassName="{!v.browserFormFactor + ' ' + v.itemClassName}" 
+                                                           lightningIcon="{!v.lightningIcon}" 
+                                                           lightningIconSize="{!v.lightningIconSize}" 
+                                                           lightningIconVariant="{!v.lightningIconVariant}" 
+                                                           isUrlImage="{!v.isUrlImage}" 
+                                                           imageUrl="{!v.imageUrl}" 
+                                                           useBrandColorForImage="{!v.useBrandColorForImage}" 
+                                                           navigationItemMaskedImageUrl="{!v.navigationItemMaskedImageUrl}" 
+                                                           fitInContainer="{!v.fitInContainer}" 
+                                                           />
+                            </aura:if>
+                        </aura:if>
+                        <div class="{!(v.browserFormFactor + ' ' + v.itemClassName + ' acn-navigation-list-item-transparent-div') + (v.firstLayoutItemClass == '' ? '' : ' ' + v.firstLayoutItemClass)}">
+                            <span style="{!v.showItemName ? '' : 'display:none'}" class="{!(v.firstLayoutItemClass == '' ? '' : ' ' + v.firstLayoutItemClass)}">
+                                {!v.navigationItem.Name}
+                            </span>
+                        </div>
+                        <aura:if isTrue="{!v.hasScoring}">
+                            <c:ACN_Scoring contextIdentifier="{!v.navigationItem.Id}" 
+                                           styleClass="{!v.browserFormFactor + ' ' + v.itemClassName}" 
+                                           showScoringStars="{!v.showScoringStars}" 
+                                           averageFiveStarsRating="{!v.scoring[0].AverageFiveStarsRating}" 
+                                           fiveStarsRatingCount="{!v.scoring[0].FiveStarsRatingCount}" 
+                                           showScoringVotes="{!v.showScoringVotes}" 
+                                           showScoringLoveIt="{!v.showScoringLoveIt}" 
+                                           isLoved="{!v.scoring[0].IsLoved}" 
+                                           isLiked="{!v.scoring[0].IsLiked}" 
+                                           isLikedCount="{!v.scoring[0].IsLikedCount}" 
+                                           isNotLiked="{!v.scoring[0].IsNotLiked}" 
+                                           isNotLikedCount="{!v.scoring[0].IsNotLikedCount}" 
+                                           inactiveIconColor="silver" 
+                                           showScoringViews="{!v.showScoringViews}" 
+                                           isViewed="{!v.scoring[0].IsViewed}" 
+                                           isViewedCount="{!v.scoring[0].IsViewedCount}" 
+                                           activeIconColor="#700d1b" />
+                        </aura:if>
+                        <!-- <div class="{!v.itemClassName + ' acn-navigation-list-item-transparent-div'}"> -->
+                        <ui:outputRichText value="{!v.navigationItem.Description}" class="{!(v.showItemDescription ? v.itemClassName + ' acn-navigation-list-item-description' : v.itemClassName + ' acn-navigation-list-item-description-hidden') + (v.secondLayoutItemClass == '' ? '' : ' ' + v.secondLayoutItemClass)}" /> 
+                        <!-- </div> -->
+                        <aura:if isTrue="{!v.navigationItem.ImageUrl != 'no image'}">
+                            <aura:if isTrue="{!!v.showItemImageBehind}">
+                                <c:ACN_NavigationItemImage 
+                                                           navigationItem="{!v.navigationItem}" 
+                                                           showItemImage="{!v.showItemImage}" 
+                                                           itemClassName="{!v.browserFormFactor + ' ' + v.itemClassName}" 
+                                                           lightningIcon="{!v.lightningIcon}" 
+                                                           lightningIconSize="{!v.lightningIconSize}" 
+                                                           lightningIconVariant="{!v.lightningIconVariant}" 
+                                                           isUrlImage="{!v.isUrlImage}" 
+                                                           imageUrl="{!v.imageUrl}" 
+                                                           useBrandColorForImage="{!v.useBrandColorForImage}" 
+                                                           navigationItemMaskedImageUrl="{!v.navigationItemMaskedImageUrl}" 
+                                                           fitInContainer="{!v.fitInContainer}" 
+                                                           />
+                            </aura:if>
+                        </aura:if>
+                        <aura:if isTrue="{!v.navigationItem.ImageUrl == 'no image'}">
+                            <div style="height: 100px;">
+                            </div>
+                        </aura:if>
+                        
+                        <c:ACN_NavigationChart navigationItem="{!v.navigationItem}" />
+                    </a>
+                </div>
+            </aura:set>
+        </aura:if>
+    </aura:if>
 </aura:component>

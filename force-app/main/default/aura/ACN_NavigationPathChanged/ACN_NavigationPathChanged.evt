@@ -1,0 +1,3 @@
+<aura:event type="COMPONENT" description="Fired when an the navigation path changes">
+    <aura:attribute name="navigationItem" type="ACN_NavigationLibrary.NavigationListItem" description="The navigation list item last pressed"/>
+</aura:event>

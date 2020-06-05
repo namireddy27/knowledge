@@ -1,0 +1,19 @@
+.THIS {
+    width: 100%;
+    text-align: center;
+    margin: auto;
+}
+
+.THIS .acn-contextual-menu-link {
+    text-align: center;
+    margin: auto;
+}
+
+.THIS .acn-contextual-menu-link-span {
+    font-family: georgia,serif !important;
+    color: #FF0000 !important;
+}
+
+.THIS a {
+    text-decoration: none;
+}

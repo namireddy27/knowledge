@@ -1,0 +1,56 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,c:ACN_Gridable" 
+                access="global" 
+                controller="ACN_NavigationCX" 
+                description="Navigation Item Image">
+    <aura:attribute name="navigationItem" type="ACN_NavigationLibrary.NavigationListItem"/>
+    <aura:attribute name="showItemImage" type="Boolean" access="global" default="true" />
+    <aura:attribute name="itemClassName" type="String"/>
+    <aura:attribute name="lightningIcon" type="String" access="global" default="" />
+    <aura:attribute name="lightningIconSize" type="String" access="global" default="small" />
+    <aura:attribute name="lightningIconVariant" type="String" access="global" default="brand" />
+    <aura:attribute name="isUrlImage" type="Boolean" access="global" default="false" />
+    <aura:attribute name="imageUrl" type="String" access="global" default="" />
+    <aura:attribute name="useBrandColorForImage" type="Boolean" access="global" default="false" />
+    <aura:attribute name="navigationItemMaskedImageUrl" type="String" default="" access="global" />
+    <aura:attribute name="fitInContainer" type="Boolean" access="global" default="false" />
+    
+    <aura:if isTrue="{!v.navigationItem.ImageUrl != 'no image'}">
+        <aura:if isTrue="{!v.showItemImage}">
+            <aura:if isTrue="{!v.lightningIcon == ''}">
+                <aura:if isTrue="{!v.useBrandColorForImage ? v.navigationItemMaskedImageUrl != '' ? true : false : false}">
+                    <div class="{!(v.fitInContainer ? v.itemClassName + '-fit acn-navigation-list-item-img-Tag' : v.itemClassName + ' acn-navigation-list-item-img-Tag') + (v.useBrandColorForImage ? ' acn-masked-bitmap-image-container' : '')}">
+                        <div class="{!v.itemClassName + ' acn-masked-bitmap-image'}" 
+                             style="{!''
+                                    + 'mask-image: url(' + v.navigationItemMaskedImageUrl + ');' 
+                                    + 'mask-position: center;'
+                                    + 'mask-repeat: no-repeat;'
+                                    + 'mask-origin: content-box;'
+                                    + '-webkit-mask-image: url(' + v.navigationItemMaskedImageUrl + ');' 
+                                    + '-webkit-mask-position: center;'
+                                    + '-webkit-mask-repeat: no-repeat;'
+                                    + '-webkit-mask-origin: content-box;'
+                                    }">
+                            <div class="{!(v.fitInContainer ? v.itemClassName + '-fit acn-navigation-list-item-img-Tag' : v.itemClassName + ' acn-navigation-list-item-img-Tag') + (v.useBrandColorForImage ? ' acn-masked-bitmap-image-color' : '')}" >
+                            </div>
+                        </div>
+                    </div>
+                    <aura:set attribute="else">
+                        <!-- <div class="{!v.fitInContainer ? v.itemClassName + '-fit' : v.itemClassName + ' acn-navigation-list-item-image-container-div'}"> -->
+                        <ui:outputRichText value="{!v.navigationItem.ImageUrl}" class="{!(v.fitInContainer ? v.itemClassName + '-fit acn-navigation-list-item-img-Tag' : v.itemClassName + ' acn-navigation-list-item-img-Tag') + (v.useBrandColorForImage ? ' acn-image-masked-brand-color' : '')}" />
+                        <!-- </div> -->
+                    </aura:set>
+                </aura:if>
+            </aura:if>
+            <aura:if isTrue="{!v.lightningIcon != ''}">
+                <div class="{!v.itemClassName + ' acn-lightning-icon-container'}">
+                    <aura:if isTrue="{!v.lightningIconVariant == 'brand'}">
+                        <lightning:icon iconName="{!v.lightningIcon}" size="{!v.lightningIconSize}" alternativeText="{!v.navigationItem.Name}" title="{!v.navigationItem.Name}" class="{!(v.fitInContainer ? v.itemClassName + '-fit acn-navigation-list-item-img-Tag' : v.itemClassName + ' acn-navigation-list-item-img-Tag') + (v.navigationItem.IsSelected ? ' acn-navigation-list-item-selected' : '' )}" />
+                        <aura:set attribute="else">
+                            <lightning:icon iconName="{!v.lightningIcon}" size="{!v.lightningIconSize}" variant="{!v.lightningIconVariant}" alternativeText="{!v.navigationItem.Name}" title="{!v.navigationItem.Name}" class="{!(v.fitInContainer ? v.itemClassName + '-fit acn-navigation-list-item-img-Tag' : v.itemClassName + ' acn-navigation-list-item-img-Tag') + (v.navigationItem.IsSelected ? ' acn-navigation-list-item-selected' : '' )}" />
+                        </aura:set>
+                    </aura:if>
+                </div>
+            </aura:if>
+        </aura:if>
+    </aura:if>	
+</aura:component>

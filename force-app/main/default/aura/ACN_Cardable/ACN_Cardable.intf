@@ -1,0 +1,18 @@
+<aura:interface description="Use this interface to provide support for card layouts.">
+    <aura:attribute name="imageElementIndex" type="String" access="global" default="hidden" />
+    <aura:attribute name="nameElementIndex" type="String" access="global" default="hidden" />
+    <aura:attribute name="descriptionElementIndex" type="String" access="global" default="hidden" />
+    <aura:attribute name="scoreElementIndex" type="String" access="global" default="hidden" />
+    <aura:attribute name="badgeElementIndex" type="String" access="global" default="hidden" />
+    <aura:attribute name="chartElementIndex" type="String" access="global" default="hidden" />
+    <aura:attribute name="showItemName" type="Boolean" access="global" default="true" />
+    <aura:attribute name="showItemImage" type="Boolean" access="global" default="true" />
+    <aura:attribute name="showItemImageBehind" type="Boolean" access="global" default="false" />
+    <aura:attribute name="showItemDescription" type="Boolean" access="global" default="false" />
+    <aura:attribute name="alternateImageElementIndex" type="String" access="global" default="hidden" />
+    <aura:attribute name="alternateNameElementIndex" type="String" access="global" default="hidden" />
+    <aura:attribute name="alternateDescriptionElementIndex" type="String" access="global" default="hidden" />
+    <aura:attribute name="alternateScoreElementIndex" type="String" access="global" default="hidden" />
+    <aura:attribute name="alternateBadgeElementIndex" type="String" access="global" default="hidden" />
+    <aura:attribute name="alternateChartElementIndex" type="String" access="global" default="hidden" />
+</aura:interface>

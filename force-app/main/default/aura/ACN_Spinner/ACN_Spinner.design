@@ -1,0 +1,4 @@
+<design:component >
+    <design:attribute name="showSpinner" label="Show Spinner" description="Specifies if the spinner should be displayed."/>	
+    <design:attribute name="loadingMessageText" label="Loading Message Text" description="Specifies the text for the loading spinner."/>	
+</design:component>

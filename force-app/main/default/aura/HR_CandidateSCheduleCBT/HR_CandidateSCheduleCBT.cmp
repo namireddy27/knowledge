@@ -1,0 +1,104 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global"
+                controller="HR_CandidateSSOLinkController">
+    <aura:attribute name="showButton" type="boolean" default="false" />
+    <aura:attribute name="showConfirtmation" type="boolean" default="false" />
+    <aura:attribute name="isButtonActive" type="Boolean" default="false" />
+    <aura:attribute name="isinvited" type="boolean" default="true" />
+    <aura:attribute name="externalSystemSuccess" type="boolean" default="false" />
+    <aura:attribute name="externalSystemError" type="boolean" default="false" />
+    <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="ssoLink" type="string" />
+    <aura:attribute name="application" type="HR_Application__c[]" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"></aura:handler>
+    <aura:attribute name="timer" type="integer" default="0" /><!--Timer -->
+    <aura:attribute name="timeout" type="integer" default="15" /><!--Timer -->
+    <aura:attribute name="countdowntimer" type="integer" default="15" /><!--Timer -->
+    <aura:attribute name="timerobj" type="object"/><!--Timer -->
+    <aura:attribute name="timerobj1" type="object"/><!--Timer -->
+    
+    <aura:if isTrue= "{!v.showButton}">
+        
+        <div class="slds-text-align--right slds-text-heading_small"><u><a onclick="{!c.clickCBTLink}">Schedule CBT</a></u></div>
+    </aura:if>
+    <div id="showconfirm">
+        <aura:if isTrue="{!v.showConfirtmation}">
+            <div class="slds-m-around_xx-large">
+                <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+                         aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                    <div class="slds-modal__container">
+                        <!-- ###### MODAL BOX HEADER Start ######-->
+                        <header class="slds-modal__header" id="rwtopDivide">
+                            <lightning:buttonIcon iconName="utility:close" onclick="{! c.closeModel }"
+                                                  alternativeText="close" variant="bare-inverse" class="slds-modal__close" />
+                            <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate"><Strong>Schedule Exam</Strong></h2>
+                        </header>
+                        <!--###### MODAL BOX BODY Part Start######-->
+                        <div id="modalbody" class="modalbody">
+                            
+                            <aura:if isTrue="{!v.isinvited}">
+                                <br/>
+                                <div class="rwContent">
+                                    <center>
+                                        <p>
+                                            Please wait we are tyring to get access to Schedule an Exam in {!v.countdowntimer} sec<br/>
+                                            You can click Cancle not to schedule.. <sup class="rwSup">1</sup>
+                                        </p>
+                                    </center>
+                                </div>                                     
+                            </aura:if>   
+                            
+                            <aura:if isTrue="{!v.externalSystemSuccess}">
+                                <br/>
+                                <div class="rwContent">
+                                    <center>
+                                        <p>
+                                            Congratulation.. You are ready to schedule Examplease click on Schedule to schedule Exam<br/>
+                                            Or you can click Cancle not to schedule exam. <sup class="rwSup">1</sup>
+                                        </p>
+                                    </center>
+                                </div>                                     
+                            </aura:if>  
+                            
+                            <aura:if isTrue="{!v.externalSystemError}">
+                                <br/>
+                                <div class="rwContent">
+                                    <center>
+                                        <p>
+                                            We are very sorry for your inconvinence it is taking more time than expected <br/>
+                                            please click Cancle and try after some time. <sup class="rwSup">1</sup>
+                                        </p>
+                                    </center>
+                                </div>                                     
+                            </aura:if> 
+                            <!-- ** BUTTONS *** -->
+                            <div class="slds-modal__content slds-p-around_medium button rwBtnRow" id="modal-content-id-1">
+                                <!-- ** BUTTON ROW -->
+                                <div class="rwCancelbtn">       
+                                    <!-- ** Schedule CBT BTN *** -->
+                                    <aura:if isTrue="{!v.isButtonActive}">
+                                        <span class="no">
+                                            <lightning:button label="Schedule CBT"  title="Schedule CBT" onclick="{! c.scheduleCBT }" variant="brand" disabled="true"/>
+                                        </span>  
+                                        <aura:set attribute="else">
+                                            <span class="no">
+                                                <lightning:button label="Schedule CBT" aura:Id="myclickButton"  title="Schedule CBT2" onclick="{! c.scheduleCBT }" variant="brand" disabled="true"/>
+                                            </span>
+                                        </aura:set>                                   
+                                    </aura:if>
+                                    <!-- // END Schedule CBT BTN // -->
+                                    <!-- ** CANCEL BTN *** -->     
+                                    <span class="yes rwCancelMargin">
+                                        <lightning:button label="Cancel" title="Cancel" onclick="{! c.closeModel }"/>
+                                    </span>   
+                                    <!-- // CANCEL BTN // -->
+                                </div><!-- // END BUTTON ROW // -->
+                            </div><!-- // END BUTTONS // -->
+                            
+                        </div>
+                    </div>
+                </section>
+                <div class="slds-backdrop slds-backdrop_open"></div>
+            </div>
+        </aura:if>
+    </div>
+</aura:component>

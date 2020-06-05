@@ -1,0 +1,4 @@
+<aura:event type="APPLICATION" description="Event template">
+	<aura:attribute name="contentPreviewIdentifier" type="String" description="The preview viewport identifier that will display the selected navigation item."/>
+	<aura:attribute name="navigationItem" type="ACN_NavigationLibrary.NavigationListItem" description="The navigation list item last pressed"/>
+</aura:event>

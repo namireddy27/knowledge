@@ -1,0 +1,92 @@
+<design:component>
+    <design:attribute name="showCompanyLogo" label="Show Company Logo" description="Use this attribute to specify if the company logo should be displayed on the community for the current page." />
+    <design:attribute name="companyLogoHeight" label="Company Logo Height" description="Use this attribute to specify the company logo height." />
+    <design:attribute name="companyLogoWidth" label="Company Logo Width" description="Use this attribute to specify the company logo height (Enter a value from 1 to 4)." />
+    <design:attribute name="showHero" label="Show Hero" description="Use this attribute to specify if a hero image should show at the top of the community." />
+    <design:attribute name="heroBackgroundImage" label="Hero Background Image Url" description="Use this attribute to specify the hero image Url." />
+    <design:attribute name="heroBackgroundImageWidth" label="Hero Background Image Width" description="Use this attribute to specify the hero image width." />
+    <design:attribute name="heroBackgroundImageHeight" label="Hero Background Image Height" description="Use this attribute to specify the hero image height." />
+    <design:attribute name="heroBackgroundImagePosition" label="Hero Background Image Position" description="Use this attribute to specify the hero image position." />
+    <design:attribute name="showSearch" label="Show Search Box" description="Use this attribute to specify if the search box should be displayed on the community for the current page." />
+    <design:attribute name="showProfileMenu" label="Show User Profile Menu" description="Use this attribute to specify if the user profile menu should be displayed on the community for the current page." />
+    <design:attribute name="showNavigationMenu" label="Show Navigation Menu" description="Use this attribute to specify if the navigation menu should be displayed on the community for the current page." />
+    <design:attribute name="showNavigationMenuHome" label="Show Navigation Menu Home Item" description="Use this attribute to specify if the navigation menu should display the Home item." />
+    <design:attribute name="showCustomNavigationMenu" label="Show Custom Navigation Menu" description="Use this attribute to specify if the custom navigation menu should be displayed on the community for the current page." />
+    <design:attribute name="customNavigationMenuDataProvider" label="Custom Navigation Menu Data Provider" description="Use this attribute to specify the data provider for the custom navigation menu." />
+    <design:attribute name="customNavigationMenuPosition" label="Custom Navigation Menu Position" description="Use this attribute to specify the position of the custom navigation menu should be displayed on the community for the current page."  datasource="top,left"/>
+    <design:attribute name="customNavigationMenuItemSize" label="Custom Navigation Menu Item Size" description="Use this attribute to specify the size of the custom navigation menu items (default is 2)." />
+    <design:attribute name="customNavigationMenuItemSizeVertical" label="Custom Navigation Menu Item Size (Mobile)" description="Use this attribute to specify the size of the custom navigation menu items for vertical menus (default is 12)." />
+    <design:attribute name="customNavigationMenuStyleClass" label="Custom Navigation Menu Style Class" description="Use this attribute to specify the style class of the custom navigation menu." />
+    <design:attribute name="showHeader" label="Show Template Header" description="Use this attribute to specify if the template header should be displayed on the community for the current page." />
+    <design:attribute name="showHeaderFooter" label="Show Template Header Footer" description="Use this attribute to specify if the template header footer should be displayed under the navigation menu on the community for the current page." />
+    <design:attribute name="isHeaderFixed" label="Is Header Fixed?" description="Use this attribute to specify if the template header should be displayed on the community in a fixed position." />
+    <design:attribute name="fixedHeaderPadding" label="Fixed Header Padding" description="Use this attribute to specify the template fixed header top padding." />
+    <design:attribute name="showFooter" label="Show Template Footer" description="Use this attribute to specify if the template footer should be displayed on the community for the current page." />
+    <design:attribute name="isFooterFixed" label="Is Footer Fixed?" description="Use this attribute to specify if the template footer should be displayed on the community in a fixed position." />
+    <design:attribute name="fixedFooterPadding" label="Fixed Footer Padding" description="Use this attribute to specify the template fixed footer bottom padding." />
+    <design:attribute name="footerStyleClass" label="Footer style class" description="Use this attribute to specify the template footer style class." />
+    <design:attribute name="showGutters" label="Show Gutters" description="Use this attribute to specify if the page should show gutters to the left and right of the main content." />
+    <design:attribute name="showGuttersInTopHeader" label="Show Gutters in Top Header" description="Use this attribute to specify if the page should show gutters to the left and right of the top header." />
+    <design:attribute name="showGuttersInHeader" label="Show Gutters in Header" description="Use this attribute to specify if the page should show gutters to the left and right of the header." />
+    <design:attribute name="showGuttersInHeaderContent" label="Show Gutters in Header Content" description="Use this attribute to specify if the page should show gutters to the left and right of the header content." />
+    <design:attribute name="headerBackground" label="Header Background" description="Use this attribute to specify the header background." />
+    <design:attribute name="showGuttersInFooter" label="Show Gutters in Footer" description="Use this attribute to specify if the page should show gutters to the left and right of the footer." />
+    <design:attribute name="footerBackground" label="Footer Background" description="Use this attribute to specify the footer background." />
+    <design:attribute name="leftGutterSize" label="Left Gutter Size" description="Use this attribute to specify the gutter size to the left of the main content." />
+    <design:attribute name="rightGutterSize" label="Right Gutter Size" description="Use this attribute to specify the gutter size to the right of the main content." />
+    <design:attribute name="hideListViewsFirstColumn" label="Hide List Views First Column" description="Use this attribute to specify if the page should hide list views first column." />
+    <design:attribute name="hideListViewsSecondColumn" label="Hide List Views Second Column" description="Use this attribute to specify if the page should hide list views second column." />
+    
+    <design:attribute name="logoHeaderIndex" label="Logo Element Index" description="Use this attribute to specify the company logo element index (5 elements, or hidden)." datasource="hidden,1,2,3,4,5" />
+    <design:attribute name="searchHeaderIndex" label="Search Element Index" description="Use this attribute to specify the search element index (5 elements, or hidden)." datasource="hidden,1,2,3,4,5" />
+    <design:attribute name="profileMenuHeaderIndex" label="Profile Menu Element Index" description="Use this attribute to specify the profile menu element index (5 elements, or hidden)." datasource="hidden,1,2,3,4,5" />
+    <design:attribute name="navigationMenuHeaderIndex" label="Navigation Menu Element Index" description="Use this attribute to specify the navigation menu element index (5 elements, or hidden)." datasource="hidden,1,2,3,4,5" />
+    <design:attribute name="headerFooterIndex" label="Header Footer Element Index" description="Use this attribute to specify the header footer element index (5 elements, or hidden)." datasource="hidden,1,2,3,4,5" />
+    <design:attribute name="headerBandIndex" label="Header Band Element Index" description="Use this attribute to specify the header band element index (5 elements, or hidden)." datasource="hidden,1,2,3,4,5" />
+
+	<design:attribute name="templateLayoutClass" label="Template Layout Style Class Name" description="Use this attribute to specify the template layout style class name." />
+	<design:attribute name="templateLayoutTitle" label="Template Layout Title" description="Use this attribute to specify the template layout style class name." />
+	<design:attribute name="templateLayoutHorizontalAlign" label="Template Layout Horizontal Align" description="Use this attribute to specify how to spread the layout items horizontally. The alignment options are center, space, spread, and end." datasource="center,space,spread,end" />
+	<design:attribute name="templateLayoutVerticalAlign" label="Template Layout Vertical Align" description="Use this attribute to specify the template layout horizontal alignment option." datasource="start,center,end,stretch" />
+	<design:attribute name="templateLayoutMultipleRows" label="Wrap Template Layout Items" description="Use this attribute to specify if the template layout items wrap in multiple rows based on their size." />
+	<design:attribute name="templateLayoutPullToBoundary" label="Pull Template Layout Items to Boundary" description="Use this attribute to specify the template layout pull to boundary option." datasource="small,medium,large,none" />
+    
+    <design:attribute name="firstElementTitle" label="First Element Title" description="Use this attribute to specify the first element title." />
+    <design:attribute name="firstElementStyleClass" label="First Element Style Class" description="Use this attribute to specify the first element style class." />
+    <design:attribute name="firstElementWidthString" label="First Element Size" description="Use this attribute to specify the first element size." />
+    <design:attribute name="firstElementFlexibility" label="First Element Flexibility" description="Use this attribute to specify the first element flexibility (auto (columns grow or shrink equally as space allows), shrink (columns shrink equally as space decreases), no-shrink (columns don't shrink as space reduces), grow (columns grow equally as space increases), no-grow (columns don't grow as space increases), no-flex (columns don't grow or shrink as space changes). Use a comma-separated value for multiple options, such as 'auto, no-shrink')." />
+    <design:attribute name="firstElementPadding" label="First Element Padding" description="Use this attribute to specify the first element padding (horizontal-small, horizontal-medium, horizontal-large, around-small, around-medium, around-large)." datasource="horizontal-small,horizontal-medium,horizontal-large,around-small,around-medium,around-large" />
+    <design:attribute name="firstElementAlignmentBump" label="First Element Alignment Bump" description="Use this attribute to specify the first element alignment bump (left,top,right,bottom)." datasource="left,top,right,bottom" />
+
+    <design:attribute name="secondElementTitle" label="Second Element Title" description="Use this attribute to specify the second element title." />
+    <design:attribute name="secondElementStyleClass" label="Second Element Style Class" description="Use this attribute to specify the second element style class." />
+    <design:attribute name="secondElementWidthString" label="Second Element Size" description="Use this attribute to specify the second element size." />
+    <design:attribute name="secondElementFlexibility" label="Second Element Flexibility" description="Use this attribute to specify the second element flexibility (auto (columns grow or shrink equally as space allows), shrink (columns shrink equally as space decreases), no-shrink (columns don't shrink as space reduces), grow (columns grow equally as space increases), no-grow (columns don't grow as space increases), no-flex (columns don't grow or shrink as space changes). Use a comma-separated value for multiple options, such as 'auto, no-shrink')." />
+    <design:attribute name="secondElementPadding" label="Second Element Padding" description="Use this attribute to specify the second element padding (horizontal-small, horizontal-medium, horizontal-large, around-small, around-medium, around-large)." datasource="horizontal-small,horizontal-medium,horizontal-large,around-small,around-medium,around-large" />
+    <design:attribute name="secondElementAlignmentBump" label="Second Element Alignment Bump" description="Use this attribute to specify the second element alignment bump (left,top,right,bottom)." datasource="left,top,right,bottom" />
+
+    <design:attribute name="thirdElementTitle" label="Third Element Title" description="Use this attribute to specify the third element title." />
+    <design:attribute name="thirdElementStyleClass" label="Third Element Style Class" description="Use this attribute to specify the third element style class." />
+    <design:attribute name="thirdElementWidthString" label="Third Element Size" description="Use this attribute to specify the third element size." />
+    <design:attribute name="thirdElementFlexibility" label="Third Element Flexibility" description="Use this attribute to specify the third element flexibility (auto (columns grow or shrink equally as space allows), shrink (columns shrink equally as space decreases), no-shrink (columns don't shrink as space reduces), grow (columns grow equally as space increases), no-grow (columns don't grow as space increases), no-flex (columns don't grow or shrink as space changes). Use a comma-separated value for multiple options, such as 'auto, no-shrink')." />
+    <design:attribute name="thirdElementPadding" label="Third Element Padding" description="Use this attribute to specify the third element padding (horizontal-small, horizontal-medium, horizontal-large, around-small, around-medium, around-large)." datasource="horizontal-small,horizontal-medium,horizontal-large,around-small,around-medium,around-large" />
+    <design:attribute name="thirdElementAlignmentBump" label="Third Element Alignment Bump" description="Use this attribute to specify the third element alignment bump (left,top,right,bottom)." datasource="left,top,right,bottom" />
+
+    <design:attribute name="fourthElementTitle" label="Fourth Element Title" description="Use this attribute to specify the fourth element title." />
+    <design:attribute name="fourthElementStyleClass" label="Fourth Element Style Class" description="Use this attribute to specify the fourth element style class." />
+    <design:attribute name="fourthElementWidthString" label="Fourth Element Size" description="Use this attribute to specify the fourth element size." />
+    <design:attribute name="fourthElementFlexibility" label="Fourth Element Flexibility" description="Use this attribute to specify the fourth element flexibility (auto (columns grow or shrink equally as space allows), shrink (columns shrink equally as space decreases), no-shrink (columns don't shrink as space reduces), grow (columns grow equally as space increases), no-grow (columns don't grow as space increases), no-flex (columns don't grow or shrink as space changes). Use a comma-separated value for multiple options, such as 'auto, no-shrink')." />
+    <design:attribute name="fourthElementPadding" label="Fourth Element Padding" description="Use this attribute to specify the fourth element padding (horizontal-small, horizontal-medium, horizontal-large, around-small, around-medium, around-large)." datasource="horizontal-small,horizontal-medium,horizontal-large,around-small,around-medium,around-large" />
+    <design:attribute name="fourthElementAlignmentBump" label="Fourth Element Alignment Bump" description="Use this attribute to specify the fourth element alignment bump (left,top,right,bottom)." datasource="left,top,right,bottom" />
+
+    <design:attribute name="fifthElementTitle" label="Fifth Element Title" description="Use this attribute to specify the fifth element title." />
+    <design:attribute name="fifthElementStyleClass" label="Fifth Element Style Class" description="Use this attribute to specify the fifth element style class." />
+    <design:attribute name="fifthElementWidthString" label="Fifth Element Size" description="Use this attribute to specify the fifth element size." />
+    <design:attribute name="fifthElementFlexibility" label="Fifth Element Flexibility" description="Use this attribute to specify the fifth element flexibility (auto (columns grow or shrink equally as space allows), shrink (columns shrink equally as space decreases), no-shrink (columns don't shrink as space reduces), grow (columns grow equally as space increases), no-grow (columns don't grow as space increases), no-flex (columns don't grow or shrink as space changes). Use a comma-separated value for multiple options, such as 'auto, no-shrink')." />
+    <design:attribute name="fifthElementPadding" label="Fifth Element Padding" description="Use this attribute to specify the fifth element padding (horizontal-small, horizontal-medium, horizontal-large, around-small, around-medium, around-large)." datasource="horizontal-small,horizontal-medium,horizontal-large,around-small,around-medium,around-large" />
+    <design:attribute name="fifthElementAlignmentBump" label="Fifth Element Alignment Bump" description="Use this attribute to specify the fifth element alignment bump (left,top,right,bottom)." datasource="left,top,right,bottom" />
+    
+    <!-- Page layout modifiers -->
+    <design:attribute name="showTop" label="Show Page Layout Top" description="Use this attribute to specify if the responsive page layout should show the top section." />
+    <design:attribute name="showDrawer" label="showDrawer" description="Use this attribute to specify if the the theme page tempalte should show a drawer to the right of the page." />
+</design:component>

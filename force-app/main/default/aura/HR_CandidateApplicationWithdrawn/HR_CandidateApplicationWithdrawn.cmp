@@ -1,0 +1,69 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" controller="HR_CandidateAppWithdrawnController">
+
+    <aura:attribute name="showConfirtmation" type="boolean" default="false" />
+    <aura:attribute name="showButton" type="boolean" default="false" />
+    <aura:attribute name="recordId" type="String" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+	<aura:handler event="force:refreshView" action="{! c.doInit}" />
+	<!--    <aura:handler event="c:HR_ApplicationWithdrawnEvent" action="{!c.handleEdit}"/> -->
+    <!--    <aura:registerEvent name="appEvent" type="c:HR_RefreshActionItemsEvent" /> -->
+    <aura:if isTrue="{!v.showButton}">      
+	<!--    <div class="slds-text-align-right slds-text-heading_small"><u><a onclick="{!c.handleEdit}">Withdraw Applications</a></u></div> -->
+            <lightning:button label="Withdraw Applications" title="Withdraw" onclick="{!c.handleEdit }" variant="brand" />
+    </aura:if> 
+            <aura:if isTrue="{!v.showConfirtmation}">  
+            <div class="slds-m-around_xx-large">
+                <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+                    aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                    <div class="slds-modal__container">
+<!-- ###### MODAL BOX HEADER Start ######-->
+                        <header class="slds-modal__header" id="rwtopDivide">
+                            <lightning:buttonIcon iconName="utility:close" onclick="{! c.closeModel }"
+                                alternativeText="close" variant="bare-inverse" class="slds-modal__close" />
+                            <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate"><Strong>Withdraw Application</Strong></h2>
+                        </header>
+                        <!--###### MODAL BOX BODY Part Start######-->
+                        <div id="modalbody" class="modalbody">
+                            <br/>
+                            <div class="rwContent">
+                                <center>
+                                    <p>
+                                        To withdraw your application, please click "Withdraw" below. <br/> 
+                                        Note: by withdrawing from this position, you may be considered "Ineligible"  <br/>
+                                        to apply to other TSA positions for a period of time.  <br/>
+                                        If you click "Decline" in error, please contact the Help Desk.
+                                        <br/>
+                                     </p>
+                                </center>
+                              </div>
+          <!-- ** BUTTONS *** -->
+                            <div class="slds-modal__content slds-p-around_medium button rwBtnRow" id="modal-content-id-1">
+                                <!-- ** BUTTON ROW -->
+                                <div class="rwCancelbtn">
+          <!-- ** WITHDRAW BTN *** -->
+                               <span class="no">
+                                   <lightning:button label="Withdraw" title="Withdraw" onclick="{! c.handleWithdraw }" variant="brand"/>
+                                </span>
+                                    <!-- // END WITHDRAW BTN // -->
+                                    <!-- ** CANCEL BTN *** -->
+                                <span class="yes rwCancelMargin">
+                                   <lightning:button label="Cancel" title="Cancel" onclick="{! c.closeModel }"/>
+                                </span>
+                                    <!-- // CANCEL BTN // -->
+				</div><!-- // END BUTTON ROW // -->
+			</div><!-- // END BUTTONS // -->
+                            <div class="footer">
+                                <center>
+                                	<p class="rwFooter">
+                                    	<!--1. If withdrawing your only active TSO application and have already attended an airport assessment, but have not completed the medical and background investigation steps, you will no longer receive consideration for a TSO position.-->
+                                    </p>
+                                </center>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <div class="slds-backdrop slds-backdrop_open"></div>
+            </div>
+        </aura:if>    
+   
+</aura:component>

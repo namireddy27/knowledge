@@ -1,0 +1,44 @@
+.THIS .yes{
+    float : left !important;
+}
+.THIS .no{
+    float : right !important;
+}
+.THIS .button{
+    background : #e6f7ff !important;
+}
+.THIS .modalbody{
+    background: white !important;
+    font-size : 1rem;
+}
+.THIS .footer{
+    margin-left : 5%;
+    font-size : 0.75rem;
+}
+
+.THIS .rwTitle {
+    font-size: 0.875rem; }
+
+.THIS #rwtopDivide {
+    border-bottom: #FFBE2E 1px solid; }
+
+.THIS .rwContent {
+    margin-bottom:20px; text-align:center; }
+
+.THIS .rwSup {
+    font-size: .625rem;}
+
+.THIS .rwBtnRow {
+    background: #e6f7ff!important;
+    border-top: 1px solid #707070;
+    border-bottom: 1px solid #707070;
+    padding-bottom: 12px; }
+
+.THIS .rwCancelbtn {
+    float:right; font-size:.825rem; font-weight:600; }
+
+.THIS .rwCancelMargin {
+    margin-right:20px; }
+
+.THIS .rwFooter {
+	text-align: left; color: #080707; padding:15px; }

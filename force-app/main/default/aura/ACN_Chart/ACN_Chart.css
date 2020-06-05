@@ -1,0 +1,9 @@
+.THIS div.navigationChart {
+    height: 80px;
+    width: 100%;
+}
+
+.THIS .navigationChart canvas {
+    height: 80px;
+    width: 80px;
+}

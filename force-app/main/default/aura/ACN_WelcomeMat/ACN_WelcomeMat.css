@@ -1,0 +1,13 @@
+.THIS .acn-welcome-mat-title {
+    color: t(colorTextDefault);
+    /*font-family: t(fontFamily);*/
+    font-size: 1.3em;
+    font-weight: 600;
+}
+
+.THIS .acn-welcome-mat-message {
+    color: t(colorTextWeak);
+    /*font-family: t(fontFamily);*/
+    font-size: 1.05em;
+    font-weight: 600;
+}

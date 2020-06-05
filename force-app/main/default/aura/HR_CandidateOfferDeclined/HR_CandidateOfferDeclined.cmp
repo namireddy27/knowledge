@@ -1,0 +1,84 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" controller="HR_CandidateOfferDeclinedController">
+
+    <aura:attribute name="showConfirtmation" type="boolean" default="false" />
+    <aura:attribute name="showButton" type="boolean" default="false" />
+    <aura:attribute name="recordId" type="String" />
+     <aura:attribute name="reason" type="String" default=""/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+	<aura:handler event="force:refreshView" action="{! c.doInit}" />
+    <!--    <aura:handler event="c:HR_ApplicationOfferDeclinedEvent" action="{!c.handleEdit}"/>  -->
+    <!--    <aura:registerEvent name="appEvent" type="c:HR_RefreshActionItemsEvent" /> -->
+    <aura:if isTrue="{!v.showButton}">      
+    <!--    <div class="slds-text-align-right slds-text-heading_small"><u><a onclick="{!c.handleEdit}">Decline Offer</a></u></div> -->
+            <lightning:button label="Decline Offer" title="Decline Offer" onclick="{!c.handleEdit }" variant="brand" />
+    </aura:if> 
+            <aura:if isTrue="{!v.showConfirtmation}">  
+            <div class="slds-m-around_xx-large">
+                <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+                    aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                    <div class="slds-modal__container">
+<!-- ###### MODAL BOX HEADER Start ######-->
+                        <header class="slds-modal__header" id="rwtopDivide">
+                            <lightning:buttonIcon iconName="utility:close" onclick="{! c.closeModel }"
+                                alternativeText="close" variant="bare-inverse" class="slds-modal__close" />    
+                            <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate"><Strong>Decline Offer</Strong></h2>
+                        </header>
+                        <!--###### MODAL BOX BODY Part Start######-->
+                        <div id="modalbody" class="modalbody">
+                            <br/>
+
+                            <div class="rwContent">
+                                <center>
+                                    <p>
+                                        To decline this offer, please click "Decline". <br/>Note: by declining this offer, you may be considered "Ineligible" <br/>to apply to other TSA positions for a period of time.<br/> If you click "Decline" in error, contact the Help Desk.
+                                    </p>
+                                </center>
+                              </div>
+                            <div class="rwContentLeft">
+                                <lightning:select name="select1" aura:id="declineReason" label="Reason for declining offer?" 
+                                              required="true" value="{!v.reason}" messageWhenValueMissing="Please select a reason of  declining offer">
+                                <option value="">choose one...</option>
+                                <option value="1">Accepted offer from another employer</option>
+                                <option value="2">Active Duty Military</option>
+                                <option value="3">Feel overqualified for this position</option>
+                                <option value="4">Feel that benefits package is unsatisfactory</option>
+                                <option value="5">Feel that salary is insufficient</option>
+                                <option value="6">Feel that work hours are unsuitable</option>
+                                <option value="7">Feel that work location is unsuitable</option>
+                                <option value="8">Not able/ not willing to relocate</option>
+                                <option value="9">Not interested in this position</option>
+                                <option value="10">Other</option>
+                            </lightning:select>
+                            </div>
+                            <!-- ** BUTTONS *** -->
+                            <div style="margin-top:10px" class="slds-modal__content slds-p-around_medium button rwBtnRow" id="modal-content-id-1">
+                                <!-- ** BUTTON ROW -->
+                                <div class="rwCancelbtn">
+		<!-- ** CANCEL BTN *** -->
+                                <span class="yes rwCancelMargin">
+                                   <lightning:button label="Cancel" title="Cancel" onclick="{! c.closeModel }"/>
+                                </span>
+       		<!-- // CANCEL BTN // -->
+       <!-- ** DECLINE BTN *** -->
+                               <span class="no">
+                                   <lightning:button label="Decline" title="Decline" onclick="{! c.handleDecline }" variant="brand"/>
+                                </span>
+        	<!-- // END DECLINE BTN // -->
+
+				</div><!-- // END BUTTON ROW // -->
+			</div><!-- // END BUTTONS // -->
+                            <div class="footer">
+                                <center>
+                                	<p class="rwFooter">
+                                    	<!-- Any text -->
+                                    </p>
+                                </center>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <div class="slds-backdrop slds-backdrop_open"></div>
+            </div>
+        </aura:if>    
+   
+</aura:component>

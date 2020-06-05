@@ -1,0 +1,5 @@
+<aura:event type="APPLICATION" description="Fired when an navigation list item is pressed and needs an interticial confirmation">
+    <aura:attribute name="navigationItem" 
+                    type="ACN_NavigationLibrary.NavigationListItem" 
+                    description="The navigation list item pressed"/>
+</aura:event>

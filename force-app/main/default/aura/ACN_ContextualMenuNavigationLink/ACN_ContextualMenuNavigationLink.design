@@ -1,0 +1,4 @@
+<design:component >
+    <design:attribute name="contextualMenuItemLinkText" label="Link Text" description="The text that will be displayed for the link related to a contextual menu item." />
+	<design:attribute name="contextParentIdentifier" label="Context Parent Identifier" description="The contextual parent identifier of the contextual menu item."/>	
+</design:component>

@@ -1,0 +1,10 @@
+.THIS div.navigationChart.acn-mini-chart-container {
+    height: 80px !important;
+    width: 100% !important;
+    z-index: -1;
+}
+
+.THIS .acn-mini-chart-container canvas {
+    width: 100% !important;
+    height: 100px !important;
+}

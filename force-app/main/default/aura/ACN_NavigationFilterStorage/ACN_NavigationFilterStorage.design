@@ -1,0 +1,7 @@
+<design:component >
+	<design:attribute name="filterContextIdentifier" label="Filter Context Identifier" description="The filter context identifier for filtering event handling."/>	
+	<design:attribute name="showStorageFilterConditions" label="Show Filter Conditions (debug)" description="Use this flag to specify if the filter conditions should be displayed in the UI (debug mode)."/>
+	<design:attribute name="showFilterConditionsClearAll" label="Show Clear All button" description="Use this flag to specify if Clear All button should be displayed in the UI."/>
+	<design:attribute name="showClearAllAs" label="Show Clear All button as..." description="Show the Clear All as a button or text" datasource="button,text" />
+	<design:attribute name="showActiveFilter" label="Show the active filters as badges" description="Use this flag to allow the active filters to be displayed as badges" />
+</design:component>

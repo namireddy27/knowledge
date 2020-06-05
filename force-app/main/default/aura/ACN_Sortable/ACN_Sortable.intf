@@ -1,0 +1,4 @@
+<aura:interface description="Use this interface to provide support for sorting.">
+	<aura:attribute name="sortingItems" type="List" default="" description="List of sorting items."/>
+	<aura:attribute name="serializedSorting" type="String[]" default="" description="Serialized sorting applied."/>
+</aura:interface>

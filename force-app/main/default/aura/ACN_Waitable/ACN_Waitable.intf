@@ -1,0 +1,5 @@
+<aura:interface description="Use this interface to provide support for waiting.">
+    <aura:attribute name="showLoadingMessage" type="Boolean" access="global" default="false" />
+    <aura:attribute name="loadingMessageText" type="String" access="global" default="{!$Label.c.ACN_NavigationListLoading}" />
+    <aura:attribute name="showSpinner" type="Boolean" access="global" default="false" />
+</aura:interface>

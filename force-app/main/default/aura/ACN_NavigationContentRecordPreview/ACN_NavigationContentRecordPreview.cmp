@@ -1,0 +1,25 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global" controller="ACN_NavigationCX" >
+    <aura:attribute name="navigationItem" type="ACN_NavigationLibrary.NavigationListItem"/>
+    <aura:attribute name="contentPreviewIdentifier" type="String" access="global" default="" />
+    <aura:attribute name="showItemName" type="Boolean" access="global" default="true" />
+    <aura:attribute name="showItemImage" type="Boolean" access="global" default="true" />
+    <aura:attribute name="showItemDescription" type="Boolean" access="global" default="false" />
+    <aura:attribute name="hasPreviewContent" type="Boolean" access="global" default="false" />
+    <aura:attribute name="showContentsPreviewUnavailableMessage" type="Boolean" access="global" default="false" />
+    <aura:attribute name="noContentsMessage" type="String" access="global" default="" />
+
+	<aura:handler event="c:ACN_NavigationItemContentPreviewPressed" action="{!c.handleNavigationItemContentPreviewPressed}" />
+    
+    <!--
+    <div>{!v.navigationItem.NavigationTarget}</div>
+    -->
+    
+    <div style="{!v.hasPreviewContent ? 'display: inline-block !important;' : 'display: none !important;'}" aura:id="acn-preview-container" >
+	    <force:recordView recordId="{!v.navigationItem.NavigationTarget}" type="FULL"/> 
+    </div>
+    <div style="{!v.showContentsPreviewUnavailableMessage ? 'display: inline-block !important;' : 'display: none !important;'}" >
+        <p>
+            <!--{!format($Label.c.ACN_NavigationContentPreviewEmptyMessage, v.navigationItem.Name)}-->
+        </p>
+    </div>
+</aura:component>

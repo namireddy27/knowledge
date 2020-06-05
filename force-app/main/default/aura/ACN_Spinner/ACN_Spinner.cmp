@@ -1,0 +1,13 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	<aura:attribute name="loadingMessageText" type="String" access="global" default="{!$Label.c.ACN_Loading}" />
+	<aura:attribute name="showSpinner" type="Boolean" access="global" default="false" />
+
+    <aura:if isTrue="{!v.showSpinner}">
+            <div class="{!v.showSpinner ? 'slds-spinner slds-spinner--brand slds-spinner--medium acn-navigation-list-loading-spinner' : '' }" style="{!'display: ' + ( v.showSpinner ? 'block' : 'none' )}" role="status">
+                <div class="{!v.showSpinner ? 'slds-spinner__dot-a' : '' }">
+                </div>
+                <div class="{!v.showSpinner ? 'slds-spinner__dot-b' : '' }">
+                </div>
+            </div>
+        </aura:if>
+</aura:component>

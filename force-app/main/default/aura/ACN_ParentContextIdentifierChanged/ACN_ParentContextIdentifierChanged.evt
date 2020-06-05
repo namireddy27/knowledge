@@ -1,0 +1,4 @@
+<aura:event type="APPLICATION" description="Use this event to notify when a parent context identifier has changed. All elements listening to this event will react if the Context Identifier matches the one carried out by the event.">
+    <aura:attribute name="contextParentIdentifierContextIdentifier" type="String" access="global" />
+    <aura:attribute name="contextParentIdentifier" type="String" access="global" />
+</aura:event>

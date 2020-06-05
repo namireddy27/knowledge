@@ -1,0 +1,16 @@
+.THIS input[type="text"]:focus,
+.THIS radio:focus, 
+.THIS select:focus, 
+.THIS textarea:focus,
+.THIS .uiInputSelect a:focus {
+    outline: t(acnInputOutlineFocusOutline) !important;
+    border: t(acnInputOutlineFocusBorderWidth + ' ' + acnInputOutlineFocusBorderPattern + ' ' + acnInputOutlineFocusBorderColor) !important;
+    background-color: t(acnInputOutlineFocusBackgroundColor) !important;
+    box-shadow: t(acnInputOutlineFocusBoxShadowHorizontalOffset + ' ' + acnInputOutlineFocusBoxShadowVerticalOffset + ' ' + acnInputOutlineFocusBoxShadowBlurRadius + ' ' + acnInputOutlineFocusBoxShadowColor) !important;
+}
+
+.THIS input[type="checkbox"]:focus {
+    content: t(acnInputCheckboxOutlineFocusContent) !important;
+    border: t(acnInputOutlineFocusBorderWidth + ' ' + acnInputOutlineFocusBorderPattern + ' ' + acnInputOutlineFocusBorderColor) !important;
+    box-shadow: t(acnInputOutlineFocusBoxShadowHorizontalOffset + ' ' + acnInputOutlineFocusBoxShadowVerticalOffset + ' ' + acnInputOutlineFocusBoxShadowBlurRadius + ' ' + acnInputOutlineFocusBoxShadowColor) !important;
+}

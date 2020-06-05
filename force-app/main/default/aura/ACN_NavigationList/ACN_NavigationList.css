@@ -1,865 +1,1517 @@
-/*
- 
-<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,c:ACN_Navigationable,c:ACN_Titleable,c:ACN_Eventable,c:ACN_Dataable,c:ACN_Gridable,c:ACN_Cardable,c:ACN_Overrideable,c:ACN_Identifiable,c:ACN_Styleable,c:ACN_Scoreable,c:ACN_Filterable,c:ACN_Waitable,c:ACN_Contentable,c:ACN_Groupable,c:ACN_Sortable,lightning:isUrlAddressable,c:ACN_Buttonable" 
-                access="global" 
-                controller="ACN_NavigationCX">
-    <!-- Navigation List specific attributes. For all other attributes used check interfaces -->
-    <aura:attribute name="touchStart" type="double" default="0.00" />
-    <aura:attribute name="touchEnd" type="double" default="0.00" />
-    <aura:attribute name="total" type="Double" default="0.00" />
-    <aura:attribute name="showLoadMore" type="boolean" default="false" description="Show the Load More button." />
-    <aura:attribute name="isLastItemPresent" type="boolean" default="true" description="Indicates if the last item of the list is present in the current page." />
-    <aura:attribute name="showNextPage" type="boolean" default="false" description="Show the Show Next Page button." />
-    <aura:attribute name="showPreviousPage" type="boolean" default="false" description="Show the Show Previous Page button." />
-    <aura:attribute name="loadingMoreItems" type="boolean" default="false" description="Flag set when Load More button is pressed." />
-    <aura:attribute name="loadedPages" type="Integer" default="0" description="Number of loaded pages" />
-    <aura:attribute name="initComplete" type="boolean" default="false" description="Flag to controller doInit." />
+.THIS .cACN_NavigationItem .acn-tsa-button li {
+    text-align: center;
+    padding: .6rem 1.5rem 0.6rem 1.5rem;
+    background: #FFF;
+    border: 1px solid #006699;
+    border-radius: 4px;
+    color: #006699 !important;
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: .875rem;
+    letter-spacing: .05em;
+    width: max-content;
+}
+
+/* HEADERS and TITLES */
+
+.THIS h1.acn-title-level-01 {
+    color: #080707; font-size:1.5rem; font-weight:700; padding:0; margin:0; }
+
+.THIS h2.acn-title-level-02 {
+    color: #333; font-size:1.5rem; font-weight:600; padding:0; margin:0; }
+
+.THIS .acn-group-container-grid.acn-border-bottom-light-2:after {
+    border-bottom-width: thin !important;
+    border-bottom-color: t(colorBorderInput);
+	border-bottom-style: solid;
+    content: " ";
+    display: block;
+    height: 0em;
+    margin-left: 2em;
+    padding-top: .5em;
+    /*position: absolute;*/
+    width: calc(100% - 2em);
+}
+
+
+.THIS .acn-group-container-grid.acn-border-bottom-light:before {
+    border-bottom-width: thin !important;
+    border-bottom-color: t(colorBorderInput);
+	border-bottom-style: solid;
+    content: " ";
+    display: block;
+    height: 0em;
+    margin-top: -1em;
+    margin-left: 2em;
+    position: absolute;
+    width: calc(100% - 2em);
+}
+
+.THIS .DESKTOP.acn-group-container-grid.acn-border-bottom-light:before {
+    width: 30%;
+}
+
+.THIS .acn-group-container-grid.acn-border-bottom-light:nth-child(1):before {
+    border-bottom: none;
+}
+
+.THIS .acn-group-container-grid.acn-border-bottom-light:nth-last-child(1):after {
+    border-bottom-width: thin !important;
+    border-bottom-color: t(colorBorderInput);
+	border-bottom-style: solid;
+    content: " ";
+    display: block;
+    height: 0em;
+    margin-left: 2em;
+    position: relative;
+    width: calc(100% - 2em);
+}
+
+.THIS .acn-margin-right-none {
+    margin-right: 0 !important;
+}
+
+.THIS .acn-previous-next-chevrons .acn-navigation-list-pagination-container > .acn-navigation-list-pagination-container-pagination-loading > .slds-button:nth-child(1):before {
+    content: "";
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' id='chevronleft'%3E%3Cpath d='M15.8 22l-9.6-9.4c-.3-.3-.3-.8 0-1.1l9.6-9.4c.3-.3.7-.3 1 0l1 1c.3.3.3.7 0 1l-7.6 7.4c-.3.3-.3.8 0 1.1l7.5 7.4c.3.3.3.7 0 1l-1 1c-.2.2-.6.2-.9 0z'%3E%3C/path%3E%3C/svg%3E");
+    display: inline-block;
+    font-size: 72px;
+    font-weight: bold;
+    height: 34px;
+    width: 34px;
+    background-color: t(colorBrand);
+}
+
+.THIS .acn-previous-next-chevrons .acn-navigation-list-pagination-container > .acn-navigation-list-pagination-container-pagination-loading > .slds-button:nth-child(1):disabled:before {
+    background-color: #6b7883;
+}
+
+.THIS .acn-previous-next-chevrons .acn-navigation-list-pagination-container > .acn-navigation-list-pagination-container-pagination-loading > .slds-button:nth-child(1):disabled {
+    color: #6b7883;
+    font-size: 14px;
+}
+
+.THIS .acn-previous-next-chevrons .acn-navigation-list-pagination-container > .acn-navigation-list-pagination-container-pagination-loading > .slds-button:nth-child(1) {
+    float: left;
+    font-size: 14px;
+}
+
+.THIS .acn-previous-next-chevrons svg {
+    /*fill: t(colorBrand);*/
+}
+
+.THIS .acn-previous-next-chevrons .acn-navigation-list-pagination-container > .acn-navigation-list-pagination-container-pagination-loading > .slds-button:nth-child(2):after {
+    content: "";
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' id='chevronright'%3E%3Cpath d='M8.3 2l9.5 9.5c.3.3.3.7 0 1L8.3 22c-.3.2-.8.2-1.1 0l-1-1c-.2-.3-.2-.8 0-1.1l7.6-7.4c.2-.3.2-.7 0-1L6.3 4.1C6 3.8 6 3.3 6.3 3l1-1c.3-.2.7-.2 1 0z'%3E%3C/path%3E%3C/svg%3E");
+    display: inline-block;
+    font-size: 72px;
+    font-weight: bold;
+    height: 34px;
+    width: 34px;
+    background-color: t(colorBrand);
+}
+
+.THIS .acn-previous-next-chevrons .acn-navigation-list-pagination-container > .acn-navigation-list-pagination-container-pagination-loading > .slds-button:nth-child(2):disabled:after {
+    background-color: #6b7883;
+}
+
+.THIS .acn-previous-next-chevrons .acn-navigation-list-pagination-container > .acn-navigation-list-pagination-container-pagination-loading > .slds-button:nth-child(2):disabled {
+    color: #6b7883;
+    font-size: 14px;
+}
+
+.THIS .acn-previous-next-chevrons .acn-navigation-list-pagination-container > .acn-navigation-list-pagination-container-pagination-loading > .slds-button:nth-child(2) {
+    float: right;
+    font-size: 14px;
+}
+
+.THIS .acn-image-margin-top-negative-5-px img {
+    margin-top: -5px;
+}
+
+.THIS .acn-line-height-large p::first-line {
+    line-height: 1em;
+}
+
+.THIS .acn-line-height-large p {
+    line-height: 2em;
+}
+
+.THIS .acn-image-margin-top-negative-5-px img {
+    margin-top: -5px;
+}
+
+.THIS .acn-text-transform-lowercase h1, 
+.THIS .acn-text-transform-lowercase h2, 
+.THIS .acn-text-transform-lowercase h3, 
+.THIS .acn-text-transform-lowercase label, 
+.THIS .acn-text-transform-lowercase span, 
+.THIS .acn-text-transform-lowercase p {
+    text-transform: lowercase;
+}
+
+.THIS .acn-text-transform-uppercase h1, 
+.THIS .acn-text-transform-uppercase h2, 
+.THIS .acn-text-transform-uppercase h3, 
+.THIS .acn-text-transform-uppercase label, 
+.THIS .acn-text-transform-uppercase span, 
+.THIS .acn-text-transform-uppercase p, 
+.THIS .acn-text-transform-uppercase-name .acn-navigation-list-item-name-grid label, 
+.THIS .acn-text-transform-uppercase-name .acn-navigation-list-item-name-grid span, 
+.THIS .acn-text-transform-uppercase-name .acn-navigation-list-item-name-grid p {
+    text-transform: uppercase;
+}
+
+.THIS .acn-text-transform-capitalize h1, 
+.THIS .acn-text-transform-capitalize h2, 
+.THIS .acn-text-transform-capitalize h3, 
+.THIS .acn-text-transform-capitalize label, 
+.THIS .acn-text-transform-capitalize span, 
+.THIS .acn-text-transform-capitalize p {
+    text-transform: capitalize;
+}
+
+.THIS .acn-text-transform-none h1, 
+.THIS .acn-text-transform-none h2, 
+.THIS .acn-text-transform-none h3, 
+.THIS .acn-text-transform-none label, 
+.THIS .acn-text-transform-none span, 
+.THIS .acn-text-transform-none p {
+    text-transform: none;
+}
+
+.THIS .acn-text-transform-inherit h1, 
+.THIS .acn-text-transform-inherit h2, 
+.THIS .acn-text-transform-inherit h3, 
+.THIS .acn-text-transform-inherit label, 
+.THIS .acn-text-transform-inherit span, 
+.THIS .acn-text-transform-inherit p {
+    text-transform: inherit;
+}
+
+.THIS .acn-text-transform-full-width h1, 
+.THIS .acn-text-transform-full-width h2, 
+.THIS .acn-text-transform-full-width h3, 
+.THIS .acn-text-transform-full-width label, 
+.THIS .acn-text-transform-full-width span, 
+.THIS .acn-text-transform-full-width p {
+    text-transform: full-width;
+}
+
+.THIS .acn-color-overlay-brand {
+    color: t(colorTextButtonBrand);
+}
+
+.THIS .acn-record-list-row:nth-child(even) {
+    background-color: t(colorBackgroundRowSelected);
+}
+
+.THIS .acn-record-list .acn-record-list-row:nth-child(1) {
+    background-color: t(colorBrand);
+}
+
+.THIS .acn-record-list .acn-record-list-row:nth-child(1) p, 
+.THIS .acn-record-list .acn-record-list-row:nth-child(1) textarea, 
+.THIS .acn-record-list .acn-record-list-row:nth-child(1) span {
+    color: t(colorTextButtonBrand);
+}
+
+.THIS .acn-margin-small {
+    margin: .5em;
+}
+
+.THIS .acn-padding-left-small {
+    padding-left: .5em;
+}
+
+.THIS .acn-contact-card {
+    background-color: #f4f4f4;
+    min-height: 200px;
+    margin: 1em;
+    border: 5px solid white;
+}
+
+.THIS li.acn-group-list-item:nth-child(odd) .acn-max-height-items-05 {
+    max-height: 20em;
+    min-height: 20em;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+.THIS .acn-home-page-list-title-band {
+    background-color: #5f5f5f;
+    color: #fff;
+}
+
+.THIS .acn-home-page-list-group-item {
+    /*min-height: 1.60em;*/
+}
+
+
+.THIS .acn-list-item-separation-small.acn-list-item-layout-container .acn-navigation-list-grid-element {
+    /*padding: .5em;*/
+}
+/* Added by Becky for List Border */
+.THIS .acn-list-border-style-tsabrand {
+   border: #FFF solid 2px; 
+}
+
+/* Added by Becky for List Border */
+.THIS .acn-list-border-styleLT-tsabrand {
+   border-right: #FFF solid 1px; border-bottom: #FFF solid 1px; 
+}
+
+/* Added by Becky for List Border */
+.THIS .acn-list-border-styleRT-tsabrand {
+   border-left: /*#16325C*/ #FFF solid 1px; border-bottom: #FFF solid 1px; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.THIS .acn-margin-top-x-large-negative {
+    margin-top: -5em;
+}
+
+.THIS .acn-margin-top-large-negative {
+    margin-top: -3em;
+}
+
+.THIS .acn-height-all {
+    min-height: 4em;
+}
+
+.THIS .acn-margin-top-negative-large {
+    margin-top: -2em;
+}
+
+.THIS .acn-color-white {
+    color: white;
+}
+
+.THIS .acn-justify-content-initial {
+    justify-content: initial;
+}
+
+.THIS .acn-gutter-left {
+    margin-left: 6em !important;
+}
+
+.THIS .acn-group-header.acn-border-light-top, 
+.THIS .acn-border-light-top {
+    border-top: solid 1px;
+}
+
+.THIS .acn-border-color-silver {
+    border-color: silver;
+}
+
+.THIS .acn-background-color-default {
+    background-color: token(colorBackground);
+}
+
+.THIS .acn-group-header.acn-background-color-brand, 
+.THIS .acn-background-color-brand {
+    background-color: t(colorBrand);
+}
+
+/* Added by Becky for Alex to use in Help Component*/
+.THIS .acn-group-header.acn-background-color-brand, 
+.THIS .acn-background-color-tsabrand {
+    color: #333333;
+    background-color: #FFF;
+    border-left: 3px solid #CC0033;
+    font-size: 1.625rem;
+    padding: 8px 0 8px 20px;
+    margin-top: 32px;
+}
+.THIS .acn-dark {
+    filter: brightness(80%);
+}
+
+.THIS .acn-darker {
+    filter: brightness(60%);
+}
+
+.THIS .acn-darkest {
+    filter: brightness(40%);
+}
+
+.THIS .acn-light {
+    filter: brightness(125%);
+}
+
+.THIS .acn-lighter {
+    filter: brightness(150%);
+}
+
+.THIS .acn-lightest {
+    filter: brightness(175%);
+}
+
+.THIS .acn-float-right {
+    float: right;
+}
+
+.THIS .acn-float-left {
+    float: right;
+}
+
+.THIS .acn-float-initial {
+    float: initial;
+}
+
+.THIS .acn-border-radius-small {
+    border-radius: .25em;
+}
+
+.THIS .acn-overflow-hidden {
+	overflow: hidden;
+}
+
+.THIS .acn-text-align-left {
+    text-align: left;
+}
+
+.THIS .acn-text-align-right {
+    text-align: right;
+}
+
+.THIS .acn-text-align-center {
+    text-align: center;
+}
+
+.THIS .acn-text-default {
+    color: token(colorTextDefault);
+}
+
+.THIS .acn-text-default-li li {
+    color: token(colorTextDefault);
+}
+
+.THIS .acn-text-brand {
+    color: token(colorTextBrand);
+}
+
+.THIS .acn-text-brand-li li {
+    color: token(colorTextBrand);
+}
+
+.THIS .acn-text-button-brand {
+    color: token(colorTextButtonBrand);
+}
+
+.THIS .acn-text-overlay {
+    color: token(colorTextButtonBrand);
+}
+
+.THIS .acn-font-bold {
+    font-weight: 600;
+}
+
+.THIS .acn-font-bolder {
+    font-weight: 700;
+}
+
+.THIS .acn-font-boldest {
+    font-weight: 800;
+}
+
+.THIS .acn-font-bold-li li {
+    font-weight: 600;
+}
+
+.THIS .acn-font-bolder-li li {
+    font-weight: 700;
+}
+
+.THIS .acn-font-boldest-li li {
+    font-weight: 800;
+}
+
+.THIS .acn-font-normal {
+    font-size: 1em;
+    line-height: 1.5em;
+}
+
+.THIS .acn-font-large {
+    font-size: 1.25em;
+    line-height: 1.75em;
+}
+
+.THIS .acn-font-larger {
+    font-size: 1.5em;
+    line-height: 2em;
+}
+
+.THIS .acn-font-largest {
+    font-size: 2em;
+    line-height: 2.5em;
+}
+
+.THIS .acn-font-normal-li li {
+    font-size: 1em;
+}
+
+.THIS .acn-font-large-li li {
+    font-size: 1.25em;
+}
+
+.THIS .acn-font-larger-li li {
+    font-size: 1.5em;
+}
+
+.THIS .acn-font-largest-li li {
+    font-size: 2em;
+}
+
+.THIS .acn-min-height-five-units {
+	min-height: 10em;
+}
+
+.THIS .acn-title-level-01.navigationCardAlternateBlocks {
+    color: rgb(127, 55, 155);
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+.THIS .acn-title-level-01.navigationCardsBlockButtons {
+    color: white;
+    font-size: 1.5em;
+    font-weight: 600;
+    /*margin: .75em 0 1em 1em;*/
+    /*position: absolute;*/
+    /*width: 60%;*/
+    z-index: 99;
+}
+
+.acn-padding-none.THIS, 
+.THIS .acn-padding-none {
+    padding: 0;
+}
+
+.acn-margin-none.THIS, 
+.THIS .acn-margin-none {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.acn-horizontal-padding-both-small.THIS, 
+.THIS .acn-horizontal-padding-both-small {
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.acn-horizontal-padding-both-medium.THIS, 
+.THIS .acn-horizontal-padding-both-medium {
+    padding-left: 3em;
+    padding-right: 3em;
+}
+
+.acn-horizontal-padding-both-large.THIS, 
+.THIS .acn-horizontal-padding-both-large {
+    padding-left: 5em;
+    padding-right: 5em;
+}
+
+.THIS .navigationCardsBlockButtons-item-container-grid.acn-padding-left-half {
+    /*padding-left: 50%;*/
+}
+
+.navigationCardsBlockButtons-navigation-list-container-grid.THIS {
+    background-color: rgb(127, 55, 155);
+}
+
+.THIS .acn-push-right-small {
+	margin-left: 1em;
+}
+
+.THIS .acn-push-right-medium {
+	margin-left: 3em;
+}
+
+.THIS .acn-push-right-large {
+	margin-left: 5em;
+}
+
+.THIS .acn-push-left-small {
+	margin-right: 1em;
+}
+
+.THIS .acn-push-left-medium {
+	margin-right: 3em;
+}
+
+.navigationCardTitleViewAll.THIS, 
+.THIS .navigationCardTitleViewAll, 
+.THIS .navigationCardTitleViewAll .acn-group-body, 
+.THIS .acn-group-body.navigationCardTitleViewAll, 
+.THIS .navigationCardTitleViewAll-list-item-grid, 
+.THIS .navigationCardTitleViewAll-item-container-grid, 
+.THIS .navigationCardTitleViewAll-first-grid-item, 
+.THIS .navigationCardTitleViewAll-second-grid-item, 
+.THIS .navigationCardTitleViewAll-third-grid-item {
+    height: 2em;
+    min-height: 2em;
+    padding: 0 .5em;
+}
+
+.acn-title-container-outer.navigationCardTitleViewAll.THIS {
+    height: initial;
+    min-height: initial;
+}
+
+.THIS .navigationProductCard-list-item-grid {
+    padding-top: .25em;
+    padding-bottom: .25em;
+}
+
+.THIS .acn-navigation-list-grid-element.navigationCardMenuItem-list-item-grid {
+    background-color: t(colorBrand);
+    padding: 0 .5em;
+    height: 3.5em;
+}
+
+.THIS .navigationCardMenuItem-item-container-grid {
+    /*position: fixed;
+    bottom: 0;*/
+}
+
+.acn-hidden.THIS, 
+.THIS .acn-hidden {
+    display: none;
+}
+
+
+.THIS .acn-navigation-list-grid-element.navigationScoreCard-list-item-grid {
+    /*border: 1px solid t(colorBorderBrand);*/
+}
+
+
+
+/***********************************************************************************/
+/***********************************************************************************/
+/***********************************************************************************/
+/***********************************************************************************/
+
+.acn-hidden.THIS, 
+.THIS .acn-hidden {
+    display: none;
+}
+
+/************** Navigation Card Contact Start ********************/
+.THIS ul.navigationCardContact {
+    margin: 0 auto;
+}
+
+.THIS ul.navigationCardContact:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.THIS li.navigationCardContact {
+    float: left;
+    padding: .5em;
+}
+
+/**************** Navigation Card Contact End ********************/
+
+.THIS li.navigationCardIconAndMask {
+    overflow: hidden;
+}
+
+.THIS .navigationCardIconAndMask h1 {
+    text-transform: lowercase;
+    font-weight: 300;
+    font-size: 34px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    line-height: 1.1;
+    color: t(colorTextDefault);
+}
+
+.THIS .navigationCardIconAndMask h1:after {
+    content: " ";
+    width: 3em;
+    height: .8em;
+    border-bottom: 7px solid t(colorBrand);
+    position: relative;
+    display: block;
+    margin: auto;
+}
+
+.THIS li.navigationCardIconAndMask {
+    float: left;
+    text-align: center;
+    /*border-right: dotted thick t(colorBrand);*/
+    max-height: 350px;
+}
+
+.THIS li.navigationCardIconAndMask:after {
+    position: absolute;
+    content: "";
+    display: block;
+    top: 33%;
+    height: 34%;
+    border-right: dotted 3px t(colorBrand);
+}
+
+.THIS li.navigationHighlightsGlass {
+    display: inline-block;
+    position: relative;
+    float: left;
+    min-height: 150px;
+}
+
+.THIS ul.navigationCardBandSection {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    background-color: #ededed !important;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.THIS li.navigationCardBandSection:nth-child(1) {
+    border-left: none;
+}
+
+.THIS li.navigationCardBandSection {
+    position: relative;
+    display: inline-block;
+    height: 300px;
+    border-left: 1px solid #1a2942;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.THIS li.navigationCardBandSection, 
+.THIS li.navigationCardBandSection svg {
+    background-color: #ededed !important;
+}
+
+.THIS li.navigationCardBandSection:hover, 
+.THIS li.navigationCardBandSection:hover svg {
+    background-color: white !important;
+}
+
+.THIS ul.navigationCardIconButton {
+    background-color: white !important;
+}
+
+.THIS li.navigationCardIconButton {
+    padding: 10px;
+    vertical-align: middle;
+    border-bottom: 1px solid #1a2942;
+    display: inline-flex;
+    position: relative;
+}
+
+.THIS li.navigationCardIconButton:nth-child(odd), 
+.THIS li.navigationCardIconButton:nth-child(odd) svg {
+    background-color: white !important;
+}
+
+.THIS li.navigationCardIconButton:nth-child(even), 
+.THIS li.navigationCardIconButton:nth-child(even) svg {
+    background-color: #ededed !important;
+}
+
+.THIS .carouselStretched.acn-carousel-list {
+    max-height: 300px !important;
+}
+
+@media screen and (max-width: 885px){
+    .THIS .carouselStretched.acn-carousel-list {
+        height: 200px !important;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .THIS .carouselStretched.acn-carousel-list {
+        height: 150px !important;
+    }
+}
+
+.THIS ul.navigationCard {
+    width: 100%;
+    text-align: center;
+}
+
+.THIS li.navigationCard {
+    display: inline-block;
+    position: relative;
+    float: left;
+    min-height: 150px;
+}
+
+.THIS li.navigationCardWithButton {
+    width: 48%;
+    float: left;
+}
+
+.THIS .navigationMenuItem li {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-top: 1px solid silver;
+}
+
+.THIS .navigationMenuItem li:nth-child(1) {
+    border-top: none;
+}
+
+.THIS .carouselCenteredContents.acn-carousel-navigation-items-container, 
+.THIS .carouselCenteredContents.acn-carousel-navigation-items-container ul, 
+.THIS .carouselCenteredContents.acn-carousel-navigation-items-container ul li, 
+.THIS .acn-carousel-list.carouselCenteredContents
+{
+    height: t(acnNavigationCarouselCenteredContentsHeight) !important;
+}
+
+
+
+/****************** General Begin ************************/
+.THIS {
+    font-family: token(fontFamily);    
+}
+
+.THIS .hidden {
+    display: none !important;
+}
+
+.THIS .acn-group-header {
+    /*color: t(colorTextButtonBrand);*/
+    /*background-color: token(colorBrand);*/
+    /*height: 2em;*/
+}
+
+.THIS .acn-component-disabled {
+    pointer-events: none; 
+    opacity: 0.6;
+}
+
+.THIS .acn-spinner-outer-container {
+    position: relative;
+}
+
+.THIS .acn-spinner-inner-container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.THIS .acn-navigation-list-loading-spinner {
+    background: t(acnDefaultBackground);
+    color: t(acnBrandColor);
+}
+
+.THIS .slds-spinner.slds-spinner--brand.slds-spinner--medium.acn-navigation-list-loading-spinner {
+    margin-top: 15px;
+    position: relative;
+}
+
+.THIS .show {
+    opacity: 1;
+    max-height: 500px;
+}
+
+@media screen and (min-width: 885px){
+    .THIS ul.acn-custom-nav-ul  {
+        width: 94% !important;
+        margin: 0 auto !important;
+    }
+}
+
+.THIS .slds-button--neutral{
+    border: none;
+}
+
+.THIS .slds-button:focus{
+    box-shadow: none;
+}
+
+/*770px */
+@media screen and (max-width: 885px) {
+    .THIS .acn-group-body-list-item {
+        min-width: 30%;
+    }
+}
+
+/* 654*/
+@media screen and (max-width: 550px) {
+    .THIS .acn-group-body-list-item {
+        width: 100%;
+        min-width: 100%
+            
+    }
+
+    .THIS .acn-custom-nav-inner-ul {
+        width: 100%;
+        margin: none;
+    }
     
-    <!-- Event Handlers. For all event registration check interfaces -->
-    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
-    <aura:handler name="change" value="{!v.selectedPathSegment.Id}" action="{!c.pathSegmentChange}"/>
-    <aura:handler name="carouselNavigationPressedHandler" event="c:ACN_CarouselNavigationPressed" action="{!c.handleNavigationListItemPressed}"/>
-    <aura:handler name="navigationListItemPressed" event="c:ACN_NavigationListItemPressed" action="{!c.handleNavigationListItemPressed}"/>
-    <aura:handler event="aura:doneRendering" action="{!c.doneRendering}"/>
-    <aura:handler event="c:ACN_NavigationFilterChanged" action="{!c.handleNavigationFilterChanged}"/>
-    <aura:handler event="c:ACN_NavigationListRefreshAllRequested" action="{!c.handleNavigationListRefreshAllRequested}"/>
-    <aura:handler event="c:ACN_NavigationListRefreshRequested" action="{!c.handleNavigationListRefreshRequested}"/>
-    <aura:handler event="c:ACN_SelectedNavigationItemResponseReturned" action="{!c.handleSelectedNavigationItemResponseReturned}"/>
-    <aura:handler event="c:ACN_ParentContextIdentifierChanged" action="{!c.handleParentContextIdentifierChanged}" />
-    <aura:handler event="c:ACN_NavigationSelectionUpdated" action="{!c.handleNavigationSelectionUpdated}" />
-    <aura:handler event="c:ACN_NavigationListItemConfirmation" action="{!c.handleItemConfirm}" />
-    <lightning:overlayLibrary aura:id="overlayLib"/>
+    .THIS .acn-custom-nav-card-inner-li{
+        width: 45%;
+        border: 0.7px solid rgba(0,0,0,0.6);
+    }
+}
+
+/****************** General End **************************/
+
+/*************** Red Star Card Begin *********************/
+.THIS .navigationCardStarRed.acn-group-body-list-item, 
+.THIS .navigationCardStarBlue.acn-group-body-list-item, 
+.THIS .navigationCardStarBrand.acn-group-body-list-item {
+    /*float: left;*/
+    display: inline-block;
+    padding: 5px;
+}
+/*************** Red Star Card End *********************/
+
+/**************** Score Card Begin ***********************/
+.THIS .navigationScoreCard.acn-group-body-list-item {
+    float: left;
+    list-style-type: none;
+    box-sizing: border-box;
+    padding: 2px;
+    background-color: white;
+}
+
+.THIS .navigationScoreCard.acn-group-body-list-item .acn-navigation-item-container {
+    border-radius: 3px;
+    border: 1px solid token(acnBorderColor);
+    margin: 1px 0px;
+}
+
+.THIS .navigationScoreCard.acn-group-body-list-item .acn-navigation-item-container:hover, 
+.THIS .navigationScoreCard.acn-group-body-list-item .acn-navigation-item-container:focus {
+    border: t(acnBrandColor) solid 1px;
+    -o-box-shadow: 2px 2px 19px #CCC;
+    -webkit-box-shadow: 2px 2px 19px #CCC;
+    -moz-box-shadow: 2px 2px 19px #CCC;
+}
+
+/*770px */
+@media screen and (max-width: 885px) {
+    .THIS .navigationScoreCard.acn-group-body-list-item{
+        width: 45% !important;
+    }
+}
+
+/* 654*/
+@media screen and (max-width: 550px) {
+    .THIS .navigationScoreCard.acn-group-body-list-item{
+        width: 45%;
+        margin-left: 4px;
+        margin-right: 12px;
+        min-width: 16px;
+    }
     
-    <lightning:layout 
-                      class="{!( v.styleClass == '' ? '' : ' ' + v.styleClass + '-navigation-list-container-grid') + (v.containerLayoutClass == '' ? '' : ' ' + v.containerLayoutClass)}" 
-                      title="{!v.containerLayoutTitle}" 
-                      horizontalAlign="{!v.containerLayoutHorizontalAlign}" 
-                      verticalAlign="{!v.containerLayoutVerticalAlign}" 
-                      multipleRows="{!v.containerLayoutMultipleRows}" 
-                      pullToBoundary="{!v.containerLayoutPullToBoundary}" 
-                      >
-        <aura:if isTrue="{!v.titleLevel01 != '' || v.titleLevel02 != '' || v.titleLevel03 != ''}">
-            <lightning:layoutItem 
-                                  class="{!( v.styleClass == '' ? '' : ' ' + v.styleClass + '-navigation-list-container-grid-title') + (v.contentTitleLayoutItemClass == '' ? '' : ' ' + v.contentTitleLayoutItemClass)}" 
-                                  title="{!v.contentTitleLayoutItemTitle}"
-                                  size="{!v.contentTitleLayoutItemSizeArray[0]}" 
-                                  largeDeviceSize="{!v.contentTitleLayoutItemSizeArray[1]}"
-                                  mediumDeviceSize="{!v.contentTitleLayoutItemSizeArray[2]}" 
-                                  smallDeviceSize="{!v.contentTitleLayoutItemSizeArray[3]}" 
-                                  flexibility="{!v.contentTitleLayoutItemFlexibility}"
-                                  padding="{!v.contentTitleLayoutItemPadding}"
-                                  alignmentBump="{!v.contentTitleLayoutItemAlignmentBump}"
-                                  >
-                <div class="{!'acn-title-container-outer' + (v.styleClass == '' ? '' : ' ' + v.styleClass) + (v.listLayoutClass == '' ? '' : ' ' + v.listLayoutClass)}">
-                    <div class="{!'acn-title-container-inner' + (v.styleClass == '' ? '' : ' ' + v.styleClass) + (v.listLayoutClass == '' ? '' : ' ' + v.listLayoutClass)}">
-                        <div class="acn-hidden">
-                            <span class="acn-hidden">
-                                {!v.contextParentIdentifier}
-                            </span>
-                        </div>
-                        <div class="{!'acn-title-container' + (v.styleClass == '' ? '' : ' ' + v.styleClass) + (v.listLayoutClass == '' ? '' : ' ' + v.listLayoutClass)}">
-                            <lightning:layout 
-                                              class="{!'acn-content-title-layout' + (v.styleClass == '' ? '' : ' ' + v.styleClass) + (v.contentTitleLayoutClass == '' ? '' : ' ' + v.contentTitleLayoutClass)}" 
-                                              title="{!v.contentTitleLayoutTitle}" 
-                                              horizontalAlign="{!v.contentTitleLayoutHorizontalAlign}" 
-                                              verticalAlign="{!v.contentTitleLayoutVerticalAlign}" 
-                                              multipleRows="{!v.contentTitleLayoutMultipleRows}" 
-                                              pullToBoundary="{!v.contentTitleLayoutPullToBoundary}" 
-                                              >
-                                <lightning:layoutItem 
-                                                      class="{!'acn-content-title-layout-item-level-first' + ( v.styleClass == '' ? '' : ' ' + v.styleClass) + (v.contentTitleLayoutItemLevel01Class == '' ? '' : ' ' + v.contentTitleLayoutItemLevel01Class)}" 
-                                                      title="{!v.contentTitleLayoutItemLevel01Title}"
-                                                      size="{!v.contentTitleLayoutItemLevel01SizeArray[0]}" 
-                                                      largeDeviceSize="{!v.contentTitleLayoutItemLevel01SizeArray[1]}"
-                                                      mediumDeviceSize="{!v.contentTitleLayoutItemLevel01SizeArray[2]}" 
-                                                      smallDeviceSize="{!v.contentTitleLayoutItemLevel01SizeArray[3]}" 
-                                                      flexibility="{!v.contentTitleLayoutItemLevel01Flexibility}"
-                                                      padding="{!v.contentTitleLayoutItemLevel01Padding}"
-                                                      alignmentBump="{!v.contentTitleLayoutItemLevel01AlignmentBump}"
-                                                      >
-                                    <div style="{!v.titleLevel01Alignment == '' ? '' : 'text-align: ' + v.titleLevel01Alignment + ';'}" class="{!'acn-title-level-01' + (v.styleClass == '' ? '' : ' ' + v.styleClass)}">
-                                        <h1 class="{!'acn-title-level-01' + (v.styleClass == '' ? '' : ' ' + v.styleClass)}">
-                                            {!v.titleLevel01}
-                                        </h1>
-                                    </div>
-                                </lightning:layoutItem>
-                                <lightning:layoutItem 
-                                                      class="{!'acn-content-title-layout-item-level-second' + ( v.styleClass == '' ? '' : ' ' + v.styleClass) + (v.contentTitleLayoutItemLevel02Class == '' ? '' : ' ' + v.contentTitleLayoutItemLevel02Class)}" 
-                                                      title="{!v.contentTitleLayoutItemLevel02Title}"
-                                                      size="{!v.contentTitleLayoutItemLevel02SizeArray[0]}" 
-                                                      largeDeviceSize="{!v.contentTitleLayoutItemLevel02SizeArray[1]}"
-                                                      mediumDeviceSize="{!v.contentTitleLayoutItemLevel02SizeArray[2]}" 
-                                                      smallDeviceSize="{!v.contentTitleLayoutItemLevel02SizeArray[3]}" 
-                                                      flexibility="{!v.contentTitleLayoutItemLevel02Flexibility}"
-                                                      padding="{!v.contentTitleLayoutItemLevel02Padding}"
-                                                      alignmentBump="{!v.contentTitleLayoutItemLevel02AlignmentBump}"
-                                                      >
-                                    <div class="{!'acn-title-level-02' + (v.styleClass == '' ? '' : ' ' + v.styleClass) + (v.listLayoutClass == '' ? '' : ' ' + v.listLayoutClass)}">
-                                        <h2 style="{!v.titleLevel02Alignment == '' ? '' : 'text-align: ' + v.titleLevel02Alignment + ';'}" class="{!'acn-title-level-02' + (v.styleClass == '' ? '' : ' ' + v.styleClass)}">
-                                            {!v.titleLevel02}
-                                        </h2>
-                                    </div>
-                                </lightning:layoutItem>
-                                <lightning:layoutItem 
-                                                      class="{!'acn-content-title-layout-item-level-third' + ( v.styleClass == '' ? '' : ' ' + v.styleClass) + (v.contentTitleLayoutItemLevel03Class == '' ? '' : ' ' + v.contentTitleLayoutItemLevel03Class)}" 
-                                                      title="{!v.contentTitleLayoutItemLevel03Title}"
-                                                      size="{!v.contentTitleLayoutItemLevel03SizeArray[0]}" 
-                                                      largeDeviceSize="{!v.contentTitleLayoutItemLevel03SizeArray[1]}"
-                                                      mediumDeviceSize="{!v.contentTitleLayoutItemLevel03SizeArray[2]}" 
-                                                      smallDeviceSize="{!v.contentTitleLayoutItemLevel03SizeArray[3]}" 
-                                                      flexibility="{!v.contentTitleLayoutItemLevel03Flexibility}"
-                                                      padding="{!v.contentTitleLayoutItemLevel03Padding}"
-                                                      alignmentBump="{!v.contentTitleLayoutItemLevel03AlignmentBump}"
-                                                      >
-                                    <div style="{!v.titleLevel03Alignment == '' ? '' : 'text-align: ' + v.titleLevel03Alignment + ';'}" class="{!'acn-title-level-03' + (v.styleClass == '' ? '' : ' ' + v.styleClass) + (v.listLayoutClass == '' ? '' : ' ' + v.listLayoutClass)}">
-                                        <h3 class="{!'acn-title-level-03' + (v.styleClass == '' ? '' : ' ' + v.styleClass)}">
-                                            {!v.titleLevel03}
-                                        </h3>
-                                    </div>
-                                </lightning:layoutItem>
-                            </lightning:layout>
-                        </div>
-                    </div>
-                </div>
-            </lightning:layoutItem>
-        </aura:if>
-        <lightning:layoutItem 
-                              class="{!( v.styleClass == '' ? '' : ' ' + v.styleClass + '-navigation-list-container-grid-body') + (v.contentBodyLayoutItemClass == '' ? '' : ' ' + v.contentBodyLayoutItemClass)}" 
-                              title="{!v.contentBodyLayoutItemTitle}"
-                              size="{!v.contentBodyLayoutItemSizeArray[0]}" 
-                              largeDeviceSize="{!v.contentBodyLayoutItemSizeArray[1]}"
-                              mediumDeviceSize="{!v.contentBodyLayoutItemSizeArray[2]}" 
-                              smallDeviceSize="{!v.contentBodyLayoutItemSizeArray[3]}" 
-                              flexibility="{!v.contentBodyLayoutItemFlexibility}"
-                              padding="{!v.contentBodyLayoutItemPadding}"
-                              alignmentBump="{!v.contentBodyLayoutItemAlignmentBump}"
-                              >
-            <div class="{!'acn-aura-container' + (v.listLayoutClass == '' ? '' : ' ' + v.listLayoutClass)}" id="{!v.auraId}">
-                <aura:if isTrue="{!v.showCarouselList}">
-                    <div aura:id="carousel" class="{!v.styleClass + ' ' + 'acn-carousel-list'}" style="position: relative;display: inline-block;width: 100%;text-align: center;">
-                        <ui:button aura:id="button" label="&lt;" press="{!c.buttonPreviousPressed}" class="acn-carousel-button acn-carousel-button-previous" />
-                        <div class="{!v.styleClass + ' ' + 'acn-carousel-navigation-items-container'}" style="">
-                            <ul class="acn-group-body-list acn-carousel-group-body-list slds-transition-hide" style="" aura:id="carouselList" transition="slow">
-                                <aura:iteration items="{!v.navigationListItemsPage}" var="navigationListItem">
-                                    <li aura:id="carousel-item-cmp" class="{!navigationListItem.StyleClassName + ' acn-group-body-list-item' + (navigationListItem.IsSelected ? ' acn-navigation-list-item-selected' : '' )}">
-                                        <c:ACN_NavigationItem navigationItem="{!navigationListItem}" 
-                                                              navigationListItemPressed="{!c.handleNavigationListItemPressed}" 
-                                                              fitInContainer="true" 
-                                                              showItemName="{!v.showItemName}" 
-                                                              showItemImage="{!v.showItemImage}" 
-                                                              showItemImageBehind="{!v.showItemImageBehind}" 
-                                                              showItemDescription="{!v.showItemDescription}" 
-                                                              contentPreviewIdentifier="{!v.contentPreviewIdentifier}" 
-                                                              selectedNavigationItemId="{!v.selectedNavigationItemId}" 
-                                                              selectedItemIdentifier="{!v.selectedItemIdentifier}" 
-                                                              inactiveTargetIdentifier="{!v.inactiveTargetIdentifier}" 
-                                                              notifyNavigationToMenu="{!v.notifyNavigationToMenu}" 
-                                                              styleClass="{!(v.gridLayoutItemClass == '' ? '' : ' ' + v.gridLayoutItemClass) + (v.listLayoutClass == '' ? '' : ' ' + v.listLayoutClass) + (v.containerLayoutClass == '' ? '' : ' ' + v.containerLayoutClass) + ' ' + v.styleClass}" 
-                                                              selectedStyleClass="{!v.selectedStyleClass}" 
-                                                              activeStyleClass="{!v.activeStyleClass}" 
-                                                              overrideItemClassName="{!v.overrideItemClassName}" 
-                                                              showScoringStars="{!v.showScoringStars}" 
-                                                              showScoringVotes="{!v.showScoringVotes}" 
-                                                              showScoringLoveIt="{!v.showScoringLoveIt}" 
-                                                              showScoringViews="{!v.showScoringViews}" 
-                                                              useBrandColorForImage="{!v.useBrandColorForImages}" 
-                                                              isNavigationEnabled="{!v.isNavigationEnabled}" 
-                                                              imageElementIndex="{!v.imageElementIndex}" 
-                                                              nameElementIndex="{!v.nameElementIndex}" 
-                                                              descriptionElementIndex="{!v.descriptionElementIndex}" 
-                                                              scoreElementIndex="{!v.scoreElementIndex}" 
-                                                              badgeElementIndex="{!v.badgeElementIndex}" 
-                                                              chartElementIndex="{!v.chartElementIndex}" 
-                                                              layoutClass="{!v.layoutClass}" 
-                                                              layoutTitle="{!v.layoutTitle}" 
-                                                              layoutHorizontalAlign="{!v.layoutHorizontalAlign}" 
-                                                              layoutVerticalAlign="{!v.layoutVerticalAlign}" 
-                                                              layoutMultipleRows="{!v.layoutMultipleRows}" 
-                                                              layoutPullToBoundary="{!v.layoutPullToBoundary}" 
-                                                              firstLayoutItemClass="{!v.firstLayoutItemClass + (v.styleClass == '' ? '' : ' ' + v.styleClass) + (v.gridLayoutItemClass == '' ? '' : ' ' + v.gridLayoutItemClass) + (v.listLayoutClass == '' ? '' : ' ' + v.listLayoutClass) + (v.containerLayoutClass == '' ? '' : ' ' + v.containerLayoutClass)}" 
-                                                              firstLayoutItemTitle="{!v.firstLayoutItemTitle}" 
-                                                              firstLayoutItemSize="{!v.firstLayoutItemSize}" 
-                                                              firstLayoutItemFlexibility="{!v.firstLayoutItemFlexibility}" 
-                                                              firstLayoutItemPadding="{!v.firstLayoutItemPadding}" 
-                                                              firstLayoutItemAlignmentBump="{!v.firstLayoutItemAlignmentBump}" 
-                                                              secondLayoutItemClass="{!v.secondLayoutItemClass + (v.styleClass == '' ? '' : ' ' + v.styleClass) + (v.gridLayoutItemClass == '' ? '' : ' ' + v.gridLayoutItemClass) + (v.listLayoutClass == '' ? '' : ' ' + v.listLayoutClass) + (v.containerLayoutClass == '' ? '' : ' ' + v.containerLayoutClass)}" 
-                                                              secondLayoutItemTitle="{!v.secondLayoutItemTitle}" 
-                                                              secondLayoutItemSize="{!v.secondLayoutItemSize}" 
-                                                              secondLayoutItemFlexibility="{!v.secondLayoutItemFlexibility}" 
-                                                              secondLayoutItemPadding="{!v.secondLayoutItemPadding}" 
-                                                              secondLayoutItemAlignmentBump="{!v.secondLayoutItemAlignmentBump}" 
-                                                              thirdLayoutItemClass="{!v.thirdLayoutItemClass + (v.styleClass == '' ? '' : ' ' + v.styleClass) + (v.gridLayoutItemClass == '' ? '' : ' ' + v.gridLayoutItemClass) + (v.listLayoutClass == '' ? '' : ' ' + v.listLayoutClass) + (v.containerLayoutClass == '' ? '' : ' ' + v.containerLayoutClass)}" 
-                                                              thirdLayoutItemTitle="{!v.thirdLayoutItemTitle}" 
-                                                              thirdLayoutItemSize="{!v.thirdLayoutItemSize}" 
-                                                              thirdLayoutItemFlexibility="{!v.thirdLayoutItemFlexibility}" 
-                                                              thirdLayoutItemPadding="{!v.thirdLayoutItemPadding}" 
-                                                              thirdLayoutItemAlignmentBump="{!v.thirdLayoutItemAlignmentBump}" 
-                                                              />
-                                    </li>
-                                </aura:iteration>
-                            </ul>
-                        </div>
-                        <ui:button aura:id="button" label="&gt;" press="{!c.buttonNextPressed}" class="acn-carousel-button acn-carousel-button-next" />
-                        <aura:if isTrue="{!v.carouselItems.length > 1}">
-                            <div class="carouselIndicatorContainer" aura:id="randomId" style="height: auto; width: 100%; position: absolute; bottom: 0; z-index: 2;">
-                                <aura:iteration items="{!v.navigationListTotalPageArray}" var="currentCarouselPage">
-                                    <ui:button press="{!c.pageSelectorPressed}" class="acn-carousel-page-indicator-button">
-                                        <div aura:id="carouselIndicator" pageNumber="{!currentCarouselPage}" class="{!(v.navigationListSelectedPage == currentCarouselPage ? ' acn-carousel-indicator-active ' : ' acn-carousel-indicator-not-active ' ) + ' acn-carousel-indicator'}" customCardDesign="{!v.customCardDesign}" > <span style="display:none"> carousel Navigation Button</span></div> 
-                                    </ui:button>
-                                </aura:iteration>
-                            </div>
-                        </aura:if>
-                    </div>
-                </aura:if>
-                <aura:if isTrue="{!v.showNavigationList}">
-                    <lightning:layout 
-                                      class="{!( v.styleClass == '' ? '' : ' ' + v.styleClass + '-list-container-grid') + (v.buttonableLayoutClass == '' ? '' : ' ' + v.buttonableLayoutClass) + ' acn-list-layout-container'}" 
-                                      title="{!v.buttonableLayoutTitle}" 
-                                      horizontalAlign="{!v.buttonableLayoutHorizontalAlign}" 
-                                      verticalAlign="{!v.buttonableLayoutVerticalAlign}" 
-                                      multipleRows="{!v.buttonableLayoutMultipleRows}" 
-                                      pullToBoundary="{!v.buttonableLayoutPullToBoundary}" 
-                                      >
-                        <aura:if isTrue="{!v.buttonableShowButtonsFirst}">
-                            <lightning:layoutItem 
-                                                  class="{!'acn-navigation-list-buttons' + (v.styleClass == '' ? '' : ' ' + v.styleClass + '-list-item-buttons-grid') + (v.buttonableLayoutItemButtonsClass == '' ? '' : ' ' + v.buttonableLayoutItemButtonsClass)}"
-                                                  title="{!v.buttonableLayoutItemButtonsTitle}"
-                                                  size="{!v.buttonableLayoutItemButtonsSizeArray[0]}" 
-                                                  largeDeviceSize="{!v.buttonableLayoutItemButtonsSizeArray[1]}"
-                                                  mediumDeviceSize="{!v.buttonableLayoutItemButtonsSizeArray[2]}" 
-                                                  smallDeviceSize="{!v.buttonableLayoutItemButtonsSizeArray[3]}" 
-                                                  flexibility="{!v.buttonableLayoutItemButtonsFlexibility}"
-                                                  padding="{!v.buttonableLayoutItemButtonsPadding}"
-                                                  alignmentBump="{!v.buttonableLayoutItemButtonsAlignmentBump}"
-                                                  >
-                                <div class="acn-navigation-list-pagination-container">
-                                    <div class="acn-navigation-list-pagination-container-infinite-loading">
-                                        <aura:if isTrue="{!v.isInfiniteLoading}">
-                                            <aura:if isTrue="{!v.showLoadMore ? !v.isLastItemPresent ? true : false : false}">
-                                                <lightning:button label="{!$Label.c.ACN_NavigationListLoadMoreCaption}" variant="base" title="{!$Label.c.ACN_NavigationListLoadMoreDescription}" onclick="{!c.loadMoreItems}" />
-                                            </aura:if>
-                                        </aura:if>
-                                    </div>
-                                    <div class="acn-navigation-list-pagination-container-pagination-loading">
-                                        <aura:if isTrue="{!!v.isInfiniteLoading}">
-                                            <aura:if isTrue="{!v.showPreviousPage}">
-                                                <!--
-                                                <lightning:button label="{!$Label.c.ACN_NavigationListPrevPageCaption}" variant="base" title="{!$Label.c.ACN_NavigationListPrevPageDescription}" onclick="{!c.gotoPreviousPage}" disabled="{!v.currentPage==1}" />
-												-->
-                                                <lightning:button iconName="utility:chevronleft" iconPosition="left" label="{!$Label.c.ACN_NavigationListPrevPageCaption}" variant="base" title="{!$Label.c.ACN_NavigationListPrevPageDescription}" onclick="{!c.gotoPreviousPage}" disabled="{!v.currentPage==1}" />
-                                            </aura:if>
-                                            <aura:if isTrue="{!v.showNextPage}">
-                                                <!--
-                                                <lightning:button label="{!$Label.c.ACN_NavigationListNextPageCaption}" variant="base" title="{!$Label.c.ACN_NavigationListNextPageDescription}" onclick="{!c.gotoNextPage}" disabled="{!v.isLastItemPresent}" />
-												-->
-                                                <lightning:button iconName="utility:chevronright" iconPosition="right" label="{!$Label.c.ACN_NavigationListNextPageCaption}" variant="base" title="{!$Label.c.ACN_NavigationListNextPageDescription}" onclick="{!c.gotoNextPage}" disabled="{!v.isLastItemPresent}" />
-                                            </aura:if>
-                                        </aura:if>
-                                    </div>
-                                </div>
-                            </lightning:layoutItem>
-                        </aura:if>
-                        <lightning:layoutItem 
-                                              class="{!'acn-navigation-list-body' + (v.styleClass == '' ? '' : ' ' + v.styleClass + '-list-item-body-grid') + (v.buttonableLayoutItemBodyClass == '' ? '' : ' ' + v.buttonableLayoutItemBodyClass)}"
-                                              title="{!v.buttonableLayoutItemBodyTitle}"
-                                              size="{!v.buttonableLayoutItemBodySizeArray[0]}" 
-                                              largeDeviceSize="{!v.buttonableLayoutItemBodySizeArray[1]}"
-                                              mediumDeviceSize="{!v.buttonableLayoutItemBodySizeArray[2]}" 
-                                              smallDeviceSize="{!v.buttonableLayoutItemBodySizeArray[3]}" 
-                                              flexibility="{!v.buttonableLayoutItemBodyFlexibility}"
-                                              padding="{!v.buttonableLayoutItemBodyPadding}"
-                                              alignmentBump="{!v.buttonableLayoutItemBodyAlignmentBump}"
-                                              >
-                            <aura:if isTrue="{!v.showNavigationListGroups}">
-                                <div class="{!'acn-group-body' + ( v.styleClass == '' ? '' : ' ' + v.styleClass)}">
-                                    <ul class="{!v.styleClass + ' acn-group-list' + (v.showSpinner ? ' acn-component-disabled' : '')}">
-                                        <lightning:layout 
-                                                          class="{!( v.styleClass == '' ? '' : ' ' + v.styleClass + '-groups-container-grid') + (v.groupsGridLayoutClass == '' ? '' : ' ' + v.groupsGridLayoutClass)}" 
-                                                          title="{!v.groupsGridLayoutTitle}" 
-                                                          horizontalAlign="{!v.groupsGridLayoutHorizontalAlign}" 
-                                                          verticalAlign="{!v.groupsGridLayoutVerticalAlign}" 
-                                                          multipleRows="{!v.groupsGridLayoutMultipleRows}" 
-                                                          pullToBoundary="{!v.groupsGridLayoutPullToBoundary}" 
-                                                          >
-                                            <aura:iteration items="{!v.navigationListItemGroups}" var="navigationListItemGroup">
-                                                <lightning:layoutItem 
-                                                                      class="{!v.browserFormFactor + ' ' + 'acn-group-container-grid' + ( v.styleClass == '' ? '' : ' ' + v.styleClass + '-groups-container-grid') + (v.groupsGridLayoutItemClass == '' ? '' : ' ' + v.groupsGridLayoutItemClass)}" 
-                                                                      title="{!v.groupsGridLayoutItemTitle}"
-                                                                      size="{!v.groupsGridLayoutItemSizeArray[0]}" 
-                                                                      largeDeviceSize="{!v.groupsGridLayoutItemSizeArray[1]}"
-                                                                      mediumDeviceSize="{!v.groupsGridLayoutItemSizeArray[2]}" 
-                                                                      smallDeviceSize="{!v.groupsGridLayoutItemSizeArray[3]}" 
-                                                                      flexibility="{!v.groupsGridLayoutItemFlexibility}"
-                                                                      padding="{!v.groupsGridLayoutItemPadding}"
-                                                                      alignmentBump="{!v.groupsGridLayoutItemAlignmentBump}"
-                                                                      >
-                                                    <li class="{!v.styleClass + ' acn-group-list-item'}">
-                                                        <aura:if isTrue="{!v.isGroupCollapsible}">
-                                                            <!--To-Do: Add accordion behavior -->
-                                                        </aura:if>
-                                                        <lightning:layout 
-                                                                          class="{!( v.styleClass == '' ? '' : ' ' + v.styleClass + '-group-container-grid') + (v.groupLayoutClass == '' ? '' : ' ' + v.groupLayoutClass)}" 
-                                                                          title="{!v.groupLayoutTitle}" 
-                                                                          horizontalAlign="{!v.groupLayoutHorizontalAlign}" 
-                                                                          verticalAlign="{!v.groupLayoutVerticalAlign}" 
-                                                                          multipleRows="{!v.groupLayoutMultipleRows}" 
-                                                                          pullToBoundary="{!v.groupLayoutPullToBoundary}" 
-                                                                          >
-                                                            <lightning:layoutItem 
-                                                                                  class="{!'acn-group-grid-element' + (v.styleClass == '' ? '' : ' ' + v.styleClass + '-group-grid-header') + (v.groupLayoutItemHeaderClass == '' ? '' : ' ' + v.groupLayoutItemHeaderClass)}"
-                                                                                  title="{!v.groupLayoutItemHeaderTitle}"
-                                                                                  size="{!(navigationListItemGroup.NavigationItem ? navigationListItemGroup.NavigationItem.ItemGridSizeDefault ? navigationListItemGroup.NavigationItem.ItemGridSizeDefault : v.groupLayoutItemHeaderSizeArray[0] : v.groupLayoutItemHeaderSizeArray[0])}" 
-                                                                                  largeDeviceSize="{!(navigationListItemGroup.NavigationItem ? navigationListItemGroup.NavigationItem.ItemGridSizeDesktop ? navigationListItemGroup.NavigationItem.ItemGridSizeDesktop : v.groupLayoutItemHeaderSizeArray[1] : v.groupLayoutItemHeaderSizeArray[1])}"
-                                                                                  mediumDeviceSize="{!(navigationListItemGroup.NavigationItem ? navigationListItemGroup.NavigationItem.ItemGridSizeTablet ? navigationListItemGroup.NavigationItem.ItemGridSizeTablet : v.groupLayoutItemHeaderSizeArray[2] : v.groupLayoutItemHeaderSizeArray[2])}" 
-                                                                                  smallDeviceSize="{!(navigationListItemGroup.NavigationItem ? navigationListItemGroup.NavigationItem.ItemGridSizePhone ? navigationListItemGroup.NavigationItem.ItemGridSizePhone : v.groupLayoutItemHeaderSizeArray[3] : v.groupLayoutItemHeaderSizeArray[3])}" 
-                                                                                  flexibility="{!v.groupLayoutItemHeaderFlexibility}"
-                                                                                  padding="{!v.groupLayoutItemHeaderPadding}"
-                                                                                  alignmentBump="{!v.groupLayoutItemHeaderAlignmentBump}"
-                                                                                  >
-                                                                <div class="{!'acn-group-header' + ( v.styleClass == '' ? '' : ' ' + v.styleClass + '-group-header') + (v.groupLayoutClass == '' ? '' : ' ' + v.groupLayoutClass)}">
-                                                                    <aura:if isTrue="{!navigationListItemGroup.NavigationItem ? (navigationListItemGroup.NavigationItem.Description != '' || navigationListItemGroup.NavigationItem.Name != '') ? true : false : false}">
-                                                                        <c:ACN_NavigationItem navigationItem="{!navigationListItemGroup.NavigationItem}" 
-                                                                                              navigationListItemPressed="{!c.handleNavigationListItemPressed}" 
-                                                                                              showNavigationList="{!v.showNavigationList}" 
-                                                                                              customCardDesign="{!v.customCardDesign}" 
-                                                                                              showItemName="{!v.showItemName}" 
-                                                                                              showItemImage="{!v.showItemImage}" 
-                                                                                              showItemImageBehind="{!v.showItemImageBehind}" 
-                                                                                              showItemDescription="{!v.showItemDescription}" 
-                                                                                              contentPreviewIdentifier="{!v.contentPreviewIdentifier}" 
-                                                                                              selectedNavigationItemId="{!v.selectedNavigationItemId}" 
-                                                                                              selectedItemIdentifier="{!v.selectedItemIdentifier}" 
-                                                                                              inactiveTargetIdentifier="{!v.inactiveTargetIdentifier}" 
-                                                                                              notifyNavigationToMenu="{!v.notifyNavigationToMenu}" 
-                                                                                              styleClass="{!v.styleClass}" 
-                                                                                              overrideItemClassName="{!v.overrideItemClassName}" 
-                                                                                              showScoringStars="{!v.showScoringStars}" 
-                                                                                              showScoringVotes="{!v.showScoringVotes}" 
-                                                                                              showScoringLoveIt="{!v.showScoringLoveIt}" 
-                                                                                              showScoringViews="{!v.showScoringViews}"
-                                                                                              useBrandColorForImage="{!v.useBrandColorForImages}"
-                                                                                              isNavigationEnabled="{!v.isNavigationEnabled}" 
-                                                                                              imageElementIndex="{!v.alternateImageElementIndex}" 
-                                                                                              nameElementIndex="{!v.alternateNameElementIndex}" 
-                                                                                              descriptionElementIndex="{!v.alternateDescriptionElementIndex}" 
-                                                                                              scoreElementIndex="{!v.alternateScoreElementIndex}" 
-                                                                                              badgeElementIndex="{!v.alternateBadgeElementIndex}" 
-                                                                                              chartElementIndex="{!v.alternateChartElementIndex}" 
-                                                                                              layoutClass="{!v.groupHeaderLayoutClass}" 
-                                                                                              layoutTitle="{!v.groupHeaderLayoutTitle}" 
-                                                                                              layoutHorizontalAlign="{!v.groupHeaderLayoutHorizontalAlign}" 
-                                                                                              layoutVerticalAlign="{!v.groupHeaderLayoutVerticalAlign}" 
-                                                                                              layoutMultipleRows="{!v.groupHeaderLayoutMultipleRows}" 
-                                                                                              layoutPullToBoundary="{!v.groupHeaderLayoutPullToBoundary}" 
-                                                                                              firstLayoutItemClass="{!v.groupHeaderLayoutFirstItemClass}" 
-                                                                                              firstLayoutItemTitle="{!v.groupHeaderLayoutFirstItemTitle}" 
-                                                                                              firstLayoutItemSize="{!v.groupHeaderLayoutFirstItemSize}" 
-                                                                                              firstLayoutItemFlexibility="{!v.groupHeaderLayoutFirstItemFlexibility}" 
-                                                                                              firstLayoutItemPadding="{!v.groupHeaderLayoutFirstItemPadding}" 
-                                                                                              firstLayoutItemAlignmentBump="{!v.groupHeaderLayoutFirstItemAlignmentBump}" 
-                                                                                              secondLayoutItemClass="{!v.groupHeaderLayoutSecondItemClass}" 
-                                                                                              secondLayoutItemTitle="{!v.groupHeaderLayoutSecondItemTitle}" 
-                                                                                              secondLayoutItemSize="{!v.groupHeaderLayoutSecondItemSize}" 
-                                                                                              secondLayoutItemFlexibility="{!v.groupHeaderLayoutSecondItemFlexibility}" 
-                                                                                              secondLayoutItemPadding="{!v.groupHeaderLayoutSecondItemPadding}" 
-                                                                                              secondLayoutItemAlignmentBump="{!v.groupHeaderLayoutSecondItemAlignmentBump}" 
-                                                                                              thirdLayoutItemClass="{!v.groupHeaderLayoutThirdItemClass}" 
-                                                                                              thirdLayoutItemTitle="{!v.groupHeaderLayoutThirdItemTitle}" 
-                                                                                              thirdLayoutItemSize="{!v.groupHeaderLayoutThirdItemSize}" 
-                                                                                              thirdLayoutItemFlexibility="{!v.groupHeaderLayoutThirdItemFlexibility}" 
-                                                                                              thirdLayoutItemPadding="{!v.groupHeaderLayoutThirdItemPadding}" 
-                                                                                              thirdLayoutItemAlignmentBump="{!v.groupHeaderLayoutThirdItemAlignmentBump}" 
-                                                                                              />
-                                                                        
-                                                                        <aura:set attribute="else">
-                                                                            <!--
-                                                              To-do: 
-                                                                Use the full ACN_NavigationItem passing navigationListItemGroup.NavigationItem 
-                                                                if there is a target to navigate to. Might need to add group grid design properties
-                                                             -->
-                                                                            <h3 class="{!'acn-group-header-title' + ( v.styleClass == '' ? '' : ' ' + v.styleClass + '-group-header-title') + (v.groupLayoutClass == '' ? '' : ' ' + v.groupLayoutClass)}">
-                                                                                <ui:outputText value="{!navigationListItemGroup.Name}" class="{!'acn-group-name' + ( v.styleClass == '' ? '' : ' ' + v.styleClass + '-group-name') + (v.groupLayoutClass == '' ? '' : ' ' + v.groupLayoutClass)}" />
-                                                                            </h3>
-                                                                            <!--
-                                                              Preview feature: 
-                                                                Use HTML in navigationListItemGroup.NavigationItem.Description
-                                                             -->
-                                                                        </aura:set>
-                                                                    </aura:if>
-                                                                </div>
-                                                            </lightning:layoutItem>
-                                                            <lightning:layoutItem 
-                                                                                  class="{!'acn-group-grid-element' + (v.styleClass == '' ? '' : ' ' + v.styleClass + '-group-grid-body') + (v.groupLayoutItemBodyClass == '' ? '' : ' ' + v.groupLayoutItemBodyClass)}"
-                                                                                  title="{!v.groupLayoutItemBodyTitle}"
-                                                                                  size="{!v.groupLayoutItemBodySizeArray[0]}" 
-                                                                                  largeDeviceSize="{!v.groupLayoutItemBodySizeArray[1]}"
-                                                                                  mediumDeviceSize="{!v.groupLayoutItemBodySizeArray[2]}" 
-                                                                                  smallDeviceSize="{!v.groupLayoutItemBodySizeArray[3]}" 
-                                                                                  flexibility="{!v.groupLayoutItemBodyFlexibility}"
-                                                                                  padding="{!v.groupLayoutItemBodyPadding}"
-                                                                                  alignmentBump="{!v.groupLayoutItemBodyAlignmentBump}"
-                                                                                  >
-                                                                <div class="{!'acn-group-body' + ( v.styleClass == '' ? '' : ' ' + v.styleClass + '-group-body') + (v.groupLayoutClass == '' ? '' : ' ' + v.groupLayoutClass)}">
-                                                                    <aura:if isTrue="{!
-                                                                                     v.scoreElementIndex != 'hidden' 
-                                                                                     || v.imageElementIndex != 'hidden' 
-                                                                                     || v.nameElementIndex != 'hidden' 
-                                                                                     || v.descriptionElementIndex != 'hidden' 
-                                                                                     || v.badgeElementIndex != 'hidden' 
-                                                                                     }"
-                                                                             >
-                                                                        <lightning:layout 
-                                                                                          class="{!( v.styleClass == '' ? '' : ' ' + v.styleClass + '-item-container-grid') + (v.listLayoutClass == '' ? '' : ' ' + v.listLayoutClass)}" 
-                                                                                          title="{!v.layoutTitle}" 
-                                                                                          horizontalAlign="{!v.layoutHorizontalAlign}" 
-                                                                                          verticalAlign="{!v.layoutVerticalAlign}" 
-                                                                                          multipleRows="{!v.layoutMultipleRows}" 
-                                                                                          pullToBoundary="{!v.layoutPullToBoundary}" 
-                                                                                          >
-                                                                            <aura:iteration items="{!navigationListItemGroup.groupItems.Items}" var="navigationListItem">
-                                                                                <lightning:layoutItem 
-                                                                                                      class="{!'acn-navigation-list-grid-element' + (v.styleClass == '' ? '' : ' ' + v.styleClass + '-list-item-grid') + (v.gridLayoutItemClass == '' ? '' : ' ' + v.gridLayoutItemClass)}"
-                                                                                                      title="{!v.gridLayoutItemTitle}"
-                                                                                                      size="{!(navigationListItem ? navigationListItem.ItemGridSizeDefault ? navigationListItem.ItemGridSizeDefault : v.gridLayoutItemSizeArray[0] : v.gridLayoutItemSizeArray[0])}" 
-                                                                                                      largeDeviceSize="{!(navigationListItem ? navigationListItem.ItemGridSizeDesktop ? navigationListItem.ItemGridSizeDesktop : v.gridLayoutItemSizeArray[1] : v.gridLayoutItemSizeArray[1])}"
-                                                                                                      mediumDeviceSize="{!(navigationListItem ? navigationListItem.ItemGridSizeTablet ? navigationListItem.ItemGridSizeTablet : v.gridLayoutItemSizeArray[2] : v.gridLayoutItemSizeArray[2])}" 
-                                                                                                      smallDeviceSize="{!(navigationListItem ? navigationListItem.ItemGridSizePhone ? navigationListItem.ItemGridSizePhone : v.gridLayoutItemSizeArray[3] : v.gridLayoutItemSizeArray[3])}" 
-                                                                                                      flexibility="{!v.gridLayoutItemFlexibility}"
-                                                                                                      padding="{!v.gridLayoutItemPadding}"
-                                                                                                      alignmentBump="{!v.gridLayoutItemAlignmentBump}"
-                                                                                                      >
-                                                                                    <c:ACN_NavigationItem navigationItem="{!navigationListItem}" 
-                                                                                                          navigationListItemPressed="{!c.handleNavigationListItemPressed}" 
-                                                                                                          showNavigationList="{!v.showNavigationList}" 
-                                                                                                          customCardDesign="{!v.customCardDesign}" 
-                                                                                                          showItemName="{!v.showItemName}" 
-                                                                                                          showItemImage="{!v.showItemImage}" 
-                                                                                                          showItemImageBehind="{!v.showItemImageBehind}" 
-                                                                                                          showItemDescription="{!v.showItemDescription}" 
-                                                                                                          contentPreviewIdentifier="{!v.contentPreviewIdentifier}" 
-                                                                                                          selectedNavigationItemId="{!v.selectedNavigationItemId}" 
-                                                                                                          selectedItemIdentifier="{!v.selectedItemIdentifier}" 
-                                                                                                          inactiveTargetIdentifier="{!v.inactiveTargetIdentifier}" 
-                                                                                                          notifyNavigationToMenu="{!v.notifyNavigationToMenu}" 
-                                                                                                          styleClass="{!v.styleClass}" 
-                                                                                                          selectedStyleClass="{!v.selectedStyleClass}" 
-                                                                                                          activeStyleClass="{!v.activeStyleClass}" 
-                                                                                                          overrideItemClassName="{!v.overrideItemClassName}" 
-                                                                                                          showScoringStars="{!v.showScoringStars}" 
-                                                                                                          showScoringVotes="{!v.showScoringVotes}" 
-                                                                                                          showScoringLoveIt="{!v.showScoringLoveIt}" 
-                                                                                                          showScoringViews="{!v.showScoringViews}"
-                                                                                                          useBrandColorForImage="{!v.useBrandColorForImages}"
-                                                                                                          isNavigationEnabled="{!v.isNavigationEnabled}" 
-                                                                                                          imageElementIndex="{!v.imageElementIndex}" 
-                                                                                                          nameElementIndex="{!v.nameElementIndex}" 
-                                                                                                          descriptionElementIndex="{!v.descriptionElementIndex}" 
-                                                                                                          scoreElementIndex="{!v.scoreElementIndex}" 
-                                                                                                          badgeElementIndex="{!v.badgeElementIndex}" 
-                                                                                                          chartElementIndex="{!v.chartElementIndex}" 
-                                                                                                          layoutClass="{!v.layoutClass}" 
-                                                                                                          layoutTitle="{!v.layoutTitle}" 
-                                                                                                          layoutHorizontalAlign="{!v.layoutHorizontalAlign}" 
-                                                                                                          layoutVerticalAlign="{!v.layoutVerticalAlign}" 
-                                                                                                          layoutMultipleRows="{!v.layoutMultipleRows}" 
-                                                                                                          layoutPullToBoundary="{!v.layoutPullToBoundary}" 
-                                                                                                          firstLayoutItemClass="{!v.firstLayoutItemClass}" 
-                                                                                                          firstLayoutItemTitle="{!v.firstLayoutItemTitle}" 
-                                                                                                          firstLayoutItemSize="{!v.firstLayoutItemSize}" 
-                                                                                                          firstLayoutItemFlexibility="{!v.firstLayoutItemFlexibility}" 
-                                                                                                          firstLayoutItemPadding="{!v.firstLayoutItemPadding}" 
-                                                                                                          firstLayoutItemAlignmentBump="{!v.firstLayoutItemAlignmentBump}" 
-                                                                                                          secondLayoutItemClass="{!v.secondLayoutItemClass}" 
-                                                                                                          secondLayoutItemTitle="{!v.secondLayoutItemTitle}" 
-                                                                                                          secondLayoutItemSize="{!v.secondLayoutItemSize}" 
-                                                                                                          secondLayoutItemFlexibility="{!v.secondLayoutItemFlexibility}" 
-                                                                                                          secondLayoutItemPadding="{!v.secondLayoutItemPadding}" 
-                                                                                                          secondLayoutItemAlignmentBump="{!v.secondLayoutItemAlignmentBump}" 
-                                                                                                          thirdLayoutItemClass="{!v.thirdLayoutItemClass}" 
-                                                                                                          thirdLayoutItemTitle="{!v.thirdLayoutItemTitle}" 
-                                                                                                          thirdLayoutItemSize="{!v.thirdLayoutItemSize}" 
-                                                                                                          thirdLayoutItemFlexibility="{!v.thirdLayoutItemFlexibility}" 
-                                                                                                          thirdLayoutItemPadding="{!v.thirdLayoutItemPadding}" 
-                                                                                                          thirdLayoutItemAlignmentBump="{!v.thirdLayoutItemAlignmentBump}" 
-                                                                                                          />
-                                                                                    
-                                                                                </lightning:layoutItem>
-                                                                            </aura:iteration>
-                                                                        </lightning:layout>
-                                                                        <aura:set attribute="else">
-                                                                            <ul class="{!v.styleClass + ' acn-group-body-list'}">
-                                                                                <aura:iteration items="{!navigationListItemGroup.groupItems.Items}" var="navigationListItem">
-                                                                                    <li class="{!(v.overrideItemClassName ? v.styleClass + ' acn-group-body-list-item' : navigationListItem.StyleClassName + ' acn-group-body-list-item') + (navigationListItem.IsSelected ? ' acn-navigation-list-item-selected' : '')}" style="{!v.columnWidth}">
-                                                                                        <c:ACN_NavigationItem navigationItem="{!navigationListItem}" 
-                                                                                                              navigationListItemPressed="{!c.handleNavigationListItemPressed}" 
-                                                                                                              showNavigationList="{!v.showNavigationList}" 
-                                                                                                              customCardDesign="{!v.customCardDesign}" 
-                                                                                                              showItemName="{!v.showItemName}" 
-                                                                                                              showItemImage="{!v.showItemImage}" 
-                                                                                                              showItemImageBehind="{!v.showItemImageBehind}" 
-                                                                                                              showItemDescription="{!v.showItemDescription}" 
-                                                                                                              contentPreviewIdentifier="{!v.contentPreviewIdentifier}" 
-                                                                                                              selectedNavigationItemId="{!v.selectedNavigationItemId}" 
-                                                                                                              selectedItemIdentifier="{!v.selectedItemIdentifier}" 
-                                                                                                              inactiveTargetIdentifier="{!v.inactiveTargetIdentifier}" 
-                                                                                                              notifyNavigationToMenu="{!v.notifyNavigationToMenu}" 
-                                                                                                              styleClass="{!v.styleClass}" 
-                                                                                                              overrideItemClassName="{!v.overrideItemClassName}" 
-                                                                                                              showScoringStars="{!v.showScoringStars}" 
-                                                                                                              showScoringVotes="{!v.showScoringVotes}" 
-                                                                                                              showScoringLoveIt="{!v.showScoringLoveIt}" 
-                                                                                                              showScoringViews="{!v.showScoringViews}"
-                                                                                                              useBrandColorForImage="{!v.useBrandColorForImages}"
-                                                                                                              isNavigationEnabled="{!v.isNavigationEnabled}" 
-                                                                                                              imageElementIndex="{!v.imageElementIndex}" 
-                                                                                                              nameElementIndex="{!v.nameElementIndex}" 
-                                                                                                              descriptionElementIndex="{!v.descriptionElementIndex}" 
-                                                                                                              scoreElementIndex="{!v.scoreElementIndex}" 
-                                                                                                              badgeElementIndex="{!v.badgeElementIndex}" 
-                                                                                                              chartElementIndex="{!v.chartElementIndex}" 
-                                                                                                              layoutClass="{!v.layoutClass}" 
-                                                                                                              layoutTitle="{!v.layoutTitle}" 
-                                                                                                              layoutHorizontalAlign="{!v.layoutHorizontalAlign}" 
-                                                                                                              layoutVerticalAlign="{!v.layoutVerticalAlign}" 
-                                                                                                              layoutMultipleRows="{!v.layoutMultipleRows}" 
-                                                                                                              layoutPullToBoundary="{!v.layoutPullToBoundary}" 
-                                                                                                              firstLayoutItemClass="{!v.firstLayoutItemClass}" 
-                                                                                                              firstLayoutItemTitle="{!v.firstLayoutItemTitle}" 
-                                                                                                              firstLayoutItemSize="{!v.firstLayoutItemSize}" 
-                                                                                                              firstLayoutItemFlexibility="{!v.firstLayoutItemFlexibility}" 
-                                                                                                              firstLayoutItemPadding="{!v.firstLayoutItemPadding}" 
-                                                                                                              firstLayoutItemAlignmentBump="{!v.firstLayoutItemAlignmentBump}" 
-                                                                                                              secondLayoutItemClass="{!v.secondLayoutItemClass}" 
-                                                                                                              secondLayoutItemTitle="{!v.secondLayoutItemTitle}" 
-                                                                                                              secondLayoutItemSize="{!v.secondLayoutItemSize}" 
-                                                                                                              secondLayoutItemFlexibility="{!v.secondLayoutItemFlexibility}" 
-                                                                                                              secondLayoutItemPadding="{!v.secondLayoutItemPadding}" 
-                                                                                                              secondLayoutItemAlignmentBump="{!v.secondLayoutItemAlignmentBump}" 
-                                                                                                              thirdLayoutItemClass="{!v.thirdLayoutItemClass}" 
-                                                                                                              thirdLayoutItemTitle="{!v.thirdLayoutItemTitle}" 
-                                                                                                              thirdLayoutItemSize="{!v.thirdLayoutItemSize}" 
-                                                                                                              thirdLayoutItemFlexibility="{!v.thirdLayoutItemFlexibility}" 
-                                                                                                              thirdLayoutItemPadding="{!v.thirdLayoutItemPadding}" 
-                                                                                                              thirdLayoutItemAlignmentBump="{!v.thirdLayoutItemAlignmentBump}" 
-                                                                                                              />
-                                                                                    </li>
-                                                                                </aura:iteration>
-                                                                            </ul>
-                                                                        </aura:set>
-                                                                    </aura:if>
-                                                                </div>
-                                                            </lightning:layoutItem>
-                                                            <lightning:layoutItem 
-                                                                                  class="{!'acn-group-grid-element' + (v.styleClass == '' ? '' : ' ' + v.styleClass + '-group-grid-footer') + (v.groupLayoutItemFooterClass == '' ? '' : ' ' + v.groupLayoutItemFooterClass)}"
-                                                                                  title="{!v.groupLayoutItemFooterTitle}"
-                                                                                  size="{!(navigationListItemGroup.Footer ? navigationListItemGroup.Footer.NavigationItem ? navigationListItemGroup.NavigationItem.ItemGridSizeDefault ? navigationListItemGroup.NavigationItem.ItemGridSizeDefault : v.groupLayoutItemFooterSizeArray[0] : v.groupLayoutItemFooterSizeArray[0] : v.groupLayoutItemFooterSizeArray[0])}" 
-                                                                                  largeDeviceSize="{!(navigationListItemGroup.Footer ? navigationListItemGroup.Footer.NavigationItem ? navigationListItemGroup.NavigationItem.ItemGridSizeDesktop ? navigationListItemGroup.NavigationItem.ItemGridSizeDesktop : v.groupLayoutItemFooterSizeArray[1] : v.groupLayoutItemFooterSizeArray[1] : v.groupLayoutItemFooterSizeArray[1])}"
-                                                                                  mediumDeviceSize="{!(navigationListItemGroup.Footer ? navigationListItemGroup.Footer.NavigationItem ? navigationListItemGroup.NavigationItem.ItemGridSizeTablet ? navigationListItemGroup.NavigationItem.ItemGridSizeTablet : v.groupLayoutItemFooterSizeArray[2] : v.groupLayoutItemFooterSizeArray[2] : v.groupLayoutItemFooterSizeArray[2])}" 
-                                                                                  smallDeviceSize="{!(navigationListItemGroup.Footer ? navigationListItemGroup.Footer.NavigationItem ? navigationListItemGroup.NavigationItem.ItemGridSizePhone ? navigationListItemGroup.NavigationItem.ItemGridSizePhone : v.groupLayoutItemFooterSizeArray[3] : v.groupLayoutItemFooterSizeArray[3] : v.groupLayoutItemFooterSizeArray[3])}" 
-                                                                                  flexibility="{!v.groupLayoutItemFooterFlexibility}"
-                                                                                  padding="{!v.groupLayoutItemFooterPadding}"
-                                                                                  alignmentBump="{!v.groupLayoutItemFooterAlignmentBump}"
-                                                                                  >
-                                                                <div class="{!'acn-group-footer' + ( v.styleClass == '' ? '' : ' ' + v.styleClass + '-group-footer') + (v.groupLayoutClass == '' ? '' : ' ' + v.groupLayoutClass)}">
-                                                                    <aura:if isTrue="{!navigationListItemGroup.Footer ? navigationListItemGroup.Footer.NavigationItem ? (navigationListItemGroup.Footer.NavigationItem.Description != '' || navigationListItemGroup.Footer.NavigationItem.Name != '') ? true : false : false : false}">
-                                                                        <c:ACN_NavigationItem navigationItem="{!navigationListItemGroup.Footer.NavigationItem}" 
-                                                                                              navigationListItemPressed="{!c.handleNavigationListItemPressed}" 
-                                                                                              showNavigationList="{!v.showNavigationList}" 
-                                                                                              customCardDesign="{!v.customCardDesign}" 
-                                                                                              showItemName="{!v.showItemName}" 
-                                                                                              showItemImage="{!v.showItemImage}" 
-                                                                                              showItemImageBehind="{!v.showItemImageBehind}" 
-                                                                                              showItemDescription="{!v.showItemDescription}" 
-                                                                                              contentPreviewIdentifier="{!v.contentPreviewIdentifier}" 
-                                                                                              selectedNavigationItemId="{!v.selectedNavigationItemId}" 
-                                                                                              selectedItemIdentifier="{!v.selectedItemIdentifier}" 
-                                                                                              inactiveTargetIdentifier="{!v.inactiveTargetIdentifier}" 
-                                                                                              notifyNavigationToMenu="{!v.notifyNavigationToMenu}" 
-                                                                                              styleClass="{!v.styleClass}" 
-                                                                                              overrideItemClassName="{!v.overrideItemClassName}" 
-                                                                                              showScoringStars="{!v.showScoringStars}" 
-                                                                                              showScoringVotes="{!v.showScoringVotes}" 
-                                                                                              showScoringLoveIt="{!v.showScoringLoveIt}" 
-                                                                                              showScoringViews="{!v.showScoringViews}"
-                                                                                              useBrandColorForImage="{!v.useBrandColorForImages}"
-                                                                                              isNavigationEnabled="{!v.isNavigationEnabled}" 
-                                                                                              imageElementIndex="{!v.alternateImageElementIndex}" 
-                                                                                              nameElementIndex="{!v.alternateNameElementIndex}" 
-                                                                                              descriptionElementIndex="{!v.alternateDescriptionElementIndex}" 
-                                                                                              scoreElementIndex="{!v.alternateScoreElementIndex}" 
-                                                                                              badgeElementIndex="{!v.alternateBadgeElementIndex}" 
-                                                                                              chartElementIndex="{!v.alternateChartElementIndex}" 
-                                                                                              layoutClass="{!v.groupFooterLayoutClass}" 
-                                                                                              layoutTitle="{!v.groupFooterLayoutTitle}" 
-                                                                                              layoutHorizontalAlign="{!v.groupFooterLayoutHorizontalAlign}" 
-                                                                                              layoutVerticalAlign="{!v.groupFooterLayoutVerticalAlign}" 
-                                                                                              layoutMultipleRows="{!v.groupFooterLayoutMultipleRows}" 
-                                                                                              layoutPullToBoundary="{!v.groupFooterLayoutPullToBoundary}" 
-                                                                                              firstLayoutItemClass="{!v.groupFooterLayoutFirstItemClass}" 
-                                                                                              firstLayoutItemTitle="{!v.groupFooterLayoutFirstItemTitle}" 
-                                                                                              firstLayoutItemSize="{!v.groupFooterLayoutFirstItemSize}" 
-                                                                                              firstLayoutItemFlexibility="{!v.groupFooterLayoutFirstItemFlexibility}" 
-                                                                                              firstLayoutItemPadding="{!v.groupFooterLayoutFirstItemPadding}" 
-                                                                                              firstLayoutItemAlignmentBump="{!v.groupFooterLayoutFirstItemAlignmentBump}" 
-                                                                                              secondLayoutItemClass="{!v.groupFooterLayoutSecondItemClass}" 
-                                                                                              secondLayoutItemTitle="{!v.groupFooterLayoutSecondItemTitle}" 
-                                                                                              secondLayoutItemSize="{!v.groupFooterLayoutSecondItemSize}" 
-                                                                                              secondLayoutItemFlexibility="{!v.groupFooterLayoutSecondItemFlexibility}" 
-                                                                                              secondLayoutItemPadding="{!v.groupFooterLayoutSecondItemPadding}" 
-                                                                                              secondLayoutItemAlignmentBump="{!v.groupFooterLayoutSecondItemAlignmentBump}" 
-                                                                                              thirdLayoutItemClass="{!v.groupFooterLayoutThirdItemClass}" 
-                                                                                              thirdLayoutItemTitle="{!v.groupFooterLayoutThirdItemTitle}" 
-                                                                                              thirdLayoutItemSize="{!v.groupFooterLayoutThirdItemSize}" 
-                                                                                              thirdLayoutItemFlexibility="{!v.groupFooterLayoutThirdItemFlexibility}" 
-                                                                                              thirdLayoutItemPadding="{!v.groupFooterLayoutThirdItemPadding}" 
-                                                                                              thirdLayoutItemAlignmentBump="{!v.groupFooterLayoutThirdItemAlignmentBump}" 
-                                                                                              />
-                                                                        
-                                                                        <aura:set attribute="else">
-                                                                            <!--
-                                                              To-do: 
-                                                                Use the full ACN_NavigationItem passing navigationListItemGroup.NavigationItem 
-                                                                if there is a target to navigate to. Might need to add group grid design properties
-                                                             -->
-                                                                            <h3 class="{!'acn-group-footer-title' + ( v.styleClass == '' ? '' : ' ' + v.styleClass + '-group-footer-title') + (v.groupLayoutClass == '' ? '' : ' ' + v.groupLayoutClass)}">
-                                                                                <ui:outputText value="{!navigationListItemGroup.Footer.Name}" class="{!'acn-group-name' + ( v.styleClass == '' ? '' : ' ' + v.styleClass + '-group-name') + (v.groupLayoutClass == '' ? '' : ' ' + v.groupLayoutClass)}" />
-                                                                            </h3>
-                                                                            <!--
-                                                              Preview feature: 
-                                                                Use HTML in navigationListItemGroup.NavigationItem.Description
-                                                             -->
-                                                                        </aura:set>
-                                                                    </aura:if>
-                                                                </div>
-                                                            </lightning:layoutItem>
-                                                        </lightning:layout>
-                                                    </li>
-                                                </lightning:layoutItem>
-                                            </aura:iteration>
-                                        </lightning:layout>
-                                    </ul>
-                                    <div class="acn-spinner-inner-container">
-                                        <c:ACN_Spinner showSpinner="{!v.showSpinner}" loadingMessageText="{!v.loadingMessageText}" />
-                                    </div>
-                                </div>
-                            </aura:if>
-                            <aura:if isTrue="{!!v.showNavigationListGroups}">
-                                <div class="{!'acn-group-body' + ( v.styleClass == '' ? '' : ' ' + v.styleClass)}">
-                                    <aura:if isTrue="{!
-                                                     v.scoreElementIndex != 'hidden' 
-                                                     || v.imageElementIndex != 'hidden' 
-                                                     || v.nameElementIndex != 'hidden' 
-                                                     || v.descriptionElementIndex != 'hidden' 
-                                                     || v.badgeElementIndex != 'hidden' 
-                                                     }"
-                                             >
-                                        
-                                        <lightning:layout 
-                                                          class="{!( v.styleClass == '' ? '' : ' ' + v.styleClass + '-item-container-grid') + (v.listLayoutClass == '' ? '' : ' ' + v.listLayoutClass) + ' acn-list-item-layout-container'}" 
-                                                          title="{!v.layoutTitle}" 
-                                                          horizontalAlign="{!v.layoutHorizontalAlign}" 
-                                                          verticalAlign="{!v.layoutVerticalAlign}" 
-                                                          multipleRows="{!v.layoutMultipleRows}" 
-                                                          pullToBoundary="{!v.layoutPullToBoundary}" 
-                                                          >
-                                            <aura:iteration items="{!v.navigationListItems}" var="navigationListItem">
-                                                <lightning:layoutItem 
-                                                                      class="{!'acn-navigation-list-grid-element' + (v.styleClass == '' ? '' : ' ' + v.styleClass + '-list-item-grid') + (v.gridLayoutItemClass == '' ? '' : ' ' + v.gridLayoutItemClass)}"
-                                                                      title="{!v.gridLayoutItemTitle}"
-                                                                      size="{!(navigationListItem ? navigationListItem.ItemGridSizeDefault ? navigationListItem.ItemGridSizeDefault : v.gridLayoutItemSizeArray[0] : v.gridLayoutItemSizeArray[0])}" 
-                                                                      largeDeviceSize="{!(navigationListItem ? navigationListItem.ItemGridSizeDesktop ? navigationListItem.ItemGridSizeDesktop : v.gridLayoutItemSizeArray[1] : v.gridLayoutItemSizeArray[1])}"
-                                                                      mediumDeviceSize="{!(navigationListItem ? navigationListItem.ItemGridSizeTablet ? navigationListItem.ItemGridSizeTablet : v.gridLayoutItemSizeArray[2] : v.gridLayoutItemSizeArray[2])}" 
-                                                                      smallDeviceSize="{!(navigationListItem ? navigationListItem.ItemGridSizePhone ? navigationListItem.ItemGridSizePhone : v.gridLayoutItemSizeArray[3] : v.gridLayoutItemSizeArray[3])}" 
-                                                                      flexibility="{!v.gridLayoutItemFlexibility}"
-                                                                      padding="{!v.gridLayoutItemPadding}"
-                                                                      alignmentBump="{!v.gridLayoutItemAlignmentBump}"
-                                                                      >
-                                                    <c:ACN_NavigationItem navigationItem="{!navigationListItem}" 
-                                                                          navigationListItemPressed="{!c.handleNavigationListItemPressed}" 
-                                                                          showNavigationList="{!v.showNavigationList}" 
-                                                                          customCardDesign="{!v.customCardDesign}" 
-                                                                          showItemName="{!v.showItemName}" 
-                                                                          showItemImage="{!v.showItemImage}" 
-                                                                          showItemImageBehind="{!v.showItemImageBehind}" 
-                                                                          showItemDescription="{!v.showItemDescription}" 
-                                                                          contentPreviewIdentifier="{!v.contentPreviewIdentifier}" 
-                                                                          selectedNavigationItemId="{!v.selectedNavigationItemId}" 
-                                                                          selectedItemIdentifier="{!v.selectedItemIdentifier}" 
-                                                                          inactiveTargetIdentifier="{!v.inactiveTargetIdentifier}" 
-                                                                          notifyNavigationToMenu="{!v.notifyNavigationToMenu}" 
-                                                                          styleClass="{!v.styleClass}" 
-                                                                          selectedStyleClass="{!v.selectedStyleClass}" 
-                                                                          activeStyleClass="{!v.activeStyleClass}" 
-                                                                          overrideItemClassName="{!v.overrideItemClassName}" 
-                                                                          showScoringStars="{!v.showScoringStars}" 
-                                                                          showScoringVotes="{!v.showScoringVotes}" 
-                                                                          showScoringLoveIt="{!v.showScoringLoveIt}" 
-                                                                          showScoringViews="{!v.showScoringViews}"
-                                                                          useBrandColorForImage="{!v.useBrandColorForImages}"
-                                                                          isNavigationEnabled="{!v.isNavigationEnabled}" 
-                                                                          imageElementIndex="{!v.imageElementIndex}" 
-                                                                          nameElementIndex="{!v.nameElementIndex}" 
-                                                                          descriptionElementIndex="{!v.descriptionElementIndex}" 
-                                                                          scoreElementIndex="{!v.scoreElementIndex}" 
-                                                                          badgeElementIndex="{!v.badgeElementIndex}" 
-                                                                          chartElementIndex="{!v.chartElementIndex}" 
-                                                                          layoutClass="{!v.layoutClass}" 
-                                                                          layoutTitle="{!v.layoutTitle}" 
-                                                                          layoutHorizontalAlign="{!v.layoutHorizontalAlign}" 
-                                                                          layoutVerticalAlign="{!v.layoutVerticalAlign}" 
-                                                                          layoutMultipleRows="{!v.layoutMultipleRows}" 
-                                                                          layoutPullToBoundary="{!v.layoutPullToBoundary}" 
-                                                                          firstLayoutItemClass="{!v.firstLayoutItemClass}" 
-                                                                          firstLayoutItemTitle="{!v.firstLayoutItemTitle}" 
-                                                                          firstLayoutItemSize="{!v.firstLayoutItemSize}" 
-                                                                          firstLayoutItemFlexibility="{!v.firstLayoutItemFlexibility}" 
-                                                                          firstLayoutItemPadding="{!v.firstLayoutItemPadding}" 
-                                                                          firstLayoutItemAlignmentBump="{!v.firstLayoutItemAlignmentBump}" 
-                                                                          secondLayoutItemClass="{!v.secondLayoutItemClass}" 
-                                                                          secondLayoutItemTitle="{!v.secondLayoutItemTitle}" 
-                                                                          secondLayoutItemSize="{!v.secondLayoutItemSize}" 
-                                                                          secondLayoutItemFlexibility="{!v.secondLayoutItemFlexibility}" 
-                                                                          secondLayoutItemPadding="{!v.secondLayoutItemPadding}" 
-                                                                          secondLayoutItemAlignmentBump="{!v.secondLayoutItemAlignmentBump}" 
-                                                                          thirdLayoutItemClass="{!v.thirdLayoutItemClass}" 
-                                                                          thirdLayoutItemTitle="{!v.thirdLayoutItemTitle}" 
-                                                                          thirdLayoutItemSize="{!v.thirdLayoutItemSize}" 
-                                                                          thirdLayoutItemFlexibility="{!v.thirdLayoutItemFlexibility}" 
-                                                                          thirdLayoutItemPadding="{!v.thirdLayoutItemPadding}" 
-                                                                          thirdLayoutItemAlignmentBump="{!v.thirdLayoutItemAlignmentBump}" 
-                                                                          />
-                                                    
-                                                </lightning:layoutItem>
-                                            </aura:iteration>
-                                        </lightning:layout>
-                                        <aura:set attribute="else">
-                                            <ul class="{!v.styleClass + ' acn-group-body-list' + (v.showSpinner ? ' acn-component-disabled' : '')}">
-                                                <aura:iteration items="{!v.navigationListItems}" var="navigationListItem">
-                                                    <li class="{!(v.overrideItemClassName ? v.styleClass + ' acn-group-body-list-item' : navigationListItem.StyleClassName + ' acn-group-body-list-item') + (navigationListItem.IsSelected ? ' acn-navigation-list-item-selected' : '' )}" style="{!v.columnWidth}">
-                                                        <c:ACN_NavigationItem navigationItem="{!navigationListItem}" 
-                                                                              navigationListItemPressed="{!c.handleNavigationListItemPressed}" 
-                                                                              showNavigationList="{!v.showNavigationList}" 
-                                                                              customCardDesign="{!v.customCardDesign}" 
-                                                                              showItemName="{!v.showItemName}" 
-                                                                              showItemImage="{!v.showItemImage}" 
-                                                                              showItemImageBehind="{!v.showItemImageBehind}" 
-                                                                              showItemDescription="{!v.showItemDescription}" 
-                                                                              contentPreviewIdentifier="{!v.contentPreviewIdentifier}" 
-                                                                              selectedNavigationItemId="{!v.selectedNavigationItemId}" 
-                                                                              selectedItemIdentifier="{!v.selectedItemIdentifier}" 
-                                                                              inactiveTargetIdentifier="{!v.inactiveTargetIdentifier}" 
-                                                                              notifyNavigationToMenu="{!v.notifyNavigationToMenu}" 
-                                                                              styleClass="{!v.styleClass}" 
-                                                                              selectedStyleClass="{!v.selectedStyleClass}" 
-                                                                              activeStyleClass="{!v.activeStyleClass}" 
-                                                                              overrideItemClassName="{!v.overrideItemClassName}" 
-                                                                              showScoringStars="{!v.showScoringStars}" 
-                                                                              showScoringVotes="{!v.showScoringVotes}" 
-                                                                              showScoringLoveIt="{!v.showScoringLoveIt}" 
-                                                                              showScoringViews="{!v.showScoringViews}"
-                                                                              useBrandColorForImage="{!v.useBrandColorForImages}"
-                                                                              isNavigationEnabled="{!v.isNavigationEnabled}" 
-                                                                              imageElementIndex="{!v.imageElementIndex}" 
-                                                                              nameElementIndex="{!v.nameElementIndex}" 
-                                                                              descriptionElementIndex="{!v.descriptionElementIndex}" 
-                                                                              scoreElementIndex="{!v.scoreElementIndex}" 
-                                                                              badgeElementIndex="{!v.badgeElementIndex}" 
-                                                                              chartElementIndex="{!v.chartElementIndex}" 
-                                                                              layoutClass="{!v.layoutClass}" 
-                                                                              layoutTitle="{!v.layoutTitle}" 
-                                                                              layoutHorizontalAlign="{!v.layoutHorizontalAlign}" 
-                                                                              layoutVerticalAlign="{!v.layoutVerticalAlign}" 
-                                                                              layoutMultipleRows="{!v.layoutMultipleRows}" 
-                                                                              layoutPullToBoundary="{!v.layoutPullToBoundary}" 
-                                                                              firstLayoutItemClass="{!v.firstLayoutItemClass}" 
-                                                                              firstLayoutItemTitle="{!v.firstLayoutItemTitle}" 
-                                                                              firstLayoutItemSize="{!v.firstLayoutItemSize}" 
-                                                                              firstLayoutItemFlexibility="{!v.firstLayoutItemFlexibility}" 
-                                                                              firstLayoutItemPadding="{!v.firstLayoutItemPadding}" 
-                                                                              firstLayoutItemAlignmentBump="{!v.firstLayoutItemAlignmentBump}" 
-                                                                              secondLayoutItemClass="{!v.secondLayoutItemClass}" 
-                                                                              secondLayoutItemTitle="{!v.secondLayoutItemTitle}" 
-                                                                              secondLayoutItemSize="{!v.secondLayoutItemSize}" 
-                                                                              secondLayoutItemFlexibility="{!v.secondLayoutItemFlexibility}" 
-                                                                              secondLayoutItemPadding="{!v.secondLayoutItemPadding}" 
-                                                                              secondLayoutItemAlignmentBump="{!v.secondLayoutItemAlignmentBump}" 
-                                                                              thirdLayoutItemClass="{!v.thirdLayoutItemClass}" 
-                                                                              thirdLayoutItemTitle="{!v.thirdLayoutItemTitle}" 
-                                                                              thirdLayoutItemSize="{!v.thirdLayoutItemSize}" 
-                                                                              thirdLayoutItemFlexibility="{!v.thirdLayoutItemFlexibility}" 
-                                                                              thirdLayoutItemPadding="{!v.thirdLayoutItemPadding}" 
-                                                                              thirdLayoutItemAlignmentBump="{!v.thirdLayoutItemAlignmentBump}" 
-                                                                              />
-                                                    </li>
-                                                </aura:iteration>
-                                            </ul>
-                                        </aura:set>
-                                    </aura:if>
-                                    <div class="acn-spinner-inner-container">
-                                        <c:ACN_Spinner showSpinner="{!v.showSpinner}" loadingMessageText="{!v.loadingMessageText}" />
-                                    </div>
-                                </div>
-                            </aura:if>
-                            <aura:if isTrue="{!v.showEmptyListMessage ? v.isListEmpty ? true : false : false}">
-                                <div class="{!v.styleClass + ' acn-group-body-list-empty-container'}" >
-                                    <aura:if isTrue="{!v.emptyListLink != ''}">
-                                        <a href="{!v.emptyListLink}">
-                                            <span class="{!v.styleClass + ' acn-group-body-list-empty-container'}" >
-                                                {!v.emptyListMessage}
-                                            </span>
-                                        </a>
-                                    </aura:if>
-                                    <aura:if isTrue="{!v.emptyListLink == ''}">
-                                        <span class="{!v.styleClass + ' acn-group-body-list-empty-container'}" >
-                                            {!v.emptyListMessage}
-                                        </span>
-                                    </aura:if>
-                                </div>
-                            </aura:if>
-                        </lightning:layoutItem>
-                        <aura:if isTrue="{!v.buttonableShowButtonsLast}">
-                            <lightning:layoutItem 
-                                                  class="{!'acn-navigation-list-buttons' + (v.styleClass == '' ? '' : ' ' + v.styleClass + '-list-item-buttons-grid') + (v.buttonableLayoutItemButtonsClass == '' ? '' : ' ' + v.buttonableLayoutItemButtonsClass)}"
-                                                  title="{!v.buttonableLayoutItemButtonsTitle}"
-                                                  size="{!v.buttonableLayoutItemButtonsSizeArray[0]}" 
-                                                  largeDeviceSize="{!v.buttonableLayoutItemButtonsSizeArray[1]}"
-                                                  mediumDeviceSize="{!v.buttonableLayoutItemButtonsSizeArray[2]}" 
-                                                  smallDeviceSize="{!v.buttonableLayoutItemButtonsSizeArray[3]}" 
-                                                  flexibility="{!v.buttonableLayoutItemButtonsFlexibility}"
-                                                  padding="{!v.buttonableLayoutItemButtonsPadding}"
-                                                  alignmentBump="{!v.buttonableLayoutItemButtonsAlignmentBump}"
-                                                  >
-                                <div class="acn-navigation-list-pagination-container">
-                                    <div class="acn-navigation-list-pagination-container-infinite-loading">
-                                        <aura:if isTrue="{!v.isInfiniteLoading}">
-                                            <aura:if isTrue="{!v.showLoadMore ? !v.isLastItemPresent ? true : false : false}">
-                                                <lightning:button label="{!$Label.c.ACN_NavigationListLoadMoreCaption}" variant="base" title="{!$Label.c.ACN_NavigationListLoadMoreDescription}" onclick="{!c.loadMoreItems}" />
-                                            </aura:if>
-                                        </aura:if>
-                                    </div>
-                                    <div class="acn-navigation-list-pagination-container-pagination-loading">
-                                        <aura:if isTrue="{!!v.isInfiniteLoading}">
-                                            <aura:if isTrue="{!v.showPreviousPage}">
-                                                <!--
-                                                <lightning:button label="{!$Label.c.ACN_NavigationListPrevPageCaption}" variant="base" title="{!$Label.c.ACN_NavigationListPrevPageDescription}" onclick="{!c.gotoPreviousPage}" disabled="{!v.currentPage==1}" />
-												-->
-                                                <lightning:button iconName="utility:chevronleft" iconPosition="left" label="{!$Label.c.ACN_NavigationListPrevPageCaption}" variant="base" title="{!$Label.c.ACN_NavigationListPrevPageDescription}" onclick="{!c.gotoPreviousPage}" disabled="{!v.currentPage==1}" />
-                                            </aura:if>
-                                            <aura:if isTrue="{!v.showNextPage}">
-                                                <!--
-                                                <lightning:button label="{!$Label.c.ACN_NavigationListNextPageCaption}" variant="base" title="{!$Label.c.ACN_NavigationListNextPageDescription}" onclick="{!c.gotoNextPage}" disabled="{!v.isLastItemPresent}" />
-												-->
-                                                <lightning:button iconName="utility:chevronright" iconPosition="right" label="{!$Label.c.ACN_NavigationListNextPageCaption}" variant="base" title="{!$Label.c.ACN_NavigationListNextPageDescription}" onclick="{!c.gotoNextPage}" disabled="{!v.isLastItemPresent}" />
-                                            </aura:if>
-                                        </aura:if>
-                                    </div>
-                                </div>
-                            </lightning:layoutItem>
-                        </aura:if>
-                    </lightning:layout>
-                </aura:if>
-            </div>
-        </lightning:layoutItem>
-    </lightning:layout>
-</aura:component>
-*/
+    .THIS .navigationScoreCard.acn-group-body-list-item:nth-child(2n) {
+        margin-right: 0;
+        margin-left: 0;
+    }
+}
+/***************** Score Card End ************************/
+
+/************** Article Preview Begin ********************/
+.THIS ul.navigationArticlePreview.acn-group-body-list {
+    -webkit-column-width: 25em;
+    column-width: 25em;
+    -moz-column-width: 25em;
+    -webkit-column-gap: 1em;
+    -moz-column-gap: 1em;
+    column-gap: 1em;
+    /*overflow:hidden;*/
+}
+
+.THIS .navigationArticlePreview.acn-group-body-list-item {
+    min-width: 16px;
+    width: 100%;
+    list-style-type: none;
+    box-sizing: border-box;
+    margin: 5px;
+    display: inline-block;
+    border-radius: 3px;
+    border: 1px solid rgba(0,0,0,0.1);
+    /*box-shadow: 0 8px 6px -6px black;*/
+    height: auto;
+    -webkit-column-break-inside : avoid;
+    /*min-height: 150px;*/
+    float: none;
+    padding: 0;
+    background-color: white;
+}
+
+.THIS .navigationArticlePreview.acn-group-body-list-item:hover {
+    /*border: 1px solid rgba(0,0,0,0.6);*/
+    -o-box-shadow: 2px 2px 19px #CCC;
+    -webkit-box-shadow: 2px 2px 19px #CCC;
+    -moz-box-shadow: 2px 2px 19px #CCC;
+}
+
+/************** Article Preview End **********************/
+
+/******************** Pill Begin *************************/
+.THIS .navigationCardPill.acn-group-body-list {
+    display: -ms-flexbox;
+    -ms-flex-pack: center;
+    justify-content: flex-start;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    flex-flow: wrap;
+    display: -webkit-flex;
+    -webkit-flex-wrap: wrap;
+    display: inline-table;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.THIS .navigationCardPill.acn-group-body-list-item {
+    display: -ms-flexbox;
+    display: inline-table;
+    flex-wrap: wrap;
+    -ms-flex-pack: center;
+    width: 0% !important;
+    margin-bottom: 5px;
+    margin-right: 5px;
+	font-size: 15px;
+}
+
+/******************** Pill End ***************************/
+
+/***************** Mobile Tile Begin *********************/
+.THIS .navigationCardMobileTile.acn-group-body-list {
+    display: flex;
+}
+
+.THIS .navigationCardMobileTile.acn-group-body-list-item {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    list-style-type: none;
+    box-sizing: border-box;
+    height: auto;
+    -webkit-column-break-inside: avoid;
+    /*margin-right: 12px;
+    margin-top: 15px;*/
+    min-width: auto;
+    height: auto !important;
+    width: auto !important;
+}
+
+.THIS .navigationCardMobileTile.acn-group-body-list-item:last-child {
+    margin-right: 0px;
+}
+
+/* 654*/
+@media screen and (max-width: 550px) {
+    .THIS .navigationCardMobileTile.acn-group-body-list{
+        display: flex;
+    }
+}
+
+/***************** Mobile Tile End ***********************/
+
+/*************** KSA Breadcrumbs Begin *******************/
+.THIS .navigationCardKSABreadCrumbs.acn-group-body-list {
+    padding-left: 10px;
+}
+
+/*************** KSA Breadcrumbs End *********************/
+
+/******************* KSA Text Begin **********************/
+.THIS .navigationCardKSAText.acn-group-body-list {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 10px;
+    padding-bottom: 24px;
+}
+
+.THIS .navigationCardKSAText.acn-group-body-list-item {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    width: auto;
+    float: left;
+    list-style-type: none;
+    box-sizing: border-box;
+    height: auto;
+    -webkit-column-break-inside: avoid;
+    padding-right: 21px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    line-height: 2.3
+}
+
+/******************* KSA Text End ************************/
+
+/**************** Selection Pill Begin *******************/
+.THIS ul.navigationCardSelectionPill.acn-group-body-list {
+    border: 1px solid #d8dde6;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+}
+
+/**************** Selection Pill End *********************/
+
+/****************** Quick Link Begin *********************/
+.THIS ul.navigationQuickLink.acn-group-body-list {
+    background-color: t(acnDefaultBackgroundAlternate);
+}
+
+.THIS .navigationQuickLink .acn-group-header {
+    background-color: t(acnDefaultBackgroundAlternate);
+    color: t(acnBrandColor);
+    display: block;
+    font-family: t(fontFamily);
+    font-size: 20px;
+    font-weight: normal;
+    margin: 0;
+    padding: 6px 3px 0 12px;
+    text-align: left;
+}
+
+.THIS .navigationQuickLink ul {
+    padding-top: 0;
+    margin-top: 0;
+    min-height: 50px;    
+}
+
+.THIS .navigationQuickLink ul li {
+    padding: 12px;
+}
+
+/****************** Quick Link End ***********************/
+
+/****************** Icon Button Begin ********************/
+.THIS li.navigationIconButton {
+    float: left;
+    width: initial !important;
+    padding: 3px;
+    margin: 3px;
+    background-color: initial;
+    border-radius: 5px;
+    border: solid t(acnBrandColor) 1px;
+}
+
+.THIS li.navigationIconButton.acn-navigation-list-item-selected {
+    background-color: t(acnBrandColor);
+}
+
+.THIS li.navigationIconButton:not(.acn-navigation-list-item-selected):hover {
+    background-color: t(acnPillCardColorHover);
+}
+
+/****************** Icon Button End **********************/
+
+/********************* Chart Begin ***********************/
+.THIS ul.navigationChart {
+    text-align: center;
+    margin: auto;
+}
+
+.THIS li.navigationChart {
+    float: left;
+    padding: 3px;
+}
+
+/********************* Chart End ***********************/
+
+/****************** Carousel Begin ***********************/
+.THIS .navigationCardCarousel.acn-navigation-list-item-description:empty {
+	background: none !important;
+}
+
+.THIS .acn-carousel-button-previous, .THIS .acn-carousel-button-next {
+    display: none;
+}
+
+.THIS .acn-carousel-indicator-active {
+	background-color: token(acnCarouselPageSelectorColor);
+	opacity: 1 !important;
+}
+
+.THIS .acn-carousel-indicator-not-active {
+    background-color: token(acnCarouselPageSelectorColor);
+}
+
+.THIS .carouselIndicatorContainer button {
+	opacity: 1 !important;
+}
+
+.THIS .acn-carousel-group-body-list .acn-group-body-list-item {
+    height: token(acnNavigationCarouselHeight);
+    border: none;
+    width: 100%;
+    margin: -2px;
+}
+
+.THIS .acn-carousel-indicator{
+    display: inline-block;
+    height: 15px; 
+    width: 15px; 
+    border-radius: 50%;
+    margin-right:30px;
+}
+
+.THIS .acn-carousel-indicator-first {
+    background-color: token(acnCarouselPageSelectorColor);
+}
+
+.THIS .acn-carousel-indicator-active {
+    background-color: token(acnCarouselPageSelectorColor);
+    opacity: 1;
+    width: 20px;
+    height: 20px;
+}
+
+.THIS .acn-carousel-indicator-not-active {
+    background-color: token(acnCarouselPageSelectorColorNotSelected);
+}
+
+.THIS .acn-carousel-button {
+    position: absolute;
+    height: token(acnCarouselButtonHeight);
+    width: 70px;
+    top: 0;
+    background-color: transparent;
+    z-index: 5;
+}
+
+.THIS .acn-carousel-button > span {
+    display: block;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background-color: rgba(255,255,255,0.5);
+    text-align: center;
+    line-height: 1;
+	font-weight: 900;
+	color: white;
+	font-size: 17px;
+	opacity: .5;
+}
+
+.THIS .acn-carousel-button:hover {
+    background-color: transparent !important;
+}
+
+.THIS .acn-carousel-button:focus {
+    outline: none;
+}
+
+.THIS .acn-carousel-page-indicator-button {
+    /*width: 22px;
+    height: 22px;*/
+    outline: none;
+    /*margin-bottom: 8px;*/
+    margin: 0px;
+    padding: 6px 0px 6px 0px;
+    box-shadow: initial;
+} 
+
+.THIS .acn-carousel-page-indicator-button:hover {
+    background: initial;
+}
+
+.THIS .acn-carousel-page-indicator-button > div.acn-carousel-indicator {
+    margin-left: 6px;
+    margin-right: 6px;
+}
+
+.THIS .acn-carousel-button-previous {
+    left: 830px;
+    margin-top: 166px !important;
+	/*width: 3%;*/
+}
+
+.THIS .acn-carousel-button-next {
+    right: 11px;
+    margin-top: 166px !important;
+	width: 3%;
+}
+
+.THIS .carouselIndicatorContainer {
+    display: flex;
+    justify-content: flex-end;
+	z-index: 4 !important;
+	margin-left: -22px;
+}
+
+.THIS .carouselIndicatorContainer button {
+    background-color: transparent;
+    border: 0;
+	opacity: .25;
+}
+
+.THIS .carouselIndicatorContainer button:hover {
+    background-color: transparent !important;
+    border: 0;
+}
+
+
+.THIS .acn-carousel-list{
+    position: relative;
+    text-align: center;
+    display: inline-block;
+    width: token(acnCarouselWidth);
+    background-color: token(acnCarouselBackGroundColor);
+    height: token(acnNavigationCarouselHeight);
+}
+
+.THIS .acn-carousel-group-body-list {
+    width: token(acnCarouselWidth);
+    height: token(acnNavigationCarouselHeight);
+}
+
+.THIS .acn-list-slide-in-from-right {
+    animation-duration: 3s;
+    animation-name: slideinfromright;
+}
+
+.THIS .acn-list-slide-in-from-left {
+    animation-duration: 1s;
+    animation-name: slideinfromleft;
+}
+
+.THIS .acn-carousel-navigation-items-container {
+    overflow: hidden;
+    text-align: center;
+}
+
+.THIS .acn-list-slide-out-from-left {
+    overflow: hidden;
+    animation-duration: 2s;
+    animation-name: slideoutfromleft;
+}
+
+.THIS .acn-list-slide-out-from-right {
+    overflow: hidden;
+    animation-duration: 1.5s;
+    animation-name: slideoutfromright;
+}
+
+.THIS .acn-carousel-group-body-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes slideinfromright {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+@keyframes slideinfromleft {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+@keyframes slideoutfromleft {
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+}
+
+@keyframes slideoutfromright {
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+}
+
+@media screen and (min-width: 885px){
+    .THIS .acn-carousel-button-next, .THIS .acn-carousel-button-previous{
+        margin: 0;
+        overflow: hidden;
+        font-weight: bolder;
+        font-size: 22px;
+        border:0;
+        color: token(acnCarouselPageSelectorColor);
+    }
+}
+
+/*770px */
+@media screen and (max-width: 885px) {
+    .THIS .acn-carousel-group-body-list {
+        width: 100%;
+        
+    }
+    
+    .THIS .acn-carousel-button > span{
+        line-height: 1.6;
+        font-weight: bold;
+        font-size: x-large;
+    }
+}
+
+/* 654*/
+@media screen and (max-width: 550px) {
+    .THIS .acn-carousel-group-body-list .acn-group-body-list-item {
+        height: token(acnNavigationCarouselHeightMobile);
+   	}
+    
+    .THIS .acn-carousel-group-body-list {
+        width: 100%;
+        height: token(acnNavigationCarouselHeightMobile);
+    }
+
+	.THIS .acn-carousel-list {
+        height: token(acnNavigationCarouselHeightMobile);
+	}
+   
+    .THIS .acn-carousel-button-previous, .THIS .acn-carousel-button-next {
+        top: 0;
+        height: 100%;
+        
+    }
+    
+    .THIS .acn-carousel-button-previous{
+        left: 0;
+    }
+    .THIS .acn-carousel-button-next{
+        right: 0;
+    }
+    
+    .THIS .acn-carousel-button > span{
+        line-height: 1.6;
+        font-weight: bold;
+        font-size: x-large;
+    }
+}
+/****************** Carousel End *************************/
+
+.THIS ul.navigationCardIconPill { 
+    margin: 10px;
+}
+
+.THIS li.navigationCardIconPill {
+    padding: 1px;
+    position: relative;
+    display: inline-block;
+}
+
+.THIS li.navigationCardIconPill .acn-navigation-item-container {
+    position: relative;
+    display: inline-block;
+    border-radius: 30px;
+    border: 1px rgba(45, 115, 185, .5) solid;
+    margin-left: 5px;
+    margin-right: 5px;
+    height: 60px;
+    min-width: 230px;
+    max-width: 230px;
+    -webkit-box-shadow: 1px 10px 17px -9px rgba(45,115,185,1);
+    -moz-box-shadow: 1px 10px 17px -9px rgba(45,115,185,1);
+    box-shadow: 1px 10px 17px -9px rgba(45,115,185,1);
+}
+
+.THIS li.navigationCardIconPill:hover .acn-navigation-item-container {
+    -webkit-box-shadow: 2px 11px 17px -9px rgba(45,115,185,1);
+    -moz-box-shadow: 2px 11px 17px -9px rgba(45,115,185,1);
+    box-shadow: 2px 14px 11px -9px rgba(45,115,185,1);
+}
+
+.THIS li.navigationCardIconPill:active .acn-navigation-item-container {
+    -webkit-box-shadow: 0px 8px 17px -9px rgba(45,115,185,1);
+    -moz-box-shadow: 0px 8px 17px -9px rgba(45,115,185,1);
+    box-shadow: 0px 8px 17px -9px rgba(45,115,185,1);
+}
+
+.THIS ul.navigationProductCard { 
+    background-color: #f5f5f5;
+    padding: 10px;
+}
+
+.THIS li.navigationProductCard {
+    padding: 3px;
+    position: relative;
+    display: inline-block;
+    /*margin: 10px;*/
+}
+
+.THIS li.navigationProductCard .acn-navigation-item-container {
+    background-color: white;
+    -webkit-box-shadow: 6px 6px 10px -6px rgba(149,149,149,1);
+    -moz-box-shadow: 6px 6px 10px -6px rgba(149,149,149,1);
+    box-shadow: 6px 6px 10px -6px rgba(149,149,149,1);
+    padding: 20px;
+}
+
+.THIS li.navigationProductCard:hover .acn-navigation-item-container {
+    -webkit-box-shadow: 8px 8px 10px -6px rgba(149,149,149,1);
+    -moz-box-shadow: 8px 8px 10px -6px rgba(149,149,149,1);
+    box-shadow: 8px 8px 10px -6px rgba(149,149,149,1);
+}
+
+.THIS li.navigationProductCard:active .acn-navigation-item-container {
+    -webkit-box-shadow: 4px 4px 10px -6px rgba(149,149,149,1);
+    -moz-box-shadow: 4px 4px 10px -6px rgba(149,149,149,1);
+    box-shadow: 4px 4px 10px -6px rgba(149,149,149,1);
+}
+
+.THIS ul.navigationCardQuickAction {
+    margin: 0;
+}
+
+.THIS li.navigationCardQuickAction {
+    min-height: 150px;
+    margin: 0;
+    padding: 3px;
+    border: none;
+    display: inline-block;
+    position: relative;
+    float: left;
+    min-height: 150px;
+}
+
+.THIS li.navigationCardQuickAction .acn-navigation-item-container {
+    display: inline-block;
+    position: relative;
+    min-height: 150px;
+    width: 100%;
+    border: 1px solid t(colorBorder);
+}
+
+.THIS li.navigationCardQuickAction .acn-navigation-item-container:hover {
+    -webkit-box-shadow: 8px 8px 10px -6px rgba(149,149,149,1);
+    -moz-box-shadow: 8px 8px 10px -6px rgba(149,149,149,1);
+    box-shadow: 8px 8px 10px -6px rgba(149,149,149,1);
+    cursor: pointer;
+}
+
+.THIS li.navigationCardQuickAction .acn-navigation-item-container:active {
+    -webkit-box-shadow: 4px 4px 10px -6px rgba(149,149,149,1);
+    -moz-box-shadow: 4px 4px 10px -6px rgba(149,149,149,1);
+    box-shadow: 4px 4px 10px -6px rgba(149,149,149,1);
+}

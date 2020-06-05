@@ -1,0 +1,6 @@
+<aura:event type="COMPONENT" description="Fired when any of the contextual menu items are pressed.">
+    <aura:attribute name="topContextParentIdentifier" type="String" description="The Context Menu Item Top Context Parent Identifier." />
+    <aura:attribute name="contextParentIdentifier" type="String" description="The Context Menu Item Context Parent Identifier." />
+    <aura:attribute name="contextIdentifier" type="String" description="The Context Menu Item Context Identifier." />
+	<aura:attribute name="contextualMenuItems" type="ACN_NavigationLibrary.NavigationListItem[]" description="The Items for the contextual menu item pressed." />
+</aura:event>

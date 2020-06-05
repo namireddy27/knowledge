@@ -1,0 +1,113 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction,c:ACN_Dataable,c:ACN_Identifiable" access="global" controller="ACN_CanvasCX">
+    <aura:attribute name="currentUrl" type="String" default="" access="global" />
+    <aura:attribute name="urlFieldName" type="String" default="" access="global" />
+    <aura:attribute name="recordFields" type="String[]" default="" access="global" />
+    <aura:attribute name="urlTemplateList" type="String[]" default="" access="global" />
+    <aura:attribute name="left" type="string" default="0" access="global" />
+    <aura:attribute name="top" type="string" default="0" access="global" />
+    <aura:attribute name="width" type="string" default="100%" access="global" />
+    <aura:attribute name="maxWidth" type="string" default="100%" access="global" />
+    <aura:attribute name="height" type="string" default="100%" access="global" />
+    <aura:attribute name="maxHeight" type="string" default="100%" access="global" />
+    <aura:attribute name="border" type="string" default="none" access="global" />
+    <aura:attribute name="position" type="string" default="relative" access="global" />
+    <aura:attribute name="scrolling" type="string" default="yes" access="global" />
+    <aura:attribute name="sandbox" type="string" default="" access="global" />
+    <aura:attribute name="style" type="string" default="" access="global" />
+    <aura:attribute name="styleClass" type="string" default="" access="global" />
+    <aura:attribute name="recordError" type="string" default="" access="global" />
+    <aura:attribute name="showCanvasLoading" type="Boolean" default="true" access="global" />
+    <aura:attribute name="isCanvas" type="Boolean" default="" access="global" />
+    <aura:attribute name="canvasId" type="String" default="" access="global" />
+    <aura:attribute name="containerId" type="String" default="" access="global" />
+    <aura:attribute name="canvasAppName" type="String" default="" access="global" />
+    <aura:attribute name="canvasAppDeveloperName" type="String" default="" access="global" />
+    <aura:attribute name="canvasAppNamespacePrefix" type="String" default="" access="global" />
+    <aura:attribute name="canvasAppParameters" type="String" default="" access="global" />
+    <aura:attribute name="displayLocation" type="string" default="" access="global" />
+    <aura:attribute name="sublocation" type="string" default="" access="global" />
+    <aura:attribute name="referenceId" type="string" default="" access="global" />
+    <aura:attribute name="watermark" type="Boolean" default="false" access="global" />
+    <aura:attribute name="title" type="string" default="" access="global" />
+    <aura:attribute name="browserFormFactor" type="String" access="global" default="{!$Browser.formFactor}" />
+    <aura:attribute name="browserIsAndroid" type="Boolean" access="global" default="{!$Browser.isAndroid}" />
+    <aura:attribute name="browserIsIOS" type="Boolean" access="global" default="{!$Browser.isIOS}" />
+    <aura:attribute name="browserIsIPad" type="Boolean" access="global" default="{!$Browser.isIPad}" />
+    <aura:attribute name="browserIsIPhone" type="Boolean" access="global" default="{!$Browser.isIPhone}" />
+    <aura:attribute name="browserIsPhone" type="Boolean" access="global" default="{!$Browser.isPhone}" />
+    <aura:attribute name="browserIsTablet" type="Boolean" access="global" default="{!$Browser.isTablet}" />
+    <aura:attribute name="browserIsWindowsPhone" type="Boolean" access="global" default="{!$Browser.isWindowsPhone}" />
+    <aura:attribute name="refreshCanvas" type="Boolean" access="global" default="false" />
+    <aura:attribute name="isDebugModeOn" type="Boolean" default="false" access="global" />
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    
+    <aura:if isTrue="{!v.isCanvas ? v.refreshCanvas ? true : false : false}">
+        <div class="{!'acn-canvas-container' + (v.showCanvasLoading ? ' acn-canvas-loading-message-visible' : ' acn-canvas-loading-message-hidden')}">
+        </div>
+        <aura:if isTrue="{!v.isDebugModeOn}">
+            <div class="acn-debug-values-container">
+                <textarea class="acn-debug-values">
+                    {!v.canvasAppParameters}
+                </textarea>
+            </div>
+        </aura:if>
+        <force:canvasApp 
+                         developerName="{!v.canvasAppDeveloperName}" 
+                         applicationName="{!v.canvasAppName}" 
+                         namespacePrefix="{!v.canvasAppNamespacePrefix}" 
+                         parameters="{!v.canvasAppParameters}" 
+                         border="{!v.border}" 
+                         width="{!v.width}" 
+                         height="{!v.height}" 
+                         maxWidth="{!v.maxWidth}" 
+                         maxHeight="{!v.maxHeight}" 
+                         scrolling="{!v.scrolling}" 
+                         onCanvasAppLoad="{!c.onCanvasAppLoad}" 
+                         onCanvasSubscribed="{!c.onCanvasSubscribed}" 
+                         onCanvasAppError="{!c.onCanvasAppError}" 
+                         sublocation="{!v.sublocation}"
+                         watermark="{!v.watermark}"
+                         title="{!v.title}"
+                         />
+        				<!--
+                        displayLocation="{!v.displayLocation}"
+                        canvasId="canvasId" 
+                        containerId="viewPortCanvasId" 
+                        referenceId="{!v.referenceId}"
+                        -->
+    </aura:if>
+    <aura:if isTrue="{!!v.isCanvas}">
+        {!v.recordError}
+        <force:recordData aura:id="record"
+                          recordId="{!v.recordId}"
+                          fields="{!v.recordFields}"
+                          targetRecord="{!v.record}"
+                          layoutType="COMPACT" 
+                          mode="VIEW"
+                          targetFields="{!v.recordFields}" 
+                          recordUpdated="{!c.handleRecordUpdated}"
+                          targetError="{!v.recordError}" 
+                          />
+        
+        <div class="acn-viewport-container-outer">
+            <div class="acn-viewport-container-inner">
+                <div class="acn-viewport-container">
+                    <lightning:layout multipleRows="true" pullToBoundary="small">
+                        <lightning:layoutItem 
+                                              size="12" 
+                                              smallDeviceSize="12" 
+                                              mediumDeviceSize="12" 
+                                              largeDeviceSize="12" 
+                                              flexibility="no-shrink" 
+                                              alignmentBump="bottom" 
+                                              padding="horizontal-small">
+                            
+                            <div aura:id="iframe" class="acn-external-content-viewport" />
+                        </lightning:layoutItem>
+                    </lightning:layout>
+                </div>
+            </div>
+        </div>
+    </aura:if>
+</aura:component>

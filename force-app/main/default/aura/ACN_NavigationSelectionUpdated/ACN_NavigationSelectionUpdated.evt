@@ -1,0 +1,4 @@
+<aura:event type="APPLICATION" description="Use this event to notify when a navigation selection is updated.">
+    <aura:attribute name="selectionContextIdentifier" required="false" type="string" description="Use this attribute to provide a common identifier to act as a channel between multiple navigation components."/>
+    <aura:attribute name="selectedIds" required="true" type="Object" description="Use this attribute to broadcast selected Ids."/>
+</aura:event>

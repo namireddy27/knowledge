@@ -1,0 +1,44 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" controller="HR_CurrentUserController" > 
+    <aura:attribute type="User" name="currentUser"></aura:attribute>
+    <aura:attribute name="check" type="boolean" default="false"/>
+    <aura:attribute name="recordId" type="String" default="{!$SObjectType.CurrentUser.Id}" />
+ 	<aura:attribute name="contact" type="Object" /> 
+    <aura:attribute name="AccountId" type="String"/>
+    <aura:attribute name="isModalOpen" type="boolean" default="false"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doinit}" />
+    <aura:attribute name="contactFields" type="String[]" default="Name,FirstName,LastName,Phone,Email,MailingCity,MailingStreet,MailingPostalCode"/>
+    <div class="slds-text-heading_large"><b>Welcome, {!v.currentUser.FirstName}&nbsp;{!v.currentUser.LastName}</b></div>
+    <br/>
+       <div class="slds-text-heading_small"><b>{!v.currentUser.FirstName}&nbsp;{!v.currentUser.LastName}</b>
+       <div class="slds-text-align--center slds-text-heading_small"><u><a onclick="{!c.handleClick2}">Edit</a></u></div>
+    </div><br/>     
+    <div>{!v.currentUser.Street}<br />
+        {!v.currentUser.City}, {!v.currentUser.State} &nbsp; {!v.currentUser.PostalCode}<br/>
+        {!v.currentUser.Country}<br/>
+        {!v.currentUser.Phone}<br/>
+ <!--       {!v.currentUser.MobilePhone}<br/>       -->
+        {!v.currentUser.Email}<br/></div>
+    <aura:if isTrue="{!v.isModalOpen}">
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <!-- Modal/Popup Box Header Starts here-->
+                <header class="slds-modal__header" style="border-bottom:1px solid #FFBE2E;">
+                    <lightning:buttonIcon iconName="utility:close"
+                                          onclick="{! c.closeModel }"
+                                          alternativeText="close"
+                                          variant="bare-inverse"
+                                          class="slds-modal__close"/>
+                    <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate" style="font-size:1.375rem;"><strong>Edit Candidate Details</strong></h2>
+                </header>
+                <!--Modal/Popup Box Body Starts here-->
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    <c:HR_CandidateEditScreen AccountId= "{!v.recordId}"></c:HR_CandidateEditScreen>
+                </div>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </aura:if>
+    
+    <br /><br />
+    
+</aura:component>

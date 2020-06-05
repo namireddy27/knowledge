@@ -1,0 +1,23 @@
+<aura:interface description="Use this interface to specify if a lightning component will implement theming capability.">
+	<aura:attribute name="styleClass" type="String" default="" description="The style class to assign to the lightning component."/>
+	<aura:attribute name="selectedStyleClass" type="String" default="" description="The style class to assign to the lightning component."/>
+	<aura:attribute name="activeStyleClass" type="String" default="" description="The style class to assign to the lightning component."/>
+    <aura:attribute name="overrideItemClassName" type="Boolean" access="global" default="false" /> 
+    <aura:attribute name="fitInContainer" type="Boolean" access="global" default="false" />
+    <aura:attribute name="customCardDesign" type="Boolean" access="global" default="false" />
+    <aura:attribute name="navigationListRowSize" type="Integer" access="global" default="1" /> 
+    <aura:attribute name="maxColumnWidth" type="Integer" access="global" default="100" /> 
+    <aura:attribute name="columnWidth" type="String" access="global" default="" /> 
+    <aura:attribute name="useBrandColorForImages" type="Boolean" access="global" default="false" />
+    <aura:attribute name="browserFormFactor" type="Object" access="global" default="{!$Browser.formFactor}" />
+
+    <aura:attribute name="itemClassName" type="String"/>
+    <aura:attribute name="showItemName" type="Boolean" access="global" default="true" />
+    <aura:attribute name="showItemImage" type="Boolean" access="global" default="true" />
+    <aura:attribute name="showItemImageBehind" type="Boolean" access="global" default="false" />
+    <aura:attribute name="showItemDescription" type="Boolean" access="global" default="false" />
+    <aura:attribute name="lightningIcon" type="String" access="global" default="" />
+    <aura:attribute name="lightningIconSize" type="String" access="global" default="small" />
+    <aura:attribute name="lightningIconVariant" type="String" access="global" default="brand" />
+    <aura:attribute name="useBrandColorForImage" type="Boolean" access="global" default="false" />
+</aura:interface>

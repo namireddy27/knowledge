@@ -1,0 +1,4 @@
+<aura:component implements="flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes,force:hasRecordId" access="global">
+  <div class="ltblue">
+        <lightning:icon iconName="utility:info" size="small" />&nbsp;&nbsp;<b>Welcome to your Application History.</b> Select an application to go to its Dashboard; on the dashboard you can view further details, current status, and go to Action Items.</div>
+     </aura:component>

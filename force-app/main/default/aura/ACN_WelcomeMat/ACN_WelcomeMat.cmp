@@ -1,0 +1,42 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" controller="ACN_CurrentUserInformation" access="global">
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+    <aura:attribute name="greetingMessage" type="String" access="global"/>
+    <aura:attribute name="greetingMessageAlign" type="String" access="global" default="left" />
+    <aura:attribute name="greetingMessageFontSize" type="String" access="global" default="" />
+    <aura:attribute name="greetingMessageFontColor" type="String" access="global" default="" />
+    <aura:attribute name="greetingMessageFontBold" type="Boolean" access="global" default="true" />
+    <aura:attribute name="welcomeMessage" type="String" access="global"/>
+    <aura:attribute name="welcomeMessageAlign" type="String" access="global" default="left" />
+    <aura:attribute name="welcomeMessageFontSize" type="String" access="global" default="" />
+    <aura:attribute name="welcomeMessageFontColor" type="String" access="global" default="" />
+    <aura:attribute name="welcomeMessageFontBold" type="Boolean" access="global" default="false" />
+    <aura:attribute name="loginUserName" type="String"/>
+    <aura:attribute name="UserInfo" type="Map"/>
+    <aura:attribute name="showMessage" type="Boolean" access="global" default="false" />
+    <aura:attribute name="backgroundColor" type="String" access="global" default="" />
+    <aura:attribute name="width" type="String" access="global" default="" />
+    <aura:attribute name="height" type="String" access="global" default="" />
+    <aura:attribute name="margin" type="String" access="global" default="" />
+    <aura:attribute name="css" type="String" access="global" default="" />
+    <aura:attribute name="browserFormFactor" type="Object" access="global" default="{!$Browser.formFactor}" />
+    
+    <aura:attribute name="contentParagraph" type="String" access="global"/>
+    <div class="acn-welcome-mat-container-outer">
+        <div class="acn-welcome-mat-container-inner" style="{!(v.backgroundColor == '' ? '' : 'background-color: ' + v.backgroundColor + ';') + (v.width == '' ? '' : 'width: ' + v.width + ';') + (v.height == '' ? '' : 'height: ' + v.height + ';') + (v.margin == '' ? '' : 'margin: ' + v.margin + ';') + (v.css == '' ? '' : v.css)}">
+            <div class="acn-welcome-mat-container">
+                <aura:if isTrue="{!v.showMessage}">
+                    <h1 class="acn-welcome-mat-title" style="{!'text-align:' + v.greetingMessageAlign + ';' 
+                                                             + (v.greetingMessageFontSize == '' ? '' : 'font-size:' + v.greetingMessageFontSize + ';')
+                                                             + (v.greetingMessageFontColor == '' ? '' : 'color:' + v.greetingMessageFontColor + ';')
+                                                             + (v.greetingMessageFontBold ? 'font-weight:600;' : 'font-weight:initial;')
+                                                             }">{!v.greetingMessage}</h1>
+                    <p class="acn-welcome-mat-message" style="{!'text-align:' + v.welcomeMessageAlign + ';' 
+                                                              + (v.welcomeMessageFontSize == '' ? '' : 'font-size:' + v.welcomeMessageFontSize + ';')
+                                                              + (v.welcomeMessageFontColor == '' ? '' : 'color:' + v.welcomeMessageFontColor + ';')
+                                                              + (v.welcomeMessageFontBold ? 'font-weight:600;' : 'font-weight:initial;')
+                                                              }">{!v.welcomeMessage}</p>
+                </aura:if>
+            </div>
+        </div>
+    </div>
+</aura:component>

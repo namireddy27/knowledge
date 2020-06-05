@@ -1,0 +1,6 @@
+<design:component >
+    <design:attribute name="dataProviderName" label="Data Provider Name" description="Specifies the data provider for the component." datasource=",ACN_FilterProvider,SOG_AccountFilterProvider,SOG_ServiceAreaFilterProvider" />
+	<design:attribute name="filterContextIdentifier" label="Filter Context Identifier" description="The filter context identifier for filtering event handling."/>	
+	<design:attribute name="filterGroupNamesCsv" label="Filter Group Names (CSV)" description="The filter group names to be provided by this navigation filter."/>	
+	<design:attribute name="showGroupNamesTitle" label="Show Group Names Title" description="Flag to indicate if the group names should be shown as a title for the filter selector." />	
+</design:component>

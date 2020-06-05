@@ -1,0 +1,37 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction,c:ACN_Componentable,c:ACN_Validationable" access="global" >
+    <aura:attribute name="recordId" type="String" access="global" />
+    <aura:attribute name="isReadOnly" type="Boolean" default="false" access="global" />
+    <aura:attribute name="showRecordActions" type="Boolean" default="false" access="global" />
+    <aura:attribute name="isEditEnabled" type="Boolean" default="false" access="global" />
+    <aura:attribute name="isSaveEnabled" type="Boolean" default="false" access="global" />
+    <aura:attribute name="isRefreshEnabled" type="Boolean" default="false" access="global" />
+    
+    <aura:registerEvent name="forceRecordEditSaveRequested" type="c:ACN_ForceRecordEditSaveRequested" />
+    
+    <aura:handler event="c:ACN_ForceRecordEditSaveCompleted" action="{!c.handleForceRecordEditSaveCompleted}" />
+    <aura:handler event="c:ACN_ForceRecordEditSaveFailed" action="{!c.handleForceRecordEditSaveFailed}" />
+    
+    <aura:if isTrue="{!v.isReadOnly}">
+        <force:recordView recordId="{!v.recordId}" />
+        <aura:set attribute="else">
+            <c:ACN_ForceRecordEdit aura:id="acn_forcerecordedit_id"
+                                   recordId="{!v.recordId}" 
+                                   sectionId="{!v.recordId}" 
+                                   isAutoSaveEnabled="{!!v.isEditEnabled ? !v.isSaveEnabled ? true : false : false}" 
+                                   isReadOnly="{!v.isReadOnly}"
+                                   />
+        </aura:set>
+    </aura:if>
+    
+    <lightning:buttonGroup>
+        <aura:if isTrue="{!v.isRefreshEnabled}">
+	        <lightning:button label="Refresh" onclick="{!c.handleRefresh}" />
+        </aura:if>
+        <aura:if isTrue="{!v.isEditEnabled ? v.isReadOnly ? true : false : false}">
+            <lightning:button label="Edit" onclick="{!c.handleEdit}" />
+        </aura:if>
+        <aura:if isTrue="{!v.isSaveEnabled ? !v.isReadOnly ? true : false : false}">
+            <lightning:button label="Save" onclick="{!c.handleSave}" value="{!recordId}" />
+        </aura:if>
+    </lightning:buttonGroup>                        
+</aura:component>

@@ -1,0 +1,5 @@
+<aura:interface description="Use this interface to specify if a lightning component will implement a data provider.">
+	<aura:attribute name="dataProviderName" type="String" default="" description="The data provider name that is used by the component to retrieve data."/>
+	<aura:attribute name="isCacheEnabled" type="Boolean" default="false" description="Use this property to indicate if the data provider should try to levearge platform cache."/>
+	<aura:attribute name="isDataLoadAsynchronous" type="Boolean" default="false" description="Use this property to indicate if the data provider should try to load the data aynchronously."/>
+</aura:interface>

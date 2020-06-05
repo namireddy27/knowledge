@@ -1,0 +1,15 @@
+<aura:interface description="Use this interface to provide user interface refresh capabilities to Lightning Components.">
+    <aura:attribute name="record" type="Object" access="global" description="Use this attribute to specify a refreshable record." />
+    <aura:attribute name="simpleRecord" type="Object" access="global" description="Use this attribute to specify the fields definition for a refreshable record." />
+    <aura:attribute name="recordError" type="String" access="global" description="Use this attribute to specify the error on a refreshable record." />
+    <aura:attribute name="sObjectTypeName" type="String" access="global" description="Use this attribute to specify the sobject type name of the record to be loaded." default="" required="true" />
+    <aura:attribute name="recordFields" type="String[]" access="global" description="Use this attribute to specify the record fields to be loaded (must support the RefreshableIsUpdated__c field)." default="" />
+    <aura:attribute name="idFieldName" type="String" access="global" description="Use this attribute to specify the identifier field name of the record to be loaded." default="Id" required="true" />
+    <aura:attribute name="updatedFieldName" type="String" access="global" description="Use this attribute to specify the updated field name of the record to be loaded." default="RefreshableIsUpdated__c" required="true" />
+    <aura:attribute name="recordFieldsCsv" type="String" access="global" description="Use this attribute to specify the identifier field name of the record to be loaded." default="Name" />
+    <aura:attribute name="refreshIntervalId" type="String" access="global" description="Use this attribute to specify the record refresh interval identifier." default="" />
+    <aura:attribute name="refreshIntervalInSeconds" type="Integer" access="global" description="Use this attribute to specify the record refresh interval in seconds." default="5" />
+    <aura:attribute name="isRefreshIntervalInSecondsRandom" type="Boolean" access="global" default="false" />
+    <aura:attribute name="isRefreshIntervalActive" type="Boolean" access="global" default="false" />
+    <aura:attribute name="listenForChanges" type="Boolean" access="global" default="false" />
+</aura:interface>

@@ -1,0 +1,28 @@
+<!--
+  @File Name          : contactListItem.html
+  @Description        : 
+  @Author             : Peter Tran
+  @Group              : 
+  @Last Modified By   : Peter Tran
+  @Last Modified On   : 2/4/2020, 12:51:55 PM
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    2/4/2020   Peter Tran     Initial Version
+-->
+<template>
+    <a href="#" onclick={handleClick}>
+        <lightning-layout vertical-align="center">
+            <lightning-layout-item>
+                <img src={contact.Picture__c} alt="Profile photo" />
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small">
+                <p>{contact.Name}</p>
+            </lightning-layout-item>
+            <lightning-input 
+                value={positionid}
+                type="checkbox"
+                onclick={handleCheckboxSelect}
+            ></lightning-input>
+        </lightning-layout>
+    </a>
+</template>

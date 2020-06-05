@@ -1,0 +1,27 @@
+<aura:interface description="Use this interface to provide support for layouts that can support buttons.">
+    <aura:attribute name="buttonableLayoutTitle" type="String" default="" access="global" />
+    <aura:attribute name="buttonableLayoutClass" type="String" default="acn-margin-none acn-padding-none" access="global" />
+    <aura:attribute name="buttonableLayoutHorizontalAlign" type="String" default="center" access="global" />
+    <aura:attribute name="buttonableLayoutVerticalAlign" type="String" default="center" access="global" />
+    <aura:attribute name="buttonableLayoutMultipleRows" type="Boolean" default="true" access="global" />
+    <aura:attribute name="buttonableLayoutPullToBoundary" type="String" default="small" access="global" />
+	
+    <aura:attribute name="buttonableLayoutItemBodyTitle" type="String" default="" access="global" />
+    <aura:attribute name="buttonableLayoutItemBodyClass" type="String" default="acn-margin-none acn-padding-none" access="global" />
+    <aura:attribute name="buttonableLayoutItemBodySize" type="String" default="12,12,12,12" access="global" />
+    <aura:attribute name="buttonableLayoutItemBodySizeArray" type="Integer[]" default="[]" access="global" />
+    <aura:attribute name="buttonableLayoutItemBodyFlexibility" type="String" default="auto" access="global" />
+    <aura:attribute name="buttonableLayoutItemBodyPadding" type="String" default="around-small" access="global" />
+    <aura:attribute name="buttonableLayoutItemBodyAlignmentBump" type="String" default="bottom" access="global" />
+
+    <aura:attribute name="buttonableLayoutItemButtonsTitle" type="String" default="" access="global" />
+    <aura:attribute name="buttonableLayoutItemButtonsClass" type="String" default="acn-margin-none acn-padding-none" access="global" />
+    <aura:attribute name="buttonableLayoutItemButtonsSize" type="String" default="12,12,12,12" access="global" />
+    <aura:attribute name="buttonableLayoutItemButtonsSizeArray" type="Integer[]" default="[]" access="global" />
+    <aura:attribute name="buttonableLayoutItemButtonsFlexibility" type="String" default="auto" access="global" />
+    <aura:attribute name="buttonableLayoutItemButtonsPadding" type="String" default="around-small" access="global" />
+    <aura:attribute name="buttonableLayoutItemButtonsAlignmentBump" type="String" default="bottom" access="global" />
+
+    <aura:attribute name="buttonableShowButtonsFirst" type="Boolean" default="false" access="global" />
+    <aura:attribute name="buttonableShowButtonsLast" type="Boolean" default="true" access="global" />
+</aura:interface>

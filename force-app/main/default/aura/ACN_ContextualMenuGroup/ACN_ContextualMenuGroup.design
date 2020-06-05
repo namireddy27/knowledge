@@ -1,0 +1,6 @@
+<design:component>
+    <design:attribute name="dataProviderName" label="Data Provider Name" description="Specifies the data provider for the component." datasource=",ACN_CustomObjectListViewProvider,ACN_CommunityNavigationTopics,ACN_CloneListViewProvider,ACN_ArticleSnippetProvider,ACN_ScoreCardProvider" />
+	<design:attribute name="styleClass" label="CSS Style Class Name" description="The CSS Style Class Name to be applied to the Component."/>	
+	<design:attribute name="topContextParentIdentifier" label="Context Parent Identifier" description="The contextual parent identifier to select the children and sub-children navigation items."/>	
+	<design:attribute name="auraId" label="Container Id" description="Container Aura Id for the Component."/>	
+</design:component>

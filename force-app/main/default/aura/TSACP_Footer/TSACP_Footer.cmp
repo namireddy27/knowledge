@@ -1,0 +1,67 @@
+<aura:component implements="flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes,force:hasRecordId" access="global">
+    
+<div class="footerWrapper">
+<div class="sectionFooter group">
+<!-- ** COLUMN 1 ** -->
+	<div class="col span_1_of_4">
+                <img src="{!$Resource.HR_TSALogoHorizSVG}" alt="TSA logo"></img>
+        	</div>
+<!-- // END COLUMN 1 // -->
+<!-- ** COLUMN 2 ** -->
+	<div class="col span_2_of_4">
+		<h3>SUPPORT</h3>
+		<p>(877) 872-7990</p>
+
+		<div style="width: 100%; padding: 0;">
+			<h3 style="margin-top:22px;">HCACCESS HELP DESK HOURS</h3>
+			<div style="float: left; width: 14%;">
+                M-F<br />
+                Sat<br />
+				Sun
+			</div>
+			<div style="float: right; width: 86%;">
+                7 AM&ndash;10 PM ET<br />
+                11 AM&ndash;3 PM ET<br />
+				12 PM&ndash;4 PM ET
+			</div>
+		</div>
+	</div>
+<!-- // END COLUMN 2 // -->
+<!-- ** COLUMN 3 ** -->
+	<div class="col span_3_of_4">
+		<h3>FOLLOW US</h3>
+		<p>
+		<a href="javascript:void();" title="(opens new browser window)">Facebook</a></p>
+		<p>
+		<a href="javascript:void();" title="(opens new browser window)">LinkedIn</a></p>
+		<p>
+		<a href="javascript:void();" title="(opens new browser window)">Twitter</a></p>
+		<p>
+		<a href="javascript:void();" title="(opens new browser window)">Instagram</a></p>
+		<p>
+		<a href="javascript:void();" title="(opens new browser window)">TSA Blog</a></p>
+		<p>
+		<a href="javascript:void();" title="(opens new browser window)">Glassdoor</a></p>
+	</div>
+<!-- // END COLUMN 3 // -->
+<!-- ** COLUMN 4 ** -->
+	<div class="col span_4_of_4">
+		<h3>LEGAL</h3>
+		<p>
+		<a href="javascript:void();" title="(opens new browser window)">USA.gov</a></p>
+		<p>
+		<a href="javascript:void();" title="(opens new browser window)">TSA.gov</a></p>
+		<p>
+		<a href="javascript:void();" title="(opens new browser window)">FOIA</a></p>
+		<p>
+		<a href="javascript:void();" title="(opens new browser window)">No FEAR Act</a></p>
+		<p>
+		<a href="javascript:void();">Accessibility</a></p>
+		<p>
+		<a href="javascript:void();">Privacy Policy</a></p>
+	</div>
+<!-- // END COLUMN 4 // -->
+
+</div><!-- // Close SectionFooter // -->
+    </div><!-- // Close footerWrapper // -->
+</aura:component>
